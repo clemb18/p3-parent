@@ -1,6 +1,6 @@
 package org.occ.p3.controler;
 
-import org.occ.p3.model.Works;
+import org.occ.p3.model.Work;
 import org.occ.p3.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,19 +18,21 @@ public class BookControler {
 	
 	@RequestMapping(value = "/book/{bookId}", method = RequestMethod.GET)
 
-    public @ResponseBody Works sayHello (@PathVariable Integer bookId) {
+    public @ResponseBody
+	Work sayHello (@PathVariable Integer bookId) {
         return bookService.getBookById(bookId);
     }	
 
 	@RequestMapping(value = "/works/create", method = RequestMethod.POST)
-	public @ResponseBody Works saveNewBook(@RequestParam("title") String bookTitle,@RequestParam("author") String bookAuthor) {
+	public @ResponseBody
+	Work saveNewBook(@RequestParam("title") String bookTitle, @RequestParam("author") String bookAuthor) {
 
-		Works bookToSave = new Works();
+		Work bookToSave = new Work();
 		bookToSave.setTitle(bookTitle);
 		bookToSave.setAuthor(bookAuthor);
 		
 		//Appeler le service qui fait ce traitement
-		Works bookToReturn = bookService.saveNewBook(bookToSave);
+		Work bookToReturn = bookService.saveNewBook(bookToSave);
 		
 		return bookToReturn;
 	}

@@ -20,7 +20,7 @@ public class Book {
 	private Boolean isAvailable;
 	
 	@ManyToOne
-	private Works originWork;
+	private Work originWork;
 
 	public Integer getId() {
 		return id;
@@ -38,11 +38,11 @@ public class Book {
 		this.isAvailable = isAvailable;
 	}
 
-	public Works getOriginWork() {
+	public Work getOriginWork() {
 		return originWork;
 	}
 
-	public void setOriginWork(Works originWork) {
+	public void setOriginWork(Work originWork) {
 		this.originWork = originWork;
 	}
 	

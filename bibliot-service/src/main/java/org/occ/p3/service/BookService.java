@@ -1,11 +1,11 @@
 package org.occ.p3.service;
 
-import org.occ.p3.model.Works;
+import org.occ.p3.model.Work;
 
 public interface BookService {
 
-	public Works getBookById(Integer bookId);
+	public Work getBookById(Integer bookId);
 	
-	public Works saveNewBook(Works book);
+	public Work saveNewBook(Work book);
 	
 }

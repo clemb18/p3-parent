@@ -1,7 +1,7 @@
 package org.occ.p3.service;
 
 import org.occ.p3.consumer.repository.BookRepository;
-import org.occ.p3.model.Works;
+import org.occ.p3.model.Work;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,11 +11,11 @@ public class BookServiceImpl implements BookService {
 	@Autowired
 	BookRepository bookRepository;
 	
-	public Works getBookById(Integer bookId) {
+	public Work getBookById(Integer bookId) {
 		//On fait des traitement si nécessaire
 	
 		/// Appeler le consumer adéquat
-		Works bookGotFromConsumer = bookRepository.findById(bookId).get();
+		Work bookGotFromConsumer = bookRepository.findById(bookId).get();
 		
 		return bookGotFromConsumer;
 	}
@@ -24,13 +24,13 @@ public class BookServiceImpl implements BookService {
 		return "Oui le service répond";
 	}
 	
-	public Works saveNewBook(Works book) {
+	public Work saveNewBook(Work book) {
 		//Vérifier que tu es authentifié
 		
 		//Vérifier que tu es habilité à faire cette opération
 		
 		//Appeler le consumer pour sauvegarder
-		Works bookSaved = bookRepository.save(book);
+		Work bookSaved = bookRepository.save(book);
 		
 		return bookSaved;
 	}

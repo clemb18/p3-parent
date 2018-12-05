@@ -1,20 +1,13 @@
 package org.occ.p3.model;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
-
 @Entity
 @Table(name="work")
-public class Works  implements Serializable {
+public class Work implements Serializable {
 
 	/**
 	 * 
@@ -37,11 +30,11 @@ public class Works  implements Serializable {
 	@OneToMany
 	private List<Book> booksList;
 
-	public Works() {
+	public Work() {
 		super();
 	}
 	
-	public Works(String title, String author){
+	public Work(String title, String author){
 		this.title = title;
 		this.author = author;
 	}
