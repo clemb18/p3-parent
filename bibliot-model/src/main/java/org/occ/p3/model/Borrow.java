@@ -24,11 +24,19 @@ public class Borrow  implements Serializable {
 	
 	private Date endBorrowDate;
 	
-	private Boolean isExtended;
+	private boolean extended;
 
 	@ManyToOne
 	private Member memberBorrowing;
-	
+
+	public boolean isExtended() {
+		return extended;
+	}
+
+	public void setExtended(boolean extended) {
+		this.extended = extended;
+	}
+
 	@OneToOne
 	private Book book;
 
@@ -76,13 +84,6 @@ public class Borrow  implements Serializable {
 		return serialVersionUID;
 	}
 
-	public Boolean getIsExtended() {
-		return isExtended;
-	}
-
-	public void setIsExtended(Boolean isExtended) {
-		this.isExtended = isExtended;
-	}
 
 	public Book getBook() {
 		return book;

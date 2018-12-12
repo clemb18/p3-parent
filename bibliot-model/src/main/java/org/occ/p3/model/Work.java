@@ -2,7 +2,6 @@ package org.occ.p3.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -23,12 +22,25 @@ public class Work implements Serializable {
 	
 	private String author;
 	
-	private Date publicationDate;
+	private Integer publicationDate;
 	
 	private String bookDescription;
-	
+
+	@ManyToOne
+	private Library library;
+
 	@OneToMany
 	private List<Book> booksList;
+
+	public Library getLibrary() {
+		return library;
+	}
+
+	public void setLibrary(Library library) {
+		this.library = library;
+	}
+
+
 
 	public Work() {
 		super();
@@ -63,11 +75,11 @@ public class Work implements Serializable {
 		this.author = author;
 	}
 
-	public Date getPublicationDate() {
+	public Integer getPublicationDate() {
 		return publicationDate;
 	}
 
-	public void setPublicationDate(Date publicationDate) {
+	public void setPublicationDate(Integer publicationDate) {
 		this.publicationDate = publicationDate;
 	}
 

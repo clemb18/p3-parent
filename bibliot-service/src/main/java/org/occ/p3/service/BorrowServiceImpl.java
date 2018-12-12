@@ -37,7 +37,7 @@ public class BorrowServiceImpl implements BorrowService {
         // On parcours la bookList
         for (Book result : bookList) {
 
-            if (result.getIsAvailable()) {
+            if (result.isAvailable()) {
 
                 Borrow borrowToSave = new Borrow();
                 borrowToSave.setBook(result);
@@ -49,7 +49,7 @@ public class BorrowServiceImpl implements BorrowService {
                 // Save le borrow dans le repository
                 borrowRepository.save(borrowToSave);
                 //Indique que le livre n'est plus disponible et on sauvegarde dans le bookRepository
-                result.setIsAvailable(false);
+                result.setAvailable(false);
                 bookRepository.save(result);
 
                 toReturn = true;
