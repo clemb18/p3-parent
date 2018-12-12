@@ -10,14 +10,14 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="book")
-public class Book {
+public class Book extends Work {
 	
 	@Id
     @GeneratedValue(generator="gen_book", strategy = GenerationType.IDENTITY)
     @SequenceGenerator(name="gen_book", sequenceName="seq_book", allocationSize=1)		
 	private Integer id;	
 
-	private Boolean isAvailable;
+	public Boolean isAvailable;
 	
 	@ManyToOne
 	private Work originWork;
@@ -45,7 +45,7 @@ public class Book {
 	public void setOriginWork(Work originWork) {
 		this.originWork = originWork;
 	}
-	
-	
-	
+
+
+
 }

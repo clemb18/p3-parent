@@ -12,12 +12,12 @@
         <module name="bibliot-webapp" />
         <module name="maven-archiver" />
         <module name="maven-archiver (1)" />
+        <module name="maven-archiver (2)" />
         <module name="maven-archiver (3)" />
-        <module name="maven-archiver (4)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="maven-archiver (2)" target="1.5" />
+      <module name="maven-archiver (4)" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
