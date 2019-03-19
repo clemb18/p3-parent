@@ -2,6 +2,7 @@ package org.occ.p3.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -15,7 +16,7 @@ public class Work implements Serializable {
 
 	@Id
     @GeneratedValue(generator="gen_work", strategy = GenerationType.IDENTITY)
-    @SequenceGenerator(name="gen_work", sequenceName="seq_work", allocationSize=1)		
+    @SequenceGenerator(name="gen_work", allocationSize=1)
 	private Integer id;
 	
 	private String title;
@@ -29,8 +30,18 @@ public class Work implements Serializable {
 	@ManyToOne
 	private Library library;
 
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER)
+	//@LazyCollection(FALSE)
 	private List<Book> booksList;
+
+	public Work() {
+		super();
+	}
+
+	public Work(String title, String author){
+		this.title = title;
+		this.author = author;
+	}
 
 	public Library getLibrary() {
 		return library;
@@ -41,15 +52,6 @@ public class Work implements Serializable {
 	}
 
 
-
-	public Work() {
-		super();
-	}
-	
-	public Work(String title, String author){
-		this.title = title;
-		this.author = author;
-	}
 	
 	public Integer getId() {
 		return id;

@@ -1,0 +1,1735 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="4" />
+  </component>
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="bibliot-webapp:war" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutomaticModuleUnloader">
+    <loaded-modules>
+      <module name="Wservice" />
+      <module name="bibliot-model" />
+      <module name="bibliot-service" />
+      <module name="bibliot-consumer" />
+      <module name="p3-parent" />
+      <module name="bibliot-webapp" />
+    </loaded-modules>
+  </component>
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/bibliot-webapp/src/main/webapp/jsp/borrowerror.jsp" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1082e021-8ac2-4d56-8c2b-b0c26e73b793" name="Default Changelist" comment="19/03/2019&#10;&#10;- Fonctions de recherches fonctionnelles&#10;- Fonctions d'emprunt fonctionnelles &#10;- Listing des emprunts ok&#10;- Web service créé&#10;- WS Client créé">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/cbiottea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bibliot-client/bibliot-client.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bibliot-client/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bibliot-client/src/main/java/org/occ/p3/client/ws/WsWork.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bibliot-client/src/test/java/org/occ/p3/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bibliot-consumer/src/main/java/org/occ/p3/consumer/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bibliot-webapp/src/main/java/org/occ/p3/controler/BootStrapController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bibliot-webapp/src/main/java/org/occ/p3/controler/UserControler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bibliot-webapp/src/main/webapp/jsp/borrowListPage.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bibliot-webapp/src/main/webapp/jsp/borrowerror.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bibliot-webapp/src/main/webapp/jsp/connexion.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bibliot-webapp/src/main/webapp/jsp/header.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bibliot-webapp/src/main/webapp/jsp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bibliot-webapp/src/main/webapp/jsp/indexCo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bibliot-webapp/src/main/webapp/jsp/search.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bibliot-webapp/src/main/webapp/jsp/userPage.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bibliot-webservice/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bibliot-webservice/src/main/java/org/occ/p3/webservice/WsBook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bibliot-webservice/src/main/java/org/occ/p3/webservice/WsBorrow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bibliot-webservice/src/main/java/org/occ/p3/webservice/WsUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bibliot-webservice/src/main/java/org/occ/p3/webservice/WsWork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bibliot-consumer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bibliot-consumer/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bibliot-consumer/src/main/java/org/occ/p3/consumer/repository/BorrowRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/bibliot-consumer/src/main/java/org/occ/p3/consumer/repository/BorrowRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bibliot-consumer/src/main/java/org/occ/p3/consumer/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/bibliot-consumer/src/main/java/org/occ/p3/consumer/repository/MemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bibliot-consumer/src/main/java/org/occ/p3/consumer/repository/WorkRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/bibliot-consumer/src/main/java/org/occ/p3/consumer/repository/WorkRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bibliot-model/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bibliot-model/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bibliot-model/src/main/java/org/occ/p3/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/bibliot-model/src/main/java/org/occ/p3/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bibliot-model/src/main/java/org/occ/p3/model/Borrow.java" beforeDir="false" afterPath="$PROJECT_DIR$/bibliot-model/src/main/java/org/occ/p3/model/Borrow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bibliot-model/src/main/java/org/occ/p3/model/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/bibliot-model/src/main/java/org/occ/p3/model/Library.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bibliot-model/src/main/java/org/occ/p3/model/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/bibliot-model/src/main/java/org/occ/p3/model/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bibliot-model/src/main/java/org/occ/p3/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/bibliot-model/src/main/java/org/occ/p3/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bibliot-model/src/main/java/org/occ/p3/model/Work.java" beforeDir="false" afterPath="$PROJECT_DIR$/bibliot-model/src/main/java/org/occ/p3/model/Work.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bibliot-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bibliot-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/BookServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/BorrowService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/BorrowService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/BorrowServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/BorrowServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/WorkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/WorkService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/WorkServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/WorkServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bibliot-webapp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bibliot-webapp/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bibliot-webapp/src/main/java/org/occ/p3/controler/BorrowControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/bibliot-webapp/src/main/java/org/occ/p3/controler/BorrowControler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bibliot-webapp/src/main/java/org/occ/p3/controler/MemberControler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bibliot-webapp/src/main/java/org/occ/p3/controler/WorkControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/bibliot-webapp/src/main/java/org/occ/p3/controler/WorkControler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bibliot-webapp/src/main/resources/data-test.sql" beforeDir="false" afterPath="$PROJECT_DIR$/bibliot-webapp/src/main/resources/data-test.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bibliot-webapp/src/main/webapp/WEB-INF/myServlet-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bibliot-webapp/src/main/webapp/WEB-INF/myServlet-servlet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bibliot-webapp/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bibliot-webapp/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/bibliot-model/target/" />
+    <ignored path="$PROJECT_DIR$/bibliot-webapp/target/" />
+    <ignored path="$PROJECT_DIR$/bibliot-consumer/target/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/bibliot-service/target/" />
+    <ignored path="$PROJECT_DIR$/batch/target/" />
+    <ignored path="$PROJECT_DIR$/bibliot-batch/target/" />
+    <ignored path="$PROJECT_DIR$/web-service/target/" />
+    <ignored path="$PROJECT_DIR$/bibliot-client/target/" />
+    <ignored path="$PROJECT_DIR$/Wservice/target/" />
+    <ignored path="$PROJECT_DIR$/bibliot-webservice/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bibliot-webapp/src/main/java/org/occ/p3/controler/WorkControler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="64" column="18" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bibliot-webservice/src/main/webapp/WEB-INF/sun-jaxws.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bibliot-webservice/src/main/java/org/occ/p3/webservice/WsWork.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bibliot-client/src/main/java/org/occ/p3/client/ws/WsWork.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Arquillian JUnit Test Class" />
+        <option value="Jsp File" />
+        <option value="spring-beans.schema" />
+        <option value="Tag Library Descriptor" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>jstl</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+    <dirStrings>
+      <dir>C:\env\Projets\p3-parent\bibliot-client</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/web-service/src/main/java/WorkWs.java" />
+        <option value="$PROJECT_DIR$/web-service/src/main/java/org/occ/p3/WorkWs.java" />
+        <option value="$PROJECT_DIR$/web-service/src/main/java/org/occ/p3/webservice/WorkWs.java" />
+        <option value="$PROJECT_DIR$/web-service/src/main/java/org/occ/p3/webservice/UserWs.java" />
+        <option value="$PROJECT_DIR$/web-service/src/main/java/org/occ/p3/webservice/BorrowWs.java" />
+        <option value="$PROJECT_DIR$/web-service/src/main/webapp/WEB-INF/sun-jaxws.xml" />
+        <option value="$PROJECT_DIR$/web-service/src/main/java/org/occ/p3/webservice/BookWs.java" />
+        <option value="$PROJECT_DIR$/web-service/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/bibliot-client/src/main/java/org/occ/p3/client/GetWorksByAuthor.java" />
+        <option value="$PROJECT_DIR$/web-service/pom.xml" />
+        <option value="$PROJECT_DIR$/Wservice/pom.xml" />
+        <option value="$PROJECT_DIR$/Wservice/src/main/webapp/WEB-INF/sun-jaxws.xml.tld" />
+        <option value="$PROJECT_DIR$/bibliot-webapp/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/Wservice/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/Wservice/src/main/java/org/occ/p3/Wservice/WsBook.java" />
+        <option value="$PROJECT_DIR$/Wservice/src/main/java/org/occ/p3/Wservice/WsUser.java" />
+        <option value="$PROJECT_DIR$/Wservice/src/main/java/org/occ/p3/Wservice/WsBorrow.java" />
+        <option value="$PROJECT_DIR$/Wservice/src/main/java/org/occ/p3/Wservice/WsWork.java" />
+        <option value="$PROJECT_DIR$/bibliot-model/src/main/java/org/occ/p3/model/Library.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/bibliot-webservice/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/bibliot-webservice/pom.xml" />
+        <option value="$PROJECT_DIR$/bibliot-model/src/main/java/org/occ/p3/model/Book.java" />
+        <option value="$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/MemberService.java" />
+        <option value="$PROJECT_DIR$/bibliot-model/src/main/java/org/occ/p3/model/Work.java" />
+        <option value="$PROJECT_DIR$/bibliot-model/src/main/java/org/occ/p3/model/Member.java" />
+        <option value="$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/MemberServiceImpl.java" />
+        <option value="$PROJECT_DIR$/bibliot-consumer/src/main/java/org/occ/p3/consumer/repository/UserRepository.java" />
+        <option value="$PROJECT_DIR$/bibliot-consumer/src/main/java/org/occ/p3/consumer/repository/MemberRepository.java" />
+        <option value="$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/bibliot-webapp/src/main/java/org/occ/p3/controler/UserControler.java" />
+        <option value="$PROJECT_DIR$/bibliot-model/src/main/java/org/occ/p3/model/User.java" />
+        <option value="$PROJECT_DIR$/bibliot-webapp/src/main/java/org/occ/p3/controler/BorrowControler.java" />
+        <option value="$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/BookServiceImpl.java" />
+        <option value="$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/UserService.java" />
+        <option value="$PROJECT_DIR$/bibliot-consumer/src/main/java/org/occ/p3/consumer/repository/WorkRepository.java" />
+        <option value="$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/WorkServiceImpl.java" />
+        <option value="$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/WorkService.java" />
+        <option value="$PROJECT_DIR$/bibliot-model/src/main/java/org/occ/p3/model/Borrow.java" />
+        <option value="$PROJECT_DIR$/bibliot-consumer/src/main/java/org/occ/p3/consumer/repository/BorrowRepository.java" />
+        <option value="$PROJECT_DIR$/bibliot-webservice/src/main/java/org/occ/p3/webservice/WsWork.java" />
+        <option value="$PROJECT_DIR$/bibliot-webservice/src/main/java/org/occ/p3/webservice/WsUser.java" />
+        <option value="$PROJECT_DIR$/bibliot-webservice/src/main/java/org/occ/p3/webservice/WsBook.java" />
+        <option value="$PROJECT_DIR$/bibliot-webservice/src/main/webapp/WEB-INF/sun-jaxws.xml" />
+        <option value="$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/BorrowService.java" />
+        <option value="$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/BorrowServiceImpl.java" />
+        <option value="$PROJECT_DIR$/bibliot-webservice/src/main/java/org/occ/p3/webservice/WsBorrow.java" />
+        <option value="$PROJECT_DIR$/bibliot-model/pom.xml" />
+        <option value="$PROJECT_DIR$/bibliot-webapp/pom.xml" />
+        <option value="$PROJECT_DIR$/bibliot-client/pom.xml" />
+        <option value="$PROJECT_DIR$/bibliot-webapp/src/main/java/org/occ/p3/controler/WorkControler.java" />
+      </list>
+    </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="C:\env\maven\repository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../maven/apache-maven-3.6.0" />
+        <option name="userSettingsFile" value="C:\env\maven\apache-maven-3.6.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadDocsAutomatically" value="true" />
+        <option name="downloadSourcesAutomatically" value="true" />
+        <option name="importAutomatically" value="true" />
+        <option name="lookForNested" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="bibliot-model" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="bibliot-model" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="client" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="client" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="width" value="2880" />
+    <option name="height" value="1563" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ws" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-client" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-consumer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="consumer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-model" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-model" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-model" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-model" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="p3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="p3" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="controler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-webservice" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-webservice" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-webservice" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-webservice" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-webservice" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="webservice" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-webservice" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-webservice" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p3-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="p3-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="bibliot-webservice" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552927987177" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.39670932" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="org.occ.p3.controler" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.occ.p3.controler" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.occ.p3.controler" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\env\Projets\p3-parent\bibliot-client\src\main\java\org\occ\p3\client" />
+      <recent name="C:\env\Projets\p3-parent\bibliot-webapp\src\main\webapp\jsp" />
+      <recent name="C:\env\Projets\p3-parent\bibliot-webapp\src\main\webapp" />
+      <recent name="C:\env\Projets\p3-parent\bibliot-webapp\src\main\webapp\WEB-INF" />
+      <recent name="C:\env\Projets\p3-parent\bibliot-webapp\src\main\webapp\WEB-INF\pages" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="GlassFish Server.glassfish">
+    <configuration name="glassfish" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.0.0" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="bibliot-webservice:war">
+          <settings />
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="DOMAIN" value="domain1" />
+        <option name="PRESERVE" value="false" />
+        <option name="COMPATIBILITY" value="false" />
+        <option name="VIRTUAL_SERVER" />
+        <option name="USERNAME" value="admin" />
+        <option name="CREDENTIAL_ALIAS" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="GlassFish" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="9009" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tomcat 8.0.53" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.53" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
+      <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="bibliot-webapp:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/bibliot_webapp_war" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Tomcat_9_0_13_p3-parent_2" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="49882" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.13" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:7070/" />
+      <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="bibliot-webapp:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_p3-parent_3" />
+        <option name="HTTP_PORT" value="7070" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="49882" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.13" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_p3-parent" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="49882" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2" />
+    </configuration>
+    <configuration name="tomcat webservice" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.53" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/webservice_war/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="webservice:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/webservice_war" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Tomcat_9_0_13_p3-parent" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="49882" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="webservice:war" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="GlassFish Server.glassfish" />
+      <item itemvalue="Tomcat Server.Unnamed" />
+      <item itemvalue="Tomcat Server.Tomcat 8.0.53" />
+      <item itemvalue="Tomcat Server.tomcat webservice" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1082e021-8ac2-4d56-8c2b-b0c26e73b793" name="Default Changelist" comment="" />
+      <created>1543498738146</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1543498738146</updated>
+      <workItem from="1543498742845" duration="5122000" />
+      <workItem from="1543834249557" duration="818000" />
+      <workItem from="1543835578009" duration="26054000" />
+      <workItem from="1544000844543" duration="16292000" />
+      <workItem from="1544556391438" duration="191000" />
+      <workItem from="1544556692963" duration="3417000" />
+      <workItem from="1544606231073" duration="361000" />
+      <workItem from="1544606653302" duration="13704000" />
+      <workItem from="1544690897944" duration="15300000" />
+      <workItem from="1544965198661" duration="31000" />
+      <workItem from="1545050855717" duration="17254000" />
+      <workItem from="1545228459766" duration="33012000" />
+      <workItem from="1545658400651" duration="13306000" />
+      <workItem from="1545837919008" duration="14167000" />
+      <workItem from="1546421061196" duration="10806000" />
+      <workItem from="1546504295006" duration="21180000" />
+      <workItem from="1546607680403" duration="2602000" />
+      <workItem from="1546859171889" duration="10832000" />
+      <workItem from="1546959394219" duration="1772000" />
+      <workItem from="1547032376903" duration="17766000" />
+      <workItem from="1547543006503" duration="29000" />
+      <workItem from="1547543155543" duration="6547000" />
+      <workItem from="1547731277705" duration="1054000" />
+      <workItem from="1547738283917" duration="599000" />
+      <workItem from="1547837831162" duration="1339000" />
+      <workItem from="1547888857858" duration="5758000" />
+      <workItem from="1548061303775" duration="11844000" />
+      <workItem from="1548235006465" duration="3109000" />
+      <workItem from="1548411378697" duration="1733000" />
+      <workItem from="1548511463936" duration="5406000" />
+      <workItem from="1548760422990" duration="7880000" />
+      <workItem from="1548854229992" duration="59000" />
+      <workItem from="1548854376150" duration="11187000" />
+      <workItem from="1549354802662" duration="14938000" />
+      <workItem from="1549543973389" duration="16359000" />
+      <workItem from="1549880094406" duration="5894000" />
+      <workItem from="1549962596834" duration="11567000" />
+      <workItem from="1550046838961" duration="2720000" />
+      <workItem from="1550138428623" duration="5762000" />
+      <workItem from="1550426935326" duration="369000" />
+      <workItem from="1550668886264" duration="2199000" />
+      <workItem from="1550676437199" duration="546000" />
+      <workItem from="1550746480455" duration="16088000" />
+      <workItem from="1551103275273" duration="6541000" />
+      <workItem from="1551112414873" duration="895000" />
+      <workItem from="1551113357229" duration="1916000" />
+      <workItem from="1551117502227" duration="26000" />
+      <workItem from="1551174299562" duration="594000" />
+      <workItem from="1551177443732" duration="6734000" />
+      <workItem from="1551193457020" duration="7970000" />
+      <workItem from="1551202796073" duration="33427000" />
+      <workItem from="1551474411053" duration="2999000" />
+      <workItem from="1551710366708" duration="13000" />
+      <workItem from="1551710473666" duration="9083000" />
+      <workItem from="1551777358684" duration="1002000" />
+      <workItem from="1551791676734" duration="11701000" />
+      <workItem from="1551877417015" duration="6160000" />
+      <workItem from="1551908289891" duration="25453000" />
+      <workItem from="1552466343313" duration="8685000" />
+      <workItem from="1552481931316" duration="10677000" />
+      <workItem from="1552742926700" duration="152000" />
+      <workItem from="1552743745050" duration="5778000" />
+      <workItem from="1552926014275" duration="1976000" />
+      <workItem from="1552982821809" duration="842000" />
+    </task>
+    <task id="LOCAL-00001" summary="03 dec - commit 1.1">
+      <created>1543869577426</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1543869577426</updated>
+    </task>
+    <task id="LOCAL-00002" summary="05 dec - commit 1.2&#10;&#10;Ajout des methodes de recherches d'oeuvres par auteurs, ainsi que par année de parution.&#10;&#10;Méthodes fonctionnelles">
+      <created>1544025858315</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1544025858315</updated>
+    </task>
+    <task id="LOCAL-00003" summary="05 dec - commit 1.2&#10;&#10;Ajout de la methode borrow, pas encore fonctionnelle">
+      <created>1544606571429</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1544606571429</updated>
+    </task>
+    <task id="LOCAL-00004" summary="05 dec - commit 1.2&#10;&#10;Ajout de la methode borrow, pas encore fonctionnelle">
+      <created>1544626661935</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1544626661936</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="All_Features_in__p3-parent - 2018.11.29 at 15h 11m 12s.xml">
+      <configuration name="All Features in: p3-parent" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+    <history-entry file="All_Features_in__p3-parent - 2018.12.19 at 13h 47m 07s.xml">
+      <configuration name="All Features in: p3-parent" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="499597000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24453442" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Learn" order="7" weight="0.32995737" />
+      <window_info id="Web" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.6066434" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.44055945" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.43944266" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32867134" />
+      <window_info anchor="bottom" id="Application Servers" order="7" sideWeight="0.49946696" weight="0.3279743" />
+      <window_info anchor="bottom" id="Spring" order="8" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49840087" visible="true" weight="0.42657343" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50159913" side_tool="true" weight="0.41800642" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3687031" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32867134" />
+      <window_info anchor="bottom" id="Docker" order="15" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Console" order="16" weight="0.32867134" />
+      <window_info anchor="bottom" id="Inspection Results" order="17" weight="0.3279743" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24949698" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="CDI" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Database" order="7" weight="0.32995737" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="Maven" order="10" weight="0.32995737" />
+      <window_info anchor="right" id="Bean Validation" order="11" weight="0.32995737" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.4141949" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Learn" order="7" weight="0.32995737" />
+      <window_info id="Web" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32692307" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2915327" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.43944266" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32867134" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.3279743" />
+      <window_info anchor="bottom" id="Spring" order="8" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49946696" visible="true" weight="0.42207792" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" weight="0.39013934" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.37237763" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32867134" />
+      <window_info anchor="bottom" id="Docker" order="15" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Console" order="16" weight="0.32867134" />
+      <window_info anchor="bottom" id="Inspection Results" order="17" weight="0.3279743" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24949698" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="CDI" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="Maven" order="10" weight="0.32995737" />
+      <window_info anchor="right" id="Bean Validation" order="11" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="03 dec - commit 1" />
+    <MESSAGE value="03 dec - commit 1.1" />
+    <MESSAGE value="05 dec - commit 1.2&#10;&#10;Ajout des methodes de recherches d'oeuvres par auteurs, ainsi que par année de parution.&#10;&#10;Méthodes fonctionnelles" />
+    <MESSAGE value="05 dec - commit 1.2&#10;&#10;Ajout de la methode borrow, pas encore fonctionnelle" />
+    <MESSAGE value="19/03/2019&#10;&#10;- Fonctions de recherches fonctionnelles&#10;- Fonctions d'emprunt fonctionnelles &#10;- Listing des emprunts ok&#10;- Web service créé&#10;- WS Client créé" />
+    <option name="LAST_COMMIT_MESSAGE" value="19/03/2019&#10;&#10;- Fonctions de recherches fonctionnelles&#10;- Fonctions d'emprunt fonctionnelles &#10;- Listing des emprunts ok&#10;- Web service créé&#10;- WS Client créé" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+        <watch expression="endBorrowDate" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/MemberServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/bibliot-model/src/main/java/org/occ/p3/model/Member.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="75" column="36" selection-start-line="75" selection-start-column="36" selection-end-line="75" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-webapp/src/main/webapp/jsp/indexCo.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-webapp/src/main/webapp/jsp/header.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-webapp/src/main/webapp/jsp/borrowListPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="50" lean-forward="true" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-webapp/src/main/webapp/jsp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../maven/repository/org/springframework/data/spring-data-commons/2.1.2.RELEASE/spring-data-commons-2.1.2.RELEASE-sources.jar!/org/springframework/data/repository/CrudRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-model/src/main/java/org/occ/p3/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#550#551#0" expanded="true" />
+            <element signature="e#566#567#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-webapp/src/main/java/org/occ/p3/controler/UserControler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="64" column="61" lean-forward="true" selection-start-line="64" selection-start-column="61" selection-end-line="64" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-webapp/src/main/java/org/occ/p3/controler/BorrowControler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-61">
+          <caret line="50" column="77" lean-forward="true" selection-start-line="50" selection-start-column="77" selection-end-line="50" selection-end-column="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-webapp/src/main/webapp/jsp/connexion.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-consumer/src/main/java/org/occ/p3/consumer/repository/MemberRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-consumer/src/main/java/org/occ/p3/consumer/repository/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-client/src/main/java/org/occ/p3/client/WsWork_Service.java" />
+    <entry file="file://$PROJECT_DIR$/bibliot-model/src/main/java/org/occ/p3/model/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/BookService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="38" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/BookServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-model/src/main/java/org/occ/p3/model/Work.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/WorkService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-consumer/src/main/java/org/occ/p3/consumer/repository/WorkRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="18" column="59" selection-start-line="18" selection-start-column="59" selection-end-line="18" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/WorkServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="36" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-consumer/src/main/java/org/occ/p3/consumer/repository/BorrowRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-model/src/main/java/org/occ/p3/model/Borrow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-webservice/src/main/java/org/occ/p3/webservice/WsUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-webservice/src/main/java/org/occ/p3/webservice/WsBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/BorrowServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="173" column="61" selection-start-line="173" selection-start-column="4" selection-end-line="173" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5518#5526#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-webservice/src/main/java/org/occ/p3/webservice/WsBorrow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="49" column="5" lean-forward="true" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1235#1236#0" expanded="true" />
+            <element signature="e#1322#1323#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-service/src/main/java/org/occ/p3/service/BorrowService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="62" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-client/src/main/java/org/occ/p3/client/ws/GetWorksByAuthor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-client/src/main/java/org/occ/p3/client/ws/Work.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="44" column="11" selection-start-line="44" selection-start-column="11" selection-end-line="44" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-webapp/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-webapp/src/main/webapp/WEB-INF/myServlet-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="75" column="11" selection-start-line="75" selection-start-column="11" selection-end-line="75" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-model/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-client/src/main/java/org/occ/p3/client/ws/WorkWeb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-client/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="61" column="25" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-client/src/main/java/org/occ/p3/client/ws/BorrowWeb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-client/src/main/java/org/occ/p3/client/ws/EndBorrow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-client/src/main/java/org/occ/p3/client/ws/EndBorrowResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-client/src/main/java/org/occ/p3/client/ws/ExtendBorrow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-client/src/main/java/org/occ/p3/client/ws/ExtendBorrowResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="17" column="69" selection-start-line="17" selection-start-column="69" selection-end-line="17" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-client/src/main/java/org/occ/p3/client/ws/BorrowBookResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-client/src/main/java/org/occ/p3/client/ws/BorrowBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-client/src/main/java/org/occ/p3/client/ws/Borrow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-client/src/main/java/org/occ/p3/client/ws/BookWeb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-client/src/main/java/org/occ/p3/client/ws/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-webservice/src/main/webapp/WEB-INF/sun-jaxws.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-webservice/src/main/java/org/occ/p3/webservice/WsWork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-client/src/main/java/org/occ/p3/client/ws/WsWork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bibliot-webapp/src/main/java/org/occ/p3/controler/WorkControler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="64" column="18" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>bibliot-webapp:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.30804598" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring (bibliot-consumer)|Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.30804598" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.5735632" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.5735632" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>bibliot-webapp</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.39670932" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Java EE 6-Java EE 6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.5735632" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

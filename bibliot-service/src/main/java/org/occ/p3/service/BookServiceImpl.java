@@ -20,16 +20,8 @@ public class BookServiceImpl implements BookService {
 		return bookGotFromConsumer;
 	}
 	
-	public String test() {
-		return "Oui le service répond";
-	}
-	
 	public Book saveNewBook(Book book) {
-		//Vérifier que tu es authentifié
-		
-		//Vérifier que tu es habilité à faire cette opération
-		
-		//Appeler le consumer pour sauvegarder
+
 		Book bookSaved = bookRepository.save(book);
 		
 		return bookSaved;

@@ -1,23 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+      <entry name="!?*.aj" />
+      <entry name="*?.class" />
+    </wildcardResourcePatterns>
     <annotationProcessing>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="bibliot-client" />
         <module name="bibliot-consumer" />
         <module name="bibliot-model" />
         <module name="bibliot-service" />
         <module name="bibliot-webapp" />
-        <module name="maven-archiver" />
-        <module name="maven-archiver (1)" />
-        <module name="maven-archiver (2)" />
-        <module name="maven-archiver (3)" />
+        <module name="bibliot-webservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="bibliot-batch" target="1.8" />
+      <module name="bibliot-client" target="1.8" />
+      <module name="bibliotbatch" target="1.8" />
+      <module name="bibliotclient" target="1.8" />
+      <module name="maven-archiver" target="1.5" />
+      <module name="maven-archiver (1)" target="1.5" />
+      <module name="maven-archiver (2)" target="1.5" />
+      <module name="maven-archiver (3)" target="1.5" />
       <module name="maven-archiver (4)" target="1.5" />
+      <module name="webservice" target="1.8" />
+      <module name="Wservice" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="webservice" options="" />
+    </option>
   </component>
 </project>

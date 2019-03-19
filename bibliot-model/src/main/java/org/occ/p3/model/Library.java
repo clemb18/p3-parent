@@ -3,6 +3,7 @@ package org.occ.p3.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -11,7 +12,7 @@ public class Library implements Serializable {
 
     @Id
     @GeneratedValue(generator="gen_library", strategy = GenerationType.IDENTITY)
-    @SequenceGenerator(name="gen_library", sequenceName="seq_library", allocationSize=1)
+    @SequenceGenerator(name="gen_library", allocationSize=1)
     Integer id;
     private String name;
     private String city;
@@ -50,11 +51,11 @@ public class Library implements Serializable {
         this.city = city;
     }
 
-    public List<Work> getWorks() {
-        return works;
+    public ArrayList<Work> getWorks() {
+        return (ArrayList<Work>) works;
     }
 
-    public void setWorks(List<Work> works) {
+    public void setWorks(ArrayList<Work> works) {
         this.works = works;
     }
 }

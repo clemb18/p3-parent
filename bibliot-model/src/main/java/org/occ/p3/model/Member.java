@@ -1,10 +1,8 @@
 package org.occ.p3.model;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
+
 
 @Entity
 @Table(name="member")
@@ -13,13 +11,56 @@ public class Member extends User {
 
 
 	private String name;
-	
-	private String userName;
 
-	@OneToMany
-	private List<Borrow> borrowList;
+	private String mail;
 
+	private String city;
 
+	private String postCode;
+
+	private String firstName;
+
+	private String nickName;
+
+	public String getMail() {
+		return mail;
+	}
+
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getPostCode() {
+		return postCode;
+	}
+
+	public void setPostCode(String postCode) {
+		this.postCode = postCode;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getNickName() {
+		return nickName;
+	}
+
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
+	}
 
 	public String getName() {
 		return name;
@@ -30,16 +71,9 @@ public class Member extends User {
 		this.name = name;
 	}
 
-
-	public String getUserName() {
-		return userName;
-	}
-
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
+	@OneToMany(fetch= FetchType.EAGER)
+	//@LazyCollection(LazyCollectionOption.FALSE)
+	private List<Borrow> borrowList;
 
 	public List<Borrow> getBorrowList() {
 		return borrowList;

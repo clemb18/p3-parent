@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="EntryPointsManager">
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="javax.jws.WebService" />
+    </list>
+  </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/bibliot-webapp" />
+    <file type="web" url="file://$PROJECT_DIR$/bibliot-webservice" />
+    <file type="web" url="file://$PROJECT_DIR$/web-service" />
+    <file type="web" url="file://$PROJECT_DIR$/Wservice" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
@@ -11,14 +19,18 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/bibliot-model/target/maven-archiver/pom.properties" />
-        <option value="$PROJECT_DIR$/bibliot-webapp/target/maven-archiver/pom.properties" />
-        <option value="$PROJECT_DIR$/bibliot-service/target/maven-archiver/pom.properties" />
-        <option value="$PROJECT_DIR$/bibliot-consumer/target/maven-archiver/pom.properties" />
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/Wservice/pom.xml" />
+        <option value="$PROJECT_DIR$/bibliot-batch/pom.xml" />
+        <option value="$PROJECT_DIR$/bibliot-client/pom.xml" />
+        <option value="$PROJECT_DIR$/web-service/pom.xml" />
+      </set>
+    </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

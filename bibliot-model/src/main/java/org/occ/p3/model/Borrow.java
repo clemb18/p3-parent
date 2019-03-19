@@ -1,44 +1,41 @@
 package org.occ.p3.model;
 
+import javax.annotation.Nullable;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
-@Entity
-@Table(name="borrow")
-public class Borrow  implements Serializable {
 
-	/**
-	 * 
-	 */
+@Entity
+@Table(name="borrow",schema="public")
+public class Borrow implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
-    @GeneratedValue(generator="gen_borrow", strategy = GenerationType.IDENTITY)
-    @SequenceGenerator(name="gen_borrow", sequenceName="seq_borrow", allocationSize=1)		
-	private Integer id;	
-	
-	private Date startBorrowDate;
-	
-	private String status;//TODO: Faire une enum pour cela
-	
-	private Date endBorrowDate;
-	
+	@GeneratedValue(generator = "gen_borrow", strategy = GenerationType.IDENTITY)
+	@SequenceGenerator(name = "gen_borrow", allocationSize = 1)
+	private Integer id;
+
+	private String status; // ENCOURS RENDU PROLONGE
+
+	private String workName;
+
+	private Date startborrowdate;
+
+	private Date endborrowdate;
+	//@Nullable
 	private boolean extended;
 
-	@ManyToOne
-	private Member memberBorrowing;
+	//private Date currentdate;
 
-	public boolean isExtended() {
-		return extended;
-	}
-
-	public void setExtended(boolean extended) {
-		this.extended = extended;
-	}
+	//@ManyToOne
+	private Integer userRef;
 
 	@OneToOne
 	private Book book;
+
 
 	public Integer getId() {
 		return id;
@@ -46,14 +43,6 @@ public class Borrow  implements Serializable {
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public Date getStartBorrowDate() {
-		return startBorrowDate;
-	}
-
-	public void setStartBorrowDate(Date startBorrowDate) {
-		this.startBorrowDate = startBorrowDate;
 	}
 
 	public String getStatus() {
@@ -64,26 +53,37 @@ public class Borrow  implements Serializable {
 		this.status = status;
 	}
 
+	public Date getStartBorrowDate() {
+		return startborrowdate;
+	}
+
+	public void setStartBorrowDate(Date startborrowdate) {
+		this.startborrowdate = startborrowdate;
+	}
+
 	public Date getEndBorrowDate() {
-		return endBorrowDate;
+		return endborrowdate;
 	}
 
-	public void setEndBorrowDate(Date endBorrowDate) {
-		this.endBorrowDate = endBorrowDate;
+	public void setEndBorrowDate(Date endborrowdate) {
+		this.endborrowdate = endborrowdate;
 	}
 
-	public Member getMemberBorrowing() {
-		return memberBorrowing;
+	public boolean isExtended() {
+		return extended;
 	}
 
-	public void setMemberBorrowing(Member memberBorrowing) {
-		this.memberBorrowing = memberBorrowing;
+	public void setExtended(boolean extended) {
+		this.extended = extended;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public Integer getUserRef() {
+		return userRef;
 	}
 
+	public void setUserRef(Integer userRef) {
+		this.userRef = userRef;
+	}
 
 	public Book getBook() {
 		return book;
@@ -92,5 +92,16 @@ public class Borrow  implements Serializable {
 	public void setBook(Book book) {
 		this.book = book;
 	}
-	
+
+    public void setMemberBorrowing(User membreTest) {
+    }
+
+
+
+	public void setWorkName(String workName) { this.workName = workName;
+	}
+
+	public String getWorkName() {
+		return workName;
+	}
 }

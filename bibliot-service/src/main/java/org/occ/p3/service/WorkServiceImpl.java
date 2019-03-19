@@ -5,6 +5,7 @@ import org.occ.p3.model.Work;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import java.util.List;
 
 
@@ -18,7 +19,7 @@ WorkRepository workRepository;
 
         /// Appeler le consumer
 
-        List<Work> worksGotFromConsumer = workRepository.findByAuthor(author);
+        List<Work> worksGotFromConsumer = workRepository.findByAuthorContains(author);
 
         return worksGotFromConsumer;
     }
@@ -32,5 +33,13 @@ WorkRepository workRepository;
 
         return worksGotFromConsumer;
 
+    }
+
+    @Override
+    public List<Work> getWorksByTitle(String title) {
+
+        List<Work> worksGotFromConsumer = workRepository.findByTitleContainsIgnoreCase(title);
+
+        return worksGotFromConsumer;
     }
 }
