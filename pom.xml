@@ -208,6 +208,7 @@
 		<module>bibliot-model</module>
         <module>bibliot-webservice</module>
         <module>bibliot-client</module>
+        <module>bibliot-serviceWeb</module>
     </modules>
 
 </project>

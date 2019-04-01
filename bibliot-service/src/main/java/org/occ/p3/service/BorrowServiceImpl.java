@@ -168,37 +168,4 @@ public class BorrowServiceImpl implements BorrowService {
         return toReturn;
 
     }
-
-
-
-    public ArrayList<Borrow> getBorrowListWithEndDateExceeded() {
-
-        Iterable<Borrow> borrowListGot = borrowRepository.findAll();
-        Iterator<Borrow> listBorrowIterator = borrowListGot.iterator();
-
-        ArrayList<Borrow> borrowExceeded = new ArrayList<Borrow>();
-
-
-        while(listBorrowIterator.hasNext()) {
-
-            Borrow currentBorrow = listBorrowIterator.next();
-
-            Date dateFin = currentBorrow.getEndBorrowDate();
-            Date currentDate = new Date();
-
-            if ((dateFin.before(currentDate)) && ((currentBorrow.getStatus().contains("ENCOURS")) || (currentBorrow.getStatus().contains("PROLONGE")))) {
-
-                borrowExceeded.add(currentBorrow);
-
-
-            }
-
-        return borrowExceeded;
-
-            }
-        return borrowExceeded;
-    }
-        }
-
-
-
+}

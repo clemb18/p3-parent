@@ -7,6 +7,7 @@
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/bibliot-serviceWeb" />
     <file type="web" url="file://$PROJECT_DIR$/bibliot-webapp" />
     <file type="web" url="file://$PROJECT_DIR$/bibliot-webservice" />
     <file type="web" url="file://$PROJECT_DIR$/web-service" />
@@ -26,6 +27,7 @@
         <option value="$PROJECT_DIR$/Wservice/pom.xml" />
         <option value="$PROJECT_DIR$/bibliot-batch/pom.xml" />
         <option value="$PROJECT_DIR$/bibliot-client/pom.xml" />
+        <option value="$PROJECT_DIR$/bibliot-webservice/pom.xml" />
         <option value="$PROJECT_DIR$/web-service/pom.xml" />
       </set>
     </option>

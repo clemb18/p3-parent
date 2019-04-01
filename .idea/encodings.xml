@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/bibliot-client/src/main/java/org/occ/p3/client/ws/Book.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/bibliot-client/src/main/java/org/occ/p3/client/ws/EndBorrow.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bibliot-client/src/main/java/org/occ/p3/client/ws/GetWorksByAuthor.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bibliot-serviceWeb" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bibliot-webservice" charset="UTF-8" />
   </component>
 </project>

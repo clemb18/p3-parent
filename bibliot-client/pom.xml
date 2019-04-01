@@ -35,34 +35,34 @@
 
     </dependencies>
 
-    <!--  <build>
+    <!-- <build>
 
-            <plugins>
-          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>jaxws-maven-plugin</artifactId>
-            <version>2.5</version>
-              <executions>
-              <execution>
-                  Generate webservice client
-                        <id>wsimport-for-all</id>
-                        <goals>
-                            <goal>wsimport</goal>
-                        </goals>
-                        <configuration>
-                            <sourceDestDir>${project.basedir}/src/main/java/WsClientGenerated/</sourceDestDir>
-                            <wsdlUrls>
-                                <wsdlUrl>http://localhost:8080/webservice/ws/wsWork?wsdl</wsdlUrl>
-                                <wsdlUrl>http://localhost:8080/webservice/ws/wsBorrow?wsdl</wsdlUrl>
-                                <wsdlUrl>http://localhost:8080/webservice/ws/wsBook?wsdl</wsdlUrl>
-                                <wsdlUrl>http://localhost:8080/webservice/ws/wsUser?wsdl</wsdlUrl>
-                            </wsdlUrls>
-                            </configuration>
-                    </execution>
-            </executions>
-        </plugin>
-      </plugins>
+                <plugins>
+              <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>2.5</version>
+                  <executions>
+                  <execution>
+
+                            <id>wsimport-for-all</id>
+                            <goals>
+                                <goal>wsimport</goal>
+                            </goals>
+                            <configuration>
+                                <sourceDestDir>${project.basedir}/src/main/java/generated/</sourceDestDir>
+                                <wsdlUrls>
+                                    <wsdlUrl>http://localhost:8080/webservice/ws/wsWork?wsdl</wsdlUrl>
+                                    <wsdlUrl>http://localhost:8080/webservice/ws/wsBorrow?wsdl</wsdlUrl>
+                                    <wsdlUrl>http://localhost:8080/webservice/ws/wsBook?wsdl</wsdlUrl>
+                                    <wsdlUrl>http://localhost:8080/webservice/ws/wsUser?wsdl</wsdlUrl>
+                                </wsdlUrls>
+                                </configuration>
+                        </execution>
+                </executions>
+            </plugin>
+          </plugins>
 
 
-    </build>-->
-</project>
+        </build>-->
+    </project>
