@@ -27,8 +27,8 @@ public class Work implements Serializable {
 	
 	private String bookDescription;
 
-	@ManyToOne
-	private Library library;
+	//@ManyToOne
+	//private Library library;
 
 	@OneToMany(fetch = FetchType.EAGER)
 	//@LazyCollection(FALSE)
@@ -43,13 +43,13 @@ public class Work implements Serializable {
 		this.author = author;
 	}
 
-	public Library getLibrary() {
-		return library;
-	}
+	//public Library getLibrary() {
+	//	return library;
+	//}
 
-	public void setLibrary(Library library) {
-		this.library = library;
-	}
+	//public void setLibrary(Library library) {
+	//	this.library = library;
+	//}
 
 
 	
