@@ -10,6 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>bibliot-client</artifactId>
+    <groupId>org.occ.p3</groupId>
+    <version>0.0.1-SNAPSHOT</version>
 
 
 

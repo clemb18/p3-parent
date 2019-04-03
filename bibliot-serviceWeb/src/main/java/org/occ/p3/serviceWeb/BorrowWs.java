@@ -1,6 +1,7 @@
 package org.occ.p3.serviceWeb;
 
 import org.occ.p3.service.BorrowService;
+import org.occ.p3.model.Borrow;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
@@ -10,13 +11,14 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 import java.util.ArrayList;
+import java.util.List;
 
 import static javax.jws.soap.SOAPBinding.Style.DOCUMENT;
 import static javax.jws.soap.SOAPBinding.Use.LITERAL;
 
 
 @Service
-@WebService(serviceName = "BorrowWeb", name = "borrowWs")
+@WebService(serviceName = "borrowWeb", name = "borrowWs")
 @SOAPBinding(style = DOCUMENT, use = LITERAL)
 public class BorrowWs {
 

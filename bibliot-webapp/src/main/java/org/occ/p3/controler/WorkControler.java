@@ -3,11 +3,10 @@ package org.occ.p3.controler;
 //import org.occ.p3.model.Work;
 //import org.occ.p3.service.WorkService;
 
-import org.occ.p3.model.Work;
+
+import org.occ.p3.client.Work;
 import org.occ.p3.client.WorkWeb;
 import org.occ.p3.client.WorkWs;
-import org.occ.p3.client.GetWorksByAuthor;
-import org.occ.p3.client.GetWorksByAuthorResponse;
 import org.occ.p3.service.WorkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -43,7 +42,9 @@ public class WorkControler {
 
         WorkWeb workWsService = new WorkWeb();
         WorkWs workWs = workWsService.getWorkWsPort();
-        List<org.occ.p3.client.Work> workByAuthor = workWs.getWorksByAuthor(author);
+        List<Work> workByAuthor = workWs.getWorksByAuthor(author);
+
+        //List<org.occ.p3.client.Work> workByAuthor = workWs.getWorksByAuthor(author);
 
         ModelAndView toReturn = new ModelAndView("jsp/search");
         toReturn.addObject("listWorks", workByAuthor);
@@ -57,9 +58,11 @@ public class WorkControler {
         //WsWork wsWork = wsWorkService.getWsWorkPort();
         //List<Work> workByPublicationDate = wsWork.getWorksByPublicationDate(publicationDate);
 
+        WorkWeb wsWorkService = new WorkWeb();
+        WorkWs workWs = wsWorkService.getWorkWsPort();
+        List<Work> workByPublicationDate = workWs.getWorksByPublicationDate(publicationDate);
 
 
-        List<Work> workByPublicationDate = workService.getWorksByPublicationDate(publicationDate);
 
         ModelAndView totoReturn = new ModelAndView("jsp/search");
         totoReturn.addObject("listWorksByPublicationDate", workByPublicationDate);

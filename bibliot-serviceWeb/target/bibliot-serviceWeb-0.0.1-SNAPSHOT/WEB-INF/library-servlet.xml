@@ -66,6 +66,7 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
     </bean>
     <tx:annotation-driven transaction-manager="transactionManager" />
 
+
     <!-- Activate spring data JPA repository support -->
     <!-- Find repositories -->
     <jpa:repositories
@@ -73,6 +74,6 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
             entity-manager-factory-ref="entityManagerFactory"
             transaction-manager-ref="transactionManager"/>
 
-    <mvc:resources mapping="/resources/**" location="/"/>
+    <!-- <mvc:resources mapping="/resources/**" location="/"/>-->
 
-</beans>
+ </beans>
