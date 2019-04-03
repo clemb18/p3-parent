@@ -3,6 +3,13 @@ package org.occ.p3.controler;
 //import org.occ.p3.model.Work;
 //import org.occ.p3.service.WorkService;
 
+import org.occ.p3.model.Work;
+import org.occ.p3.client.WorkWeb;
+import org.occ.p3.client.WorkWs;
+import org.occ.p3.client.GetWorksByAuthor;
+import org.occ.p3.client.GetWorksByAuthorResponse;
+import org.occ.p3.service.WorkService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,9 +22,8 @@ import java.util.List;
 @Controller
 public class WorkControler {
 
-
-
-
+    @Autowired
+    WorkService workService;
 
     @RequestMapping (value = "/bibliot-webapp/search", method = RequestMethod.GET)
     public String search() {
@@ -29,10 +35,15 @@ public class WorkControler {
     @RequestMapping(value = "/searchByAuthor", method = RequestMethod.POST)
     public ModelAndView getWorksByAuthor (@RequestParam(value="author") String author) {
 
-        WorkWeb wsWorkService = new WorkWeb();
-        WsWork wsWork = wsWorkService.getWsWorkPort();
-        List<Work> workByAuthor = wsWork.getWorksByAuthor(author);
+        //WorkWeb wsWorkService = new WorkWeb();
+        //WsWork wsWork = wsWorkService.getWsWorkPort();
+        //List<Work> workByAuthor = wsWork.getWorksByAuthor(author);
 
+        //List<Work> workByAuthor = workService.getWorksByAuthor(author);
+
+        WorkWeb workWsService = new WorkWeb();
+        WorkWs workWs = workWsService.getWorkWsPort();
+        List<org.occ.p3.client.Work> workByAuthor = workWs.getWorksByAuthor(author);
 
         ModelAndView toReturn = new ModelAndView("jsp/search");
         toReturn.addObject("listWorks", workByAuthor);
@@ -42,10 +53,13 @@ public class WorkControler {
     @RequestMapping (value = "/searchByPublicationDate", method = RequestMethod.POST)
     public ModelAndView getWorksByPublicationDate (@RequestParam(value="publicationDate") Integer publicationDate) {
 
-        WorkWeb wsWorkService = new WorkWeb();
-        WsWork wsWork = wsWorkService.getWsWorkPort();
-        List<Work> workByPublicationDate = wsWork.getWorksByPublicationDate(publicationDate);
+        //WorkWeb wsWorkService = new WorkWeb();
+        //WsWork wsWork = wsWorkService.getWsWorkPort();
+        //List<Work> workByPublicationDate = wsWork.getWorksByPublicationDate(publicationDate);
 
+
+
+        List<Work> workByPublicationDate = workService.getWorksByPublicationDate(publicationDate);
 
         ModelAndView totoReturn = new ModelAndView("jsp/search");
         totoReturn.addObject("listWorksByPublicationDate", workByPublicationDate);

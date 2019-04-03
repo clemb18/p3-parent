@@ -31,6 +31,7 @@
 			<groupId>org.occ.p3</groupId>
 			<artifactId>bibliot-client</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
+
 		</dependency>
 
 		<dependency>
@@ -41,7 +42,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>5.1.5.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 
 

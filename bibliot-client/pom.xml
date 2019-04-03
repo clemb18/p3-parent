@@ -10,12 +10,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>bibliot-client</artifactId>
-    <groupId>org.occ.p3</groupId>
-    <version>0.0.1-SNAPSHOT</version>
 
-    <name>client</name>
-    <!-- FIXME change it to the project's website
-    <url>http://www.example.com</url>-->
+
+
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -31,14 +28,37 @@
             <scope>test</scope>
         </dependency>
 
+            <dependency>
+                <groupId>org.occ.p3</groupId>
+                <artifactId>bibliot-model</artifactId>
+            </dependency>
+
+            <dependency>
+                <groupId>org.occ.p3</groupId>
+                <artifactId>bibliot-service</artifactId>
+            </dependency>
+
+        </dependencies>
 
 
-    </dependencies>
 
-    <!-- <build>
 
-                <plugins>
-              <plugin>
+
+    <build>
+
+        <plugins>
+        <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.0</version>
+        <configuration>
+            <source>1.8</source>
+            <target>1.8</target>
+        </configuration>
+        </plugin>
+
+
+              <!--<plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jaxws-maven-plugin</artifactId>
                 <version>2.5</version>
@@ -52,17 +72,17 @@
                             <configuration>
                                 <sourceDestDir>${project.basedir}/src/main/java/generated/</sourceDestDir>
                                 <wsdlUrls>
-                                    <wsdlUrl>http://localhost:8080/webservice/ws/wsWork?wsdl</wsdlUrl>
-                                    <wsdlUrl>http://localhost:8080/webservice/ws/wsBorrow?wsdl</wsdlUrl>
-                                    <wsdlUrl>http://localhost:8080/webservice/ws/wsBook?wsdl</wsdlUrl>
-                                    <wsdlUrl>http://localhost:8080/webservice/ws/wsUser?wsdl</wsdlUrl>
+                                    <wsdlUrl>http://localhost:8080/bibliot-serviceWeb/ws/workWs?wsdl</wsdlUrl>
+                                    <wsdlUrl>http://localhost:8080/bibliot-serviceWeb/ws/userWs?wsdl</wsdlUrl>
+                                    <wsdlUrl>http://localhost:8080/bibliot-serviceWeb/ws/borrowWs?wsdl</wsdlUrl>
+                                    <wsdlUrl>http://localhost:8080/bibliot-serviceWeb/ws/bookWs?wsdl</wsdlUrl>
                                 </wsdlUrls>
                                 </configuration>
                         </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
           </plugins>
 
 
-        </build>-->
+        </build>
     </project>

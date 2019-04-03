@@ -50,6 +50,12 @@
 
 			<dependency>
 				<groupId>org.occ.p3</groupId>
+				<artifactId>bibliot-serviceWeb</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.occ.p3</groupId>
 				<artifactId>bibliot-model</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
@@ -206,7 +212,6 @@
 		<module>bibliot-service</module>
 		<module>bibliot-consumer</module>
 		<module>bibliot-model</module>
-        <module>bibliot-webservice</module>
         <module>bibliot-client</module>
         <module>bibliot-serviceWeb</module>
     </modules>
