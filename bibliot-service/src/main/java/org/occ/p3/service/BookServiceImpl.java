@@ -10,20 +10,28 @@ public class BookServiceImpl implements BookService {
 
 	@Autowired
 	BookRepository bookRepository;
-	
+
 	public Book getBookById(Integer bookId) {
 		//On fait des traitement si nécessaire
-	
+
 		/// Appeler le consumer adéquat
 		Book bookGotFromConsumer = bookRepository.findById(bookId).get();
-		
+
 		return bookGotFromConsumer;
 	}
-	
-	public Book saveNewBook(Book book) {
 
+	public String test() {
+		return "Oui le service répond";
+	}
+
+	public Book saveNewBook(Book book) {
+		//Vérifier que tu es authentifié
+
+		//Vérifier que tu es habilité à faire cette opération
+
+		//Appeler le consumer pour sauvegarder
 		Book bookSaved = bookRepository.save(book);
-		
+
 		return bookSaved;
 	}
 }

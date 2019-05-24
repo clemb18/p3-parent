@@ -17,20 +17,20 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "BorrowWeb", targetNamespace = "http://serviceWeb.p3.occ.org/", wsdlLocation = "http://localhost:8080/bibliot-serviceWeb/ws/borrowWs?wsdl")
+@WebServiceClient(name = "borrowWeb", targetNamespace = "http://serviceWeb.p3.occ.org/", wsdlLocation = "http://localhost:8080/serviceWeb/ws/borrowWs?wsdl")
 public class BorrowWeb
     extends Service
 {
 
     private final static URL BORROWWEB_WSDL_LOCATION;
     private final static WebServiceException BORROWWEB_EXCEPTION;
-    private final static QName BORROWWEB_QNAME = new QName("http://serviceWeb.p3.occ.org/", "BorrowWeb");
+    private final static QName BORROWWEB_QNAME = new QName("http://serviceWeb.p3.occ.org/", "borrowWeb");
 
     static {
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:8080/bibliot-serviceWeb/ws/borrowWs?wsdl");
+            url = new URL("http://localhost:8080/serviceWeb/ws/borrowWs?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

@@ -50,18 +50,21 @@ public interface BorrowWs {
 
     /**
      * 
+     * @param arg1
      * @param arg0
      * @return
      *     returns java.lang.Boolean
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "endBorrow", targetNamespace = "http://serviceWeb.p3.occ.org/", className = "org.occ.p3.serviceweb.EndBorrow")
-    @ResponseWrapper(localName = "endBorrowResponse", targetNamespace = "http://serviceWeb.p3.occ.org/", className = "org.occ.p3.serviceweb.EndBorrowResponse")
-    @Action(input = "http://serviceWeb.p3.occ.org/borrowWs/endBorrowRequest", output = "http://serviceWeb.p3.occ.org/borrowWs/endBorrowResponse")
-    public Boolean endBorrow(
+    @RequestWrapper(localName = "terminateBorrow", targetNamespace = "http://serviceWeb.p3.occ.org/", className = "org.occ.p3.serviceweb.TerminateBorrow")
+    @ResponseWrapper(localName = "terminateBorrowResponse", targetNamespace = "http://serviceWeb.p3.occ.org/", className = "org.occ.p3.serviceweb.TerminateBorrowResponse")
+    @Action(input = "http://serviceWeb.p3.occ.org/borrowWs/terminateBorrowRequest", output = "http://serviceWeb.p3.occ.org/borrowWs/terminateBorrowResponse")
+    public Boolean terminateBorrow(
         @WebParam(name = "arg0", targetNamespace = "")
-        Integer arg0);
+        Integer arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        Integer arg1);
 
     /**
      * 

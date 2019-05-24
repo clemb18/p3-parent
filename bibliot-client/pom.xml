@@ -74,10 +74,11 @@
                             <configuration>
                                 <sourceDestDir>${project.basedir}/src/main/java/generated/</sourceDestDir>
                                 <wsdlUrls>
-                                    <wsdlUrl>http://localhost:8080/bibliot-serviceWeb/ws/workWs?wsdl</wsdlUrl>
-                                    <wsdlUrl>http://localhost:8080/bibliot-serviceWeb/ws/userWs?wsdl</wsdlUrl>
-                                    <wsdlUrl>http://localhost:8080/bibliot-serviceWeb/ws/borrowWs?wsdl</wsdlUrl>
-                                    <wsdlUrl>http://localhost:8080/bibliot-serviceWeb/ws/bookWs?wsdl</wsdlUrl>
+                                    <wsdlUrl>http://localhost:8080/serviceWeb/ws/workWs?wsdl</wsdlUrl>
+                                    <wsdlUrl>http://localhost:8080/serviceWeb/ws/borrowWs?wsdl</wsdlUrl>
+                                    <wsdlUrl>http://localhost:8080/serviceWeb/ws/batchWs?wsdl</wsdlUrl>
+                                    <wsdlUrl>http://localhost:8080/serviceWeb/ws/userWs?wsdl</wsdlUrl>
+                                    <wsdlUrl>http://localhost:8080/serviceWeb/ws/bookWs?wsdl</wsdlUrl>
                                 </wsdlUrls>
                                 </configuration>
                         </execution>

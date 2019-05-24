@@ -6,7 +6,9 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
@@ -23,8 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="bookDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="booksList" type="{http://serviceWeb.p3.occ.org/}book" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="library" type="{http://serviceWeb.p3.occ.org/}library" minOccurs="0"/>
- *         &lt;element name="publicationDate" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+ *         &lt;element name="publicationDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -40,7 +41,6 @@ import javax.xml.bind.annotation.XmlType;
     "bookDescription",
     "booksList",
     "id",
-    "library",
     "publicationDate",
     "title"
 })
@@ -51,8 +51,8 @@ public class Work {
     @XmlElement(nillable = true)
     protected List<Book> booksList;
     protected Integer id;
-    protected Library library;
-    protected Integer publicationDate;
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar publicationDate;
     protected String title;
 
     /**
@@ -157,38 +157,14 @@ public class Work {
     }
 
     /**
-     * Obtient la valeur de la propriété library.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Library }
-     *     
-     */
-    public Library getLibrary() {
-        return library;
-    }
-
-    /**
-     * Définit la valeur de la propriété library.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Library }
-     *     
-     */
-    public void setLibrary(Library value) {
-        this.library = value;
-    }
-
-    /**
      * Obtient la valeur de la propriété publicationDate.
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public Integer getPublicationDate() {
+    public XMLGregorianCalendar getPublicationDate() {
         return publicationDate;
     }
 
@@ -197,10 +173,10 @@ public class Work {
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setPublicationDate(Integer value) {
+    public void setPublicationDate(XMLGregorianCalendar value) {
         this.publicationDate = value;
     }
 

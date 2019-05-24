@@ -3,6 +3,7 @@ package org.occ.p3.model;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -10,28 +11,24 @@ import java.util.List;
 public class Work implements Serializable {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
-    @GeneratedValue(generator="gen_work", strategy = GenerationType.IDENTITY)
-    @SequenceGenerator(name="gen_work", allocationSize=1)
+	@GeneratedValue(generator="gen_work", strategy = GenerationType.IDENTITY)
+	@SequenceGenerator(name="gen_work", sequenceName="seq_work", allocationSize=1)
 	private Integer id;
-	
+
 	private String title;
-	
+
 	private String author;
-	
-	private Integer publicationDate;
-	
+
+	private Date publicationDate;
+
 	private String bookDescription;
 
-	//@ManyToOne
-	//private Library library;
-
-	@OneToMany(fetch = FetchType.EAGER)
-	//@LazyCollection(FALSE)
+	@OneToMany(fetch=FetchType.EAGER)
 	private List<Book> booksList;
 
 	public Work() {
@@ -43,16 +40,6 @@ public class Work implements Serializable {
 		this.author = author;
 	}
 
-	//public Library getLibrary() {
-	//	return library;
-	//}
-
-	//public void setLibrary(Library library) {
-	//	this.library = library;
-	//}
-
-
-	
 	public Integer getId() {
 		return id;
 	}
@@ -77,11 +64,11 @@ public class Work implements Serializable {
 		this.author = author;
 	}
 
-	public Integer getPublicationDate() {
+	public Date getPublicationDate() {
 		return publicationDate;
 	}
 
-	public void setPublicationDate(Integer publicationDate) {
+	public void setPublicationDate(Date publicationDate) {
 		this.publicationDate = publicationDate;
 	}
 

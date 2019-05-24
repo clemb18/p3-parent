@@ -18,13 +18,14 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
+ *         &lt;element name="workTitle" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="book" type="{http://serviceWeb.p3.occ.org/}book" minOccurs="0"/>
  *         &lt;element name="endBorrowDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="extended" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+ *         &lt;element name="memberBorrowing" type="{http://serviceWeb.p3.occ.org/}member" minOccurs="0"/>
  *         &lt;element name="startBorrowDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="status" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="userRef" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="workName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -36,27 +37,53 @@ import javax.xml.datatype.XMLGregorianCalendar;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "borrow", propOrder = {
+    "workTitle",
     "book",
     "endBorrowDate",
     "extended",
     "id",
+    "memberBorrowing",
     "startBorrowDate",
     "status",
-    "userRef",
     "workName"
 })
 public class Borrow {
 
+    protected String workTitle;
     protected Book book;
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar endBorrowDate;
     protected boolean extended;
     protected Integer id;
+    protected Member memberBorrowing;
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar startBorrowDate;
     protected String status;
-    protected Integer userRef;
     protected String workName;
+
+    /**
+     * Obtient la valeur de la propriété workTitle.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getWorkTitle() {
+        return workTitle;
+    }
+
+    /**
+     * Définit la valeur de la propriété workTitle.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setWorkTitle(String value) {
+        this.workTitle = value;
+    }
 
     /**
      * Obtient la valeur de la propriété book.
@@ -147,6 +174,30 @@ public class Borrow {
     }
 
     /**
+     * Obtient la valeur de la propriété memberBorrowing.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Member }
+     *     
+     */
+    public Member getMemberBorrowing() {
+        return memberBorrowing;
+    }
+
+    /**
+     * Définit la valeur de la propriété memberBorrowing.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Member }
+     *     
+     */
+    public void setMemberBorrowing(Member value) {
+        this.memberBorrowing = value;
+    }
+
+    /**
      * Obtient la valeur de la propriété startBorrowDate.
      * 
      * @return
@@ -192,30 +243,6 @@ public class Borrow {
      */
     public void setStatus(String value) {
         this.status = value;
-    }
-
-    /**
-     * Obtient la valeur de la propriété userRef.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
-     */
-    public Integer getUserRef() {
-        return userRef;
-    }
-
-    /**
-     * Définit la valeur de la propriété userRef.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
-     */
-    public void setUserRef(Integer value) {
-        this.userRef = value;
     }
 
     /**

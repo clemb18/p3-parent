@@ -42,12 +42,12 @@ public interface WorkWs {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getWorksByPublicationDate", targetNamespace = "http://serviceWeb.p3.occ.org/", className = "org.occ.p3.serviceweb.GetWorksByPublicationDate")
-    @ResponseWrapper(localName = "getWorksByPublicationDateResponse", targetNamespace = "http://serviceWeb.p3.occ.org/", className = "org.occ.p3.serviceweb.GetWorksByPublicationDateResponse")
-    @Action(input = "http://serviceWeb.p3.occ.org/workWs/getWorksByPublicationDateRequest", output = "http://serviceWeb.p3.occ.org/workWs/getWorksByPublicationDateResponse")
-    public List<Work> getWorksByPublicationDate(
+    @RequestWrapper(localName = "getWorksByAuthor", targetNamespace = "http://serviceWeb.p3.occ.org/", className = "org.occ.p3.serviceweb.GetWorksByAuthor")
+    @ResponseWrapper(localName = "getWorksByAuthorResponse", targetNamespace = "http://serviceWeb.p3.occ.org/", className = "org.occ.p3.serviceweb.GetWorksByAuthorResponse")
+    @Action(input = "http://serviceWeb.p3.occ.org/workWs/getWorksByAuthorRequest", output = "http://serviceWeb.p3.occ.org/workWs/getWorksByAuthorResponse")
+    public List<Work> getWorksByAuthor(
         @WebParam(name = "arg0", targetNamespace = "")
-        Integer arg0);
+        String arg0);
 
     /**
      * 
@@ -57,11 +57,11 @@ public interface WorkWs {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getWorksByAuthor", targetNamespace = "http://serviceWeb.p3.occ.org/", className = "org.occ.p3.serviceweb.GetWorksByAuthor")
-    @ResponseWrapper(localName = "getWorksByAuthorResponse", targetNamespace = "http://serviceWeb.p3.occ.org/", className = "org.occ.p3.serviceweb.GetWorksByAuthorResponse")
-    @Action(input = "http://serviceWeb.p3.occ.org/workWs/getWorksByAuthorRequest", output = "http://serviceWeb.p3.occ.org/workWs/getWorksByAuthorResponse")
-    public List<Work> getWorksByAuthor(
+    @RequestWrapper(localName = "getWorksByPublicationDate", targetNamespace = "http://serviceWeb.p3.occ.org/", className = "org.occ.p3.serviceweb.GetWorksByPublicationDate")
+    @ResponseWrapper(localName = "getWorksByPublicationDateResponse", targetNamespace = "http://serviceWeb.p3.occ.org/", className = "org.occ.p3.serviceweb.GetWorksByPublicationDateResponse")
+    @Action(input = "http://serviceWeb.p3.occ.org/workWs/getWorksByPublicationDateRequest", output = "http://serviceWeb.p3.occ.org/workWs/getWorksByPublicationDateResponse")
+    public List<Work> getWorksByPublicationDate(
         @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
+        Integer arg0);
 
 }

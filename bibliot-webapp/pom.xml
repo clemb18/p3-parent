@@ -27,6 +27,8 @@
 		</dependency>
 
 
+
+
 		<dependency>
 			<groupId>org.occ.p3</groupId>
 			<artifactId>bibliot-client</artifactId>

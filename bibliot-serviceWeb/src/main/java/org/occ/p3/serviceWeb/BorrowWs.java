@@ -1,51 +1,43 @@
 package org.occ.p3.serviceWeb;
-
-import org.occ.p3.service.BorrowService;
-import org.occ.p3.model.Borrow;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-
 import javax.annotation.PostConstruct;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
-import java.util.ArrayList;
-import java.util.List;
 
-import static javax.jws.soap.SOAPBinding.Style.DOCUMENT;
-import static javax.jws.soap.SOAPBinding.Use.LITERAL;
-
+import org.occ.p3.service.BorrowService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 @Service
-@WebService(serviceName = "borrowWeb", name = "borrowWs")
-@SOAPBinding(style = DOCUMENT, use = LITERAL)
+@WebService(serviceName = "borrowWeb",name = "borrowWs")
+@SOAPBinding(style = SOAPBinding.Style.DOCUMENT, use = SOAPBinding.Use.LITERAL)
+
 public class BorrowWs {
 
     @Autowired
     BorrowService borrowService;
 
     @WebMethod
-    public Boolean borrowBook(Integer workId,Integer membreId) {
+    public Boolean borrowBook(Integer workId,Integer membreId){
         return borrowService.borrowBook(workId, membreId);
-    }
 
+    }
     @WebMethod
-    public Boolean extendBorrow(Integer borrowId) {
+    public Boolean extendBorrow(Integer borrowId){
         return borrowService.extendBorrow(borrowId);
+
+    }
+    @WebMethod
+    public Boolean terminateBorrow(Integer borrowId, Integer membreId){
+        return borrowService.terminateBorrow(borrowId, membreId);
+
     }
 
-    @WebMethod
-    public Boolean endBorrow(Integer borrowId) {
-        return borrowService.endBorrow(borrowId);
-    }
-
-
-
-    @WebMethod
     @PostConstruct
     public void init() {
         SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
     }
+
 }
 

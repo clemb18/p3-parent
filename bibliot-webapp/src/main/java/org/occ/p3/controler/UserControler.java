@@ -1,84 +1,98 @@
 package org.occ.p3.controler;
 
-import org.occ.p3.model.Member;
-import org.occ.p3.model.User;
-import org.occ.p3.service.UserService;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.occ.p3.client.UserWeb;
+import org.occ.p3.client.UserWs;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
-
 @Controller
 public class UserControler {
-
+    @Autowired
+    private HttpServletRequest request;
     @RequestMapping(value = "/connexion", method = RequestMethod.GET)
     public String login() {
-
-        return "jsp/connexion";
+        return "connexion";
     }
 
 
-    @Autowired
-    UserService userService;
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public ModelAndView home() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("connexion");
+        return modelAndView;
+    }
+
+
+	/*@Autowired
+	UserService userService;*/
+
+    UserWeb userWsService = new UserWeb();
+    UserWs userWs = userWsService.getUserWsPort();
 
     @RequestMapping(value = "/authentificate", method = RequestMethod.POST)
-    public ModelAndView authentification(HttpServletRequest request){
-
-        boolean result;
+    public ModelAndView authentification(HttpServletRequest request) {
+        org.occ.p3.client.Member result;
+        System.out.println("toto nous sommes bien arrivés");
 
         ModelAndView modelAndView = null;
 
-        String userName = request.getParameter("user");
+        String username = request.getParameter("user");
         String password = request.getParameter("password");
 
-        System.out.println("user = " + userName);
-        System.out.println("password = " + password);
+        if (username != null & password != null) {
 
-        if(userName !=null & password !=null) {
 
-            result = userService.isValidUser(userName, password);
+            result = userWs.isValidUser(username, password);
 
-            if (result == true) {
 
-                System.out.println("le user est en base");
+            if (result != null) {
+                System.out.println("l'utilisateur existe");
 
-                modelAndView = new ModelAndView("jsp/indexCo");
-                modelAndView.addObject("msg","Bienvenue ! Vous êtes bien connecté !");
 
-                //Je dis que l'utilisateur est connecté
-
-                Member memberConnected = (Member) userService.findByUserNameAndPassword(userName,password);
-
+                // Je dis que le mec est connecté
+                org.occ.p3.client.Member memberConnected = userWs.isValidUser(username, password);
+                //userService.findMemberByUsernameAndPassword(username,password);
+                System.out.println("le membre connecté a enregistré est " +memberConnected);
                 request.getSession().setAttribute("connected", true);
+                request.getSession().setAttribute("memberConnected", memberConnected);
+                modelAndView = new ModelAndView("profil");
+                modelAndView.addObject("memberConnected", memberConnected);
+                System.out.println("le membre est connecté");
+                //System.out.println(memberConnected.getName());
 
-                request.getSession().setAttribute("currentSessionUser",memberConnected);
-
-                request.getSession().setAttribute("memberConnected",memberConnected);
-                modelAndView.addObject("memberConnected",memberConnected);
 
             } else {
 
-            System.out.println("le user est pas ds la base");
-                modelAndView = new ModelAndView("jsp/index");
-                modelAndView.addObject("msg","Wrong username and or password");
+                modelAndView = new ModelAndView("/connexion");
+                modelAndView.addObject("msg", "Wrong username and or password");
+
             }
         } else {
-            modelAndView = new ModelAndView("jsp/index");
-            modelAndView.addObject("msg","Une erreur est survenue");
+
+            modelAndView = new ModelAndView("/error");
         }
+        return modelAndView;
+    }
+
+
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public ModelAndView logout(HttpSession session) {
+
+        ModelAndView modelAndView = null;
+
+        session.invalidate();
+        modelAndView = new ModelAndView("/connexion");
+        modelAndView.addObject("msg", "Vous êtes deconnecté");
 
         return modelAndView;
-
     }
 
-    @RequestMapping(value = "/moncompte", method = RequestMethod.GET)
-    public String userProf() {
-
-        return "jsp/userPage";
-    }
 
 }
 

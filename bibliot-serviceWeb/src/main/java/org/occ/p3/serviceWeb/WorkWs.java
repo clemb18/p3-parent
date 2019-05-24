@@ -1,6 +1,4 @@
 package org.occ.p3.serviceWeb;
-
-
 import org.occ.p3.model.Work;
 import org.occ.p3.service.WorkService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,30 +11,25 @@ import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 import java.util.List;
 
-import static javax.jws.soap.SOAPBinding.Style.DOCUMENT;
-import static javax.jws.soap.SOAPBinding.Use.LITERAL;
-
-
 @Service
 @WebService(serviceName = "workWeb",name = "workWs")
-@SOAPBinding(style = DOCUMENT, use = LITERAL)
+@SOAPBinding(style = SOAPBinding.Style.DOCUMENT, use = SOAPBinding.Use.LITERAL)
 public class WorkWs {
 
     @Autowired
     WorkService workService;
 
-
     @WebMethod
     public List<Work> getWorksByAuthor(String author) {
         return workService.getWorksByAuthor(author);
-    }
 
+    }
     @WebMethod
-    public List<Work> getWorksByPublicationDate(Integer publicationDate) {
+    public List<Work> getWorksByPublicationDate (Integer publicationDate){
         return workService.getWorksByPublicationDate(publicationDate);
+
     }
 
-    @WebMethod
     @PostConstruct
     public void init() {
         SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);

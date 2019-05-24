@@ -1,73 +1,62 @@
 package org.occ.p3.controler;
 
-//import org.occ.p3.model.Work;
-//import org.occ.p3.service.WorkService;
+import java.util.List;
 
-
-import org.occ.p3.client.Work;
 import org.occ.p3.client.WorkWeb;
 import org.occ.p3.client.WorkWs;
-import org.occ.p3.service.WorkService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
-import java.util.List;
-
 
 @Controller
 public class WorkControler {
 
-    @Autowired
-    WorkService workService;
 
-    @RequestMapping (value = "/bibliot-webapp/search", method = RequestMethod.GET)
-    public String search() {
-        return "jsp/search";
+
+    //instanciation des WorkWeb et Workws
+
+    WorkWeb workWsService = new WorkWeb();
+    WorkWs workWs = workWsService.getWorkWsPort();
+
+    @RequestMapping(value = "/work/{author}", method = RequestMethod.GET)
+
+    public @ResponseBody
+
+    List<org.occ.p3.client.Work> getWorksByAuthor (@PathVariable String author) {
+        List<org.occ.p3.client.Work> workByAuthor = workWs.getWorksByAuthor(author);
+        return workByAuthor;
     }
 
 
+    @RequestMapping (value = "/work/{publicationDate}", method = RequestMethod.GET)
 
-    @RequestMapping(value = "/searchByAuthor", method = RequestMethod.POST)
-    public ModelAndView getWorksByAuthor (@RequestParam(value="author") String author) {
-
-        //WorkWeb wsWorkService = new WorkWeb();
-        //WsWork wsWork = wsWorkService.getWsWorkPort();
-        //List<Work> workByAuthor = wsWork.getWorksByAuthor(author);
-
-        //List<Work> workByAuthor = workService.getWorksByAuthor(author);
-
-        WorkWeb workWsService = new WorkWeb();
-        WorkWs workWs = workWsService.getWorkWsPort();
-        List<Work> workByAuthor = workWs.getWorksByAuthor(author);
-
-        //List<org.occ.p3.client.Work> workByAuthor = workWs.getWorksByAuthor(author);
-
-        ModelAndView toReturn = new ModelAndView("jsp/search");
-        toReturn.addObject("listWorks", workByAuthor);
-        return toReturn;
+    public @ResponseBody
+    List<org.occ.p3.client.Work> getWorksByPublicationDate (@PathVariable Integer publicationDate) {
+        List<org.occ.p3.client.Work> workByPublicationDate = workWs.getWorksByPublicationDate(publicationDate);
+        return workByPublicationDate;
     }
 
-    @RequestMapping (value = "/searchByPublicationDate", method = RequestMethod.POST)
-    public ModelAndView getWorksByPublicationDate (@RequestParam(value="publicationDate") Integer publicationDate) {
-
-        //WorkWeb wsWorkService = new WorkWeb();
-        //WsWork wsWork = wsWorkService.getWsWorkPort();
-        //List<Work> workByPublicationDate = wsWork.getWorksByPublicationDate(publicationDate);
-
-        WorkWeb wsWorkService = new WorkWeb();
-        WorkWs workWs = wsWorkService.getWorkWsPort();
-        List<Work> workByPublicationDate = workWs.getWorksByPublicationDate(publicationDate);
-
-
-
-        ModelAndView totoReturn = new ModelAndView("jsp/search");
-        totoReturn.addObject("listWorksByPublicationDate", workByPublicationDate);
-        return totoReturn;
+    @RequestMapping (value = "/Search", method = RequestMethod.GET)
+    public ModelAndView searchPage()
+    {
+        ModelAndView search= new ModelAndView("search");
+        return search;
     }
 
+    @RequestMapping(value = "/doSearch", method = RequestMethod.POST)
+    public ModelAndView search(@RequestParam("searchText") String searchText) {
+
+        System.out.println("texte recu = " + searchText);
+        List<org.occ.p3.client.Work> workByAuthor = workWs.getWorksByAuthor(searchText);
+
+        ModelAndView mav = new ModelAndView("SearchResults");
+        mav.addObject("foundWorks", workByAuthor);
+        System.out.println("taille liste recue = " + workByAuthor.size());
+        return mav;
+    }
 
 }

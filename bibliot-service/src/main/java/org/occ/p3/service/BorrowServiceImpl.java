@@ -1,21 +1,26 @@
 package org.occ.p3.service;
 
-import org.occ.p3.consumer.repository.*;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
+import org.occ.p3.consumer.repository.BookRepository;
+import org.occ.p3.consumer.repository.BorrowRepository;
+import org.occ.p3.consumer.repository.MemberRepository;
+import org.occ.p3.consumer.repository.WorkRepository;
 import org.occ.p3.model.Book;
 import org.occ.p3.model.Borrow;
+import org.occ.p3.model.BorrowStatusEnum;
 import org.occ.p3.model.Member;
 import org.occ.p3.model.Work;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
-
-
 @Service
 public class BorrowServiceImpl implements BorrowService {
 
     @Autowired
-    UserService userService;
+    MemberRepository memberRepository;
     @Autowired
     WorkRepository workRepository;
     @Autowired
@@ -23,10 +28,7 @@ public class BorrowServiceImpl implements BorrowService {
     @Autowired
     BookRepository bookRepository;
     @Autowired
-    MemberRepository memberRepository;
-    @Autowired
-    UserRepository userRepository;
-
+    UserService userService;
 
     public Boolean borrowBook(Integer workId, Integer membreId) {
 
@@ -40,57 +42,57 @@ public class BorrowServiceImpl implements BorrowService {
         List<Book> bookList = myWorkGot.getBooksList();
 
         // On parcours la bookList
-        for (Book result : bookList)
+        for (Book result : bookList) {
 
             if (result.isAvailable()) {
 
                 Borrow borrowToSave = new Borrow();
                 borrowToSave.setBook(result);
-
-                // on recupere l'id du membre passé en param
+                // on recupère l'Id du membre passé en parametre
                 Member membreEmprunt = memberRepository.findById(membreId).get();
 
                 // On associe le member a borrow
-                borrowToSave.setUserRef(membreId);
-                //on set la date de debut
+                borrowToSave.setMemberBorrowing(membreEmprunt);
                 borrowToSave.setStartBorrowDate(new Date());
 
-                // ajouter 4 semaines à la date de début
 
+                //Calcul de la date de fin d'emprunt
                 Date borrowDate = borrowToSave.getStartBorrowDate();
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTime(borrowDate);
-                calendar.add(Calendar.WEEK_OF_MONTH, 4);
+                calendar.add(Calendar.WEEK_OF_MONTH,4);
                 borrowToSave.setEndBorrowDate(calendar.getTime());
 
-                //mettre le statut de l'emprunt à jour et le nom du livre
-                borrowToSave.setStatus("ENCOURS");
+                //Set le statut de l'emprunt + Ajout du nom de l'oeuvre à l'emprunt
+
+                borrowToSave.setStatus(BorrowStatusEnum.ENCOURS.val());
                 borrowToSave.setWorkName(workName);
 
                 // Save le borrow dans le repository
                 borrowRepository.save(borrowToSave);
-
                 //Indique que le livre n'est plus disponible et on sauvegarde dans le bookRepository
                 result.setAvailable(false);
                 bookRepository.save(result);
 
                 //Mettre a jour la liste des emprunt du memmberCo et save
 
-                List<Borrow> memberListBorrowToUpdate = userService.findBorrowListByUserRef(membreId);
+                List<Borrow> memberListBorrowToUpdate = userService.findBorrowListByMember(membreEmprunt);
                 memberListBorrowToUpdate.add(borrowToSave);
+
                 memberRepository.save(membreEmprunt);
+
 
                 toReturn = true;
                 break;
             }
+
+        }
         return toReturn;
     }
-
 
     public Boolean extendBorrow(Integer borrowId) {
 
         Boolean toReturn = false;
-
         // Recuperer le borrow dont on connait l'ID
         Borrow borrowToExtend = borrowRepository.findById(borrowId).get();
         Date endBorrowDate = borrowToExtend.getEndBorrowDate();
@@ -104,16 +106,10 @@ public class BorrowServiceImpl implements BorrowService {
             calendar.setTime(endBorrowDate);
             calendar.add(Calendar.WEEK_OF_MONTH, 4);
             borrowToExtend.setEndBorrowDate(calendar.getTime());
-
-            borrowRepository.save(borrowToExtend);
-
             // setExtended a true
             borrowToExtend.setExtended(true);
-            // mettre a jour le statut
-            borrowToExtend.setStatus("PROLONGE");
-
+            borrowToExtend.setStatus(BorrowStatusEnum.PROLONGE.val());
             borrowRepository.save(borrowToExtend);
-
             toReturn = true;
 
         } else {
@@ -124,48 +120,21 @@ public class BorrowServiceImpl implements BorrowService {
         return toReturn;
     }
 
-
-    public Boolean endBorrow(Integer borrowId) {
+    public Boolean terminateBorrow(Integer borrowId, Integer membreId ) {
 
         Boolean toReturn = false;
 
-        // Recuperer le borrow dont on connait l'ID
+        //Set le statut de l'emprunt a "rendu"
         Borrow borrowToEnd = borrowRepository.findById(borrowId).get();
-        // recuperer la date de fin max de l'emprunt
-        Date endBorrowDate = borrowToEnd.getEndBorrowDate();
-        // Recuperer la date du jour
-        Date currentDate = new Date();
-
-        if (endBorrowDate.after(currentDate)) {
-
-            // Modifier le statut de l'emprunt
-            borrowToEnd.setStatus("RENDU");
-
-            //borrowRepository.save(borrowToEnd);
-
-            // Mettre a jour la date de fin d'emprunt avec la date du jour
-            borrowToEnd.setEndBorrowDate(currentDate);
-
-            // Sauvegarder le borrow mis a jour
-            borrowRepository.save(borrowToEnd);
-
-            // Recuperer le work dont on connait l'ID
-            Book bookToUpdate = borrowToEnd.getBook();
-
-            // Mettre à jour la disponibilité du livre
-            bookToUpdate.setAvailable(true);
-
-            // Sauvegarder le book modifié
-            bookRepository.save(bookToUpdate);
-
-            toReturn = true;
-
-        } else {
-
-            toReturn = false;
-        }
-
+        borrowToEnd.setStatus(BorrowStatusEnum.RENDU.val());
+        //Set le book comme disponible
+        Book returnedBook = borrowToEnd.getBook();
+        returnedBook.setAvailable(true);
+        //Sauvegarde du livre rendu
+        bookRepository.save(returnedBook);
+        borrowRepository.save(borrowToEnd);
+        toReturn = true;
         return toReturn;
-
     }
+
 }

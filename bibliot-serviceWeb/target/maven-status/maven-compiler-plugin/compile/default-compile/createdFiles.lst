@@ -1,3 +1,4 @@
+org\occ\p3\serviceWeb\BatchWs.class
 org\occ\p3\serviceWeb\WorkWs.class
 org\occ\p3\serviceWeb\BookWs.class
 org\occ\p3\serviceWeb\BorrowWs.class

@@ -24,11 +24,13 @@
         <module name="bibliot-service" />
         <module name="bibliot-serviceWeb" />
         <module name="bibliot-webapp" />
+        <module name="serviceWeb" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="bibliot-batch" target="1.8" />
       <module name="bibliot-client" target="1.8" />
+      <module name="bibliot-serviceWeb" target="1.8" />
       <module name="bibliot-webservice" target="1.8" />
       <module name="bibliotbatch" target="1.8" />
       <module name="bibliotclient" target="1.8" />

@@ -12,10 +12,11 @@ public class Library implements Serializable {
 
     @Id
     @GeneratedValue(generator="gen_library", strategy = GenerationType.IDENTITY)
-    @SequenceGenerator(name="gen_library", allocationSize=1)
+    @SequenceGenerator(name="gen_library", sequenceName="seq_library", allocationSize=1)
     Integer id;
     private String name;
     private String city;
+
     @OneToMany
     private List<Work> works;
 
@@ -51,11 +52,11 @@ public class Library implements Serializable {
         this.city = city;
     }
 
-    public ArrayList<Work> getWorks() {
-        return (ArrayList<Work>) works;
+    public List<Work> getWorks() {
+        return works;
     }
 
-    public void setWorks(ArrayList<Work> works) {
+    public void setWorks(List<Work> works) {
         this.works = works;
     }
 }

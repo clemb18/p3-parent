@@ -1,18 +1,17 @@
 package org.occ.p3.service;
 
+import java.util.List;
+
 import org.occ.p3.model.Borrow;
 import org.occ.p3.model.Member;
 import org.occ.p3.model.User;
 
-import java.util.List;
-
 public interface UserService {
 
-    public boolean isValidUser(String userName, String password);
 
-    public Member findMemberByUserNameAndPassword(String userName, String password);
+    public Member isValidUser(String username, String password);
 
-    public User findByUserNameAndPassword(String userName, String password);
 
-    public List<Borrow> findBorrowListByUserRef(Integer userRef);
+
+    public List<Borrow> findBorrowListByMember (Member member);
 }

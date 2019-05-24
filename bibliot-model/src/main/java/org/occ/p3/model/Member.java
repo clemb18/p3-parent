@@ -1,6 +1,14 @@
 package org.occ.p3.model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 import java.util.List;
 
 
@@ -10,57 +18,15 @@ import java.util.List;
 public class Member extends User {
 
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private String name;
 
-	private String mail;
+	private String mailAdress;
 
-	private String city;
-
-	private String postCode;
-
-	private String firstName;
-
-	private String nickName;
-
-	public String getMail() {
-		return mail;
-	}
-
-	public void setMail(String mail) {
-		this.mail = mail;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getPostCode() {
-		return postCode;
-	}
-
-	public void setPostCode(String postCode) {
-		this.postCode = postCode;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getNickName() {
-		return nickName;
-	}
-
-	public void setNickName(String nickName) {
-		this.nickName = nickName;
-	}
 
 	public String getName() {
 		return name;
@@ -71,18 +37,17 @@ public class Member extends User {
 		this.name = name;
 	}
 
-	@OneToMany(fetch= FetchType.EAGER)
-	//@LazyCollection(LazyCollectionOption.FALSE)
-	private List<Borrow> borrowList;
 
-	public List<Borrow> getBorrowList() {
-		return borrowList;
+
+
+	public String getMailAdress() {
+		return mailAdress;
 	}
 
 
-	public void setBorrowList(List<Borrow> borrowList) {
-		this.borrowList = borrowList;
+	public void setMailAdress(String mailAdress) {
+		this.mailAdress = mailAdress;
 	}
-	
-	
+
+
 }
