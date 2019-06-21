@@ -60,30 +60,36 @@
         </plugin>
 
 
-              <!--<plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>jaxws-maven-plugin</artifactId>
-                <version>2.5</version>
-                  <executions>
-                  <execution>
+            <plugin>
+               <groupId>org.codehaus.mojo</groupId>
+               <artifactId>jaxws-maven-plugin</artifactId>
+               <version>2.5</version>
+                 <executions>
+                 <execution>
 
-                            <id>wsimport-for-all</id>
-                            <goals>
-                                <goal>wsimport</goal>
-                            </goals>
-                            <configuration>
-                                <sourceDestDir>${project.basedir}/src/main/java/generated/</sourceDestDir>
-                                <wsdlUrls>
-                                    <wsdlUrl>http://localhost:8080/serviceWeb/ws/workWs?wsdl</wsdlUrl>
-                                    <wsdlUrl>http://localhost:8080/serviceWeb/ws/borrowWs?wsdl</wsdlUrl>
-                                    <wsdlUrl>http://localhost:8080/serviceWeb/ws/batchWs?wsdl</wsdlUrl>
-                                    <wsdlUrl>http://localhost:8080/serviceWeb/ws/userWs?wsdl</wsdlUrl>
-                                    <wsdlUrl>http://localhost:8080/serviceWeb/ws/bookWs?wsdl</wsdlUrl>
+                           <id>wsimport-for-all</id>
+                           <goals>
+                               <goal>wsimport</goal>
+                           </goals>
+                           <configuration>
+                               <!--<sourceDestDir>/${project.basedir}src/main/java/client/bookClient/</sourceDestDir>-->
+                               <wsdlUrls>
+
+
+
+                                   <wsdlUrl>http://localhost:8080/serviceWeb/ws/bookresult/bookWs?wsdl</wsdlUrl>
+
+                                   <wsdlUrl>http://localhost:8080/serviceWeb/ws/userresult/userWs?wsdl</wsdlUrl>
+                                    <wsdlUrl>http://localhost:8080/serviceWeb/ws/workresult/workWs?wsdl</wsdlUrl>
+                                    <wsdlUrl>http://localhost:8080/serviceWeb/ws/borrowresult/borrowWs?wsdl</wsdlUrl>
+                                    <wsdlUrl>http://localhost:8080/serviceWeb/ws/batchresult/batchWs?wsdl</wsdlUrl>
                                 </wsdlUrls>
+
+                               <packageName>org.occ.p3.client.endpoint</packageName>
                                 </configuration>
                         </execution>
                 </executions>
-            </plugin>-->
+            </plugin>
           </plugins>
 
 

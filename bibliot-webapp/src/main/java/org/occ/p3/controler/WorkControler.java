@@ -2,8 +2,9 @@ package org.occ.p3.controler;
 
 import java.util.List;
 
-import org.occ.p3.client.WorkWeb;
-import org.occ.p3.client.WorkWs;
+import org.occ.p3.client.endpoint.WorkWeb;
+import org.occ.p3.client.endpoint.WorkWs;
+import org.occ.p3.client.endpoint.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,8 +27,8 @@ public class WorkControler {
 
     public @ResponseBody
 
-    List<org.occ.p3.client.Work> getWorksByAuthor (@PathVariable String author) {
-        List<org.occ.p3.client.Work> workByAuthor = workWs.getWorksByAuthor(author);
+    List<Work> getWorksByAuthor (@PathVariable String author) {
+        List<Work> workByAuthor = workWs.getWorksByAuthor(author);
         return workByAuthor;
     }
 
@@ -35,8 +36,8 @@ public class WorkControler {
     @RequestMapping (value = "/work/{publicationDate}", method = RequestMethod.GET)
 
     public @ResponseBody
-    List<org.occ.p3.client.Work> getWorksByPublicationDate (@PathVariable Integer publicationDate) {
-        List<org.occ.p3.client.Work> workByPublicationDate = workWs.getWorksByPublicationDate(publicationDate);
+    List<Work> getWorksByPublicationDate (@PathVariable Integer publicationDate) {
+        List<Work> workByPublicationDate = workWs.getWorksByPublicationDate(publicationDate);
         return workByPublicationDate;
     }
 
@@ -51,7 +52,7 @@ public class WorkControler {
     public ModelAndView search(@RequestParam("searchText") String searchText) {
 
         System.out.println("texte recu = " + searchText);
-        List<org.occ.p3.client.Work> workByAuthor = workWs.getWorksByAuthor(searchText);
+        List<Work> workByAuthor = workWs.getWorksByAuthor(searchText);
 
         ModelAndView mav = new ModelAndView("SearchResults");
         mav.addObject("foundWorks", workByAuthor);

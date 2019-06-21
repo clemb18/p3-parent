@@ -1,5 +1,4 @@
 org\occ\p3\controler\BookControler.class
 org\occ\p3\controler\WorkControler.class
-org\occ\p3\controler\BootStrapController.class
 org\occ\p3\controler\BorrowControler.class
 org\occ\p3\controler\UserControler.class

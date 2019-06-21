@@ -3,8 +3,9 @@ package org.occ.p3.controler;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.occ.p3.client.UserWeb;
-import org.occ.p3.client.UserWs;
+import org.occ.p3.client.endpoint.UserWeb;
+import org.occ.p3.client.endpoint.UserWs;
+import org.occ.p3.client.endpoint.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,11 +14,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class UserControler {
-    @Autowired
-    private HttpServletRequest request;
+
+    UserWeb userWsService = new UserWeb();
+    UserWs userWs = userWsService.getUserWsPort();
+    //@Autowired
+    //private HttpServletRequest request;
     @RequestMapping(value = "/connexion", method = RequestMethod.GET)
     public String login() {
-        return "connexion";
+        return "jsp/connexion";
     }
 
 
@@ -32,12 +36,13 @@ public class UserControler {
 	/*@Autowired
 	UserService userService;*/
 
-    UserWeb userWsService = new UserWeb();
-    UserWs userWs = userWsService.getUserWsPort();
+
+
+    //UserWs userWs = userWsService.getUserWsPort();
 
     @RequestMapping(value = "/authentificate", method = RequestMethod.POST)
     public ModelAndView authentification(HttpServletRequest request) {
-        org.occ.p3.client.Member result;
+        Member result;
         System.out.println("toto nous sommes bien arrivés");
 
         ModelAndView modelAndView = null;
@@ -56,7 +61,7 @@ public class UserControler {
 
 
                 // Je dis que le mec est connecté
-                org.occ.p3.client.Member memberConnected = userWs.isValidUser(username, password);
+                Member memberConnected = userWs.isValidUser(username, password);
                 //userService.findMemberByUsernameAndPassword(username,password);
                 System.out.println("le membre connecté a enregistré est " +memberConnected);
                 request.getSession().setAttribute("connected", true);
