@@ -11,7 +11,7 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ page isELIgnored="false"%>
 
-<%@ include file="/jsp/header.jsp" %>
+<%@ include file="/header.jsp" %>
 
 <html>
 <head>

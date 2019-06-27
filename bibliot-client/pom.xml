@@ -72,26 +72,25 @@
                                <goal>wsimport</goal>
                            </goals>
                            <configuration>
-                               <!--<sourceDestDir>/${project.basedir}src/main/java/client/bookClient/</sourceDestDir>-->
+                               <sourceDestDir>/${project.basedir}src/main/java</sourceDestDir>
                                <wsdlUrls>
 
+                                                         <wsdlUrl>http://localhost:8080/serviceWeb/ws/bookresult/bookWs?wsdl</wsdlUrl>
+
+                                                                      <wsdlUrl>http://localhost:8080/serviceWeb/ws/userresult/userWs?wsdl</wsdlUrl>
+                                                                       <wsdlUrl>http://localhost:8080/serviceWeb/ws/workresult/workWs?wsdl</wsdlUrl>
+                                                                       <wsdlUrl>http://localhost:8080/serviceWeb/ws/borrowresult/borrowWs?wsdl</wsdlUrl>
+                                                                       <wsdlUrl>http://localhost:8080/serviceWeb/ws/batchresult/batchWs?wsdl</wsdlUrl>
+                                                                   </wsdlUrls>
+
+                               <!-- <packageName>org.occ.p3.client.endpoint</packageName> -->
+                                 </configuration>
+                                 <phase>generate-sources</phase>
+                         </execution>
+                 </executions>
+             </plugin>
+           </plugins>
 
 
-                                   <wsdlUrl>http://localhost:8080/serviceWeb/ws/bookresult/bookWs?wsdl</wsdlUrl>
-
-                                   <wsdlUrl>http://localhost:8080/serviceWeb/ws/userresult/userWs?wsdl</wsdlUrl>
-                                    <wsdlUrl>http://localhost:8080/serviceWeb/ws/workresult/workWs?wsdl</wsdlUrl>
-                                    <wsdlUrl>http://localhost:8080/serviceWeb/ws/borrowresult/borrowWs?wsdl</wsdlUrl>
-                                    <wsdlUrl>http://localhost:8080/serviceWeb/ws/batchresult/batchWs?wsdl</wsdlUrl>
-                                </wsdlUrls>
-
-                               <packageName>org.occ.p3.client.endpoint</packageName>
-                                </configuration>
-                        </execution>
-                </executions>
-            </plugin>
-          </plugins>
-
-
-        </build>
-    </project>
+         </build>
+     </project>

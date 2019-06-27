@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ include file="/jsp/header.jsp" %>
+<%@ include file="/header.jsp" %>
 
             <p>Bienvenue sur votre page personnelle !</p>
 

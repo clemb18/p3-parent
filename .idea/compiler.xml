@@ -19,12 +19,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="bibliot-service" />
-        <module name="bibliot-webapp" />
+        <module name="bibliot-model" />
         <module name="bibliot-consumer" />
         <module name="bibliot-client" />
         <module name="bibliot-serviceWeb" />
         <module name="serviceWeb" />
-        <module name="bibliot-model" />
+        <module name="bibliot-webapp" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

@@ -13,7 +13,8 @@ public class Library implements Serializable {
     @Id
     @GeneratedValue(generator="gen_library", strategy = GenerationType.IDENTITY)
     @SequenceGenerator(name="gen_library", sequenceName="seq_library", allocationSize=1)
-    Integer id;
+
+    public Integer id;
     private String name;
     private String city;
 

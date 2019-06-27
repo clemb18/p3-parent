@@ -11,7 +11,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 
-<%@ include file="/jsp/header.jsp" %>
+<%@ include file="/header.jsp" %>
 
 <!-- Affichage login -->
 
