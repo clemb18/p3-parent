@@ -41,12 +41,12 @@ public interface BookWs {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getBookById", targetNamespace = "http://book.serviceWeb.p3.occ.org/", className = "org.occ.p3.client.endpoint.GetBookById")
-    @ResponseWrapper(localName = "getBookByIdResponse", targetNamespace = "http://book.serviceWeb.p3.occ.org/", className = "org.occ.p3.client.endpoint.GetBookByIdResponse")
-    @Action(input = "http://book.serviceWeb.p3.occ.org/bookWs/getBookByIdRequest", output = "http://book.serviceWeb.p3.occ.org/bookWs/getBookByIdResponse")
-    public Book getBookById(
+    @RequestWrapper(localName = "saveNewBook", targetNamespace = "http://book.serviceWeb.p3.occ.org/", className = "org.occ.p3.client.endpoint.SaveNewBook")
+    @ResponseWrapper(localName = "saveNewBookResponse", targetNamespace = "http://book.serviceWeb.p3.occ.org/", className = "org.occ.p3.client.endpoint.SaveNewBookResponse")
+    @Action(input = "http://book.serviceWeb.p3.occ.org/bookWs/saveNewBookRequest", output = "http://book.serviceWeb.p3.occ.org/bookWs/saveNewBookResponse")
+    public Book saveNewBook(
         @WebParam(name = "arg0", targetNamespace = "")
-        Integer arg0);
+        Book arg0);
 
     /**
      * 
@@ -56,11 +56,11 @@ public interface BookWs {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "saveNewBook", targetNamespace = "http://book.serviceWeb.p3.occ.org/", className = "org.occ.p3.client.endpoint.SaveNewBook")
-    @ResponseWrapper(localName = "saveNewBookResponse", targetNamespace = "http://book.serviceWeb.p3.occ.org/", className = "org.occ.p3.client.endpoint.SaveNewBookResponse")
-    @Action(input = "http://book.serviceWeb.p3.occ.org/bookWs/saveNewBookRequest", output = "http://book.serviceWeb.p3.occ.org/bookWs/saveNewBookResponse")
-    public Book saveNewBook(
+    @RequestWrapper(localName = "getBookById", targetNamespace = "http://book.serviceWeb.p3.occ.org/", className = "org.occ.p3.client.endpoint.GetBookById")
+    @ResponseWrapper(localName = "getBookByIdResponse", targetNamespace = "http://book.serviceWeb.p3.occ.org/", className = "org.occ.p3.client.endpoint.GetBookByIdResponse")
+    @Action(input = "http://book.serviceWeb.p3.occ.org/bookWs/getBookByIdRequest", output = "http://book.serviceWeb.p3.occ.org/bookWs/getBookByIdResponse")
+    public Book getBookById(
         @WebParam(name = "arg0", targetNamespace = "")
-        Book arg0);
+        Integer arg0);
 
 }
