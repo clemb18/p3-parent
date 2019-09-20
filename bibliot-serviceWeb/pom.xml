@@ -24,23 +24,18 @@
 
     </properties>
 
-    <!--
-                tools de gÃ©nÃ©ration WS pour OS Linux et Mac
-        <tool.wsgen>${java.home}/../bin/wsgen</tool.wsgen>
-    -->
-
-
     <dependencies>
         <dependency>
             <groupId>org.occ.p3</groupId>
             <artifactId>bibliot-model</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.occ.p3</groupId>
             <artifactId>bibliot-service</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <!-- <dependency> <groupId>org.occ.p3</groupId> <artifactId>bibliot-client</artifactId>
-            <version>0.0.1-SNAPSHOT</version> </dependency> -->
+
 
         <!-- spring -->
         <dependency>
@@ -52,17 +47,20 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
         </dependency>
 
         <dependency>
@@ -101,6 +99,7 @@
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
+            <version>2.1.2.RELEASE</version>
         </dependency>
 
         <!-- Postgresql -->
@@ -118,11 +117,6 @@
         </dependency>
 
         <!-- other libraries -->
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -153,17 +147,19 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>5.4.0.Final</version>
+            <version>${hibernate.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.hibernate.common</groupId>
             <artifactId>hibernate-commons-annotations</artifactId>
+            <version>5.0.1.Final</version>
         </dependency>
 
         <!-- bean validation - annotation -->
@@ -172,14 +168,6 @@
             <artifactId>validation-api</artifactId>
             <version>2.0.1.Final</version>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.apache.axis2/axis2-java2wsdl -->
-        <dependency>
-            <groupId>org.apache.axis2</groupId>
-            <artifactId>axis2-java2wsdl</artifactId>
-            <version>1.7.9</version>
-        </dependency>
-
 
 
     </dependencies>
