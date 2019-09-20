@@ -1,8 +1,8 @@
 package org.occ.p3.controler;
 
-import org.occ.p3.client.endpoint.Book;
-import org.occ.p3.client.endpoint.BookWeb;
-import org.occ.p3.client.endpoint.BookWs;
+import org.occ.p3.client.Book;
+import org.occ.p3.client.BookWeb;
+import org.occ.p3.client.BookWs;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,12 +16,16 @@ public class BookControler {
 
 
 	BookWeb bookWsService = new BookWeb();
-	BookWs bookWs = bookWsService.getBookWsPort();
+	BookWs bookWs;
 
-	@RequestMapping(value = "/book/{bookId}", method = RequestMethod.GET)
+	public BookControler() {
+		this.bookWs = this.bookWsService.getBookWsPort();
+	}
 
-	public @ResponseBody
-	Book sayHello (@PathVariable Integer bookId) {
+	@RequestMapping(value = {"/book/{bookId}"}, method = {RequestMethod.GET})
+
+	@ResponseBody
+	public Book sayHello (@PathVariable Integer bookId) {
 		return bookWs.getBookById(bookId);
 	}
 

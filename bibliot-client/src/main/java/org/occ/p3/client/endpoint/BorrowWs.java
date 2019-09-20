@@ -35,6 +35,21 @@ public interface BorrowWs {
 
     /**
      * 
+     * @param arg0
+     * @return
+     *     returns java.lang.Boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "extendBorrow", targetNamespace = "http://borrow.serviceWeb.p3.occ.org/", className = "org.occ.p3.client.endpoint.ExtendBorrow")
+    @ResponseWrapper(localName = "extendBorrowResponse", targetNamespace = "http://borrow.serviceWeb.p3.occ.org/", className = "org.occ.p3.client.endpoint.ExtendBorrowResponse")
+    @Action(input = "http://borrow.serviceWeb.p3.occ.org/borrowWs/extendBorrowRequest", output = "http://borrow.serviceWeb.p3.occ.org/borrowWs/extendBorrowResponse")
+    public Boolean extendBorrow(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Integer arg0);
+
+    /**
+     * 
      * @param arg1
      * @param arg0
      * @return
@@ -50,21 +65,6 @@ public interface BorrowWs {
         Integer arg0,
         @WebParam(name = "arg1", targetNamespace = "")
         Integer arg1);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns java.lang.Boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "extendBorrow", targetNamespace = "http://borrow.serviceWeb.p3.occ.org/", className = "org.occ.p3.client.endpoint.ExtendBorrow")
-    @ResponseWrapper(localName = "extendBorrowResponse", targetNamespace = "http://borrow.serviceWeb.p3.occ.org/", className = "org.occ.p3.client.endpoint.ExtendBorrowResponse")
-    @Action(input = "http://borrow.serviceWeb.p3.occ.org/borrowWs/extendBorrowRequest", output = "http://borrow.serviceWeb.p3.occ.org/borrowWs/extendBorrowResponse")
-    public Boolean extendBorrow(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Integer arg0);
 
     /**
      * 

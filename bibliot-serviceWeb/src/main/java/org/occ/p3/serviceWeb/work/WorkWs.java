@@ -9,24 +9,29 @@ import javax.annotation.PostConstruct;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
+import javax.jws.soap.SOAPBinding.Style;
+import javax.jws.soap.SOAPBinding.Use;
 import java.util.List;
 
 @Service
 @WebService(serviceName = "workWeb",name = "workWs")
-@SOAPBinding(style = SOAPBinding.Style.DOCUMENT, use = SOAPBinding.Use.LITERAL)
+@SOAPBinding(style = Style.DOCUMENT, use = Use.LITERAL)
 public class WorkWs {
 
     @Autowired
     WorkService workService;
 
+    public WorkWs() {
+    }
+
     @WebMethod
     public List<Work> getWorksByAuthor(String author) {
-        return workService.getWorksByAuthor(author);
+        return this.workService.getWorksByAuthor(author);
 
     }
     @WebMethod
     public List<Work> getWorksByPublicationDate (Integer publicationDate){
-        return workService.getWorksByPublicationDate(publicationDate);
+        return this.workService.getWorksByPublicationDate(publicationDate);
 
     }
 

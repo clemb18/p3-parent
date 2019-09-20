@@ -84,7 +84,7 @@
 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
-			<value>/</value>
+			<value>/WEB-INF/jsp</value>
 		</property>
 		<property name="suffix">
 			<value>.jsp</value>
@@ -93,6 +93,6 @@
 
 	</bean>
 
-	<mvc:resources mapping="/resources/**" location="/" cache-period="31556926"/>
+	<mvc:resources mapping="/resources/**" location="/resources/" cache-period="31556926"/>
 
 </beans>

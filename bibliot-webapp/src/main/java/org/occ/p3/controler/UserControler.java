@@ -1,48 +1,46 @@
 package org.occ.p3.controler;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
-import org.occ.p3.client.endpoint.UserWeb;
-import org.occ.p3.client.endpoint.UserWs;
-import org.occ.p3.client.endpoint.*;
+import org.occ.p3.client.Member;
+import org.occ.p3.client.UserWeb;
+import org.occ.p3.client.UserWs;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+//import org.occ.p3.client.endpoint.User;
+
 @Controller
 public class UserControler {
-
+    @Autowired
+    private HttpServletRequest request;
     UserWeb userWsService = new UserWeb();
-    UserWs userWs = userWsService.getUserWsPort();
-    //@Autowired
-    //private HttpServletRequest request;
-    @RequestMapping(value = "/connexion", method = RequestMethod.GET)
+    UserWs userWs;
+
+    public UserControler() {
+        this.userWs = this.userWsService.getUserWsPort();
+    }
+
+    @RequestMapping(value = {"/connexion"}, method = {RequestMethod.GET})
     public String login() {
-        return "jsp/connexion";
+        return "connexion";
     }
 
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = {"/"}, method = {RequestMethod.GET})
     public ModelAndView home() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("connexion");
         return modelAndView;
     }
 
-
-	/*@Autowired
-	UserService userService;*/
-
-
-
-    //UserWs userWs = userWsService.getUserWsPort();
-
-    @RequestMapping(value = "/authentificate", method = RequestMethod.POST)
+    @RequestMapping(value = {"/authentificate"}, method = {RequestMethod.POST})
     public ModelAndView authentification(HttpServletRequest request) {
-        Member result;
+        this.userWs.init();
         System.out.println("toto nous sommes bien arrivés");
 
         ModelAndView modelAndView = null;
@@ -52,18 +50,16 @@ public class UserControler {
 
         if (username != null & password != null) {
 
-
-            result = userWs.isValidUser(username, password);
-
+            Member result = this.userWs.isValidUser(username, password);
 
             if (result != null) {
                 System.out.println("l'utilisateur existe");
 
 
                 // Je dis que le mec est connecté
-                Member memberConnected = userWs.isValidUser(username, password);
+                Member memberConnected = this.userWs.isValidUser(username, password);
                 //userService.findMemberByUsernameAndPassword(username,password);
-                System.out.println("le membre connecté a enregistré est " +memberConnected);
+                System.out.println("le membre connecté a enregistré est " + memberConnected);
                 request.getSession().setAttribute("connected", true);
                 request.getSession().setAttribute("memberConnected", memberConnected);
                 modelAndView = new ModelAndView("profil");
@@ -86,7 +82,7 @@ public class UserControler {
     }
 
 
-    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    @RequestMapping(value = {"/logout"}, method = {RequestMethod.GET})
     public ModelAndView logout(HttpSession session) {
 
         ModelAndView modelAndView = null;

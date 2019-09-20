@@ -4,6 +4,8 @@ import javax.annotation.PostConstruct;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
+import javax.jws.soap.SOAPBinding.Style;
+import javax.jws.soap.SOAPBinding.Use;
 
 import org.occ.p3.model.Book;
 import org.occ.p3.service.BookService;
@@ -13,21 +15,24 @@ import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 @Service
 @WebService(serviceName = "bookWeb", name = "bookWs")
-@SOAPBinding(style = SOAPBinding.Style.DOCUMENT, use = SOAPBinding.Use.LITERAL)
+@SOAPBinding(style = Style.DOCUMENT, use = Use.LITERAL)
 public class BookWs {
 
     @Autowired
     BookService bookService;
 
+    public BookWs() {
+    }
+
     @WebMethod
     public Book getBookById(Integer bookId) {
-        return bookService.getBookById(bookId);
+        return this.bookService.getBookById(bookId);
 
     }
 
     @WebMethod
     public Book saveNewBook(Book book) {
-        return bookService.saveNewBook(book);
+        return this.bookService.saveNewBook(book);
 
     }
 

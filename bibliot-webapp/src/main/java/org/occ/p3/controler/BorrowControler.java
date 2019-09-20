@@ -1,15 +1,6 @@
 package org.occ.p3.controler;
 
-import org.occ.p3.client.endpoint.Borrow;
-import org.occ.p3.client.endpoint.BorrowWeb;
-import org.occ.p3.client.endpoint.BorrowWs;
-import org.occ.p3.client.endpoint.User;
-import org.occ.p3.client.endpoint.UserWeb;
-import org.occ.p3.client.endpoint.UserWs;
-import org.occ.p3.client.endpoint.Member;
-import org.occ.p3.service.BorrowService;
-import org.occ.p3.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.occ.p3.client.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,28 +10,31 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
+//import org.occ.p3.client.endpoint.User;
+//import org.occ.p3.service.UserService;
+
 @Controller
 public class BorrowControler {
 
-    @Autowired
-    BorrowService borrowService;
-    @Autowired
-    UserService userService;
-
     BorrowWeb borrowWsService = new BorrowWeb();
-    BorrowWs borrowWs = borrowWsService.getBorrowWsPort();
+    BorrowWs borrowWs;
+    UserWeb userWsService;
+    UserWs userWs;
 
-    UserWeb userWsService = new UserWeb();
-    UserWs userWs = userWsService.getUserWsPort();
+    public BorrowControler() {
+        this.borrowWs = this.borrowWsService.getBorrowWsPort();
+        this.userWsService = new UserWeb();
+        this.userWs = this.userWsService.getUserWsPort();
+    }
 
 
 
-
-    @RequestMapping(value="/borrow/{workId}", method=RequestMethod.GET)
+    @RequestMapping(value={"/borrow/{workId}"}, method={RequestMethod.GET})
     public ModelAndView borrowBook(HttpServletRequest request, @PathVariable("workId") Integer workId) {
-
+        this.borrowWs.init();
+        this.userWs.init();
         ModelAndView modelAndView = null;
-        Member memberCo = (Member) request.getSession().getAttribute("memberConnected");
+        Member memberCo = (Member)request.getSession().getAttribute("memberConnected");
 
         if (memberCo == null) {
 
@@ -53,12 +47,12 @@ public class BorrowControler {
 
             System.out.println(membreId);
 
-            Boolean emprunt = borrowWs.borrowBook(workId, membreId);
+            Boolean emprunt = this.borrowWs.borrowBook(workId, membreId);
 
             if (emprunt == true) {
 
                 // lien vers jsp de recherche avec message de succès findBorrowListByMember(memberCo);
-                List<Borrow> memberBorrowList = userWs.findBorrowListByMember(memberCo);
+                List<Borrow> memberBorrowList = this.userWs.findBorrowListByMember(memberCo);
                 //userService.findBorrowListByMember(memberCo);
                 // Affichage de la borrowList dans un mav
                 modelAndView = new ModelAndView("borrowListPage");
@@ -76,12 +70,12 @@ public class BorrowControler {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/borrowList", method = RequestMethod.GET)
+    @RequestMapping(value = {"/borrowList"}, method = {RequestMethod.GET})
     public ModelAndView borrowList(HttpServletRequest request) {
 
         ModelAndView modelAndView = null;
         // On recupère MemberConnected de la session
-        Member memberCo = (Member) request.getSession().getAttribute("memberConnected");
+        Member memberCo = (Member)request.getSession().getAttribute("memberConnected");
 
         if (memberCo == null) {
             // Si pas de membre co on renvoie vers la page de connexion
@@ -90,7 +84,7 @@ public class BorrowControler {
         } else {
 
             // On recupère sa borrowList
-            List<org.occ.p3.client.endpoint.Borrow> memberBorrowList = userWs.findBorrowListByMember(memberCo);
+            List<Borrow> memberBorrowList = this.userWs.findBorrowListByMember(memberCo);
             //userService.findBorrowListByMember(memberCo);
             // Affichage de la borrowList dans un mav
             modelAndView = new ModelAndView("borrowListPage");
@@ -101,20 +95,20 @@ public class BorrowControler {
 
 
 
-    @RequestMapping(value="/extendBorrow/{borrowId}", method=RequestMethod.GET)
+    @RequestMapping(value={"/extendBorrow/{borrowId}"}, method={RequestMethod.GET})
     public ModelAndView extendBorrow(HttpServletRequest request, @PathVariable("borrowId") Integer borrowId) {
 
         ModelAndView modelAndView = null;
         // On recupère MemberConnected de la session
-        Member memberCo = (Member) request.getSession().getAttribute("memberConnected");
-        Boolean extend = borrowWs.extendBorrow(borrowId);
+        Member memberCo = (Member)request.getSession().getAttribute("memberConnected");
+        Boolean extend = this.borrowWs.extendBorrow(borrowId);
         //borrowService.extendBorrow(borrowId);
 
         if (extend == true) {
 
             // lien vers jsp de recherche avec message de succès
             // On recupère sa borrowList
-            List<org.occ.p3.client.endpoint.Borrow> memberBorrowList = userWs.findBorrowListByMember(memberCo);
+            List<Borrow> memberBorrowList = this.userWs.findBorrowListByMember(memberCo);
             //userService.findBorrowListByMember(memberCo);
             // Affichage de la borrowList dans un mav
             modelAndView = new ModelAndView("borrowListPage");
@@ -129,22 +123,22 @@ public class BorrowControler {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/borrowToEnd/{borrowId}", method = RequestMethod.GET)
+    @RequestMapping(value = {"/borrowToEnd/{borrowId}"}, method = {RequestMethod.GET})
     public ModelAndView borrowToEnd(HttpServletRequest request, @PathVariable("borrowId") Integer borrowId) {
 
         ModelAndView modelAndView = null;
 
         // On recupère MemberConnected de la session
-        Member memberCo = (Member) request.getSession().getAttribute("memberConnected");
+        Member memberCo = (Member)request.getSession().getAttribute("memberConnected");
         Integer membreId = memberCo.getId();
-        Boolean endBorrow = borrowWs.terminateBorrow(borrowId, membreId);
+        Boolean endBorrow = this.borrowWs.terminateBorrow(borrowId, membreId);
         //borrowService.terminateBorrow(borrowId, membreId);
 
         if (endBorrow == true) {
 
             // lien vers jsp de list avec message de succès
             // On recupère sa borrowList
-            List<org.occ.p3.client.endpoint.Borrow> memberBorrowList = userWs.findBorrowListByMember(memberCo);
+            List<Borrow> memberBorrowList = this.userWs.findBorrowListByMember(memberCo);
             //userService.findBorrowListByMember(memberCo);
             // Affichage de la borrowList dans un mav
             modelAndView = new ModelAndView("borrowListPage");

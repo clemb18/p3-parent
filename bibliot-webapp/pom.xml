@@ -78,9 +78,25 @@
             <groupId>org.occ.p3</groupId>
             <artifactId>bibliot-service</artifactId>
         </dependency>
+		<dependency>
+			<groupId>org.occ.p3</groupId>
+			<artifactId>bibliot-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.occ.p3</groupId>
+			<artifactId>bibliot-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.occ.p3</groupId>
+			<artifactId>bibliot-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.occ.p3</groupId>
+			<artifactId>bibliot-client</artifactId>
+		</dependency>
 
 
-    </dependencies>
+	</dependencies>
 
 	<build>
 		<finalName>bibliot-webapp</finalName>
