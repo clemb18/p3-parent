@@ -15,19 +15,19 @@
 		<dependency>
 			<groupId>org.occ.p3</groupId>
 			<artifactId>bibliot-model</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+
 		</dependency>
 
 		<dependency>
 			<groupId>org.occ.p3</groupId>
 			<artifactId>bibliot-client</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+
 		</dependency>
 
 		<dependency>
 			<groupId>org.occ.p3</groupId>
 			<artifactId>bibliot-service</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+
 		</dependency>
 
 		<dependency>

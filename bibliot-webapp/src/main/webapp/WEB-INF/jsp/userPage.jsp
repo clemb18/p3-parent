@@ -1,4 +1,4 @@
-<%--@elvariable id="memberConnected" type="org.occ.p3.model.Member"--%>
+<%--@elvariable id="memberConnected" type="org.occ.bibliot.model.beans.Member"--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

@@ -9,20 +9,20 @@
   
   <artifactId>bibliot-service</artifactId>
   <name>bibliot-service</name>
-    <version>0.0.1-SNAPSHOT</version>
+
   
 	<dependencies>
 
 	<dependency>
 		<groupId>org.occ.p3</groupId>
 		 <artifactId>bibliot-consumer</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+
 	</dependency>
 
 	<dependency>
 		<groupId>org.occ.p3</groupId>
 		 <artifactId>bibliot-model</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+
 	</dependency>
 
 

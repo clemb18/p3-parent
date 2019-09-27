@@ -28,7 +28,7 @@
 
 	<context:annotation-config />
 
-	<!--<bean name="/work.htm" class="org.occ.p3.controler.WorkControler" />-->
+	<!--<bean name="/work.htm" class="WorkControler" />-->
 
 
 

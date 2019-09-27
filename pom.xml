@@ -254,6 +254,7 @@
 		<module>bibliot-model</module>
         <module>bibliot-client</module>
         <module>bibliot-serviceWeb</module>
+        <module>batch</module>
     </modules>
 
 </project>

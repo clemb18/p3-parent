@@ -2,18 +2,18 @@
            version="2.0">
 
 
-    <endpoint name="workWeb" implementation="org.occ.p3.serviceWeb.work.WorkWs"
+    <endpoint name="workWeb" implementation="org.occ.bibliot.serviceWeb.work.WorkWs"
               url-pattern="/ws/workresult/workWs" />
 
-    <endpoint name="bookWeb" implementation="org.occ.p3.serviceWeb.book.BookWs"
+    <endpoint name="bookWeb" implementation="org.occ.bibliot.serviceWeb.book.BookWs"
               url-pattern="/ws/bookresult/bookWs" />
 
-    <endpoint name="userWeb" implementation="org.occ.p3.serviceWeb.user.UserWs"
+    <endpoint name="userWeb" implementation="org.occ.bibliot.serviceWeb.user.UserWs"
               url-pattern="/ws/userresult/userWs" />
 
-    <endpoint name="borrowWeb" implementation="org.occ.p3.serviceWeb.borrow.BorrowWs"
+    <endpoint name="borrowWeb" implementation="org.occ.bibliot.serviceWeb.borrow.BorrowWs"
               url-pattern="/ws/borrowresult/borrowWs" />
 
-    <endpoint name="batchWeb" implementation="org.occ.p3.serviceWeb.batch.BatchWs"
+    <endpoint name="batchWeb" implementation="org.occ.bibliot.serviceWeb.batch.BatchWs"
               url-pattern="/ws/batchresult/batchWs" />
 </endpoints>
