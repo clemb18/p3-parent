@@ -1,38 +1,30 @@
 package org.occ.bibliot.model.beans;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
-
 
 @Entity
-@Table(name = "borrow")
+@Table(name = "T_BORROW")
 public class Borrow implements Serializable {
 
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(generator = "gen_borrow", strategy = GenerationType.IDENTITY)
-	@SequenceGenerator(name = "gen_borrow", sequenceName = "seq_borrow", allocationSize = 1)
+
+	@Column(name = "B_ID")
 	private Integer id;
-
+	@Column(name = "B_STATUS")
 	private String status;
-
+	@Column(name = "B_START_BORROW_DATE")
 	private Date startBorrowDate;
-
+	@Column(name = "B_END_BORROW_DATE")
 	private Date endBorrowDate;
-
+	@Column(name = "B_EXTENDED")
 	private boolean extended;
-
+	@Column(name = "B_WORK_TITLE")
 	public String workTitle;
 
 	public String getWorkName() {

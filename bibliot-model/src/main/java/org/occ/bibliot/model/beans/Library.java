@@ -6,15 +6,16 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Table(name="library")
+@Table(name="T_LIBRARY")
 public class Library implements Serializable {
 
     @Id
-    @GeneratedValue(generator="gen_library", strategy = GenerationType.IDENTITY)
-    @SequenceGenerator(name="gen_library", sequenceName="seq_library", allocationSize=1)
 
+    @Column(name = "L_ID")
     public Integer id;
+    @Column(name = "L_NAME")
     private String name;
+    @Column(name = "L_CITY")
     private String city;
 
     @OneToMany

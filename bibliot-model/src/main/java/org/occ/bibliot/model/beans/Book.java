@@ -4,14 +4,14 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name="book")
+@Table(name="T_BOOK")
 public class Book implements Serializable {
 
 	@Id
-	@GeneratedValue(generator="gen_book", strategy = GenerationType.IDENTITY)
-	@SequenceGenerator(name="gen_book", sequenceName="seq_book", allocationSize=1)
-	private Integer id;
 
+	@Column(name = "BOOK_ID")
+	private Integer id;
+	@Column(name = "BOOK_AVAILABLE")
 	private boolean available;
 
 
