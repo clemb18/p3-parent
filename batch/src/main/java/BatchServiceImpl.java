@@ -1,27 +1,23 @@
+import org.occ.bibliot.consumer.repository.BorrowRepository;
+import org.occ.bibliot.model.ENUM.BorrowStatusEnum;
+import org.occ.bibliot.model.beans.Borrow;
+import org.occ.bibliot.model.beans.Member;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import javax.mail.*;
+import javax.mail.internet.MimeMessage;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.Properties;
 
-import org.occ.bibliot.consumer.repository.BorrowRepository;
-import org.occ.bibliot.model.beans.Borrow;
-import org.occ.bibliot.model.ENUM.BorrowStatusEnum;
-import org.occ.bibliot.model.beans.Member;
-import org.occ.bibliot.service.BatchService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.MimeMessage;
-
 
 @Service
 public class BatchServiceImpl implements BatchService {
-
+    private static Logger logger = LoggerFactory.getLogger(BatchServiceImpl.class);
     @Autowired
     BorrowRepository borrowRepository;
 
@@ -41,13 +37,18 @@ public class BatchServiceImpl implements BatchService {
         //ouverture de la session avec mon mail
         Session session = Session.getInstance(props, new javax.mail.Authenticator() {
             protected javax.mail.PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("test.javaketut38@gmail.com", "4HH7Q1pcrg");
+                return new PasswordAuthentication("clem.biotteau@gmail.com", "SergeLeChat2015");
             }
 
         });
         //Recuperation de l'iterable
         Iterable<Borrow> borrowListGot = borrowRepository.findAll();
         Iterator<Borrow> listBorrowIterator = borrowListGot.iterator();
+
+       /*  StreamSupport.stream(listBorrowIterator., false)
+                .filter(String:: toUpperCase)
+                .forEach(System.out::println); */
+
 
         while(listBorrowIterator.hasNext()) {
 
@@ -72,9 +73,9 @@ public class BatchServiceImpl implements BatchService {
                     msg.setText("Ceci est un message de relance automatique blabla a completer (WorkName etc..)");
                     msg.setHeader("XPriority", "1");
                     Transport.send(msg);
-                    System.out.println("Mail has been sent successfully");
+                    logger.info("Mail has been sent successfully");
                 } catch (MessagingException mex) {
-                    System.out.println("Unable to send an email" + mex);
+                    logger.error("Unable to send an email", mex);
                 }
 
 

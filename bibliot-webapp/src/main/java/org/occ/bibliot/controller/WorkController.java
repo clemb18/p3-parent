@@ -1,8 +1,8 @@
-package org.occ.bibliot.controler;
+package org.occ.bibliot.controller;
 
-import org.occ.p3.client.Work;
-import org.occ.p3.client.WorkWeb;
-import org.occ.p3.client.WorkWs;
+import org.occ.bibliot.client.endpoint.Work;
+import org.occ.bibliot.client.endpoint.WorkWeb;
+import org.occ.bibliot.client.endpoint.WorkWs;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @Controller
-public class WorkControler {
+public class WorkController {
 
 
 
@@ -19,7 +19,7 @@ public class WorkControler {
     WorkWeb workWsService = new WorkWeb();
     WorkWs workWs;
 
-    public WorkControler() {
+    public WorkController() {
         this.workWs = this.workWsService.getWorkWsPort();
     }
 

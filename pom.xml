@@ -7,10 +7,36 @@
 	<packaging>pom</packaging>
 
 	<properties>
+		<jaxb-core.version>2.3.0.1</jaxb-core.version>
+		<jaxws-spring.version>1.9</jaxws-spring.version>
+		<jaxws-rt.version>2.3.2</jaxws-rt.version>
 		<junit.version>4.11</junit.version>
+		<spring-ws-core.version>3.0.7.RELEASE</spring-ws-core.version>
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<jackson.version>2.9.7</jackson.version>
 		<hibernate.version>5.2.3.Final</hibernate.version>
+		<log.version>2.7</log.version>
+		<jaxb-api.version>2.3.0</jaxb-api.version>
+		<jackson-databind.version>2.9.8</jackson-databind.version>
+		<jaxb-api.version>2.3.0</jaxb-api.version>
+		<spring-data-jpa.version>2.1.2.RELEASE</spring-data-jpa.version>
+		<persistence-api.version>1.0.2</persistence-api.version>
+		<hibernate-commons-annotations.version>5.0.1.Final</hibernate-commons-annotations.version>
+		<taglibs-standard-spec.version>1.2.5</taglibs-standard-spec.version>
+		<postgresql.version>42.2.5</postgresql.version>
+		<validation-api.version>2.0.1.Final</validation-api.version>
+		<javassist.version>3.12.1.GA</javassist.version>
+		<taglibs-standard-impl.version>1.2.5</taglibs-standard-impl.version>
+		<javax.servlet-api.version>4.0.1</javax.servlet-api.version>
+		<servlet-api.version>2.5</servlet-api.version>
+		<jstl.version>1.2</jstl.version>
+		<javax.annotation-api.version>1.3.2</javax.annotation-api.version>
+		<streambuffer.version>1.5.6</streambuffer.version>
+		<spring-boot-maven-plugin.version>2.1.1.RELEASE</spring-boot-maven-plugin.version>
+		<spring-boot-starter-thymeleaf.version>2.1.1.RELEASE</spring-boot-starter-thymeleaf.version>
+		<javax.mail-api.version>1.6.2</javax.mail-api.version>
+		<jaxws-api.version>2.3.1</jaxws-api.version>
+		<javax.persistence-api.version>2.2</javax.persistence-api.version>
 	</properties>
 
 	<build>
@@ -33,37 +59,32 @@
 			<dependency>
 				<groupId>org.occ.p3</groupId>
 				<artifactId>bibliot-service</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<groupId>org.occ.p3</groupId>
 				<artifactId>bibliot-client</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<groupId>javax.xml.bind</groupId>
 				<artifactId>jaxb-api</artifactId>
-				<version>2.3.0</version>
+				<version>${jaxb-api.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>org.occ.p3</groupId>
 				<artifactId>bibliot-consumer</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<groupId>org.occ.p3</groupId>
 				<artifactId>serviceWeb</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<groupId>org.occ.p3</groupId>
 				<artifactId>bibliot-model</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
@@ -85,7 +106,7 @@
 			<dependency>
 				<groupId>com.fasterxml.jackson.core</groupId>
 				<artifactId>jackson-databind</artifactId>
-				<version>2.9.8</version>
+				<version>${jackson-databind.version}</version>
 			</dependency>
 
 			<dependency>
@@ -94,12 +115,28 @@
 				<version>${spring.version}</version>
 			</dependency>
 
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-api</artifactId>
+				<version>${log.version}</version>
+			</dependency>
 
-			<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-core</artifactId>
+				<version>${log.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-slf4j-impl</artifactId>
+				<version>${log.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-jpa</artifactId>
-				<version>2.1.2.RELEASE</version>
+				<version>${spring-data-jpa.version}</version>
 			</dependency>
 
 			<dependency>
@@ -111,7 +148,7 @@
 			<dependency>
 				<groupId>javax.persistence</groupId>
 				<artifactId>persistence-api</artifactId>
-				<version>1.0.2</version>
+				<version>${persistence-api.version}</version>
 			</dependency>
 
 			<dependency>
@@ -136,7 +173,7 @@
 			<dependency>
 				<groupId>org.hibernate.common</groupId>
 				<artifactId>hibernate-commons-annotations</artifactId>
-				<version>5.0.1.Final</version>
+				<version>${hibernate-commons-annotations.version}</version>
 			</dependency>
 
 			<dependency>
@@ -147,14 +184,15 @@
 			<dependency>
 				<groupId>javassist</groupId>
 				<artifactId>javassist</artifactId>
-				<version>3.12.1.GA</version>
+				<version>${javassist.version}</version>
 			</dependency>
-			<!-- bean validation - annotation -->
+
 			<dependency>
 				<groupId>javax.validation</groupId>
 				<artifactId>validation-api</artifactId>
-				<version>2.0.1.Final</version>
+				<version>${validation-api.version}</version>
 			</dependency>
+
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-web</artifactId>
@@ -165,83 +203,89 @@
 			<dependency>
 				<groupId>org.postgresql</groupId>
 				<artifactId>postgresql</artifactId>
-				<version>42.2.5</version>
+				<version>${postgresql.version}</version>
 			</dependency>
 
 			<!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-spec -->
 			<dependency>
 				<groupId>org.apache.taglibs</groupId>
 				<artifactId>taglibs-standard-spec</artifactId>
-				<version>1.2.5</version>
+				<version>${taglibs-standard-spec.version}</version>
 			</dependency>
 
 			<!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-impl -->
 			<dependency>
 				<groupId>org.apache.taglibs</groupId>
 				<artifactId>taglibs-standard-impl</artifactId>
-				<version>1.2.5</version>
+				<version>${taglibs-standard-impl.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>javax.servlet</groupId>
 				<artifactId>javax.servlet-api</artifactId>
-				<version>4.0.1</version>
+				<version>${javax.servlet-api.version}</version>
 			</dependency>
+
 
 			<dependency>
 				<groupId>javax.servlet</groupId>
 				<artifactId>servlet-api</artifactId>
-				<version>2.5</version>
+				<version>${servlet-api.version}</version>
 			</dependency>
+
 
 			<dependency>
 				<groupId>jstl</groupId>
 				<artifactId>jstl</artifactId>
-				<version>1.2</version>
+				<version>${jstl.version}</version>
 			</dependency>
+
+
 
 			<dependency>
 				<groupId>javax.annotation</groupId>
 				<artifactId>javax.annotation-api</artifactId>
-				<version>1.3.2</version>
+				<version>${javax.annotation-api.version}</version>
 			</dependency>
+
+
 
 			<dependency>
 				<groupId>com.sun.xml.stream.buffer</groupId>
 				<artifactId>streambuffer</artifactId>
-				<version>1.5.6</version>
+				<version>${streambuffer.version}</version>
 			</dependency>
+
 
 			<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-maven-plugin -->
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>2.1.1.RELEASE</version>
+				<version>${spring-boot-maven-plugin.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-thymeleaf</artifactId>
-				<version>2.1.1.RELEASE</version>
+				<version>${spring-boot-starter-thymeleaf.version}</version>
 			</dependency>
 
-			<!-- https://mvnrepository.com/artifact/javax.mail/javax.mail-api -->
 			<dependency>
 				<groupId>javax.mail</groupId>
 				<artifactId>javax.mail-api</artifactId>
-				<version>1.6.2</version>
+				<version>${javax.mail-api.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>javax.xml.ws</groupId>
 				<artifactId>jaxws-api</artifactId>
-				<version>2.3.1</version>
+				<version>${jaxws-api.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>javax.persistence</groupId>
 				<artifactId>javax.persistence-api</artifactId>
-				<version>2.2</version>
+				<version>${javax.persistence-api.version}</version>
 			</dependency>
 
 		</dependencies>
@@ -250,7 +294,7 @@
 	<modules>
 		<module>bibliot-webapp</module>
 		<module>bibliot-service</module>
-		<module>bibliot-consumer</module>
+		<module>DAO-bibliot</module>
 		<module>bibliot-model</module>
         <module>bibliot-client</module>
         <module>bibliot-serviceWeb</module>

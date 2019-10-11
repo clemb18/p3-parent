@@ -1,13 +1,15 @@
-package org.occ.bibliot.controler;
+package org.occ.bibliot.controller;
 
-import org.occ.p3.client.Member;
-import org.occ.p3.client.UserWeb;
-import org.occ.p3.client.UserWs;
+import org.occ.bibliot.client.endpoint.Member;
+import org.occ.bibliot.client.endpoint.UserWeb;
+import org.occ.bibliot.client.endpoint.UserWs;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -15,13 +17,14 @@ import javax.servlet.http.HttpSession;
 //import org.occ.p3.client.endpoint.User;
 
 @Controller
-public class UserControler {
+public class UserController {
+    private static Logger logger = LoggerFactory.getLogger(UserController.class);
     @Autowired
     private HttpServletRequest request;
     UserWeb userWsService = new UserWeb();
     UserWs userWs;
 
-    public UserControler() {
+    public UserController() {
         this.userWs = this.userWsService.getUserWsPort();
     }
 
@@ -41,7 +44,7 @@ public class UserControler {
     @RequestMapping(value = {"/authentificate"}, method = {RequestMethod.POST})
     public ModelAndView authentification(HttpServletRequest request) {
         this.userWs.init();
-        System.out.println("toto nous sommes bien arrivés");
+        logger.info("toto nous sommes bien arrivés");
 
         ModelAndView modelAndView = null;
 
@@ -53,18 +56,18 @@ public class UserControler {
             Member result = this.userWs.isValidUser(username, password);
 
             if (result != null) {
-                System.out.println("l'utilisateur existe");
+                logger.info("l'utilisateur existe");
 
 
                 // Je dis que le mec est connecté
                 Member memberConnected = this.userWs.isValidUser(username, password);
                 //userService.findMemberByUsernameAndPassword(username,password);
-                System.out.println("le membre connecté a enregistré est " + memberConnected);
+                logger.info("le membre connecté a enregistré est " + memberConnected);
                 request.getSession().setAttribute("connected", true);
                 request.getSession().setAttribute("memberConnected", memberConnected);
                 modelAndView = new ModelAndView("profil");
                 modelAndView.addObject("memberConnected", memberConnected);
-                System.out.println("le membre est connecté");
+                logger.info("le membre est connecté");
                 //System.out.println(memberConnected.getName());
 
 

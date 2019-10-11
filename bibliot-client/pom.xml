@@ -70,7 +70,7 @@
                             <sourceDestDir>/${project.basedir}/src/main/java</sourceDestDir>
                             <wsdlUrls>
 
-                                                      <wsdlUrl>http://localhost:8080/serviceWeb/ws/bookresult/bookWs?wsdl</wsdlUrl>
+                                                                    <wsdlUrl>http://localhost:8080/serviceWeb/ws/bookresult/bookWs?wsdl</wsdlUrl>
 
                                                                    <wsdlUrl>http://localhost:8080/serviceWeb/ws/userresult/userWs?wsdl</wsdlUrl>
                                                                     <wsdlUrl>http://localhost:8080/serviceWeb/ws/workresult/workWs?wsdl</wsdlUrl>

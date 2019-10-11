@@ -6,22 +6,26 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name="work")
+@Table(name="T_WORK")
 public class Work implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(generator="gen_work", strategy = GenerationType.IDENTITY)
-	@SequenceGenerator(name="gen_work", sequenceName="seq_work", allocationSize=1)
+
+	@Column(name = "W_ID")
 	private Integer id;
 
+	@Column(name = "W_TITLE")
 	private String title;
 
+	@Column(name = "W_AUTHOR")
 	private String author;
 
+	@Column(name = "W_PUBLICATION_DATE")
 	private Date publicationDate;
 
+	@Column(name = "W_DESCRIPTION")
 	private String bookDescription;
 
 	@OneToMany(fetch=FetchType.EAGER)

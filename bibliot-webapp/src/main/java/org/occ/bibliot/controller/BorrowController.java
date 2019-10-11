@@ -1,6 +1,8 @@
-package org.occ.bibliot.controler;
+package org.occ.bibliot.controller;
 
-import org.occ.p3.client.*;
+import org.occ.bibliot.client.endpoint.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,20 +10,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.lang.reflect.Member;
 import java.util.List;
 
 //import org.occ.p3.client.endpoint.User;
 //import org.occ.p3.service.UserService;
 
 @Controller
-public class BorrowControler {
-
+public class BorrowController {
+    private static Logger logger = LoggerFactory.getLogger(BorrowController.class);
     BorrowWeb borrowWsService = new BorrowWeb();
     BorrowWs borrowWs;
     UserWeb userWsService;
     UserWs userWs;
 
-    public BorrowControler() {
+    public BorrowController() {
         this.borrowWs = this.borrowWsService.getBorrowWsPort();
         this.userWsService = new UserWeb();
         this.userWs = this.userWsService.getUserWsPort();
@@ -34,7 +37,7 @@ public class BorrowControler {
         this.borrowWs.init();
         this.userWs.init();
         ModelAndView modelAndView = null;
-        Member memberCo = (Member)request.getSession().getAttribute("memberConnected");
+        org.occ.bibliot.client.endpoint.Member memberCo = (org.occ.bibliot.client.endpoint.Member) request.getSession().getAttribute("memberConnected");
 
         if (memberCo == null) {
 
@@ -45,7 +48,7 @@ public class BorrowControler {
 
             Integer membreId = memberCo.getId();
 
-            System.out.println(membreId);
+            logger.info("id du membre: {}", membreId);
 
             Boolean emprunt = this.borrowWs.borrowBook(workId, membreId);
 
@@ -84,7 +87,7 @@ public class BorrowControler {
         } else {
 
             // On recupère sa borrowList
-            List<Borrow> memberBorrowList = this.userWs.findBorrowListByMember(memberCo);
+            List<Borrow> memberBorrowList = this.userWs.findBorrowListByMember((org.occ.bibliot.client.endpoint.Member) memberCo);
             //userService.findBorrowListByMember(memberCo);
             // Affichage de la borrowList dans un mav
             modelAndView = new ModelAndView("borrowListPage");
@@ -108,7 +111,7 @@ public class BorrowControler {
 
             // lien vers jsp de recherche avec message de succès
             // On recupère sa borrowList
-            List<Borrow> memberBorrowList = this.userWs.findBorrowListByMember(memberCo);
+            List<Borrow> memberBorrowList = this.userWs.findBorrowListByMember((org.occ.bibliot.client.endpoint.Member) memberCo);
             //userService.findBorrowListByMember(memberCo);
             // Affichage de la borrowList dans un mav
             modelAndView = new ModelAndView("borrowListPage");
@@ -129,7 +132,7 @@ public class BorrowControler {
         ModelAndView modelAndView = null;
 
         // On recupère MemberConnected de la session
-        Member memberCo = (Member)request.getSession().getAttribute("memberConnected");
+        org.occ.bibliot.client.endpoint.Member memberCo = (org.occ.bibliot.client.endpoint.Member) request.getSession().getAttribute("memberConnected");
         Integer membreId = memberCo.getId();
         Boolean endBorrow = this.borrowWs.terminateBorrow(borrowId, membreId);
         //borrowService.terminateBorrow(borrowId, membreId);

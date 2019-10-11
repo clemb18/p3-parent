@@ -1,14 +1,7 @@
 package org.occ.bibliot.model.beans;
 
+import javax.persistence.*;
 import java.io.Serializable;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
 
 @Entity
 @Table(name="book")
@@ -38,6 +31,11 @@ public class Book implements Serializable {
 		this.available = available;
 	}
 
-
-
+	@Override
+	public String toString() {
+		return "Book{" +
+				"id=" + id +
+				", available=" + available +
+				'}';
+	}
 }
