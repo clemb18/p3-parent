@@ -3,6 +3,8 @@ package org.occ.bibliot.controller;
 import org.occ.bibliot.client.endpoint.Work;
 import org.occ.bibliot.client.endpoint.WorkWeb;
 import org.occ.bibliot.client.endpoint.WorkWs;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -11,6 +13,8 @@ import java.util.List;
 
 @Controller
 public class WorkController {
+
+    private static Logger logger = LoggerFactory.getLogger(WorkController.class);
 
 
 
@@ -49,12 +53,14 @@ public class WorkController {
     @RequestMapping(value = {"/doSearch"}, method = {RequestMethod.POST})
     public ModelAndView search(@RequestParam("searchText") String searchText) {
         this.workWs.init();
-        System.out.println("texte recu = " + searchText);
+
+        logger.info("texte recu = " + searchText);
         List<Work> workByAuthor = this.workWs.getWorksByAuthor(searchText);
 
         ModelAndView mav = new ModelAndView("SearchResults");
         mav.addObject("foundWorks", workByAuthor);
-        System.out.println("taille liste recue = " + workByAuthor.size());
+        logger.info("taille liste recue = " + workByAuthor.size());
+
         return mav;
     }
 

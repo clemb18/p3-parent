@@ -13,9 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Member;
 import java.util.List;
 
-//import org.occ.p3.client.endpoint.User;
-//import org.occ.p3.service.UserService;
-
 @Controller
 public class BorrowController {
     private static Logger logger = LoggerFactory.getLogger(BorrowController.class);

@@ -6,11 +6,5 @@ public interface BorrowService {
     public Boolean extendBorrow(Integer borrowId);
     public Boolean terminateBorrow(Integer borrowId, Integer membreId);
 
-//
-//	public Works getOriginWork();
-//
-//    public Works getBookList (Integer workId);
-//
-//    public Book findAvailableBook (Integer bookId);
 
 }

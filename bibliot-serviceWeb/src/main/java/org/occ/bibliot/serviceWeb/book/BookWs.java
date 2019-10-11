@@ -1,17 +1,17 @@
 package org.occ.bibliot.serviceWeb.book;
 
+import org.occ.bibliot.model.beans.Book;
+import org.occ.bibliot.service.BookService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.context.support.SpringBeanAutowiringSupport;
+
 import javax.annotation.PostConstruct;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 import javax.jws.soap.SOAPBinding.Style;
 import javax.jws.soap.SOAPBinding.Use;
-
-import org.occ.bibliot.model.beans.Book;
-import org.occ.bibliot.service.BookService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 @Service
 @WebService(serviceName = "bookWeb", name = "bookWs")

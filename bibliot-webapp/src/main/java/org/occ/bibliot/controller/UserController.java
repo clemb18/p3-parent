@@ -14,8 +14,6 @@ import org.slf4j.LoggerFactory;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-//import org.occ.p3.client.endpoint.User;
-
 @Controller
 public class UserController {
     private static Logger logger = LoggerFactory.getLogger(UserController.class);
