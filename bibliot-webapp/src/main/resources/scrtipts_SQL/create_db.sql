@@ -105,22 +105,37 @@ VALUES ('false'),
 -- creation table work_book
 create table T_WORK_BOOK
 (
-    BOOK_ID        SERIAL,
-    
+    WB_BOOK_ID INTEGER REFERENCES T_BOOK(BOOK_ID),
+    WB_WORK_ID INTEGER REFERENCES T_WORK(W_ID),
 
-    PRIMARY KEY (BOOK_ID) -- Définition de la clé primaire de la table
+    PRIMARY KEY (WB_BOOK_ID) -- Définition de la clé primaire de la table
+
+
 );
 
-INSERT INTO T_BOOK (BOOK_AVAILABLE)
-VALUES ('false'),
-       ('false'),
-       ('false'),
-       ('false'),
-       ('true'),
-       ('true'),
-       ('true'),
-       ('true'),
-       ('true'),
-       ('true');
+INSERT INTO T_WORK_BOOK (WB_BOOK_ID, WB_WORK_ID)
+VALUES ('1','1'),
+       ('2','1'),
+       ('3','2'),
+       ('4','3'),
+       ('5','3'),
+       ('6','4'),
+       ('7','4'),
+       ('8','4'),
+       ('9','5'),
+       ('10','6'),
+       ('11','7'),
+       ('12','7'),
+       ('13','7'),
+       ('14','8'),
+       ('15','8'),
+       ('16','9'),
+       ('17','9'),
+       ('18','10'),
+       ('19','10'),
+       ('20','10');
+
+
+
 
 
