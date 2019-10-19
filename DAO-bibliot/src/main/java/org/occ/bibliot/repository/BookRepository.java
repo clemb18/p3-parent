@@ -1,4 +1,4 @@
-package org.occ.bibliot.consumer.repository;
+package org.occ.bibliot.repository;
 
 
 import org.occ.bibliot.model.beans.Book;

@@ -4,10 +4,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import org.occ.bibliot.consumer.repository.BookRepository;
-import org.occ.bibliot.consumer.repository.BorrowRepository;
-import org.occ.bibliot.consumer.repository.MemberRepository;
-import org.occ.bibliot.consumer.repository.WorkRepository;
+import org.occ.bibliot.repository.BookRepository;
+import org.occ.bibliot.repository.BorrowRepository;
+import org.occ.bibliot.repository.UserRepository;
+import org.occ.bibliot.repository.WorkRepository;
 import org.occ.bibliot.model.beans.Book;
 import org.occ.bibliot.model.beans.Borrow;
 import org.occ.bibliot.model.ENUM.BorrowStatusEnum;
@@ -22,7 +22,7 @@ import org.springframework.stereotype.Service;
 public class BorrowServiceImpl implements BorrowService {
 
     @Autowired
-    MemberRepository memberRepository;
+    UserRepository memberRepository;
     @Autowired
     WorkRepository workRepository;
     @Autowired

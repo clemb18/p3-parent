@@ -1,6 +1,6 @@
 package org.occ.bibliot.service.impl;
 
-import org.occ.bibliot.consumer.repository.BookRepository;
+import org.occ.bibliot.repository.BookRepository;
 import org.occ.bibliot.model.beans.Book;
 import org.occ.bibliot.service.BookService;
 import org.slf4j.Logger;

@@ -3,6 +3,8 @@ package org.occ.bibliot.model.beans;
 import javax.persistence.*;
 import java.io.Serializable;
 
+// Classe representant un utilisateur bibliothécaire
+
 @Entity
 @Table(name="T_USER")
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -11,7 +13,6 @@ public class User  implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-
 	@Column(name = "U_ID")
 	private Integer id;
 
@@ -20,8 +21,10 @@ public class User  implements Serializable {
 
 	@Column(name = "U_PASSWORD")
 	private String password;
+
 	@Column(name = "U_NAME")
 	private String name;
+
 	@Column(name = "U_FIRST_NAME")
 	private String firstName;
 

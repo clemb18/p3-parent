@@ -1,4 +1,4 @@
-import org.occ.bibliot.consumer.repository.BorrowRepository;
+import org.occ.bibliot.repository.BorrowRepository;
 import org.occ.bibliot.model.ENUM.BorrowStatusEnum;
 import org.occ.bibliot.model.beans.Borrow;
 import org.occ.bibliot.model.beans.Member;
