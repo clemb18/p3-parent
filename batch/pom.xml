@@ -51,12 +51,7 @@
             <artifactId>log4j-slf4j-impl</artifactId>
             <version>${log.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.occ.p3</groupId>
-            <artifactId>bibliot-consumer</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
+
         <dependency>
             <groupId>org.occ.p3</groupId>
             <artifactId>bibliot-model</artifactId>

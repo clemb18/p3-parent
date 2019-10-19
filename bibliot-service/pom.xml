@@ -14,15 +14,22 @@
 
     <dependencies>
 
-        <dependency>
-            <groupId>org.occ.p3</groupId>
-            <artifactId>bibliot-consumer</artifactId>
-        </dependency>
-
-        <dependency>
+            <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
             <version>${log.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>${spring-data-jpa.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-commons</artifactId>
+            <version>${spring-data-jpa.version}</version>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>
@@ -56,12 +63,6 @@
         <dependency>
             <groupId>org.occ.p3</groupId>
             <artifactId>bibliot-model</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.occ.p3</groupId>
-            <artifactId>bibliot-consumer</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

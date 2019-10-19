@@ -74,11 +74,6 @@
 
 			<dependency>
 				<groupId>org.occ.p3</groupId>
-				<artifactId>bibliot-consumer</artifactId>
-			</dependency>
-
-			<dependency>
-				<groupId>org.occ.p3</groupId>
 				<artifactId>serviceWeb</artifactId>
 			</dependency>
 
