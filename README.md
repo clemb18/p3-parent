@@ -18,7 +18,12 @@ Ce projet nécessite :
 -------------------------------Creation de la base de données--------------------------------------
 
 
-Base de données Postgres SQL
+Base de données Postgres SQL:
+
+- Installer PostgreSQL 11.1
+- Executer le script create_db.sql pour lancer la création de la bdd
+- user: bibliot 
+- mdp: admin
 
 
 -------------------------------Build du projet-----------------------------------------------------
