@@ -36,4 +36,10 @@ public class BookServiceImpl implements BookService {
 
 		return bookRepository.save(book);
 	}
+
+	public Book deleteBook(Integer bookId) {
+		logger.info("suppression d'un livre: {}", bookId);
+
+		return bookRepository.delete(bookId);
+	}
 }

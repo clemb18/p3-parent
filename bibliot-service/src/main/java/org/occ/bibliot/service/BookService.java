@@ -9,4 +9,6 @@ public interface BookService {
 
 	public Book saveNewBook(Book book);
 
+	public Book deleteBook(Integer bookId);
+
 }

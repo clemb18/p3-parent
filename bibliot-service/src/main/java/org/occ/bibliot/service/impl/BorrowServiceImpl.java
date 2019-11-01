@@ -1,21 +1,24 @@
 package org.occ.bibliot.service.impl;
 
+import org.occ.bibliot.model.ENUM.BorrowStatusEnum;
+import org.occ.bibliot.model.beans.Book;
+import org.occ.bibliot.model.beans.Borrow;
+import org.occ.bibliot.model.beans.Member;
+import org.occ.bibliot.model.beans.Work;
+import org.occ.bibliot.repository.BookRepository;
+import org.occ.bibliot.repository.BorrowRepository;
+import org.occ.bibliot.repository.MemberRepository;
+import org.occ.bibliot.repository.WorkRepository;
+import org.occ.bibliot.service.BorrowService;
+import org.occ.bibliot.service.MemberService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
-
-import org.occ.bibliot.repository.*;
-import org.occ.bibliot.model.beans.Book;
-import org.occ.bibliot.model.beans.Borrow;
-import org.occ.bibliot.model.ENUM.BorrowStatusEnum;
-import org.occ.bibliot.model.beans.Member;
-import org.occ.bibliot.model.beans.Work;
-import org.occ.bibliot.service.BorrowService;
-import org.occ.bibliot.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
@@ -30,7 +33,7 @@ public class BorrowServiceImpl implements BorrowService {
     @Autowired
     private BookRepository bookRepository;
     @Autowired
-    private UserService userService;
+    private MemberService memberService;
 
     public Boolean borrowBook(Integer workId, Integer membreId) {
 
@@ -88,11 +91,10 @@ public class BorrowServiceImpl implements BorrowService {
 
                 //Mettre a jour la liste des emprunt du memmberCo et save
 
-                List<Borrow> memberListBorrowToUpdate = userService.findBorrowListByMember(membreEmprunt);
+                List<Borrow> memberListBorrowToUpdate = memberService.findBorrowListByMember(member);
                 memberListBorrowToUpdate.add(borrowToSave);
 
-                memberRepository.save(membreEmprunt);
-
+                memberRepository.save(member);
 
                 toReturn = true;
                 break;

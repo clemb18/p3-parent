@@ -10,7 +10,9 @@ public interface WorkService {
 
     public List<Work> getWorksByPublicationDate (Integer publicationDate);
 
+    public Work saveNewWork(Work work);
 
+    public Work deleteWork(Integer workId);
 
 
 }
