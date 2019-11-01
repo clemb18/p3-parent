@@ -3,11 +3,9 @@ package org.occ.bibliot.service.impl;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
-import org.occ.bibliot.repository.BookRepository;
-import org.occ.bibliot.repository.BorrowRepository;
-import org.occ.bibliot.repository.UserRepository;
-import org.occ.bibliot.repository.WorkRepository;
+import org.occ.bibliot.repository.*;
 import org.occ.bibliot.model.beans.Book;
 import org.occ.bibliot.model.beans.Borrow;
 import org.occ.bibliot.model.ENUM.BorrowStatusEnum;
@@ -17,24 +15,35 @@ import org.occ.bibliot.service.BorrowService;
 import org.occ.bibliot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 public class BorrowServiceImpl implements BorrowService {
 
     @Autowired
-    UserRepository memberRepository;
+    private MemberRepository memberRepository;
     @Autowired
-    WorkRepository workRepository;
+    private WorkRepository workRepository;
     @Autowired
-    BorrowRepository borrowRepository;
+    private BorrowRepository borrowRepository;
     @Autowired
-    BookRepository bookRepository;
+    private BookRepository bookRepository;
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     public Boolean borrowBook(Integer workId, Integer membreId) {
 
+        // on recupère l'Id du membre passé en parametre
+        Optional<Member> optionalMember = memberRepository.findById(membreId);
+        if (!optionalMember.isPresent()) {
+            return false;
+        }
+        Member member = optionalMember.get();
+
         Boolean toReturn = false;
+
+
 
         // Recuperer le Work dont on connait l'ID (creer work repository)
         Work myWorkGot = workRepository.findById(workId).get();
@@ -43,6 +52,8 @@ public class BorrowServiceImpl implements BorrowService {
         // recuperer la liste dans myborrowgot
         List<Book> bookList = myWorkGot.getBooksList();
 
+
+
         // On parcours la bookList
         for (Book result : bookList) {
 
@@ -50,11 +61,10 @@ public class BorrowServiceImpl implements BorrowService {
 
                 Borrow borrowToSave = new Borrow();
                 borrowToSave.setBook(result);
-                // on recupère l'Id du membre passé en parametre
-                Member membreEmprunt = memberRepository.findById(membreId).get();
+
 
                 // On associe le member a borrow
-                borrowToSave.setMemberBorrowing(membreEmprunt);
+                borrowToSave.setMemberBorrowing(member);
                 borrowToSave.setStartBorrowDate(new Date());
 
 

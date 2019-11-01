@@ -7,10 +7,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import org.springframework.transaction.annotation.Transactional;
 
 
 @Service
+@Transactional
 public class BookServiceImpl implements BookService {
 
 	private static Logger logger = LoggerFactory.getLogger(BookServiceImpl.class);
@@ -21,12 +22,8 @@ public class BookServiceImpl implements BookService {
 	BookRepository bookRepository;
 
 	public Book getBookById(Integer bookId) {
-		//On fait des traitement si nécessaire
 
-		/// Appeler le consumer adéquat
-		Book bookGotFromConsumer = bookRepository.findById(bookId).get();
-
-		return bookGotFromConsumer;
+		return bookRepository.findById(bookId).get();
 	}
 
 	public String test() {
@@ -36,13 +33,7 @@ public class BookServiceImpl implements BookService {
 
 	public Book saveNewBook(Book book) {
 		logger.info("enregistrement d'un nouveau livre: {}", book);
-		//Vérifier que tu es authentifié
 
-		//Vérifier que tu es habilité à faire cette opération
-
-		//Appeler le consumer pour sauvegarder
-		Book bookSaved = bookRepository.save(book);
-
-		return bookSaved;
+		return bookRepository.save(book);
 	}
 }

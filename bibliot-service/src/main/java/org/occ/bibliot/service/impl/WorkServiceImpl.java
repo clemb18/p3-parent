@@ -17,21 +17,13 @@ public class WorkServiceImpl implements WorkService {
     @Override
     public List<Work> getWorksByAuthor(String author) {
 
-        /// Appeler le consumer
-
-        List<Work> worksGotFromConsumer = workRepository.findByAuthorIsContainingIgnoreCase(author);
-
-        return worksGotFromConsumer;
+        return workRepository.findByAuthorIsContainingIgnoreCase(author);
     }
 
     @Override
     public List<Work> getWorksByPublicationDate(Integer publicationDate) {
 
-        /// Appeler le consumer
-
-        List<Work> worksGotFromConsumer = workRepository.findByPublicationDate(publicationDate);
-
-        return worksGotFromConsumer;
+        return workRepository.findByPublicationDate(publicationDate);
 
     }
 }

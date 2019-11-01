@@ -5,9 +5,11 @@ import org.occ.bibliot.model.beans.Borrow;
 import org.occ.bibliot.model.beans.Member;
 import org.occ.bibliot.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class MemberServiceImpl implements MemberService {
 
     @Autowired
