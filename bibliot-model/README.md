@@ -1,1 +1,0 @@
-Module Model == Contiens les objets bean ainsi que les classes enum
