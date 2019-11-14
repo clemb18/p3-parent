@@ -1,0 +1,91 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://openclassrooms.com/projects/bibliotheque"
+           targetNamespace="http://openclassrooms.com/projects/bibliotheque" elementFormDefault="qualified">
+
+    <!-- methode borrowBook -->
+
+    <xs:element name="getBorrowBookRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer"/>
+                #TODO AJOUTER MEMBRE
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getBorrowBookResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="borrow" type="tns:borrow"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- methode extendBorrow -->
+
+    <xs:element name="getExtendBorrowRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getExtendBorrowResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="borrow" type="tns:borrow"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- methode terminateBorrow -->
+
+    <xs:element name="getTerminateBorrowRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer"/>
+                #TODO AJOUTER MEMBRE
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getTerminateBorrowResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="borrow" type="tns:borrow"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- other -->
+
+    <xs:complexType name="serviceStatus">
+        <xs:sequence>
+            <xs:element name="status" type="tns:status"/>
+            <xs:element name="message" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="borrow">
+        <xs:sequence>
+            <xs:element name="id" type="xs:integer"/>
+            <xs:element name="status" type="xs:string"/>
+            <xs:element name="startBorrowDate" type="xs:date"/>
+            <xs:element name="endBorrowDate" type="xs:date"/>
+            <xs:element name="extended" type="xs:boolean"/>
+            <xs:element name="workTitle" type="xs:string"/>
+            #TODO AJOUTER MEMBRE
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="status">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="SUCCESS" />
+            <xs:enumeration value="NOT_FOUND" />
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

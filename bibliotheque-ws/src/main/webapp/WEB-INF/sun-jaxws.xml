@@ -1,0 +1,19 @@
+<endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime"
+           version="2.0">
+
+
+    <endpoint name="workWeb" implementation="com.openclassrooms.bibliotheque.bibliot.serviceWeb.work.WorkWs"
+              url-pattern="/ws/workresult/workWs" />
+
+    <endpoint name="bookWeb" implementation="com.openclassrooms.bibliotheque.bibliot.serviceWeb.book.BookWs"
+              url-pattern="/ws/bookresult/bookWs" />
+
+    <endpoint name="userWeb" implementation="com.openclassrooms.bibliotheque.bibliot.serviceWeb.user.UserWs"
+              url-pattern="/ws/userresult/userWs" />
+
+    <endpoint name="borrowWeb" implementation="com.openclassrooms.bibliotheque.bibliot.serviceWeb.borrow.BorrowWs"
+              url-pattern="/ws/borrowresult/borrowWs" />
+
+    <endpoint name="batchWeb" implementation="org.openclassroom.bibliot.bibliot.serviceWeb.batch.BatchWs"
+              url-pattern="/ws/batchresult/batchWs" />
+</endpoints>
