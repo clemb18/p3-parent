@@ -1,6 +1,8 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://openclassrooms.com/projects/bibliot"
            targetNamespace="http://openclassrooms.com/projects/bibliot" elementFormDefault="qualified">
 
+    <!-- methode getUserByLoginAndPassword -->
+
     <xs:element name="getUserByLoginAndPasswordRequest">
         <xs:complexType>
             <xs:sequence>
@@ -19,6 +21,163 @@
         </xs:complexType>
     </xs:element>
 
+    <!-- methode get works by author -->
+
+    <xs:element name="getWorkByAuthorRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="author" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getWorkByAuthorResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="work" type="tns:work"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- methode get works by publication date -->
+
+    <xs:element name="getWorkByPublicationDateRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="publicationDate" type="xs:date"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getWorkByPublicationDateResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="work" type="tns:work"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- methode save new work -->
+
+    <xs:element name="getSaveNewWorkRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="title" type="xs:string"/>
+                <xs:element name="author" type="xs:string"/>
+                <xs:element name="publicationDate" type="xs:date"/>
+                <xs:element name="bookDescription" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getSaveNewWorkResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="work" type="tns:work"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- methode delete work -->
+
+    <xs:element name="getDeleteWorkRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getDeleteWorkResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="work" type="tns:work"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- methode borrowBook -->
+
+    <xs:element name="getBorrowBookRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer"/>
+                <!-- #AJOUT MEMBRE -->
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getBorrowBookResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="borrow" type="tns:borrow"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- methode extendBorrow -->
+
+    <xs:element name="getExtendBorrowRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getExtendBorrowResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="borrow" type="tns:borrow"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- methode terminateBorrow -->
+
+    <xs:element name="getTerminateBorrowRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer"/>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getTerminateBorrowResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="borrow" type="tns:borrow"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- methode getBookById -->
+
+    <xs:element name="getBookByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getBookByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="book" type="tns:book"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
     <xs:complexType name="serviceStatus">
         <xs:sequence>
             <xs:element name="status" type="tns:status"/>
@@ -32,6 +191,35 @@
             <xs:element name="firstName" type="xs:string"/>
             <xs:element name="login" type="xs:string"/>
             <xs:element name="password" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="book">
+        <xs:sequence>
+            <xs:element name="id" type="xs:integer"/>
+            <xs:element name="available" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="borrow">
+        <xs:sequence>
+            <xs:element name="id" type="xs:integer"/>
+            <xs:element name="status" type="xs:string"/>
+            <xs:element name="startBorrowDate" type="xs:date"/>
+            <xs:element name="endBorrowDate" type="xs:date"/>
+            <xs:element name="extended" type="xs:boolean"/>
+            <xs:element name="workTitle" type="xs:string"/>
+            <!-- #AJOUT MEMBRE -->
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="work">
+        <xs:sequence>
+            <xs:element name="id" type="xs:integer"/>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="author" type="xs:string"/>
+            <xs:element name="publicationDate" type="xs:date"/>
+            <xs:element name="bookDescription" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
 

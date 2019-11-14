@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>p3-parent</artifactId>
-        <groupId>org.occ.p3</groupId>
+        <artifactId>bibliotheque</artifactId>
+        <groupId>com.openclassrooms</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.occ.p3</groupId>
-    <artifactId>serviceWeb</artifactId>
+    <groupId>com.openclassrooms</groupId>
+    <artifactId>bibliotheque-ws</artifactId>
     <packaging>war</packaging>
 
     <properties>
@@ -85,6 +85,13 @@
                     <sources>
                         <source>${project.basedir}/src/main/resources/xsd/</source>
                     </sources>
+
+
+
+                        <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+                        <clearOutputDir>false</clearOutputDir>
+
+
                 </configuration>
             </plugin>
             <plugin>
