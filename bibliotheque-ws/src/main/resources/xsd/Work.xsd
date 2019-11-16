@@ -1,0 +1,109 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://openclassrooms.com/projects/bibliotheque"
+           targetNamespace="http://openclassrooms.com/projects/bibliotheque" elementFormDefault="qualified">
+
+    <!-- methode get works by author -->
+
+    <xs:element name="getWorkByAuthorRequest">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="author" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+
+    <xs:element name="getWorkByAuthorResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="work" type="tns:work"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- methode get works by publication date -->
+
+    <xs:element name="getWorkByPublicationDateRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="publicationDate" type="xs:date"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getWorkByPublicationDateResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="work" type="tns:work"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- methode save new work -->
+
+    <xs:element name="getSaveNewWorkRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="title" type="xs:string"/>
+                <xs:element name="author" type="xs:string"/>
+                <xs:element name="publicationDate" type="xs:date"/>
+                <xs:element name="bookDescription" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getSaveNewWorkResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="work" type="tns:work"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- methode delete work -->
+
+    <xs:element name="getDeleteWorkRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getDeleteWorkResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="work" type="tns:work"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- other -->
+
+    <xs:complexType name="serviceStatus">
+        <xs:sequence>
+            <xs:element name="status" type="tns:status"/>
+            <xs:element name="message" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="work">
+        <xs:sequence>
+            <xs:element name="id" type="xs:integer"/>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="author" type="xs:string"/>
+            <xs:element name="publicationDate" type="xs:date"/>
+            <xs:element name="bookDescription" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="status">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="SUCCESS" />
+            <xs:enumeration value="NOT_FOUND" />
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

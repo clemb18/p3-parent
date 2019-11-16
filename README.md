@@ -21,7 +21,12 @@ Ce projet nécessite :
 Base de données Postgres SQL:
 
 - Installer PostgreSQL 11.1
-- Executer le script create_db.sql pour lancer la création de la bdd
+- Installer Dbeaver
+- Cliquer sur "Creer une nouvelle connexion"
+- Selectionner PostGreSql
+- Renseigner les user et mdp
+- Selectionner l'editeur SQL
+- Executer le script create_db.sql puis init_db.sql
 - user: bibliot 
 - mdp: admin
 

@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepository extends CrudRepository<User, Long> {
-    User findByLoginAndPassword(String login, String password);
+    com.openclassrooms.projects.bibliot.User findByLoginAndPassword(String login, String password);
 }
