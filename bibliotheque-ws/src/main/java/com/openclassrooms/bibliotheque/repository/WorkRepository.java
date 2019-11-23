@@ -18,5 +18,7 @@ public interface WorkRepository extends CrudRepository<Work, Integer> {
 
     Work delete(Integer workId);
 
-    Work save(Work work);
+    com.openclassrooms.projects.bibliot.Work save(Work work);
+
+
 }

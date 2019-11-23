@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2019.11.14 à 07:22:48 PM CET 
+// Généré le : 2019.11.23 à 07:56:54 AM CET 
 //
 
 
@@ -69,6 +69,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CreateUserRequest }
+     * 
+     */
+    public CreateUserRequest createCreateUserRequest() {
+        return new CreateUserRequest();
+    }
+
+    /**
+     * Create an instance of {@link CreateUserResponse }
+     * 
+     */
+    public CreateUserResponse createCreateUserResponse() {
+        return new CreateUserResponse();
+    }
+
+    /**
      * Create an instance of {@link GetWorkByAuthorRequest }
      * 
      */
@@ -93,6 +109,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CreateWorkRequest }
+     * 
+     */
+    public CreateWorkRequest createCreateWorkRequest() {
+        return new CreateWorkRequest();
+    }
+
+    /**
+     * Create an instance of {@link CreateWorkResponse }
+     * 
+     */
+    public CreateWorkResponse createCreateWorkResponse() {
+        return new CreateWorkResponse();
+    }
+
+    /**
      * Create an instance of {@link GetWorkByPublicationDateRequest }
      * 
      */
@@ -106,22 +138,6 @@ public class ObjectFactory {
      */
     public GetWorkByPublicationDateResponse createGetWorkByPublicationDateResponse() {
         return new GetWorkByPublicationDateResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetSaveNewWorkRequest }
-     * 
-     */
-    public GetSaveNewWorkRequest createGetSaveNewWorkRequest() {
-        return new GetSaveNewWorkRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetSaveNewWorkResponse }
-     * 
-     */
-    public GetSaveNewWorkResponse createGetSaveNewWorkResponse() {
-        return new GetSaveNewWorkResponse();
     }
 
     /**
@@ -146,6 +162,14 @@ public class ObjectFactory {
      */
     public GetBorrowBookRequest createGetBorrowBookRequest() {
         return new GetBorrowBookRequest();
+    }
+
+    /**
+     * Create an instance of {@link Book }
+     * 
+     */
+    public Book createBook() {
+        return new Book();
     }
 
     /**
@@ -213,11 +237,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Book }
+     * Create an instance of {@link CreateBookRequest }
      * 
      */
-    public Book createBook() {
-        return new Book();
+    public CreateBookRequest createCreateBookRequest() {
+        return new CreateBookRequest();
+    }
+
+    /**
+     * Create an instance of {@link CreateBookResponse }
+     * 
+     */
+    public CreateBookResponse createCreateBookResponse() {
+        return new CreateBookResponse();
     }
 
 }

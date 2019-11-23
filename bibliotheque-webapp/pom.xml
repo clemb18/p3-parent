@@ -20,13 +20,8 @@
 		<ws.soap.url>http://localhost:8080/ws/bibliotheque.wsdl</ws.soap.url>
         </properties>
 
-        <dependencies>>
-            <dependency>
-                <groupId>org.testng</groupId>
-                <artifactId>testng</artifactId>
-                <version>RELEASE</version>
-                <scope>compile</scope>
-            </dependency>
+        <dependencies>
+
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-beans</artifactId>
@@ -69,7 +64,7 @@
                 <version>5.2.0.RELEASE</version>
                 <scope>compile</scope>
             </dependency>
-        </dependencies>
+
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-webmvc</artifactId>
@@ -127,7 +122,7 @@
                 <artifactId>jstl</artifactId>
             </dependency>
 
-
+        </dependencies>
 
 
     <build>
@@ -182,7 +177,7 @@
                     <generatePackage>com.openclassrooms.bibliotheque.ws</generatePackage>
                     <generateDirectory>${project.build.directory}/generated-sources</generateDirectory>
                     <forceRegenerate>true</forceRegenerate>
-                    <!--                    <schemaDirectory>${project.basedir}/src/main/resources/wsdl</schemaDirectory>-->
+                                        <schemaDirectory>${project.basedir}/src/main/resources/wsdl</schemaDirectory>
                     <schemaIncludes>
                         <include>*.wsdl</include>
                     </schemaIncludes>

@@ -40,8 +40,8 @@ import javax.xml.bind.annotation.XmlType;
     "serviceStatus",
     "book"
 })
-@XmlRootElement(name = "getBookByIdResponse")
-public class GetBookByIdResponse {
+@XmlRootElement(name = "createBookResponse")
+public class CreateBookResponse {
 
     @XmlElement(required = true)
     protected ServiceStatus serviceStatus;

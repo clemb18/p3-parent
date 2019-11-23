@@ -25,8 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="serviceStatus" type="{http://openclassrooms.com/projects/bibliot}serviceStatus"/&gt;
- *         &lt;element name="book" type="{http://openclassrooms.com/projects/bibliot}book"/&gt;
+ *         &lt;element name="work" type="{http://openclassrooms.com/projects/bibliot}work"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -37,63 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "serviceStatus",
-    "book"
+    "work"
 })
-@XmlRootElement(name = "getBookByIdResponse")
-public class GetBookByIdResponse {
+@XmlRootElement(name = "createWorkRequest")
+public class CreateWorkRequest {
 
     @XmlElement(required = true)
-    protected ServiceStatus serviceStatus;
-    @XmlElement(required = true)
-    protected Book book;
+    protected Work work;
 
     /**
-     * Obtient la valeur de la propriété serviceStatus.
+     * Obtient la valeur de la propriété work.
      * 
      * @return
      *     possible object is
-     *     {@link ServiceStatus }
+     *     {@link Work }
      *     
      */
-    public ServiceStatus getServiceStatus() {
-        return serviceStatus;
+    public Work getWork() {
+        return work;
     }
 
     /**
-     * Définit la valeur de la propriété serviceStatus.
+     * Définit la valeur de la propriété work.
      * 
      * @param value
      *     allowed object is
-     *     {@link ServiceStatus }
+     *     {@link Work }
      *     
      */
-    public void setServiceStatus(ServiceStatus value) {
-        this.serviceStatus = value;
-    }
-
-    /**
-     * Obtient la valeur de la propriété book.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Book }
-     *     
-     */
-    public Book getBook() {
-        return book;
-    }
-
-    /**
-     * Définit la valeur de la propriété book.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Book }
-     *     
-     */
-    public void setBook(Book value) {
-        this.book = value;
+    public void setWork(Work value) {
+        this.work = value;
     }
 
 }

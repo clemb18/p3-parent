@@ -25,7 +25,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="serviceStatus" type="{http://openclassrooms.com/projects/bibliot}serviceStatus"/&gt;
  *         &lt;element name="book" type="{http://openclassrooms.com/projects/bibliot}book"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -37,40 +36,13 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "serviceStatus",
     "book"
 })
-@XmlRootElement(name = "getBookByIdResponse")
-public class GetBookByIdResponse {
+@XmlRootElement(name = "createBookRequest")
+public class CreateBookRequest {
 
-    @XmlElement(required = true)
-    protected ServiceStatus serviceStatus;
     @XmlElement(required = true)
     protected Book book;
-
-    /**
-     * Obtient la valeur de la propriété serviceStatus.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ServiceStatus }
-     *     
-     */
-    public ServiceStatus getServiceStatus() {
-        return serviceStatus;
-    }
-
-    /**
-     * Définit la valeur de la propriété serviceStatus.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ServiceStatus }
-     *     
-     */
-    public void setServiceStatus(ServiceStatus value) {
-        this.serviceStatus = value;
-    }
 
     /**
      * Obtient la valeur de la propriété book.

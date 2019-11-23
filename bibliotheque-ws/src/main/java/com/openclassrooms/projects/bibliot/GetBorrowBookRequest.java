@@ -2,13 +2,12 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2019.11.14 à 07:22:48 PM CET 
+// Généré le : 2019.11.23 à 07:56:54 AM CET 
 //
 
 
 package com.openclassrooms.projects.bibliot;
 
-import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -26,7 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+ *         &lt;element name="book" type="{http://openclassrooms.com/projects/bibliot}book"/&gt;
+ *         &lt;element name="user" type="{http://openclassrooms.com/projects/bibliot}user"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -37,36 +37,63 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "id"
+    "book",
+    "user"
 })
 @XmlRootElement(name = "getBorrowBookRequest")
 public class GetBorrowBookRequest {
 
     @XmlElement(required = true)
-    protected BigInteger id;
+    protected Book book;
+    @XmlElement(required = true)
+    protected User user;
 
     /**
-     * Obtient la valeur de la propriété id.
+     * Obtient la valeur de la propriété book.
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link Book }
      *     
      */
-    public BigInteger getId() {
-        return id;
+    public Book getBook() {
+        return book;
     }
 
     /**
-     * Définit la valeur de la propriété id.
+     * Définit la valeur de la propriété book.
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link Book }
      *     
      */
-    public void setId(BigInteger value) {
-        this.id = value;
+    public void setBook(Book value) {
+        this.book = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété user.
+     * 
+     * @return
+     *     possible object is
+     *     {@link User }
+     *     
+     */
+    public User getUser() {
+        return user;
+    }
+
+    /**
+     * Définit la valeur de la propriété user.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link User }
+     *     
+     */
+    public void setUser(User value) {
+        this.user = value;
     }
 
 }

@@ -1,15 +1,14 @@
 package com.openclassrooms.bibliotheque.service.impl;
 
-import com.openclassrooms.bibliotheque.repository.BookRepository;
 import com.openclassrooms.bibliotheque.models.Book;
+import com.openclassrooms.bibliotheque.repository.BookRepository;
 import com.openclassrooms.bibliotheque.service.BookService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.math.BigInteger;
 
 
 @Service
@@ -43,6 +42,14 @@ public class BookServiceImpl implements BookService {
         logger.info("suppression d'un livre: {}", bookId);
 
         return bookRepository.delete(bookId);
+    }
+
+    @Override
+    public Book create(com.openclassrooms.projects.bibliot.Book book) {
+        Book bookCreated = new Book();
+        BeanUtils.copyProperties(book, bookCreated);
+        bookCreated = bookRepository.save(book);
+        return bookCreated;
     }
 }
 

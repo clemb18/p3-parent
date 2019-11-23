@@ -2,10 +2,7 @@ package com.openclassrooms.bibliotheque.soap;
 
 
 import com.openclassrooms.bibliotheque.service.UserService;
-import com.openclassrooms.projects.bibliot.GetUserByLoginAndPasswordRequest;
-import com.openclassrooms.projects.bibliot.GetUserByLoginAndPasswordResponse;
-import com.openclassrooms.projects.bibliot.ServiceStatus;
-import com.openclassrooms.projects.bibliot.User;
+import com.openclassrooms.projects.bibliot.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
@@ -41,5 +38,23 @@ public class UserEndpoint {
         }
         response.setServiceStatus(serviceStatus);
         return response;
+    }
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "createUserRequest")
+    @ResponsePayload
+    public CreateUserResponse createUser(@RequestPayload CreateUserRequest request) {
+        CreateUserResponse createUserResponse = new CreateUserResponse();
+        ServiceStatus serviceStatus = new ServiceStatus();
+        User userCreated = userService.create(request.getUser());
+        if (userCreated == null) {
+            serviceStatus.setStatus(NOT_FOUND);
+        } else {
+            serviceStatus.setStatus(SUCCESS);
+            User userResult = new User();
+            BeanUtils.copyProperties(userCreated, userResult);
+            createUserResponse.setUser(userResult);
+        }
+        createUserResponse.setServiceStatus(serviceStatus);
+        return createUserResponse;
     }
 }

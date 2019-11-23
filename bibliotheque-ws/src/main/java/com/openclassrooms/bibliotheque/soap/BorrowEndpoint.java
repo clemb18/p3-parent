@@ -1,28 +1,11 @@
 package com.openclassrooms.bibliotheque.soap;
 
-import com.openclassrooms.bibliotheque.service.BorrowService;
-import com.openclassrooms.projects.bibliot.GetBorrowBookRequest;
-import com.openclassrooms.projects.bibliot.GetBorrowBookResponse;
-import com.openclassrooms.projects.bibliot.GetExtendBorrowRequest;
-import com.openclassrooms.projects.bibliot.GetExtendBorrowResponse;
-import com.openclassrooms.projects.bibliot.GetTerminateBorrowRequest;
-import com.openclassrooms.projects.bibliot.GetTerminateBorrowResponse;
-import com.openclassrooms.projects.bibliot.ServiceStatus;
-import com.openclassrooms.projects.bibliot.Borrow;
-import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
-import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
-import org.springframework.ws.server.endpoint.annotation.RequestPayload;
-import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
-
-import static com.openclassrooms.projects.bibliot.Status.NOT_FOUND;
-import static com.openclassrooms.projects.bibliot.Status.SUCCESS;
 
 @Endpoint
 public class BorrowEndpoint {
 
-    private static final String NAMESPACE_URI = "http://openclassrooms.com/projects/bibliotheque";
+ /*   private static final String NAMESPACE_URI = "http://openclassrooms.com/projects/bibliotheque";
 
     @Autowired
     private BorrowService borrowService;
@@ -80,5 +63,5 @@ public class BorrowEndpoint {
         }
         response.setServiceStatus(serviceStatus);
         return response;
-    }
+    }*/
 }

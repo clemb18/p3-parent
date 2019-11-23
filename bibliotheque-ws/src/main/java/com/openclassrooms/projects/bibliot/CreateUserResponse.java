@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="serviceStatus" type="{http://openclassrooms.com/projects/bibliot}serviceStatus"/&gt;
- *         &lt;element name="book" type="{http://openclassrooms.com/projects/bibliot}book"/&gt;
+ *         &lt;element name="user" type="{http://openclassrooms.com/projects/bibliot}user"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -38,15 +38,15 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "serviceStatus",
-    "book"
+    "user"
 })
-@XmlRootElement(name = "getBookByIdResponse")
-public class GetBookByIdResponse {
+@XmlRootElement(name = "createUserResponse")
+public class CreateUserResponse {
 
     @XmlElement(required = true)
     protected ServiceStatus serviceStatus;
     @XmlElement(required = true)
-    protected Book book;
+    protected User user;
 
     /**
      * Obtient la valeur de la propriété serviceStatus.
@@ -73,27 +73,27 @@ public class GetBookByIdResponse {
     }
 
     /**
-     * Obtient la valeur de la propriété book.
+     * Obtient la valeur de la propriété user.
      * 
      * @return
      *     possible object is
-     *     {@link Book }
+     *     {@link User }
      *     
      */
-    public Book getBook() {
-        return book;
+    public User getUser() {
+        return user;
     }
 
     /**
-     * Définit la valeur de la propriété book.
+     * Définit la valeur de la propriété user.
      * 
      * @param value
      *     allowed object is
-     *     {@link Book }
+     *     {@link User }
      *     
      */
-    public void setBook(Book value) {
-        this.book = value;
+    public void setUser(User value) {
+        this.user = value;
     }
 
 }

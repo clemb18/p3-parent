@@ -15,4 +15,6 @@ public interface BookRepository extends CrudRepository<Book, Integer>{
     Book save(Book book);
 
     Optional<Book> findById(Integer bookId);
+
+    com.openclassrooms.projects.bibliot.Book save(Book book);
 }

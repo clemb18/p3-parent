@@ -21,6 +21,25 @@
         </xs:complexType>
     </xs:element>
 
+    <!-- methode create user -->
+
+    <xs:element name="createUserRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="user" type="tns:user"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createUserResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="user" type="tns:user"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
     <!-- methode get works by author -->
 
     <xs:element name="getWorkByAuthorRequest">
@@ -32,6 +51,25 @@
     </xs:element>
 
     <xs:element name="getWorkByAuthorResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="work" type="tns:work"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- methode create work -->
+
+    <xs:element name="createWorkRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="work" type="tns:work"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createWorkResponse">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="serviceStatus" type="tns:serviceStatus"/>
@@ -59,7 +97,7 @@
         </xs:complexType>
     </xs:element>
 
-    <!-- methode save new work -->
+    <!-- methode save new work
 
     <xs:element name="getSaveNewWorkRequest">
         <xs:complexType>
@@ -79,7 +117,7 @@
                 <xs:element name="work" type="tns:work"/>
             </xs:sequence>
         </xs:complexType>
-    </xs:element>
+    </xs:element>-->
 
     <!-- methode delete work -->
 
@@ -105,8 +143,8 @@
     <xs:element name="getBorrowBookRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="id" type="xs:integer"/>
-                <!-- #AJOUT MEMBRE -->
+                <xs:element name="book" type="tns:book"/>
+                <xs:element name="user" type="tns:user"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -177,6 +215,27 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
+    <!-- methode create book -->
+
+    <xs:element name="createBookRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="book" type="tns:book"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createBookResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="book" type="tns:book"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- objects -->
 
     <xs:complexType name="serviceStatus">
         <xs:sequence>

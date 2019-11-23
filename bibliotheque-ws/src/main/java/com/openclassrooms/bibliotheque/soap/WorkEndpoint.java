@@ -1,12 +1,7 @@
 package com.openclassrooms.bibliotheque.soap;
 
 import com.openclassrooms.bibliotheque.service.WorkService;
-import com.openclassrooms.projects.bibliot.GetWorkByAuthorRequest;
-import com.openclassrooms.projects.bibliot.GetWorkByAuthorResponse;
-import com.openclassrooms.projects.bibliot.GetWorkByPublicationDateRequest;
-import com.openclassrooms.projects.bibliot.GetWorkByPublicationDateResponse;
-import com.openclassrooms.projects.bibliot.ServiceStatus;
-import com.openclassrooms.projects.bibliot.Work;
+import com.openclassrooms.projects.bibliot.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
@@ -49,7 +44,7 @@ public class WorkEndpoint {
     public GetWorkByPublicationDateResponse getWorksByAuthor(@RequestPayload GetWorkByPublicationDateRequest request) {
         GetWorkByPublicationDateResponse response = new GetWorkByPublicationDateResponse();
         ServiceStatus serviceStatus = new ServiceStatus();
-        Work findWorkByDate = workService.getWorksByPublicationDate(request.getPublicationDate());
+        Work findWorkByDate = (Work) workService.getWorksByPublicationDate(request.getPublicationDate());
         if (findWorkByDate == null) {
             serviceStatus.setStatus(NOT_FOUND);
         } else {
@@ -60,5 +55,23 @@ public class WorkEndpoint {
         }
         response.setServiceStatus(serviceStatus);
         return response;
+    }
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "createWorkRequest")
+    @ResponsePayload
+    public CreateWorkResponse createWork(@RequestPayload CreateWorkRequest request) {
+        CreateWorkResponse createWorkResponse = new CreateWorkResponse();
+        ServiceStatus serviceStatus = new ServiceStatus();
+        com.openclassrooms.bibliotheque.models.Work workCreated = workService.create(request.getWork());
+        if (workCreated == null) {
+            serviceStatus.setStatus(NOT_FOUND);
+        } else {
+            serviceStatus.setStatus(SUCCESS);
+            Work workResult = new Work();
+            BeanUtils.copyProperties(workCreated, workResult);
+            createWorkResponse.setWork(workResult);
+        }
+        createWorkResponse.setServiceStatus(serviceStatus);
+        return createWorkResponse;
     }
 }

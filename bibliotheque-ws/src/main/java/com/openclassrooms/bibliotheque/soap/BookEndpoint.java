@@ -1,10 +1,7 @@
 package com.openclassrooms.bibliotheque.soap;
 
 import com.openclassrooms.bibliotheque.service.BookService;
-import com.openclassrooms.projects.bibliot.GetBookByIdResponse;
-import com.openclassrooms.projects.bibliot.GetBookByIdRequest;
-import com.openclassrooms.projects.bibliot.ServiceStatus;
-import com.openclassrooms.projects.bibliot.Book;
+import com.openclassrooms.projects.bibliot.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
@@ -40,6 +37,24 @@ public class BookEndpoint {
         }
         response.setServiceStatus(serviceStatus);
         return response;
+    }
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "createWorkRequest")
+    @ResponsePayload
+    public CreateBookResponse createBook(@RequestPayload CreateBookRequest request) {
+        CreateBookResponse createBookResponse = new CreateBookResponse();
+        ServiceStatus serviceStatus = new ServiceStatus();
+        com.openclassrooms.bibliotheque.models.Book bookCreated = bookService.create(request.getBook());
+        if (bookCreated == null) {
+            serviceStatus.setStatus(NOT_FOUND);
+        } else {
+            serviceStatus.setStatus(SUCCESS);
+            Book bookResult = new Book();
+            BeanUtils.copyProperties(bookCreated, bookResult);
+            createBookResponse.setBook(bookResult);
+        }
+        createBookResponse.setServiceStatus(serviceStatus);
+        return createBookResponse;
     }
 }
 
