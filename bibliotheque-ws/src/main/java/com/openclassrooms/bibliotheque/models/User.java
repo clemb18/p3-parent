@@ -9,7 +9,7 @@ import java.io.Serializable;
 @Entity
 @Table(name="T_USER")
 @Inheritance(strategy = InheritanceType.JOINED)
-public class UserModelWs implements Serializable {
+public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 

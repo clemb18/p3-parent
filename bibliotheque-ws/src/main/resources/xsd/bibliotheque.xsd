@@ -6,7 +6,7 @@
     <xs:element name="getUserByLoginAndPasswordRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="loginWebapp" type="xs:string"/>
+                <xs:element name="login" type="xs:string"/>
                 <xs:element name="password" type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
@@ -143,7 +143,7 @@
     <xs:element name="getBorrowBookRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="book" type="tns:book"/>
+                <xs:element name="bookWs" type="tns:bookWs"/>
                 <xs:element name="user" type="tns:user"/>
             </xs:sequence>
         </xs:complexType>
@@ -211,7 +211,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="serviceStatus" type="tns:serviceStatus"/>
-                <xs:element name="book" type="tns:book"/>
+                <xs:element name="bookWs" type="tns:bookWs"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -221,7 +221,7 @@
     <xs:element name="createBookRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="book" type="tns:book"/>
+                <xs:element name="bookWs" type="tns:bookWs"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -230,7 +230,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="serviceStatus" type="tns:serviceStatus"/>
-                <xs:element name="book" type="tns:book"/>
+                <xs:element name="bookWs" type="tns:bookWs"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -248,12 +248,12 @@
         <xs:sequence>
             <xs:element name="name" type="xs:string"/>
             <xs:element name="firstName" type="xs:string"/>
-            <xs:element name="loginWebapp" type="xs:string"/>
+            <xs:element name="login" type="xs:string"/>
             <xs:element name="password" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="book">
+    <xs:complexType name="bookWs">
         <xs:sequence>
             <xs:element name="id" type="xs:int"/>
             <xs:element name="available" type="xs:boolean"/>

@@ -11,7 +11,7 @@ import java.io.Serializable;
 @Entity
 @Table(name="T_MEMBER")
 
-public class MemberModelWs implements Serializable {
+public class Member implements Serializable {
 
 
 	private static final long serialVersionUID = 1L;

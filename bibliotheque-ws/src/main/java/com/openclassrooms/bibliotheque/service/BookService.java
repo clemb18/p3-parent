@@ -1,16 +1,16 @@
 package com.openclassrooms.bibliotheque.service;
 
-import com.openclassrooms.bibliotheque.models.BookModelWs;
+import com.openclassrooms.bibliotheque.models.Book;
 
 
 public interface BookService {
 
-    BookModelWs getBookById(Integer bookId);
+    Book getBookById(Integer bookId);
 
-    BookModelWs saveNewBook(BookModelWs book);
+    Book saveNewBook(Book book);
 
-    BookModelWs deleteBook(Integer bookId);
+    Book deleteBook(Integer bookId);
 
-    BookModelWs create(com.openclassrooms.projects.bibliot.Book book);
+    Book create(Book book);
 
 }

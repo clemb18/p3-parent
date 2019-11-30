@@ -1,11 +1,11 @@
 package com.openclassrooms.bibliotheque.service;
 
-import com.openclassrooms.bibliotheque.models.BorrowModelWs;
-import com.openclassrooms.bibliotheque.models.MemberModelWs;
+import com.openclassrooms.bibliotheque.models.Borrow;
+import com.openclassrooms.bibliotheque.models.Member;
 
 import java.util.List;
 
 public interface MemberService {
 
-    List<BorrowModelWs> findBorrowListByMember (MemberModelWs member);
+    List<Borrow> findBorrowListByMember (Member member);
 }

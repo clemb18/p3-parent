@@ -1,24 +1,24 @@
 package com.openclassrooms.bibliotheque.repository;
 
-import com.openclassrooms.bibliotheque.models.WorkModelWs;
+import com.openclassrooms.bibliotheque.models.Work;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
 
 
-public interface WorkRepository extends CrudRepository<WorkModelWs, Integer> {
+public interface WorkRepository extends CrudRepository<Work, Integer> {
 
 
-    List<WorkModelWs> findByPublicationDate(Integer publicationDate);
+    List<Work> findByPublicationDate(Integer publicationDate);
 
 
-    List<WorkModelWs> findByAuthorIsContainingIgnoreCase(String author);
+    List<Work> findByAuthorIsContainingIgnoreCase(String author);
 
 
-    WorkModelWs delete(Integer workId);
+    Work delete(Integer workId);
 
-    com.openclassrooms.projects.bibliot.Work save(WorkModelWs work);
+    com.openclassrooms.projects.bibliot.Work save(Work work);
 
 
 }

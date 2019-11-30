@@ -1,6 +1,6 @@
 package com.openclassrooms.bibliotheque.soap;
 
-import com.openclassrooms.bibliotheque.models.BookModelWs;
+import com.openclassrooms.bibliotheque.models.Book;
 import com.openclassrooms.bibliotheque.service.BookService;
 import com.openclassrooms.projects.bibliot.*;
 import org.springframework.beans.BeanUtils;
@@ -32,9 +32,9 @@ public class BookEndpoint {
             serviceStatus.setStatus(NOT_FOUND);
         } else {
             serviceStatus.setStatus(SUCCESS);
-            Book bookResult = new Book();
-            BeanUtils.copyProperties(book, bookResult);
-            response.setBook(bookResult);
+            BookWs bookWs = new BookWs();
+            BeanUtils.copyProperties(book, bookWs);
+            response.setBookWs(bookWs);
         }
         response.setServiceStatus(serviceStatus);
         return response;
@@ -45,14 +45,16 @@ public class BookEndpoint {
     public CreateBookResponse createBook(@RequestPayload CreateBookRequest request) {
         CreateBookResponse createBookResponse = new CreateBookResponse();
         ServiceStatus serviceStatus = new ServiceStatus();
-        BookModelWs bookCreated = bookService.create(request.getBook());
+        Book book = new Book();
+        BeanUtils.copyProperties(request.getBookWs(), book);
+        Book bookCreated = bookService.create(book);
         if (bookCreated == null) {
             serviceStatus.setStatus(NOT_FOUND);
         } else {
             serviceStatus.setStatus(SUCCESS);
-            Book bookResult = new Book();
-            BeanUtils.copyProperties(bookCreated, bookResult);
-            createBookResponse.setBook(bookResult);
+            BookWs bookWs = new BookWs();
+            BeanUtils.copyProperties(bookCreated, bookWs);
+            createBookResponse.setBookWs(bookWs);
         }
         createBookResponse.setServiceStatus(serviceStatus);
         return createBookResponse;

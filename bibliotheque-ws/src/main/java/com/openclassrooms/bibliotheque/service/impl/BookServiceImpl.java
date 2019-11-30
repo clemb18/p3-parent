@@ -1,6 +1,6 @@
 package com.openclassrooms.bibliotheque.service.impl;
 
-import com.openclassrooms.bibliotheque.models.BookModelWs;
+import com.openclassrooms.bibliotheque.models.Book;
 import com.openclassrooms.bibliotheque.repository.BookRepository;
 import com.openclassrooms.bibliotheque.service.BookService;
 import org.slf4j.Logger;
@@ -22,7 +22,7 @@ public class BookServiceImpl implements BookService {
     @Autowired
     BookRepository bookRepository;
 
-    public BookModelWs getBookById(Integer bookId) {
+    public Book getBookById(Integer bookId) {
 
         return bookRepository.findById(bookId).get();
     }
@@ -32,21 +32,21 @@ public class BookServiceImpl implements BookService {
     }
 
 
-    public BookModelWs saveNewBook(BookModelWs book) {
+    public Book saveNewBook(Book book) {
         logger.info("enregistrement d'un nouveau livre: {}", book);
 
         return bookRepository.save(book);
     }
 
-    public BookModelWs deleteBook(Integer bookId) {
+    public Book deleteBook(Integer bookId) {
         logger.info("suppression d'un livre: {}", bookId);
 
         return bookRepository.delete(bookId);
     }
 
     @Override
-    public BookModelWs create(com.openclassrooms.projects.bibliot.Book book) {
-        BookModelWs bookCreated = new BookModelWs();
+    public Book create(Book book) {
+        Book bookCreated = new Book();
         BeanUtils.copyProperties(book, bookCreated);
         bookCreated = bookRepository.save(book);
         return bookCreated;

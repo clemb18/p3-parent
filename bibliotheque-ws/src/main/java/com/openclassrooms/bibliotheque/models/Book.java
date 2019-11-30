@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name="T_BOOK")
-public class BookModelWs implements Serializable {
+public class Book implements Serializable {
 
 	@Id
 

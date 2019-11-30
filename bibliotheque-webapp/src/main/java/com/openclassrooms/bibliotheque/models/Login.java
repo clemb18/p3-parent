@@ -1,6 +1,6 @@
 package com.openclassrooms.bibliotheque.models;
 
-public class LoginWebapp {
+public class Login {
 
     private String login;
     private String password;

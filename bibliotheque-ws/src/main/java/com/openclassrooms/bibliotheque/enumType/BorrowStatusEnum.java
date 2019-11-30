@@ -1,4 +1,4 @@
-package com.openclassrooms.bibliotheque.models.ENUM;
+package com.openclassrooms.bibliotheque.enumType;
 
 public enum BorrowStatusEnum {
 

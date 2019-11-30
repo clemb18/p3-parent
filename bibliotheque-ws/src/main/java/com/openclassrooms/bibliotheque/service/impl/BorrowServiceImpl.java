@@ -1,17 +1,17 @@
 package com.openclassrooms.bibliotheque.service.impl;
 
 
-import com.openclassrooms.bibliotheque.models.BookModelWs;
-import com.openclassrooms.bibliotheque.models.BorrowModelWs;
-import com.openclassrooms.bibliotheque.models.MemberModelWs;
-import com.openclassrooms.bibliotheque.models.WorkModelWs;
+import com.openclassrooms.bibliotheque.models.Book;
+import com.openclassrooms.bibliotheque.models.Borrow;
+import com.openclassrooms.bibliotheque.models.Member;
+import com.openclassrooms.bibliotheque.models.Work;
 import com.openclassrooms.bibliotheque.repository.BookRepository;
 import com.openclassrooms.bibliotheque.repository.BorrowRepository;
 import com.openclassrooms.bibliotheque.repository.MemberRepository;
 import com.openclassrooms.bibliotheque.repository.WorkRepository;
 import com.openclassrooms.bibliotheque.service.BorrowService;
 import com.openclassrooms.bibliotheque.service.MemberService;
-import com.openclassrooms.bibliotheque.models.ENUM.BorrowStatusEnum;
+import com.openclassrooms.bibliotheque.enumType.BorrowStatusEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -39,31 +39,31 @@ public class BorrowServiceImpl implements BorrowService {
     public Boolean borrowBook(Integer workId, Integer membreId) {
 
         // on recupère l'Id du membre passé en parametre
-        Optional<MemberModelWs> optionalMember = memberRepository.findById(membreId);
+        Optional<Member> optionalMember = memberRepository.findById(membreId);
         if (!optionalMember.isPresent()) {
             return false;
         }
-        MemberModelWs member = optionalMember.get();
+        Member member = optionalMember.get();
 
         Boolean toReturn = false;
 
 
 
         // Recuperer le Work dont on connait l'ID (creer work repository)
-        WorkModelWs myWorkGot = workRepository.findById(workId).get();
+        Work myWorkGot = workRepository.findById(workId).get();
         String workName = myWorkGot.getTitle();
 
         // recuperer la liste dans myborrowgot
-        List<BookModelWs> bookList = myWorkGot.getBooksList();
+        List<Book> bookList = myWorkGot.getBooksList();
 
 
 
         // On parcours la bookList
-        for (BookModelWs result : bookList) {
+        for (Book result : bookList) {
 
             if (result.isAvailable()) {
 
-                BorrowModelWs borrowToSave = new BorrowModelWs();
+                Borrow borrowToSave = new Borrow();
                 borrowToSave.setBook(result);
 
 
@@ -92,7 +92,7 @@ public class BorrowServiceImpl implements BorrowService {
 
                 //Mettre a jour la liste des emprunt du memmberCo et save
 
-                List<BorrowModelWs> memberListBorrowToUpdate = memberService.findBorrowListByMember(member);
+                List<Borrow> memberListBorrowToUpdate = memberService.findBorrowListByMember(member);
                 memberListBorrowToUpdate.add(borrowToSave);
 
                 memberRepository.save(member);
@@ -109,7 +109,7 @@ public class BorrowServiceImpl implements BorrowService {
 
         Boolean toReturn = false;
         // Recuperer le borrow dont on connait l'ID
-        BorrowModelWs borrowToExtend = borrowRepository.findById(borrowId).get();
+        Borrow borrowToExtend = borrowRepository.findById(borrowId).get();
         Date endBorrowDate = borrowToExtend.getEndBorrowDate();
         // Recuperer la date du jour
         Date currentDate = new Date();
@@ -140,10 +140,10 @@ public class BorrowServiceImpl implements BorrowService {
         Boolean toReturn = false;
 
         //Set le statut de l'emprunt a "rendu"
-        BorrowModelWs borrowToEnd = borrowRepository.findById(borrowId).get();
+        Borrow borrowToEnd = borrowRepository.findById(borrowId).get();
         borrowToEnd.setStatus(BorrowStatusEnum.RENDU.value());
         //Set le book comme disponible
-        BookModelWs returnedBook = borrowToEnd.getBook();
+        Book returnedBook = borrowToEnd.getBook();
         returnedBook.setAvailable(true);
         //Sauvegarde du livre rendu
         bookRepository.save(returnedBook);

@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "T_BORROW")
-public class BorrowModelWs implements Serializable {
+public class Borrow implements Serializable {
 
 
 	private static final long serialVersionUID = 1L;
@@ -36,10 +36,10 @@ public class BorrowModelWs implements Serializable {
 	}
 
 	@ManyToOne
-	private MemberModelWs member;
+	private Member member;
 
 	@OneToOne
-	private BookModelWs book;
+	private Book book;
 
 	public Integer getId() {
 		return id;
@@ -65,11 +65,11 @@ public class BorrowModelWs implements Serializable {
 		this.endBorrowDate = endBorrowDate;
 	}
 
-	public MemberModelWs getMemberBorrowing() {
+	public Member getMemberBorrowing() {
 		return member;
 	}
 
-	public void setMemberBorrowing(MemberModelWs memberBorrowing) {
+	public void setMemberBorrowing(Member memberBorrowing) {
 		this.member = memberBorrowing;
 	}
 
@@ -77,11 +77,11 @@ public class BorrowModelWs implements Serializable {
 		return serialVersionUID;
 	}
 
-	public BookModelWs getBook() {
+	public Book getBook() {
 		return book;
 	}
 
-	public void setBook(BookModelWs book) {
+	public void setBook(Book book) {
 		this.book = book;
 	}
 

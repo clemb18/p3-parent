@@ -1,6 +1,6 @@
 package com.openclassrooms.bibliotheque.soap;
 
-import com.openclassrooms.bibliotheque.models.WorkModelWs;
+import com.openclassrooms.bibliotheque.models.Work;
 import com.openclassrooms.bibliotheque.service.WorkService;
 import com.openclassrooms.projects.bibliot.*;
 import org.springframework.beans.BeanUtils;
@@ -27,12 +27,12 @@ public class WorkEndpoint {
     public GetWorkByAuthorResponse getWorksByAuthor(@RequestPayload GetWorkByAuthorRequest request) {
         GetWorkByAuthorResponse response = new GetWorkByAuthorResponse();
         ServiceStatus serviceStatus = new ServiceStatus();
-        Work findWork = (Work) workService.getWorksByAuthor(request.getAuthor());
+        com.openclassrooms.projects.bibliot.Work findWork = (com.openclassrooms.projects.bibliot.Work) workService.getWorksByAuthor(request.getAuthor());
         if (findWork == null) {
             serviceStatus.setStatus(NOT_FOUND);
         } else {
             serviceStatus.setStatus(SUCCESS);
-            Work workByAuthorResult = new Work();
+            com.openclassrooms.projects.bibliot.Work workByAuthorResult = new com.openclassrooms.projects.bibliot.Work();
             BeanUtils.copyProperties(findWork, workByAuthorResult);
             response.setWork(workByAuthorResult);
         }
@@ -45,12 +45,12 @@ public class WorkEndpoint {
     public GetWorkByPublicationDateResponse getWorksByAuthor(@RequestPayload GetWorkByPublicationDateRequest request) {
         GetWorkByPublicationDateResponse response = new GetWorkByPublicationDateResponse();
         ServiceStatus serviceStatus = new ServiceStatus();
-        Work findWorkByDate = (Work) workService.getWorksByPublicationDate(request.getPublicationDate());
+        com.openclassrooms.projects.bibliot.Work findWorkByDate = (com.openclassrooms.projects.bibliot.Work) workService.getWorksByPublicationDate(request.getPublicationDate());
         if (findWorkByDate == null) {
             serviceStatus.setStatus(NOT_FOUND);
         } else {
             serviceStatus.setStatus(SUCCESS);
-            Work workByDateResult = new Work();
+            com.openclassrooms.projects.bibliot.Work workByDateResult = new com.openclassrooms.projects.bibliot.Work();
             BeanUtils.copyProperties(findWorkByDate, workByDateResult);
             response.setWork(workByDateResult);
         }
@@ -63,12 +63,12 @@ public class WorkEndpoint {
     public CreateWorkResponse createWork(@RequestPayload CreateWorkRequest request) {
         CreateWorkResponse createWorkResponse = new CreateWorkResponse();
         ServiceStatus serviceStatus = new ServiceStatus();
-        WorkModelWs workCreated = workService.create(request.getWork());
+        Work workCreated = workService.create(request.getWork());
         if (workCreated == null) {
             serviceStatus.setStatus(NOT_FOUND);
         } else {
             serviceStatus.setStatus(SUCCESS);
-            Work workResult = new Work();
+            com.openclassrooms.projects.bibliot.Work workResult = new com.openclassrooms.projects.bibliot.Work();
             BeanUtils.copyProperties(workCreated, workResult);
             createWorkResponse.setWork(workResult);
         }

@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2019.11.23 à 08:55:48 AM CET 
+// Généré le : 2019.11.30 à 03:27:08 PM CET 
 //
 
 
@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="book" type="{http://openclassrooms.com/projects/bibliot}book"/&gt;
+ *         &lt;element name="bookWs" type="{http://openclassrooms.com/projects/bibliot}bookWs"/&gt;
  *         &lt;element name="user" type="{http://openclassrooms.com/projects/bibliot}user"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -37,39 +37,39 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "book",
+    "bookWs",
     "user"
 })
 @XmlRootElement(name = "getBorrowBookRequest")
 public class GetBorrowBookRequest {
 
     @XmlElement(required = true)
-    protected Book book;
+    protected BookWs bookWs;
     @XmlElement(required = true)
     protected User user;
 
     /**
-     * Obtient la valeur de la propriété book.
+     * Obtient la valeur de la propriété bookWs.
      * 
      * @return
      *     possible object is
-     *     {@link Book }
+     *     {@link BookWs }
      *     
      */
-    public Book getBook() {
-        return book;
+    public BookWs getBookWs() {
+        return bookWs;
     }
 
     /**
-     * Définit la valeur de la propriété book.
+     * Définit la valeur de la propriété bookWs.
      * 
      * @param value
      *     allowed object is
-     *     {@link Book }
+     *     {@link BookWs }
      *     
      */
-    public void setBook(Book value) {
-        this.book = value;
+    public void setBookWs(BookWs value) {
+        this.bookWs = value;
     }
 
     /**
