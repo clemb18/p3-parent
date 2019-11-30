@@ -7,7 +7,7 @@ import java.util.List;
 
 @Entity
 @Table(name="T_WORK")
-public class Work implements Serializable {
+public class WorkModelWs implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -29,13 +29,13 @@ public class Work implements Serializable {
 	private String bookDescription;
 
 	@OneToMany(fetch=FetchType.EAGER)
-	private List<Book> booksList;
+	private List<BookModelWs> booksList;
 
-	public Work() {
+	public WorkModelWs() {
 		super();
 	}
 
-	public Work(String title, String author){
+	public WorkModelWs(String title, String author){
 		this.title = title;
 		this.author = author;
 	}
@@ -80,11 +80,11 @@ public class Work implements Serializable {
 		this.bookDescription = bookDescription;
 	}
 
-	public List<Book> getBooksList() {
+	public List<BookModelWs> getBooksList() {
 		return booksList;
 	}
 
-	public void setBooksList(List<Book> booksList) {
+	public void setBooksList(List<BookModelWs> booksList) {
 		this.booksList = booksList;
 	}
 

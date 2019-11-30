@@ -13,7 +13,7 @@
 
 <%@ include file="/WEB-INF/jsp/header.jsp" %>
 
-<!-- Affichage login -->
+<!-- Affichage loginWebapp -->
 
 <div class="container">
 

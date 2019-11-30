@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name="T_BOOK")
-public class Book implements Serializable {
+public class BookModelWs implements Serializable {
 
 	@Id
 
@@ -15,7 +15,7 @@ public class Book implements Serializable {
 	private boolean available;
 
 
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
 

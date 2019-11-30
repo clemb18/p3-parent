@@ -2,16 +2,16 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2019.11.23 à 07:56:54 AM CET 
+// Généré le : 2019.11.23 à 08:55:48 AM CET 
 //
 
 
 package com.openclassrooms.projects.bibliot;
 
-import java.math.BigInteger;
+import com.openclassrooms.bibliotheque.models.BookModelWs;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="available" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -40,33 +40,25 @@ import javax.xml.bind.annotation.XmlType;
     "id",
     "available"
 })
-public class Book {
+public class Book extends BookModelWs {
 
-    @XmlElement(required = true)
-    protected BigInteger id;
+    protected int id;
     protected boolean available;
 
     /**
      * Obtient la valeur de la propriété id.
-     * 
+     *
      * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
      */
-    public BigInteger getId() {
+    public int getId() {
         return id;
     }
 
     /**
      * Définit la valeur de la propriété id.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
      */
-    public void setId(BigInteger value) {
+    public void setId(int value) {
         this.id = value;
     }
 

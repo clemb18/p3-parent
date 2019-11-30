@@ -1,6 +1,6 @@
 package com.openclassrooms.bibliotheque.controllers;
 
-import com.openclassrooms.bibliotheque.models.Login;
+import com.openclassrooms.bibliotheque.models.LoginWebapp;
 import com.openclassrooms.bibliotheque.service.UserService;
 import com.openclassrooms.bibliotheque.ws.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,13 +20,13 @@ public class LoginController {
 
     @GetMapping("")
     public String welcome(Model model) {
-        model.addAttribute("login", new Login());
+        model.addAttribute("login", new LoginWebapp());
         return "login";
     }
 
     @PostMapping(path = "/login")
-    public String login(Model model, @ModelAttribute("login") Login login) {
-        User user = userService.findUser(login.getLogin(), login.getPassword());
+    public String login(Model model, @ModelAttribute("login") LoginWebapp loginWebapp) {
+        User user = userService.findUser(loginWebapp.getLogin(), loginWebapp.getPassword());
         if (user != null) {
             model.addAttribute("message", "Hello Mister " + user.getFirstName() + " "+ user.getName());
         } else {

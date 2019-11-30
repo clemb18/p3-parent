@@ -1,5 +1,6 @@
 package com.openclassrooms.bibliotheque.soap;
 
+import com.openclassrooms.bibliotheque.models.WorkModelWs;
 import com.openclassrooms.bibliotheque.service.WorkService;
 import com.openclassrooms.projects.bibliot.*;
 import org.springframework.beans.BeanUtils;
@@ -62,7 +63,7 @@ public class WorkEndpoint {
     public CreateWorkResponse createWork(@RequestPayload CreateWorkRequest request) {
         CreateWorkResponse createWorkResponse = new CreateWorkResponse();
         ServiceStatus serviceStatus = new ServiceStatus();
-        com.openclassrooms.bibliotheque.models.Work workCreated = workService.create(request.getWork());
+        WorkModelWs workCreated = workService.create(request.getWork());
         if (workCreated == null) {
             serviceStatus.setStatus(NOT_FOUND);
         } else {

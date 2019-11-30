@@ -1,20 +1,20 @@
 package com.openclassrooms.bibliotheque.repository;
 
 
-import com.openclassrooms.bibliotheque.models.Book;
+import com.openclassrooms.bibliotheque.models.BookModelWs;
 
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;
 
 
-public interface BookRepository extends CrudRepository<Book, Integer>{
+public interface BookRepository extends CrudRepository<BookModelWs, Integer>{
 
-    Book delete(Integer bookId);
+    BookModelWs delete(Integer bookId);
 
-    Book save(Book book);
+   // Book save(Book book);
 
-    Optional<Book> findById(Integer bookId);
+    Optional<BookModelWs> findById(Integer bookId);
 
-    com.openclassrooms.projects.bibliot.Book save(Book book);
+    com.openclassrooms.projects.bibliot.Book save(BookModelWs book);
 }

@@ -1,5 +1,6 @@
 package com.openclassrooms.bibliotheque.soap;
 
+import com.openclassrooms.bibliotheque.models.BookModelWs;
 import com.openclassrooms.bibliotheque.service.BookService;
 import com.openclassrooms.projects.bibliot.*;
 import org.springframework.beans.BeanUtils;
@@ -44,7 +45,7 @@ public class BookEndpoint {
     public CreateBookResponse createBook(@RequestPayload CreateBookRequest request) {
         CreateBookResponse createBookResponse = new CreateBookResponse();
         ServiceStatus serviceStatus = new ServiceStatus();
-        com.openclassrooms.bibliotheque.models.Book bookCreated = bookService.create(request.getBook());
+        BookModelWs bookCreated = bookService.create(request.getBook());
         if (bookCreated == null) {
             serviceStatus.setStatus(NOT_FOUND);
         } else {
