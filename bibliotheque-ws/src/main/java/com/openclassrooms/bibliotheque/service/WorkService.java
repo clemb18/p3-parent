@@ -11,11 +11,9 @@ public interface WorkService {
 
     public List<Work> getWorksByPublicationDate (XMLGregorianCalendar publicationDate);
 
-    public com.openclassrooms.projects.bibliot.Work saveNewWork(Work work);
-
     public Work deleteWork(Integer workId);
 
-    Work create(com.openclassrooms.projects.bibliot.Work work);
+    Work create(Work work);
 
 
 }

@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2019.11.30 à 03:27:08 PM CET 
+// Généré le : 2019.12.06 à 05:14:44 PM CET 
 //
 
 
@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="serviceStatus" type="{http://openclassrooms.com/projects/bibliot}serviceStatus"/&gt;
- *         &lt;element name="user" type="{http://openclassrooms.com/projects/bibliot}user"/&gt;
+ *         &lt;element name="userWs" type="{http://openclassrooms.com/projects/bibliot}userWs"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -38,7 +38,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "serviceStatus",
-    "user"
+    "userWs"
 })
 @XmlRootElement(name = "createUserResponse")
 public class CreateUserResponse {
@@ -46,7 +46,7 @@ public class CreateUserResponse {
     @XmlElement(required = true)
     protected ServiceStatus serviceStatus;
     @XmlElement(required = true)
-    protected User user;
+    protected UserWs userWs;
 
     /**
      * Obtient la valeur de la propriété serviceStatus.
@@ -73,27 +73,27 @@ public class CreateUserResponse {
     }
 
     /**
-     * Obtient la valeur de la propriété user.
+     * Obtient la valeur de la propriété userWs.
      * 
      * @return
      *     possible object is
-     *     {@link User }
+     *     {@link UserWs }
      *     
      */
-    public User getUser() {
-        return user;
+    public UserWs getUserWs() {
+        return userWs;
     }
 
     /**
-     * Définit la valeur de la propriété user.
+     * Définit la valeur de la propriété userWs.
      * 
      * @param value
      *     allowed object is
-     *     {@link User }
+     *     {@link UserWs }
      *     
      */
-    public void setUser(User value) {
-        this.user = value;
+    public void setUserWs(UserWs value) {
+        this.userWs = value;
     }
 
 }

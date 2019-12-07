@@ -16,17 +16,17 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="serviceStatus" type="tns:serviceStatus"/>
-                <xs:element name="user" type="tns:user"/>
+                <xs:element name="userWs" type="tns:userWs"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
-    <!-- methode create user -->
+    <!-- methode create userWs -->
 
     <xs:element name="createUserRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="user" type="tns:user"/>
+                <xs:element name="userWs" type="tns:userWs"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -35,7 +35,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="serviceStatus" type="tns:serviceStatus"/>
-                <xs:element name="user" type="tns:user"/>
+                <xs:element name="userWs" type="tns:userWs"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -54,7 +54,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="serviceStatus" type="tns:serviceStatus"/>
-                <xs:element name="work" type="tns:work"/>
+                <xs:element name="workWs" type="tns:workWs"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -64,7 +64,7 @@
     <xs:element name="createWorkRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="work" type="tns:work"/>
+                <xs:element name="workWs" type="tns:workWs"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -73,7 +73,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="serviceStatus" type="tns:serviceStatus"/>
-                <xs:element name="work" type="tns:work"/>
+                <xs:element name="workWs" type="tns:workWs"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -92,12 +92,12 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="serviceStatus" type="tns:serviceStatus"/>
-                <xs:element name="work" type="tns:work"/>
+                <xs:element name="workWs" type="tns:workWs"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
-    <!-- methode save new work
+    <!-- methode save new workWs
 
     <xs:element name="getSaveNewWorkRequest">
         <xs:complexType>
@@ -114,12 +114,12 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="serviceStatus" type="tns:serviceStatus"/>
-                <xs:element name="work" type="tns:work"/>
+                <xs:element name="workWs" type="tns:workWs"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>-->
 
-    <!-- methode delete work -->
+    <!-- methode delete workWs -->
 
     <xs:element name="getDeleteWorkRequest">
         <xs:complexType>
@@ -133,7 +133,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="serviceStatus" type="tns:serviceStatus"/>
-                <xs:element name="work" type="tns:work"/>
+                <xs:element name="workWs" type="tns:workWs"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -144,7 +144,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="bookWs" type="tns:bookWs"/>
-                <xs:element name="user" type="tns:user"/>
+                <xs:element name="userWs" type="tns:userWs"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -153,7 +153,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="serviceStatus" type="tns:serviceStatus"/>
-                <xs:element name="borrow" type="tns:borrow"/>
+                <xs:element name="borrowWs" type="tns:borrowWs"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -172,7 +172,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="serviceStatus" type="tns:serviceStatus"/>
-                <xs:element name="borrow" type="tns:borrow"/>
+                <xs:element name="borrowWs" type="tns:borrowWs"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -192,7 +192,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="serviceStatus" type="tns:serviceStatus"/>
-                <xs:element name="borrow" type="tns:borrow"/>
+                <xs:element name="borrowWs" type="tns:borrowWs"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -244,7 +244,7 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="user">
+    <xs:complexType name="userWs">
         <xs:sequence>
             <xs:element name="name" type="xs:string"/>
             <xs:element name="firstName" type="xs:string"/>
@@ -260,7 +260,7 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="borrow">
+    <xs:complexType name="borrowWs">
         <xs:sequence>
             <xs:element name="id" type="xs:integer"/>
             <xs:element name="status" type="xs:string"/>
@@ -272,7 +272,7 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="work">
+    <xs:complexType name="workWs">
         <xs:sequence>
             <xs:element name="id" type="xs:integer"/>
             <xs:element name="title" type="xs:string"/>

@@ -4,6 +4,7 @@ package com.openclassrooms.bibliotheque.soap;
 import com.openclassrooms.bibliotheque.service.UserService;
 import com.openclassrooms.projects.bibliot.*;
 import org.springframework.beans.BeanUtils;
+import com.openclassrooms.bibliotheque.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -27,14 +28,14 @@ public class UserEndpoint {
     public GetUserByLoginAndPasswordResponse getUserByLoginAndPassword(@RequestPayload GetUserByLoginAndPasswordRequest request) {
         GetUserByLoginAndPasswordResponse response = new GetUserByLoginAndPasswordResponse();
         ServiceStatus serviceStatus = new ServiceStatus();
-        User findUser = userService.findByLoginAndPassword(request.getLogin(), request.getPassword());
-        if (findUser == null) {
+        User user = userService.findByLoginAndPassword(request.getLogin(), request.getPassword());
+        if (user == null) {
             serviceStatus.setStatus(NOT_FOUND);
         } else {
             serviceStatus.setStatus(SUCCESS);
-            User userResult = new User();
-            BeanUtils.copyProperties(findUser, userResult);
-            response.setUser(userResult);
+            UserWs userWs = new UserWs();
+            BeanUtils.copyProperties(user, userWs);
+            response.setUserWs(userWs);
         }
         response.setServiceStatus(serviceStatus);
         return response;
@@ -45,16 +46,19 @@ public class UserEndpoint {
     public CreateUserResponse createUser(@RequestPayload CreateUserRequest request) {
         CreateUserResponse createUserResponse = new CreateUserResponse();
         ServiceStatus serviceStatus = new ServiceStatus();
-        User userCreated = userService.create(request.getUser());
+        User user = new User();
+        BeanUtils.copyProperties(request.getUserWs(), user);
+        User userCreated = userService.create(user);
         if (userCreated == null) {
             serviceStatus.setStatus(NOT_FOUND);
         } else {
             serviceStatus.setStatus(SUCCESS);
-            User userResult = new User();
-            BeanUtils.copyProperties(userCreated, userResult);
-            createUserResponse.setUser(userResult);
+            UserWs userWs = new UserWs();
+            BeanUtils.copyProperties(userCreated, userWs);
+            createUserResponse.setUserWs(userWs);
         }
         createUserResponse.setServiceStatus(serviceStatus);
         return createUserResponse;
     }
 }
+

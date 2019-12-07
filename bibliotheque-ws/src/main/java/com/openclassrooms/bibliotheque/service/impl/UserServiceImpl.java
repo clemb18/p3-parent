@@ -16,7 +16,7 @@ public class UserServiceImpl implements UserService {
     public UserRepository userRepository;
 
     @Override
-    public com.openclassrooms.projects.bibliot.User findByLoginAndPassword(String login, String password) {
+    public com.openclassrooms.projects.bibliot.UserWs findByLoginAndPassword(String login, String password) {
         return userRepository.findByLoginAndPassword(login, password);
     }
 

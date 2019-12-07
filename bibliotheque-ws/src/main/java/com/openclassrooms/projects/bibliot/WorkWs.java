@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2019.11.30 à 03:27:08 PM CET 
+// Généré le : 2019.12.06 à 05:14:44 PM CET 
 //
 
 
@@ -18,21 +18,20 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Classe Java pour borrow complex type.
+ * <p>Classe Java pour workWs complex type.
  * 
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
- * &lt;complexType name="borrow"&gt;
+ * &lt;complexType name="workWs"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
- *         &lt;element name="status" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="startBorrowDate" type="{http://www.w3.org/2001/XMLSchema}date"/&gt;
- *         &lt;element name="endBorrowDate" type="{http://www.w3.org/2001/XMLSchema}date"/&gt;
- *         &lt;element name="extended" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="workTitle" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="author" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="publicationDate" type="{http://www.w3.org/2001/XMLSchema}date"/&gt;
+ *         &lt;element name="bookDescription" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -42,29 +41,26 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "borrow", propOrder = {
+@XmlType(name = "workWs", propOrder = {
     "id",
-    "status",
-    "startBorrowDate",
-    "endBorrowDate",
-    "extended",
-    "workTitle"
+    "title",
+    "author",
+    "publicationDate",
+    "bookDescription"
 })
-public class Borrow {
+public class WorkWs {
 
     @XmlElement(required = true)
     protected BigInteger id;
     @XmlElement(required = true)
-    protected String status;
+    protected String title;
+    @XmlElement(required = true)
+    protected String author;
     @XmlElement(required = true)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar startBorrowDate;
+    protected XMLGregorianCalendar publicationDate;
     @XmlElement(required = true)
-    @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar endBorrowDate;
-    protected boolean extended;
-    @XmlElement(required = true)
-    protected String workTitle;
+    protected String bookDescription;
 
     /**
      * Obtient la valeur de la propriété id.
@@ -91,115 +87,99 @@ public class Borrow {
     }
 
     /**
-     * Obtient la valeur de la propriété status.
+     * Obtient la valeur de la propriété title.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getStatus() {
-        return status;
+    public String getTitle() {
+        return title;
     }
 
     /**
-     * Définit la valeur de la propriété status.
+     * Définit la valeur de la propriété title.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setStatus(String value) {
-        this.status = value;
+    public void setTitle(String value) {
+        this.title = value;
     }
 
     /**
-     * Obtient la valeur de la propriété startBorrowDate.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public XMLGregorianCalendar getStartBorrowDate() {
-        return startBorrowDate;
-    }
-
-    /**
-     * Définit la valeur de la propriété startBorrowDate.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setStartBorrowDate(XMLGregorianCalendar value) {
-        this.startBorrowDate = value;
-    }
-
-    /**
-     * Obtient la valeur de la propriété endBorrowDate.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public XMLGregorianCalendar getEndBorrowDate() {
-        return endBorrowDate;
-    }
-
-    /**
-     * Définit la valeur de la propriété endBorrowDate.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setEndBorrowDate(XMLGregorianCalendar value) {
-        this.endBorrowDate = value;
-    }
-
-    /**
-     * Obtient la valeur de la propriété extended.
-     * 
-     */
-    public boolean isExtended() {
-        return extended;
-    }
-
-    /**
-     * Définit la valeur de la propriété extended.
-     * 
-     */
-    public void setExtended(boolean value) {
-        this.extended = value;
-    }
-
-    /**
-     * Obtient la valeur de la propriété workTitle.
+     * Obtient la valeur de la propriété author.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getWorkTitle() {
-        return workTitle;
+    public String getAuthor() {
+        return author;
     }
 
     /**
-     * Définit la valeur de la propriété workTitle.
+     * Définit la valeur de la propriété author.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setWorkTitle(String value) {
-        this.workTitle = value;
+    public void setAuthor(String value) {
+        this.author = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété publicationDate.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getPublicationDate() {
+        return publicationDate;
+    }
+
+    /**
+     * Définit la valeur de la propriété publicationDate.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public void setPublicationDate(XMLGregorianCalendar value) {
+        this.publicationDate = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété bookDescription.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getBookDescription() {
+        return bookDescription;
+    }
+
+    /**
+     * Définit la valeur de la propriété bookDescription.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setBookDescription(String value) {
+        this.bookDescription = value;
     }
 
 }

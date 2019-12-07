@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2019.11.30 à 03:27:08 PM CET 
+// Généré le : 2019.12.06 à 05:14:44 PM CET 
 //
 
 
@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="serviceStatus" type="{http://openclassrooms.com/projects/bibliot}serviceStatus"/&gt;
- *         &lt;element name="borrow" type="{http://openclassrooms.com/projects/bibliot}borrow"/&gt;
+ *         &lt;element name="borrowWs" type="{http://openclassrooms.com/projects/bibliot}borrowWs"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -38,7 +38,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "serviceStatus",
-    "borrow"
+    "borrowWs"
 })
 @XmlRootElement(name = "getExtendBorrowResponse")
 public class GetExtendBorrowResponse {
@@ -46,7 +46,7 @@ public class GetExtendBorrowResponse {
     @XmlElement(required = true)
     protected ServiceStatus serviceStatus;
     @XmlElement(required = true)
-    protected Borrow borrow;
+    protected BorrowWs borrowWs;
 
     /**
      * Obtient la valeur de la propriété serviceStatus.
@@ -73,27 +73,27 @@ public class GetExtendBorrowResponse {
     }
 
     /**
-     * Obtient la valeur de la propriété borrow.
+     * Obtient la valeur de la propriété borrowWs.
      * 
      * @return
      *     possible object is
-     *     {@link Borrow }
+     *     {@link BorrowWs }
      *     
      */
-    public Borrow getBorrow() {
-        return borrow;
+    public BorrowWs getBorrowWs() {
+        return borrowWs;
     }
 
     /**
-     * Définit la valeur de la propriété borrow.
+     * Définit la valeur de la propriété borrowWs.
      * 
      * @param value
      *     allowed object is
-     *     {@link Borrow }
+     *     {@link BorrowWs }
      *     
      */
-    public void setBorrow(Borrow value) {
-        this.borrow = value;
+    public void setBorrowWs(BorrowWs value) {
+        this.borrowWs = value;
     }
 
 }

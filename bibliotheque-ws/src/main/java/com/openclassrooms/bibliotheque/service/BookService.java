@@ -7,7 +7,7 @@ public interface BookService {
 
     Book getBookById(Integer bookId);
 
-    Book saveNewBook(Book book);
+  /*  Book saveNewBook(Book book);*/
 
     Book deleteBook(Integer bookId);
 

@@ -32,11 +32,11 @@ public class BookServiceImpl implements BookService {
     }
 
 
-    public Book saveNewBook(Book book) {
+   /* public Book saveNewBook(Book book) {
         logger.info("enregistrement d'un nouveau livre: {}", book);
 
         return bookRepository.save(book);
-    }
+    }*/
 
     public Book deleteBook(Integer bookId) {
         logger.info("suppression d'un livre: {}", bookId);
