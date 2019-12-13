@@ -65,7 +65,7 @@ public class WorkEndpoint {
         ServiceStatus serviceStatus = new ServiceStatus();
         Work work = new Work();
         BeanUtils.copyProperties(request.getWorkWs(), work);
-        Work workCreated = workService.create(work);
+        Work workCreated = workService.create(request.getWorkWs());
         if (workCreated == null) {
             serviceStatus.setStatus(NOT_FOUND);
         } else {

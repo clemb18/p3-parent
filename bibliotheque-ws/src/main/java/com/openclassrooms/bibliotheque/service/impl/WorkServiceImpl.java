@@ -3,6 +3,7 @@ package com.openclassrooms.bibliotheque.service.impl;
 import com.openclassrooms.bibliotheque.models.Work;
 import com.openclassrooms.bibliotheque.repository.WorkRepository;
 import com.openclassrooms.bibliotheque.service.WorkService;
+import com.openclassrooms.projects.bibliot.WorkWs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -34,23 +35,11 @@ public class WorkServiceImpl implements WorkService {
 
     }
 
-    public com.openclassrooms.projects.bibliot.Work saveNewWork(Work work) {
-        logger.info("enregistrement d'uen nouvelle oeuvre: {}", work);
-
-        return workRepository.save(work);
-    }
-
-    public Work deleteWork(Long workId) {
-        logger.info("suppression d'une oeuvre: {}", workId);
-
-        return workRepository.delete(workId);
-    }
-
     @Override
-    public Work create(com.openclassrooms.projects.bibliot.Work work) {
+    public Work create(WorkWs work) {
         Work workCreated = new Work();
         BeanUtils.copyProperties(work, workCreated);
-        workCreated = workRepository.save(work);
+        workCreated = workRepository.save(workCreated);
         return workCreated;
     }
 }

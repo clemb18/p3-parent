@@ -1,9 +1,9 @@
 package com.openclassrooms.bibliotheque.service.impl;
 
+import com.openclassrooms.bibliotheque.models.User;
 import com.openclassrooms.bibliotheque.repository.UserRepository;
 import com.openclassrooms.bibliotheque.service.UserService;
-import com.openclassrooms.bibliotheque.models.User;
-
+import com.openclassrooms.projects.bibliot.UserWs;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
