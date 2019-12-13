@@ -25,7 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="userWs" type="{http://openclassrooms.com/projects/bibliot}userWs"/&gt;
+ *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="firstName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,36 +37,63 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "userWs"
+    "name",
+    "firstName"
 })
-@XmlRootElement(name = "createUserRequest")
-public class CreateUserRequest {
+@XmlRootElement(name = "getMemberByNameAndFirstNameRequest")
+public class GetMemberByNameAndFirstNameRequest {
 
     @XmlElement(required = true)
-    protected UserWs userWs;
+    protected String name;
+    @XmlElement(required = true)
+    protected String firstName;
 
     /**
-     * Obtient la valeur de la propriété userWs.
+     * Obtient la valeur de la propriété name.
      * 
      * @return
      *     possible object is
-     *     {@link UserWs }
+     *     {@link String }
      *     
      */
-    public UserWs getUserWs() {
-        return userWs;
+    public String getName() {
+        return name;
     }
 
     /**
-     * Définit la valeur de la propriété userWs.
+     * Définit la valeur de la propriété name.
      * 
      * @param value
      *     allowed object is
-     *     {@link UserWs }
+     *     {@link String }
      *     
      */
-    public void setUserWs(UserWs value) {
-        this.userWs = value;
+    public void setName(String value) {
+        this.name = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété firstName.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getFirstName() {
+        return firstName;
+    }
+
+    /**
+     * Définit la valeur de la propriété firstName.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setFirstName(String value) {
+        this.firstName = value;
     }
 
 }

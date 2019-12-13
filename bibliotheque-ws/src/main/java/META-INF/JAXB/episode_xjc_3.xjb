@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="2.1" xmlns="http://java.sun.com/xml/ns/jaxb">
+  <!--
+
+Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
+Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+Généré le : 2019.12.13 à 10:40:54 PM CET 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://openclassrooms.com/projects/bibliot">
+    <schemaBindings map="false">
+      <package name="com.openclassrooms.projects.bibliot"/>
+    </schemaBindings>
+    <bindings scd="tns:getUserByLoginAndPasswordRequest">
+      <class ref="com.openclassrooms.projects.bibliot.GetUserByLoginAndPasswordRequest"/>
+    </bindings>
+    <bindings scd="tns:getUserByLoginAndPasswordResponse">
+      <class ref="com.openclassrooms.projects.bibliot.GetUserByLoginAndPasswordResponse"/>
+    </bindings>
+    <bindings scd="~tns:serviceStatus">
+      <class ref="com.openclassrooms.projects.bibliot.ServiceStatus"/>
+    </bindings>
+    <bindings scd="~tns:userWs">
+      <class ref="com.openclassrooms.projects.bibliot.UserWs"/>
+    </bindings>
+    <bindings scd="tns:getMemberByNameAndFirstNameRequest">
+      <class ref="com.openclassrooms.projects.bibliot.GetMemberByNameAndFirstNameRequest"/>
+    </bindings>
+    <bindings scd="tns:getMemberByNameAndFirstNameResponse">
+      <class ref="com.openclassrooms.projects.bibliot.GetMemberByNameAndFirstNameResponse"/>
+    </bindings>
+    <bindings scd="~tns:memberWs">
+      <class ref="com.openclassrooms.projects.bibliot.MemberWs"/>
+    </bindings>
+    <bindings scd="tns:createUserRequest">
+      <class ref="com.openclassrooms.projects.bibliot.CreateUserRequest"/>
+    </bindings>
+    <bindings scd="tns:createUserResponse">
+      <class ref="com.openclassrooms.projects.bibliot.CreateUserResponse"/>
+    </bindings>
+    <bindings scd="tns:createMemberRequest">
+      <class ref="com.openclassrooms.projects.bibliot.CreateMemberRequest"/>
+    </bindings>
+    <bindings scd="tns:createMemberResponse">
+      <class ref="com.openclassrooms.projects.bibliot.CreateMemberResponse"/>
+    </bindings>
+    <bindings scd="tns:getWorkByAuthorRequest">
+      <class ref="com.openclassrooms.projects.bibliot.GetWorkByAuthorRequest"/>
+    </bindings>
+    <bindings scd="tns:getWorkByAuthorResponse">
+      <class ref="com.openclassrooms.projects.bibliot.GetWorkByAuthorResponse"/>
+    </bindings>
+    <bindings scd="~tns:workWs">
+      <class ref="com.openclassrooms.projects.bibliot.WorkWs"/>
+    </bindings>
+    <bindings scd="tns:createWorkRequest">
+      <class ref="com.openclassrooms.projects.bibliot.CreateWorkRequest"/>
+    </bindings>
+    <bindings scd="tns:createWorkResponse">
+      <class ref="com.openclassrooms.projects.bibliot.CreateWorkResponse"/>
+    </bindings>
+    <bindings scd="tns:getWorkByPublicationDateRequest">
+      <class ref="com.openclassrooms.projects.bibliot.GetWorkByPublicationDateRequest"/>
+    </bindings>
+    <bindings scd="tns:getWorkByPublicationDateResponse">
+      <class ref="com.openclassrooms.projects.bibliot.GetWorkByPublicationDateResponse"/>
+    </bindings>
+    <bindings scd="tns:getDeleteWorkRequest">
+      <class ref="com.openclassrooms.projects.bibliot.GetDeleteWorkRequest"/>
+    </bindings>
+    <bindings scd="tns:getDeleteWorkResponse">
+      <class ref="com.openclassrooms.projects.bibliot.GetDeleteWorkResponse"/>
+    </bindings>
+    <bindings scd="tns:getBorrowBookRequest">
+      <class ref="com.openclassrooms.projects.bibliot.GetBorrowBookRequest"/>
+    </bindings>
+    <bindings scd="tns:getBorrowBookResponse">
+      <class ref="com.openclassrooms.projects.bibliot.GetBorrowBookResponse"/>
+    </bindings>
+    <bindings scd="~tns:borrowWs">
+      <class ref="com.openclassrooms.projects.bibliot.BorrowWs"/>
+    </bindings>
+    <bindings scd="tns:getExtendBorrowRequest">
+      <class ref="com.openclassrooms.projects.bibliot.GetExtendBorrowRequest"/>
+    </bindings>
+    <bindings scd="tns:getExtendBorrowResponse">
+      <class ref="com.openclassrooms.projects.bibliot.GetExtendBorrowResponse"/>
+    </bindings>
+    <bindings scd="tns:getTerminateBorrowRequest">
+      <class ref="com.openclassrooms.projects.bibliot.GetTerminateBorrowRequest"/>
+    </bindings>
+    <bindings scd="tns:getTerminateBorrowResponse">
+      <class ref="com.openclassrooms.projects.bibliot.GetTerminateBorrowResponse"/>
+    </bindings>
+    <bindings scd="tns:getBookByIdRequest">
+      <class ref="com.openclassrooms.projects.bibliot.GetBookByIdRequest"/>
+    </bindings>
+    <bindings scd="tns:getBookByIdResponse">
+      <class ref="com.openclassrooms.projects.bibliot.GetBookByIdResponse"/>
+    </bindings>
+    <bindings scd="~tns:bookWs">
+      <class ref="com.openclassrooms.projects.bibliot.BookWs"/>
+    </bindings>
+    <bindings scd="tns:createBookRequest">
+      <class ref="com.openclassrooms.projects.bibliot.CreateBookRequest"/>
+    </bindings>
+    <bindings scd="tns:createBookResponse">
+      <class ref="com.openclassrooms.projects.bibliot.CreateBookResponse"/>
+    </bindings>
+    <bindings scd="~tns:status">
+      <typesafeEnumClass ref="com.openclassrooms.projects.bibliot.Status"/>
+    </bindings>
+  </bindings>
+</bindings>
+

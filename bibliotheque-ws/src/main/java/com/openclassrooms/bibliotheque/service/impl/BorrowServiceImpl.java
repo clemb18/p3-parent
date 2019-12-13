@@ -152,4 +152,9 @@ public class BorrowServiceImpl implements BorrowService {
         return toReturn;
     }
 
+    @Override
+    public List<Borrow> findBorrowListByMember(MemberWs member) {
+        return borrowRepository.findByMember(member);
+    }
+
 }

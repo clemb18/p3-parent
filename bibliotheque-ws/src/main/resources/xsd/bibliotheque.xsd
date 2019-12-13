@@ -21,6 +21,26 @@
         </xs:complexType>
     </xs:element>
 
+    <!-- methode findByNameAndFirstName -->
+
+    <xs:element name="getMemberByNameAndFirstNameRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="firstName" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getMemberByNameAndFirstNameResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="memberWs" type="tns:memberWs"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
     <!-- methode create userWs -->
 
     <xs:element name="createUserRequest">
@@ -39,6 +59,26 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
+    <!-- methode create memberWs -->
+
+    <xs:element name="createMemberRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="memberWs" type="tns:memberWs"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createMemberResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="memberWs" type="tns:memberWs"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
 
     <!-- methode get works by author -->
 

@@ -64,7 +64,7 @@ public class BorrowEndpoint {
     public GetTerminateBorrowResponse terminateBorrow(@RequestPayload GetTerminateBorrowRequest request) {
         GetTerminateBorrowResponse response = new GetTerminateBorrowResponse();
         ServiceStatus serviceStatus = new ServiceStatus();
-        Borrow borrowToEnd = borrowService.terminateBorrow(request.getId());
+        Boolean borrowToEnd = borrowService.terminateBorrow(request.getId());
         if (borrowToEnd == null) {
             serviceStatus.setStatus(NOT_FOUND);
         } else {

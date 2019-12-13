@@ -1,10 +1,10 @@
 package com.openclassrooms.bibliotheque.service;
 
-public interface BorrowService {
+import com.openclassrooms.bibliotheque.models.Borrow;
 
-   /*Borrow borrowBook(Long workId, Long memberId);
-   Borrow extendBorrow(Long borrowId);
-   Borrow terminateBorrow(Long borrowId, Long memberId);*/
+import java.util.List;
+
+public interface BorrowService {
 
 
    Boolean borrowBook(Long workId, Long memberId);
@@ -12,4 +12,5 @@ public interface BorrowService {
    Boolean terminateBorrow(Long borrowId, Long memberId);
 
 
+   List<Borrow> findBorrowListByMember(MemberWs member);
 }

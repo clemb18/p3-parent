@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="userWs" type="{http://openclassrooms.com/projects/bibliot}userWs"/&gt;
+ *         &lt;element name="memberWs" type="{http://openclassrooms.com/projects/bibliot}memberWs"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,36 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "userWs"
+    "memberWs"
 })
-@XmlRootElement(name = "createUserRequest")
-public class CreateUserRequest {
+@XmlRootElement(name = "createMemberRequest")
+public class CreateMemberRequest {
 
     @XmlElement(required = true)
-    protected UserWs userWs;
+    protected MemberWs memberWs;
 
     /**
-     * Obtient la valeur de la propriété userWs.
+     * Obtient la valeur de la propriété memberWs.
      * 
      * @return
      *     possible object is
-     *     {@link UserWs }
+     *     {@link MemberWs }
      *     
      */
-    public UserWs getUserWs() {
-        return userWs;
+    public MemberWs getMemberWs() {
+        return memberWs;
     }
 
     /**
-     * Définit la valeur de la propriété userWs.
+     * Définit la valeur de la propriété memberWs.
      * 
      * @param value
      *     allowed object is
-     *     {@link UserWs }
+     *     {@link MemberWs }
      *     
      */
-    public void setUserWs(UserWs value) {
-        this.userWs = value;
+    public void setMemberWs(MemberWs value) {
+        this.memberWs = value;
     }
 
 }
