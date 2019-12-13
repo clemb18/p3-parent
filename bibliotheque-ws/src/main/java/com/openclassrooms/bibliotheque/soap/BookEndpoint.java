@@ -47,7 +47,7 @@ public class BookEndpoint {
         ServiceStatus serviceStatus = new ServiceStatus();
         Book book = new Book();
         BeanUtils.copyProperties(request.getBookWs(), book);
-        Book bookCreated = bookService.create(book);
+        Book bookCreated = bookService.create(request.getBookWs());
         if (bookCreated == null) {
             serviceStatus.setStatus(NOT_FOUND);
         } else {

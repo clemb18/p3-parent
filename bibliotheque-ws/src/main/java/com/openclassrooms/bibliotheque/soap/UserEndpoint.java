@@ -48,7 +48,6 @@ public class UserEndpoint {
         ServiceStatus serviceStatus = new ServiceStatus();
         User user = new User();
         BeanUtils.copyProperties(request.getUserWs(), user);
-       // User userCreated = userService.create(user);
         User userCreated = userService.create(request.getUserWs());
         if (userCreated == null) {
             serviceStatus.setStatus(NOT_FOUND);
