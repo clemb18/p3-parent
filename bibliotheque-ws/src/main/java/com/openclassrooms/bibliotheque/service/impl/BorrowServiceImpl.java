@@ -47,16 +47,12 @@ public class BorrowServiceImpl implements BorrowService {
 
         Boolean toReturn = false;
 
-
-
         // Recuperer le Work dont on connait l'ID (creer work repository)
         Work myWorkGot = workRepository.findById(workId).get();
         String workName = myWorkGot.getTitle();
 
         // recuperer la liste dans myborrowgot
         List<Book> bookList = myWorkGot.getBooksList();
-
-
 
         // On parcours la bookList
         for (Book result : bookList) {
@@ -84,13 +80,13 @@ public class BorrowServiceImpl implements BorrowService {
                 borrowToSave.setStatus(BorrowStatusEnum.ENCOURS.value());
                 borrowToSave.setWorkName(workName);
 
-                // Save le borrow dans le repository
+                 //  Save le borrow dans le repository
                 borrowRepository.save(borrowToSave);
                 //Indique que le livre n'est plus disponible et on sauvegarde dans le bookRepository
                 result.setAvailable(false);
                 bookRepository.save(result);
 
-                //Mettre a jour la liste des emprunt du memmberCo et save
+               // Mettre a jour la liste des emprunt du memmberCo et save
 
                 List<Borrow> memberListBorrowToUpdate = memberService.findBorrowListByMember(member);
                 memberListBorrowToUpdate.add(borrowToSave);
@@ -109,7 +105,7 @@ public class BorrowServiceImpl implements BorrowService {
 
         Boolean toReturn = false;
         // Recuperer le borrow dont on connait l'ID
-        Borrow borrowToExtend = borrowRepository.findById(borrowId).getId();
+        Borrow borrowToExtend = borrowRepository.findById(borrowId);
         Date endBorrowDate = borrowToExtend.getEndBorrowDate();
         // Recuperer la date du jour
         Date currentDate = new Date();
@@ -135,12 +131,13 @@ public class BorrowServiceImpl implements BorrowService {
         return toReturn;
     }
 
-    public Boolean terminateBorrow(Long borrowId, Long memberId ) {
+    //public Boolean terminateBorrow(Long borrowId, Long memberId ) {
+    public Boolean terminateBorrow(Long borrowId) {
 
         Boolean toReturn = false;
 
         //Set le statut de l'emprunt a "rendu"
-        Borrow borrowToEnd = borrowRepository.findById(borrowId).getId();
+        Borrow borrowToEnd = borrowRepository.findById(borrowId);
         borrowToEnd.setStatus(BorrowStatusEnum.RENDU.value());
         //Set le book comme disponible
         Book returnedBook = borrowToEnd.getBook();
@@ -152,9 +149,6 @@ public class BorrowServiceImpl implements BorrowService {
         return toReturn;
     }
 
-    @Override
-    public List<Borrow> findBorrowListByMember(MemberWs member) {
-        return borrowRepository.findByMember(member);
-    }
+
 
 }
