@@ -22,23 +22,12 @@ public class BookServiceImpl implements BookService {
     @Autowired
     BookRepository bookRepository;
 
-    public Book getBookById(Integer bookId) {
+    public Book getBookById(Long bookId) {
 
         return bookRepository.findById(bookId).get();
     }
 
-    public String test() {
-        return "Oui le service répond";
-    }
-
-
-   /* public Book saveNewBook(Book book) {
-        logger.info("enregistrement d'un nouveau livre: {}", book);
-
-        return bookRepository.save(book);
-    }*/
-
-    public Book deleteBook(Integer bookId) {
+    public Book deleteBook(Long bookId) {
         logger.info("suppression d'un livre: {}", bookId);
 
         return bookRepository.delete(bookId);

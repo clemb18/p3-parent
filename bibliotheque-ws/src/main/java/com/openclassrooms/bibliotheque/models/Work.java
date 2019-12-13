@@ -14,7 +14,7 @@ public class Work implements Serializable {
 	@Id
 
 	@Column(name = "W_ID")
-	private Integer id;
+	private Long id;
 
 	@Column(name = "W_TITLE")
 	private String title;
@@ -40,11 +40,11 @@ public class Work implements Serializable {
 		this.author = author;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

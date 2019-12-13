@@ -40,7 +40,7 @@ public class WorkServiceImpl implements WorkService {
         return workRepository.save(work);
     }
 
-    public Work deleteWork(Integer workId) {
+    public Work deleteWork(Long workId) {
         logger.info("suppression d'une oeuvre: {}", workId);
 
         return workRepository.delete(workId);

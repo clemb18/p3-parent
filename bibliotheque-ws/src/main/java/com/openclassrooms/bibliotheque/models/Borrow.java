@@ -15,7 +15,7 @@ public class Borrow implements Serializable {
 	@Id
 
 	@Column(name = "B_ID")
-	private Integer id;
+	private Long id;
 	@Column(name = "B_STATUS")
 	private String status;
 	@Column(name = "B_START_BORROW_DATE")
@@ -41,11 +41,11 @@ public class Borrow implements Serializable {
 	@OneToOne
 	private Book book;
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

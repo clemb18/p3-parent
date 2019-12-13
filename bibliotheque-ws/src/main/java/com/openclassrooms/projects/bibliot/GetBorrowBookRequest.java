@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2019.12.06 à 05:14:44 PM CET 
+// Généré le : 2019.12.13 à 04:57:48 PM CET 
 //
 
 
@@ -25,8 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="bookWs" type="{http://openclassrooms.com/projects/bibliot}bookWs"/&gt;
- *         &lt;element name="userWs" type="{http://openclassrooms.com/projects/bibliot}userWs"/&gt;
+ *         &lt;element name="workWs" type="{http://openclassrooms.com/projects/bibliot}workWs"/&gt;
+ *         &lt;element name="memberWs" type="{http://openclassrooms.com/projects/bibliot}memberWs"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -37,63 +37,63 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "bookWs",
-    "userWs"
+    "workWs",
+    "memberWs"
 })
 @XmlRootElement(name = "getBorrowBookRequest")
 public class GetBorrowBookRequest {
 
     @XmlElement(required = true)
-    protected BookWs bookWs;
+    protected WorkWs workWs;
     @XmlElement(required = true)
-    protected UserWs userWs;
+    protected MemberWs memberWs;
 
     /**
-     * Obtient la valeur de la propriété bookWs.
+     * Obtient la valeur de la propriété workWs.
      * 
      * @return
      *     possible object is
-     *     {@link BookWs }
+     *     {@link WorkWs }
      *     
      */
-    public BookWs getBookWs() {
-        return bookWs;
+    public WorkWs getWorkWs() {
+        return workWs;
     }
 
     /**
-     * Définit la valeur de la propriété bookWs.
+     * Définit la valeur de la propriété workWs.
      * 
      * @param value
      *     allowed object is
-     *     {@link BookWs }
+     *     {@link WorkWs }
      *     
      */
-    public void setBookWs(BookWs value) {
-        this.bookWs = value;
+    public void setWorkWs(WorkWs value) {
+        this.workWs = value;
     }
 
     /**
-     * Obtient la valeur de la propriété userWs.
+     * Obtient la valeur de la propriété memberWs.
      * 
      * @return
      *     possible object is
-     *     {@link UserWs }
+     *     {@link MemberWs }
      *     
      */
-    public UserWs getUserWs() {
-        return userWs;
+    public MemberWs getMemberWs() {
+        return memberWs;
     }
 
     /**
-     * Définit la valeur de la propriété userWs.
+     * Définit la valeur de la propriété memberWs.
      * 
      * @param value
      *     allowed object is
-     *     {@link UserWs }
+     *     {@link MemberWs }
      *     
      */
-    public void setUserWs(UserWs value) {
-        this.userWs = value;
+    public void setMemberWs(MemberWs value) {
+        this.memberWs = value;
     }
 
 }

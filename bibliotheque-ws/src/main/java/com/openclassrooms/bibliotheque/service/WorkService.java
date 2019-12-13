@@ -11,7 +11,7 @@ public interface WorkService {
 
     public List<Work> getWorksByPublicationDate (XMLGregorianCalendar publicationDate);
 
-    public Work deleteWork(Integer workId);
+    public Work deleteWork(Long workId);
 
     Work create(Work work);
 

@@ -15,4 +15,5 @@ public interface BorrowRepository extends CrudRepository<Borrow, Integer> {
 
     Iterable<Borrow> findAll();
 
+    Borrow findById(Long borrowId);
 }

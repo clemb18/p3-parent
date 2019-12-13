@@ -5,11 +5,9 @@ import com.openclassrooms.bibliotheque.models.Book;
 
 public interface BookService {
 
-    Book getBookById(Integer bookId);
+    Book getBookById(Long bookId);
 
-  /*  Book saveNewBook(Book book);*/
-
-    Book deleteBook(Integer bookId);
+    Book deleteBook(Long bookId);
 
     Book create(Book book);
 

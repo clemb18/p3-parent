@@ -15,19 +15,21 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java pour userWs complex type.
+ * <p>Classe Java pour memberWs complex type.
  * 
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
- * &lt;complexType name="userWs"&gt;
+ * &lt;complexType name="memberWs"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="mailAdress" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="firstName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="login" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="tel" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="adress" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -37,22 +39,67 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "userWs", propOrder = {
+@XmlType(name = "memberWs", propOrder = {
+    "id",
+    "mailAdress",
     "name",
     "firstName",
-    "login",
-    "password"
+    "tel",
+    "adress"
 })
-public class UserWs {
+public class MemberWs {
 
+    protected long id;
+    @XmlElement(required = true)
+    protected String mailAdress;
     @XmlElement(required = true)
     protected String name;
     @XmlElement(required = true)
     protected String firstName;
     @XmlElement(required = true)
-    protected String login;
+    protected String tel;
     @XmlElement(required = true)
-    protected String password;
+    protected String adress;
+
+    /**
+     * Obtient la valeur de la propriété id.
+     * 
+     */
+    public long getId() {
+        return id;
+    }
+
+    /**
+     * Définit la valeur de la propriété id.
+     * 
+     */
+    public void setId(long value) {
+        this.id = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété mailAdress.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getMailAdress() {
+        return mailAdress;
+    }
+
+    /**
+     * Définit la valeur de la propriété mailAdress.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setMailAdress(String value) {
+        this.mailAdress = value;
+    }
 
     /**
      * Obtient la valeur de la propriété name.
@@ -103,51 +150,51 @@ public class UserWs {
     }
 
     /**
-     * Obtient la valeur de la propriété login.
+     * Obtient la valeur de la propriété tel.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getLogin() {
-        return login;
+    public String getTel() {
+        return tel;
     }
 
     /**
-     * Définit la valeur de la propriété login.
+     * Définit la valeur de la propriété tel.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setLogin(String value) {
-        this.login = value;
+    public void setTel(String value) {
+        this.tel = value;
     }
 
     /**
-     * Obtient la valeur de la propriété password.
+     * Obtient la valeur de la propriété adress.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getPassword() {
-        return password;
+    public String getAdress() {
+        return adress;
     }
 
     /**
-     * Définit la valeur de la propriété password.
+     * Définit la valeur de la propriété adress.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setPassword(String value) {
-        this.password = value;
+    public void setAdress(String value) {
+        this.adress = value;
     }
 
 }

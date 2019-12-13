@@ -4,6 +4,7 @@ import com.openclassrooms.bibliotheque.repository.UserRepository;
 import com.openclassrooms.bibliotheque.service.UserService;
 import com.openclassrooms.bibliotheque.models.User;
 
+import com.openclassrooms.projects.bibliot.UserWs;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,15 +17,15 @@ public class UserServiceImpl implements UserService {
     public UserRepository userRepository;
 
     @Override
-    public com.openclassrooms.projects.bibliot.UserWs findByLoginAndPassword(String login, String password) {
+    public User findByLoginAndPassword(String login, String password) {
         return userRepository.findByLoginAndPassword(login, password);
     }
 
     @Override
-    public com.openclassrooms.projects.bibliot.User create(com.openclassrooms.projects.bibliot.User user) {
+    public User create(UserWs user) {
         User userCreated = new User();
         BeanUtils.copyProperties(user, userCreated);
-        userCreated = userRepository.save(user);
-        return (com.openclassrooms.projects.bibliot.User) userCreated;
+        userCreated = userRepository.save(userCreated);
+        return userCreated;
     }
 }

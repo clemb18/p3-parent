@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2019.12.06 à 05:14:44 PM CET 
+// Généré le : 2019.12.13 à 04:57:48 PM CET 
 //
 
 
@@ -165,11 +165,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link BookWs }
+     * Create an instance of {@link MemberWs }
      * 
      */
-    public BookWs createBookWs() {
-        return new BookWs();
+    public MemberWs createMemberWs() {
+        return new MemberWs();
     }
 
     /**
@@ -234,6 +234,14 @@ public class ObjectFactory {
      */
     public GetBookByIdResponse createGetBookByIdResponse() {
         return new GetBookByIdResponse();
+    }
+
+    /**
+     * Create an instance of {@link BookWs }
+     * 
+     */
+    public BookWs createBookWs() {
+        return new BookWs();
     }
 
     /**

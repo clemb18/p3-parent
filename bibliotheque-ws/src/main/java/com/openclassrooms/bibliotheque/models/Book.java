@@ -10,16 +10,16 @@ public class Book implements Serializable {
 	@Id
 
 	@Column(name = "BOOK_ID")
-	private Integer id;
+	private Long id;
 	@Column(name = "BOOK_AVAILABLE")
 	private boolean available;
 
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

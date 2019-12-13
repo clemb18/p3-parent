@@ -8,13 +8,13 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.Optional;
 
 
-public interface BookRepository extends CrudRepository<Book, Integer> {
+public interface BookRepository extends CrudRepository<Book, Long> {
 
-    Book delete(Integer bookId);
+    Book delete(Long bookId);
 
    // Book save(Book book);
 
-    Optional<Book> findById(Integer bookId);
+    Optional<Book> findById(Long bookId);
 
-    com.openclassrooms.projects.bibliot.Book save(Book book);
+    Book save(Book book);
 }

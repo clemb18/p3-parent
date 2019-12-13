@@ -36,10 +36,10 @@ public class BorrowServiceImpl implements BorrowService {
     @Autowired
     private MemberService memberService;
 
-    public Boolean borrowBook(Integer workId, Integer membreId) {
+    public Boolean borrowBook(Long workId, Long memberId) {
 
         // on recupère l'Id du membre passé en parametre
-        Optional<Member> optionalMember = memberRepository.findById(membreId);
+        Optional<Member> optionalMember = memberRepository.findById(memberId);
         if (!optionalMember.isPresent()) {
             return false;
         }
@@ -105,11 +105,11 @@ public class BorrowServiceImpl implements BorrowService {
         return toReturn;
     }
 
-    public Boolean extendBorrow(Integer borrowId) {
+    public Boolean extendBorrow(Long borrowId) {
 
         Boolean toReturn = false;
         // Recuperer le borrow dont on connait l'ID
-        Borrow borrowToExtend = borrowRepository.findById(borrowId).get();
+        Borrow borrowToExtend = borrowRepository.findById(borrowId).getId();
         Date endBorrowDate = borrowToExtend.getEndBorrowDate();
         // Recuperer la date du jour
         Date currentDate = new Date();
@@ -135,12 +135,12 @@ public class BorrowServiceImpl implements BorrowService {
         return toReturn;
     }
 
-    public Boolean terminateBorrow(Integer borrowId, Integer membreId ) {
+    public Boolean terminateBorrow(Long borrowId, Long memberId ) {
 
         Boolean toReturn = false;
 
         //Set le statut de l'emprunt a "rendu"
-        Borrow borrowToEnd = borrowRepository.findById(borrowId).get();
+        Long borrowToEnd = borrowRepository.findById(borrowId).getId();
         borrowToEnd.setStatus(BorrowStatusEnum.RENDU.value());
         //Set le book comme disponible
         Book returnedBook = borrowToEnd.getBook();

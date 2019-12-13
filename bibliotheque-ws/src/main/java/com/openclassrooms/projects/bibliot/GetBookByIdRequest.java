@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2019.12.06 à 05:14:44 PM CET 
+// Généré le : 2019.12.13 à 04:57:48 PM CET 
 //
 
 
@@ -44,9 +44,10 @@ public class GetBookByIdRequest {
 
     /**
      * Obtient la valeur de la propriété id.
-     * 
+     *
+     * @return
      */
-    public int getId() {
+    public long getId() {
         return id;
     }
 
