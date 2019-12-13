@@ -8,4 +8,6 @@ import java.util.List;
 public interface MemberService {
 
     List<Borrow> findBorrowListByMember (Member member);
+
+  //  Member findByLoginAndPassword(String login, String password);
 }

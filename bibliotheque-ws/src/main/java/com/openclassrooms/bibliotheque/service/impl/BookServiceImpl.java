@@ -3,6 +3,7 @@ package com.openclassrooms.bibliotheque.service.impl;
 import com.openclassrooms.bibliotheque.models.Book;
 import com.openclassrooms.bibliotheque.repository.BookRepository;
 import com.openclassrooms.bibliotheque.service.BookService;
+import com.openclassrooms.projects.bibliot.BookWs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -34,10 +35,10 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Book create(Book book) {
+    public Book create(BookWs book) {
         Book bookCreated = new Book();
         BeanUtils.copyProperties(book, bookCreated);
-        bookCreated = bookRepository.save(book);
+        bookCreated = bookRepository.save(bookCreated);
         return bookCreated;
     }
 }

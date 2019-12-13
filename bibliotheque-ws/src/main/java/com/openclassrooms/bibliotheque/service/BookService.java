@@ -1,6 +1,7 @@
 package com.openclassrooms.bibliotheque.service;
 
 import com.openclassrooms.bibliotheque.models.Book;
+import com.openclassrooms.projects.bibliot.BookWs;
 
 
 public interface BookService {
@@ -9,6 +10,6 @@ public interface BookService {
 
     Book deleteBook(Long bookId);
 
-    Book create(Book book);
+    Book create(BookWs book);
 
 }

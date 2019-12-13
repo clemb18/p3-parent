@@ -41,7 +41,7 @@ public class Borrow implements Serializable {
 	@OneToOne
 	private Book book;
 
-	public Long getId() {
+	public Borrow getId() {
 		return id;
 	}
 

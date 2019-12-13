@@ -1,6 +1,7 @@
 package com.openclassrooms.bibliotheque.service.impl;
 
 
+import com.openclassrooms.bibliotheque.enumType.BorrowStatusEnum;
 import com.openclassrooms.bibliotheque.models.Book;
 import com.openclassrooms.bibliotheque.models.Borrow;
 import com.openclassrooms.bibliotheque.models.Member;
@@ -11,7 +12,6 @@ import com.openclassrooms.bibliotheque.repository.MemberRepository;
 import com.openclassrooms.bibliotheque.repository.WorkRepository;
 import com.openclassrooms.bibliotheque.service.BorrowService;
 import com.openclassrooms.bibliotheque.service.MemberService;
-import com.openclassrooms.bibliotheque.enumType.BorrowStatusEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -140,7 +140,7 @@ public class BorrowServiceImpl implements BorrowService {
         Boolean toReturn = false;
 
         //Set le statut de l'emprunt a "rendu"
-        Long borrowToEnd = borrowRepository.findById(borrowId).getId();
+        Borrow borrowToEnd = borrowRepository.findById(borrowId).getId();
         borrowToEnd.setStatus(BorrowStatusEnum.RENDU.value());
         //Set le book comme disponible
         Book returnedBook = borrowToEnd.getBook();
