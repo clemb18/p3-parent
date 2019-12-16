@@ -26,7 +26,7 @@ Base de données Postgres SQL:
 - Selectionner PostGreSql
 - Renseigner les user et mdp
 - Selectionner l'editeur SQL
-- Executer le script create_db.sql puis init_db.sql
+- Executer le script 2_init_db.sql puis init_db.sql
 - user: bibliot 
 - mdp: admin
 

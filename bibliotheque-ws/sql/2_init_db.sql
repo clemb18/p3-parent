@@ -1,12 +1,3 @@
-drop database if exists bibliot;
-drop role if exists bibliot;
--- create the requested bibliot user
-
-create user bibliot createdb createuser password 'admin';
-
--- create a bibliot database
-create database bibliot owner bibliot;
-
 -- creation table work
 create table T_WORK
 (

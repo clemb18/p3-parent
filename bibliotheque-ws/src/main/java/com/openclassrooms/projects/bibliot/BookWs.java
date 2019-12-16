@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2019.12.13 à 10:40:54 PM CET 
+// Généré le : 2019.12.14 à 08:41:24 AM CET 
 //
 
 
@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="available" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -40,14 +40,14 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class BookWs {
 
-    protected int id;
+    protected long id;
     protected boolean available;
 
     /**
      * Obtient la valeur de la propriété id.
      * 
      */
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -55,7 +55,7 @@ public class BookWs {
      * Définit la valeur de la propriété id.
      * 
      */
-    public void setId(int value) {
+    public void setId(long value) {
         this.id = value;
     }
 

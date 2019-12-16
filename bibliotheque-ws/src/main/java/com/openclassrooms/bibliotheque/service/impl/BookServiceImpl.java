@@ -3,6 +3,7 @@ package com.openclassrooms.bibliotheque.service.impl;
 import com.openclassrooms.bibliotheque.models.Book;
 import com.openclassrooms.bibliotheque.repository.BookRepository;
 import com.openclassrooms.bibliotheque.service.BookService;
+import com.openclassrooms.projects.bibliot.BookWs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -20,17 +21,17 @@ public class BookServiceImpl implements BookService {
 
 
     @Autowired
-    BookRepository bookRepository;
+    private BookRepository bookRepository;
 
     public Book getBookById(Long bookId) {
 
         return bookRepository.findById(bookId).get();
     }
 
-    public Book deleteBook(Long bookId) {
+    public void deleteBook(Long bookId) {
         logger.info("suppression d'un livre: {}", bookId);
 
-        return bookRepository.delete(bookId);
+         bookRepository.deleteById(bookId);
     }
 
     @Override
