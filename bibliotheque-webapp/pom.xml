@@ -17,7 +17,7 @@
 		<saaj-impl.version>1.5.1</saaj-impl.version>
 		<jaxws-api.version>2.3.1</jaxws-api.version>
 		<maven-jaxb2-plugin.version>0.14.0</maven-jaxb2-plugin.version>
-		<ws.soap.url>http://localhost:8080/ws/bibliotheque.wsdl</ws.soap.url>
+        <!--        <ws.soap.url>http://localhost:8080/ws/bibliotheque.wsdl</ws.soap.url>-->
         </properties>
 
         <dependencies>
@@ -28,39 +28,17 @@
                 <version>5.2.0.RELEASE</version>
                 <scope>compile</scope>
             </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-beans</artifactId>
-                <version>5.2.0.RELEASE</version>
-                <scope>compile</scope>
-            </dependency>
+
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-oxm</artifactId>
                 <version>5.2.0.RELEASE</version>
                 <scope>compile</scope>
             </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-oxm</artifactId>
-                <version>5.2.0.RELEASE</version>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-beans</artifactId>
-                <version>5.2.0.RELEASE</version>
-                <scope>compile</scope>
-            </dependency>
+
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-web</artifactId>
-                <version>5.2.0.RELEASE</version>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-beans</artifactId>
                 <version>5.2.0.RELEASE</version>
                 <scope>compile</scope>
             </dependency>
@@ -68,11 +46,6 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-webmvc</artifactId>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-web</artifactId>
             </dependency>
 
             <dependency>
@@ -120,6 +93,12 @@
             <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>jstl</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>com.openclassrooms</groupId>
+                <artifactId>bibliotheque-ws</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+                <scope>compile</scope>
             </dependency>
 
         </dependencies>
@@ -181,11 +160,11 @@
                     <schemaIncludes>
                         <include>*.wsdl</include>
                     </schemaIncludes>
-                    <schemas>
-                        <schema>
-                            <url>${ws.soap.url}</url>
-                        </schema>
-                    </schemas>
+                    <!--   <schemas>
+                           <schema>
+                               <url>${ws.soap.url}</url>
+                           </schema>
+                       </schemas> -->
                 </configuration>
             </plugin>
         </plugins>

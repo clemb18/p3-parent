@@ -1,4 +1,5 @@
-package com.openclassrooms.bibliotheque.soap.client;
+/*package com.openclassrooms.bibliotheque.soap.client;
 
 public class MemberClient {
 }
+*/

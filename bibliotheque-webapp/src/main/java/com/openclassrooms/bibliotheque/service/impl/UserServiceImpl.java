@@ -2,7 +2,7 @@ package com.openclassrooms.bibliotheque.service.impl;
 
 import com.openclassrooms.bibliotheque.service.UserService;
 import com.openclassrooms.bibliotheque.soap.client.UserClient;
-import com.openclassrooms.bibliotheque.ws.User;
+import com.openclassrooms.projects.bibliot.UserWs;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
@@ -14,7 +14,7 @@ public class UserServiceImpl implements UserService {
     private UserClient userClient;
 
     @Override
-    public User findUser(String login, String password) {
+    public UserWs findUser(String login, String password) {
         Assert.notNull(login, "Login must not be null. Login is mandatory.");
         Assert.notNull(password, "Password must not be null. Password is mandatory.");
         return userClient.getUserByLoginAndPasswordResponse(login, password);

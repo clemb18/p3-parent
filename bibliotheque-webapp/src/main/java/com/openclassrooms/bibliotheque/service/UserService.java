@@ -1,7 +1,7 @@
 package com.openclassrooms.bibliotheque.service;
 
 
-import com.openclassrooms.bibliotheque.ws.User;
+import com.openclassrooms.projects.bibliot.UserWs;
 
 public interface UserService {
 
@@ -11,5 +11,5 @@ public interface UserService {
    * @param password mot de passe de l'utilisateur
    * @return
    */
-  User findUser(String login, String password);
+  UserWs findUser(String login, String password);
 }

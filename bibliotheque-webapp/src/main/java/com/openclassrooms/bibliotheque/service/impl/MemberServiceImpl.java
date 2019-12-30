@@ -1,4 +1,4 @@
-package com.openclassrooms.bibliotheque.service.impl;
+/*package com.openclassrooms.bibliotheque.service.impl;
 
 import org.openclassroom.bibliot.repository.BorrowRepository;
 import org.occ.model.beans.Borrow;
@@ -19,3 +19,4 @@ public class MemberServiceImpl implements MemberService {
         return borrowRepository.findByMember(member);
     }
 }
+*/

@@ -1,4 +1,4 @@
-package com.openclassrooms.bibliotheque.controllers;
+/*package com.openclassrooms.bibliotheque.controllers;
 
 import org.occ.bibliot.client.endpoint.Member;
 import org.occ.bibliot.client.endpoint.UserWeb;
@@ -99,7 +99,7 @@ public class UserController {
 }
 
 
-
+*/
 
 
 

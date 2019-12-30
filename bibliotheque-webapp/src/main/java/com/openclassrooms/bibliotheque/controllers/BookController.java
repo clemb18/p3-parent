@@ -1,4 +1,4 @@
-package com.openclassrooms.bibliotheque.controllers;
+/*package com.openclassrooms.bibliotheque.controllers;
 
 import org.occ.bibliot.client.endpoint.Book;
 import org.occ.bibliot.client.endpoint.BookWeb;
@@ -31,7 +31,7 @@ public class BookController {
 
 
 }
-
+*/
 
 	
 	
