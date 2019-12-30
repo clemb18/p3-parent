@@ -40,7 +40,7 @@ public class BookEndpoint {
         return response;
     }
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "createWorkRequest")
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "createBookRequest")
     @ResponsePayload
     public CreateBookResponse createBook(@RequestPayload CreateBookRequest request) {
         CreateBookResponse createBookResponse = new CreateBookResponse();
