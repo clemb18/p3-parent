@@ -25,7 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="author" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="serviceStatus" type="{http://openclassrooms.com/projects/bibliot}serviceStatus"/&gt;
+ *         &lt;element name="memberWs" type="{http://openclassrooms.com/projects/bibliot}memberWs"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,36 +37,63 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "author"
+    "serviceStatus",
+    "memberWs"
 })
-@XmlRootElement(name = "getWorkByAuthorRequest")
-public class GetWorkByAuthorRequest {
+@XmlRootElement(name = "getDeleteMemberResponse")
+public class GetDeleteMemberResponse {
 
     @XmlElement(required = true)
-    protected String author;
+    protected ServiceStatus serviceStatus;
+    @XmlElement(required = true)
+    protected MemberWs memberWs;
 
     /**
-     * Obtient la valeur de la propriété author.
+     * Obtient la valeur de la propriété serviceStatus.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link ServiceStatus }
      *     
      */
-    public String getAuthor() {
-        return author;
+    public ServiceStatus getServiceStatus() {
+        return serviceStatus;
     }
 
     /**
-     * Définit la valeur de la propriété author.
+     * Définit la valeur de la propriété serviceStatus.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link ServiceStatus }
      *     
      */
-    public void setAuthor(String value) {
-        this.author = value;
+    public void setServiceStatus(ServiceStatus value) {
+        this.serviceStatus = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété memberWs.
+     * 
+     * @return
+     *     possible object is
+     *     {@link MemberWs }
+     *     
+     */
+    public MemberWs getMemberWs() {
+        return memberWs;
+    }
+
+    /**
+     * Définit la valeur de la propriété memberWs.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link MemberWs }
+     *     
+     */
+    public void setMemberWs(MemberWs value) {
+        this.memberWs = value;
     }
 
 }

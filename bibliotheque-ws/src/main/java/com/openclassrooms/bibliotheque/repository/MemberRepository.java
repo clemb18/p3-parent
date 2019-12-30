@@ -10,5 +10,7 @@ public interface MemberRepository extends CrudRepository<Member, Long> {
 
     Member save(Member member);
 
+    void deleteById(Long memberId);
+
 
 }

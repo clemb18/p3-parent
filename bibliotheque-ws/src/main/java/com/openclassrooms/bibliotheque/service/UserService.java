@@ -8,5 +8,7 @@ public interface UserService {
     User findByLoginAndPassword(String login, String password);
 
     User create(UserWs user);
+
+    void deleteUser(Long userId);
 }
 

@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2019.12.14 à 08:41:24 AM CET 
+// Généré le : 2019.12.30 à 04:06:32 PM CET 
 //
 
 
@@ -197,6 +197,62 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetDeleteBookRequest }
+     * 
+     */
+    public GetDeleteBookRequest createGetDeleteBookRequest() {
+        return new GetDeleteBookRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetDeleteBookResponse }
+     * 
+     */
+    public GetDeleteBookResponse createGetDeleteBookResponse() {
+        return new GetDeleteBookResponse();
+    }
+
+    /**
+     * Create an instance of {@link BookWs }
+     * 
+     */
+    public BookWs createBookWs() {
+        return new BookWs();
+    }
+
+    /**
+     * Create an instance of {@link GetDeleteMemberRequest }
+     * 
+     */
+    public GetDeleteMemberRequest createGetDeleteMemberRequest() {
+        return new GetDeleteMemberRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetDeleteMemberResponse }
+     * 
+     */
+    public GetDeleteMemberResponse createGetDeleteMemberResponse() {
+        return new GetDeleteMemberResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetDeleteUserRequest }
+     * 
+     */
+    public GetDeleteUserRequest createGetDeleteUserRequest() {
+        return new GetDeleteUserRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetDeleteUserResponse }
+     * 
+     */
+    public GetDeleteUserResponse createGetDeleteUserResponse() {
+        return new GetDeleteUserResponse();
+    }
+
+    /**
      * Create an instance of {@link GetBorrowBookRequest }
      * 
      */
@@ -266,14 +322,6 @@ public class ObjectFactory {
      */
     public GetBookByIdResponse createGetBookByIdResponse() {
         return new GetBookByIdResponse();
-    }
-
-    /**
-     * Create an instance of {@link BookWs }
-     * 
-     */
-    public BookWs createBookWs() {
-        return new BookWs();
     }
 
     /**

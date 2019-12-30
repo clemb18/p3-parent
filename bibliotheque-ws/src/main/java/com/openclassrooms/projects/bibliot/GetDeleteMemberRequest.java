@@ -10,7 +10,6 @@ package com.openclassrooms.projects.bibliot;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -25,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="author" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,36 +35,27 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "author"
+    "id"
 })
-@XmlRootElement(name = "getWorkByAuthorRequest")
-public class GetWorkByAuthorRequest {
+@XmlRootElement(name = "getDeleteMemberRequest")
+public class GetDeleteMemberRequest {
 
-    @XmlElement(required = true)
-    protected String author;
+    protected long id;
 
     /**
-     * Obtient la valeur de la propriété author.
+     * Obtient la valeur de la propriété id.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
      */
-    public String getAuthor() {
-        return author;
+    public long getId() {
+        return id;
     }
 
     /**
-     * Définit la valeur de la propriété author.
+     * Définit la valeur de la propriété id.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
      */
-    public void setAuthor(String value) {
-        this.author = value;
+    public void setId(long value) {
+        this.id = value;
     }
 
 }

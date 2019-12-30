@@ -158,6 +158,63 @@
         </xs:complexType>
     </xs:element>
 
+    <!-- methode delete bookWs -->
+
+    <xs:element name="getDeleteBookRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getDeleteBookResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="bookWs" type="tns:bookWs"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- methode delete memberkWs -->
+
+    <xs:element name="getDeleteMemberRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getDeleteMemberResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="memberWs" type="tns:memberWs"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- methode delete memberkWs -->
+
+    <xs:element name="getDeleteUserRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getDeleteUserResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="userWs" type="tns:userWs"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
     <!-- methode borrowBook -->
 
     <xs:element name="getBorrowBookRequest">
@@ -266,6 +323,7 @@
 
     <xs:complexType name="userWs">
         <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
             <xs:element name="name" type="xs:string"/>
             <xs:element name="firstName" type="xs:string"/>
             <xs:element name="login" type="xs:string"/>

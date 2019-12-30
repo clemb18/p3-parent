@@ -9,11 +9,15 @@ import com.openclassrooms.projects.bibliot.MemberWs;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 @Service
 public class MemberServiceImpl implements MemberService {
+
+    private static Logger logger = LoggerFactory.getLogger(MemberServiceImpl.class);
 
     @Autowired
     public MemberRepository memberRepository;
@@ -35,6 +39,12 @@ public class MemberServiceImpl implements MemberService {
         BeanUtils.copyProperties(member, memberCreated);
         memberCreated = memberRepository.save(memberCreated);
         return memberCreated;
+    }
+
+    public void deleteMember(Long memberId) {
+        logger.info("suppression d'un membre: {}", memberId);
+
+        memberRepository.deleteById(memberId);
     }
 
 }

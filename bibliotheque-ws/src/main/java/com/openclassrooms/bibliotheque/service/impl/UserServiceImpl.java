@@ -7,9 +7,13 @@ import com.openclassrooms.projects.bibliot.UserWs;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Service
 public class UserServiceImpl implements UserService {
+
+    private static Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
     @Autowired
     public UserRepository userRepository;
@@ -25,5 +29,11 @@ public class UserServiceImpl implements UserService {
         BeanUtils.copyProperties(user, userCreated);
         userCreated = userRepository.save(userCreated);
         return userCreated;
+    }
+
+    public void deleteUser(Long userId) {
+        logger.info("suppression d'un livre: {}", userId);
+
+        userRepository.deleteById(userId);
     }
 }

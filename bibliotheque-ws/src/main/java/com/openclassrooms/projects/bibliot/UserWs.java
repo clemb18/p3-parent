@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2019.12.14 à 08:41:24 AM CET 
+// Généré le : 2019.12.30 à 04:06:32 PM CET 
 //
 
 
@@ -24,6 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="firstName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="login" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
@@ -38,6 +39,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "userWs", propOrder = {
+    "id",
     "name",
     "firstName",
     "login",
@@ -45,6 +47,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class UserWs {
 
+    protected long id;
     @XmlElement(required = true)
     protected String name;
     @XmlElement(required = true)
@@ -53,6 +56,22 @@ public class UserWs {
     protected String login;
     @XmlElement(required = true)
     protected String password;
+
+    /**
+     * Obtient la valeur de la propriété id.
+     * 
+     */
+    public long getId() {
+        return id;
+    }
+
+    /**
+     * Définit la valeur de la propriété id.
+     * 
+     */
+    public void setId(long value) {
+        this.id = value;
+    }
 
     /**
      * Obtient la valeur de la propriété name.

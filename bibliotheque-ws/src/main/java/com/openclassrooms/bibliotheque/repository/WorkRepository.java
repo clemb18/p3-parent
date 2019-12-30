@@ -17,8 +17,7 @@ public interface WorkRepository extends CrudRepository<Work, Long> {
 
     List<Work> findByAuthorIsContainingIgnoreCase(String author);
 
-
-    Work delete(Long workId);
+    void deleteById(Long workId);
 
     Work save(Work work);
 

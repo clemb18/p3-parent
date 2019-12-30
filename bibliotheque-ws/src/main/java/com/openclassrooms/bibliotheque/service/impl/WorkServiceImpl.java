@@ -35,6 +35,12 @@ public class WorkServiceImpl implements WorkService {
 
     }
 
+    public void deleteWork(Long workId) {
+        logger.info("suppression d'un livre: {}", workId);
+
+        workRepository.deleteById(workId);
+    }
+
     @Override
     public Work create(WorkWs work) {
         Work workCreated = new Work();
