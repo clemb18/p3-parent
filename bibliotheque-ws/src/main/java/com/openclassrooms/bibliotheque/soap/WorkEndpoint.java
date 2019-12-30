@@ -77,5 +77,25 @@ public class WorkEndpoint {
         createWorkResponse.setServiceStatus(serviceStatus);
         return createWorkResponse;
     }
+
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getDeleteWorkRequest")
+    @ResponsePayload
+    public GetDeleteWorkResponse getDeleteWork(@RequestPayload GetDeleteWorkRequest request) {
+        GetDeleteWorkResponse response = new GetDeleteWorkResponse();
+        ServiceStatus serviceStatus = new ServiceStatus();
+        Work workToDelete = workService.deleteWork(request.getId());
+        if (workToDelete == null) {
+            serviceStatus.setStatus(NOT_FOUND);
+        } else {
+            serviceStatus.setStatus(SUCCESS);
+            WorkWs workWs = new WorkWs();
+            BeanUtils.copyProperties(workToDelete, workWs);
+            response.setWorkWs(workWs);
+        }
+        response.setServiceStatus(serviceStatus);
+        return response;
+    }
+
 }
 

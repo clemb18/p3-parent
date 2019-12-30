@@ -14,7 +14,7 @@ public interface WorkService {
 
     Work create(WorkWs work);
 
-    void deleteWork(Long workId);
+    Work deleteWork(Long workId);
 
 
 }

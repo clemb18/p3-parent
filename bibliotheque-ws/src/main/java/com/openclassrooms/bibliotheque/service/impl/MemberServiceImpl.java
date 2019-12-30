@@ -41,10 +41,11 @@ public class MemberServiceImpl implements MemberService {
         return memberCreated;
     }
 
-    public void deleteMember(Long memberId) {
+    public Member deleteMember(Long memberId) {
         logger.info("suppression d'un membre: {}", memberId);
 
         memberRepository.deleteById(memberId);
+        return null;
     }
 
 }

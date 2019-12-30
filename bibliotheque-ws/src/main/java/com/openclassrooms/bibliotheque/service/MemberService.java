@@ -16,6 +16,6 @@ public interface MemberService {
 
     List<Borrow> findBorrowListByMember (Member member);
 
-    void deleteMember(Long memberId);
+    Member deleteMember(Long memberId);
 
 }

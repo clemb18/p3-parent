@@ -59,5 +59,25 @@ public class BookEndpoint {
         createBookResponse.setServiceStatus(serviceStatus);
         return createBookResponse;
     }
+
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getDeleteBookRequest")
+    @ResponsePayload
+    public GetDeleteBookResponse getDeleteBook(@RequestPayload GetDeleteBookRequest request) {
+        GetDeleteBookResponse response = new GetDeleteBookResponse();
+        ServiceStatus serviceStatus = new ServiceStatus();
+        Book bookToDelete = bookService.deleteBook(request.getId());
+        if (bookToDelete == null) {
+            serviceStatus.setStatus(NOT_FOUND);
+        } else {
+            serviceStatus.setStatus(SUCCESS);
+            BookWs bookWs = new BookWs();
+            BeanUtils.copyProperties(bookToDelete, bookWs);
+            response.setBookWs(bookWs);
+        }
+        response.setServiceStatus(serviceStatus);
+        return response;
+    }
+
 }
 

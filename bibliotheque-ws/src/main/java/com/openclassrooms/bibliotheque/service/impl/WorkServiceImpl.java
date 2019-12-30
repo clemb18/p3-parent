@@ -35,10 +35,11 @@ public class WorkServiceImpl implements WorkService {
 
     }
 
-    public void deleteWork(Long workId) {
+    public Work deleteWork(Long workId) {
         logger.info("suppression d'un livre: {}", workId);
 
         workRepository.deleteById(workId);
+        return null;
     }
 
     @Override

@@ -31,9 +31,10 @@ public class UserServiceImpl implements UserService {
         return userCreated;
     }
 
-    public void deleteUser(Long userId) {
+    public User deleteUser(Long userId) {
         logger.info("suppression d'un livre: {}", userId);
 
         userRepository.deleteById(userId);
+        return null;
     }
 }

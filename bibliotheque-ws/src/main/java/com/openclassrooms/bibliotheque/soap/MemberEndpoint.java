@@ -56,4 +56,24 @@ public class MemberEndpoint {
         createMemberResponse.setServiceStatus(serviceStatus);
         return createMemberResponse;
     }
+
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getDeleteMemberRequest")
+    @ResponsePayload
+    public GetDeleteMemberResponse getDeleteMember(@RequestPayload GetDeleteMemberRequest request) {
+        GetDeleteMemberResponse response = new GetDeleteMemberResponse();
+        ServiceStatus serviceStatus = new ServiceStatus();
+        Member memberToDelete = memberService.deleteMember(request.getId());
+        if (memberToDelete == null) {
+            serviceStatus.setStatus(NOT_FOUND);
+        } else {
+            serviceStatus.setStatus(SUCCESS);
+            MemberWs memberWs = new MemberWs();
+            BeanUtils.copyProperties(memberToDelete, memberWs);
+            response.setMemberWs(memberWs);
+        }
+        response.setServiceStatus(serviceStatus);
+        return response;
+    }
+
 }

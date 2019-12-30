@@ -60,5 +60,25 @@ public class UserEndpoint {
         createUserResponse.setServiceStatus(serviceStatus);
         return createUserResponse;
     }
+
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getDeleteUserRequest")
+    @ResponsePayload
+    public GetDeleteUserResponse getDeleteUser(@RequestPayload GetDeleteUserRequest request) {
+        GetDeleteUserResponse response = new GetDeleteUserResponse();
+        ServiceStatus serviceStatus = new ServiceStatus();
+        User userToDelete = userService.deleteUser(request.getId());
+        if (userToDelete == null) {
+            serviceStatus.setStatus(NOT_FOUND);
+        } else {
+            serviceStatus.setStatus(SUCCESS);
+            UserWs userWs = new UserWs();
+            BeanUtils.copyProperties(userToDelete, userWs);
+            response.setUserWs(userWs);
+        }
+        response.setServiceStatus(serviceStatus);
+        return response;
+    }
+
 }
 
