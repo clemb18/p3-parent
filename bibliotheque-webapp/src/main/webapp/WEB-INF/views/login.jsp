@@ -11,7 +11,7 @@
         <h2 class="form-heading">Log in</h2>
         <h2>${message}</h2>
         <div class="form-group">
-            <form:input path="login" name="login" id="login" type="text" class="form-control" placeholder="Login"
+            <form:input path="username" name="username" id="username" type="text" class="form-control" placeholder="Username"
                         autofocus="true" required="true"/>
             <br/><br/>
             <form:input path="password" name="password" id="password" type="password" class="form-control" placeholder="Password" required="true"/>

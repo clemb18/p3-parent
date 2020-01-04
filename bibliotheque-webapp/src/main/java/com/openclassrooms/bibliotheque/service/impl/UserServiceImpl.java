@@ -14,10 +14,10 @@ public class UserServiceImpl implements UserService {
     private UserClient userClient;
 
    @Override
-    public UserWs findUser(String login, String password) {
-        Assert.notNull(login, "Login must not be null. Login is mandatory.");
+    public UserWs findUser(String username, String password) {
+        Assert.notNull(username, "Login must not be null. Login is mandatory.");
         Assert.notNull(password, "Password must not be null. Password is mandatory.");
-        return userClient.getUserByLoginAndPasswordResponse(login, password);
+        return userClient.getUserByUsernameAndPasswordResponse(username, password);
     }
 }
 

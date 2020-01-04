@@ -1,18 +1,18 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://openclassrooms.com/projects/bibliotheque"
            targetNamespace="http://openclassrooms.com/projects/bibliotheque" elementFormDefault="qualified">
 
-    <!-- methode getUserByLoginAndPassword -->
+    <!-- methode getUserByUsernameAndPassword -->
 
-    <xs:element name="getUserByLoginAndPasswordRequest">
+    <xs:element name="getUserByUsernameAndPasswordRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="login" type="xs:string"/>
+                <xs:element name="username" type="xs:string"/>
                 <xs:element name="password" type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="getUserByLoginAndPasswordResponse">
+    <xs:element name="getUserByUsernameAndPasswordResponse">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="serviceStatus" type="tns:serviceStatus"/>
@@ -326,7 +326,7 @@
             <xs:element name="id" type="xs:long"/>
             <xs:element name="name" type="xs:string"/>
             <xs:element name="firstName" type="xs:string"/>
-            <xs:element name="login" type="xs:string"/>
+            <xs:element name="username" type="xs:string"/>
             <xs:element name="password" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>

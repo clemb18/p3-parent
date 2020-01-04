@@ -1,7 +1,7 @@
 package com.openclassrooms.bibliotheque.service;
 
 import com.openclassrooms.bibliotheque.models.Work;
-import com.openclassrooms.projects.bibliot.WorkWs;
+import com.openclassrooms.projects.bibliotheque.WorkWs;
 
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.List;

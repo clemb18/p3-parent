@@ -26,7 +26,7 @@ public class LoginController {
 
     @PostMapping(path = "/login")
     public String login(Model model, @ModelAttribute("login") Login login) {
-        UserWs user = userService.findUser(login.getLogin(), login.getPassword());
+        UserWs user = userService.findUser(login.getUsername(), login.getPassword());
         if (user != null) {
             model.addAttribute("message", "Hello Mister " + user.getFirstName() + " "+ user.getName());
         } else {

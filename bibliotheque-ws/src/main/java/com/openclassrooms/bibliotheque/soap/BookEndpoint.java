@@ -2,7 +2,7 @@ package com.openclassrooms.bibliotheque.soap;
 
 import com.openclassrooms.bibliotheque.models.Book;
 import com.openclassrooms.bibliotheque.service.BookService;
-import com.openclassrooms.projects.bibliot.*;
+import com.openclassrooms.projects.bibliotheque.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
@@ -10,8 +10,8 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
-import static com.openclassrooms.projects.bibliot.Status.NOT_FOUND;
-import static com.openclassrooms.projects.bibliot.Status.SUCCESS;
+import static com.openclassrooms.projects.bibliotheque.Status.NOT_FOUND;
+import static com.openclassrooms.projects.bibliotheque.Status.SUCCESS;
 
 @Endpoint
 public class BookEndpoint {

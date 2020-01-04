@@ -1,11 +1,11 @@
 package com.openclassrooms.bibliotheque.service;
 
 import com.openclassrooms.bibliotheque.models.User;
-import com.openclassrooms.projects.bibliot.UserWs;
+import com.openclassrooms.projects.bibliotheque.UserWs;
 
 public interface UserService {
 
-    User findByLoginAndPassword(String login, String password);
+    User findByUsernameAndPassword(String username, String password);
 
     User create(UserWs user);
 

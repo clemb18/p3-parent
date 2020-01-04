@@ -3,7 +3,7 @@ package com.openclassrooms.bibliotheque.service.impl;
 import com.openclassrooms.bibliotheque.models.Work;
 import com.openclassrooms.bibliotheque.repository.WorkRepository;
 import com.openclassrooms.bibliotheque.service.WorkService;
-import com.openclassrooms.projects.bibliot.WorkWs;
+import com.openclassrooms.projects.bibliotheque.WorkWs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;

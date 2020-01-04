@@ -14,11 +14,11 @@ public class UserClient extends WebServiceGatewaySupport {
     private String bibliothequeWsUrl;
 
 
-    public UserWs getUserByLoginAndPasswordResponse(String login, String password) {
-        GetUserByLoginAndPasswordRequest request = new GetUserByLoginAndPasswordRequest();
-        request.setLogin(login);
+    public UserWs getUserByUsernameAndPasswordResponse(String username, String password) {
+        GetUserByUsernameAndPasswordRequest request = new GetUserByUsernameAndPasswordRequest();
+        request.setUsername(username);
         request.setPassword(password);
-        GetUserByLoginAndPasswordResponse response = (GetUserByLoginAndPasswordResponse) getWebServiceTemplate().marshalSendAndReceive(bibliothequeWsUrl, request,
+        GetUserByUsernameAndPasswordResponse response = (GetUserByUsernameAndPasswordResponse) getWebServiceTemplate().marshalSendAndReceive(bibliothequeWsUrl, request,
                 new SoapActionCallback("http://openclassrooms.com/projects/bibliotheque/GetUserByLoginAndPasswordRequest"));
         return response.getUserWs();
     }
@@ -28,7 +28,7 @@ public class UserClient extends WebServiceGatewaySupport {
         UserWs user = new UserWs();
         user.setFirstName(firstName);
         user.setName(name);
-        user.setLogin(login);
+        user.setUsername(login);
         user.setPassword(password);
         request.setUserWs(user);
         CreateUserResponse response = (CreateUserResponse) getWebServiceTemplate()

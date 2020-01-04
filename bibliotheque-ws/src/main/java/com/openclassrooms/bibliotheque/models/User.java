@@ -7,7 +7,7 @@ import java.io.Serializable;
 // Classe representant un utilisateur bibliothécaire
 
 @Entity
-@Table(name="T_USER")
+@Table(name="T_UTILISATEUR")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class User implements Serializable {
 
@@ -23,8 +23,8 @@ public class User implements Serializable {
 	@Column(name = "U_FIRST_NAME")
 	private String firstName;
 
-	@Column(name = "U_LOGIN")
-	private String login;
+	@Column(name = "U_USERNAME")
+	private String username;
 
 	@Column(name = "U_PASSWORD")
 	private String password;
@@ -53,12 +53,12 @@ public class User implements Serializable {
 		this.firstName = firstName;
 	}
 
-	public String getLogin() {
-		return login;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setLogin(String login) {
-		this.login = login;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -75,7 +75,7 @@ public class User implements Serializable {
 				"id=" + id +
 				", name='" + name + '\'' +
 				", firstName='" + firstName + '\'' +
-				", login='" + login + '\'' +
+				", username='" + username + '\'' +
 				", password='" + password + '\'' +
 				'}';
 	}

@@ -1,7 +1,7 @@
 package com.openclassrooms.bibliotheque.service;
 
 import com.openclassrooms.bibliotheque.models.Book;
-import com.openclassrooms.projects.bibliot.BookWs;
+import com.openclassrooms.projects.bibliotheque.BookWs;
 
 
 public interface BookService {

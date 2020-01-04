@@ -2,7 +2,7 @@ package com.openclassrooms.bibliotheque.soap;
 
 
 import com.openclassrooms.bibliotheque.service.UserService;
-import com.openclassrooms.projects.bibliot.*;
+import com.openclassrooms.projects.bibliotheque.*;
 import org.springframework.beans.BeanUtils;
 import com.openclassrooms.bibliotheque.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +11,8 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
-import static com.openclassrooms.projects.bibliot.Status.NOT_FOUND;
-import static com.openclassrooms.projects.bibliot.Status.SUCCESS;
+import static com.openclassrooms.projects.bibliotheque.Status.NOT_FOUND;
+import static com.openclassrooms.projects.bibliotheque.Status.SUCCESS;
 
 @Endpoint
 public class UserEndpoint {
@@ -23,12 +23,12 @@ public class UserEndpoint {
     private UserService userService;
 
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getUserByLoginAndPasswordRequest")
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getUserByUsernameAndPasswordRequest")
     @ResponsePayload
-    public GetUserByLoginAndPasswordResponse getUserByLoginAndPassword(@RequestPayload GetUserByLoginAndPasswordRequest request) {
-        GetUserByLoginAndPasswordResponse response = new GetUserByLoginAndPasswordResponse();
+    public GetUserByUsernameAndPasswordResponse getUserByUsernameAndPassword(@RequestPayload GetUserByUsernameAndPasswordRequest request) {
+        GetUserByUsernameAndPasswordResponse response = new GetUserByUsernameAndPasswordResponse();
         ServiceStatus serviceStatus = new ServiceStatus();
-        User user = userService.findByLoginAndPassword(request.getLogin(), request.getPassword());
+        User user = userService.findByUsernameAndPassword(request.getUsername(), request.getPassword());
         if (user == null) {
             serviceStatus.setStatus(NOT_FOUND);
         } else {

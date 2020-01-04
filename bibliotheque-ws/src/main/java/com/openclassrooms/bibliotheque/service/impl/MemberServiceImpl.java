@@ -5,7 +5,7 @@ import com.openclassrooms.bibliotheque.models.Member;
 import com.openclassrooms.bibliotheque.repository.MemberRepository;
 import com.openclassrooms.bibliotheque.repository.BorrowRepository;
 import com.openclassrooms.bibliotheque.service.MemberService;
-import com.openclassrooms.projects.bibliot.MemberWs;
+import com.openclassrooms.projects.bibliotheque.MemberWs;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
