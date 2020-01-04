@@ -17,7 +17,7 @@
 		<saaj-impl.version>1.5.1</saaj-impl.version>
 		<jaxws-api.version>2.3.1</jaxws-api.version>
 		<maven-jaxb2-plugin.version>0.14.0</maven-jaxb2-plugin.version>
-        <!--        <ws.soap.url>http://localhost:8080/ws/bibliotheque.wsdl</ws.soap.url>-->
+            <ws.soap.url>http://localhost:8080/ws/bibliotheque.wsdl</ws.soap.url>
         </properties>
 
         <dependencies>
@@ -94,19 +94,13 @@
                 <groupId>javax.servlet</groupId>
                 <artifactId>jstl</artifactId>
             </dependency>
-            <dependency>
-                <groupId>com.openclassrooms</groupId>
-                <artifactId>bibliotheque-ws</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-                <scope>compile</scope>
-            </dependency>
 
-        </dependencies>
+            </dependencies>
 
 
-    <build>
-        <finalName>bibliotheque-webapp</finalName>
-        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+          <build>
+              <finalName>bibliotheque-webapp</finalName>
+              <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
                 <plugin>
                     <artifactId>maven-clean-plugin</artifactId>
@@ -156,15 +150,15 @@
                     <generatePackage>com.openclassrooms.bibliotheque.ws</generatePackage>
                     <generateDirectory>${project.build.directory}/generated-sources</generateDirectory>
                     <forceRegenerate>true</forceRegenerate>
-                                        <schemaDirectory>${project.basedir}/src/main/resources/wsdl</schemaDirectory>
+                            <!--            <schemaDirectory>${project.basedir}/src/main/resources/wsdl</schemaDirectory>-->
                     <schemaIncludes>
                         <include>*.wsdl</include>
                     </schemaIncludes>
-                    <!--   <schemas>
+                       <schemas>
                            <schema>
                                <url>${ws.soap.url}</url>
                            </schema>
-                       </schemas> -->
+                       </schemas>
                 </configuration>
             </plugin>
         </plugins>

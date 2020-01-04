@@ -2,7 +2,7 @@ package com.openclassrooms.bibliotheque.controllers;
 
 import com.openclassrooms.bibliotheque.models.Login;
 import com.openclassrooms.bibliotheque.service.UserService;
-import com.openclassrooms.projects.bibliot.UserWs;
+import com.openclassrooms.bibliotheque.ws.UserWs;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

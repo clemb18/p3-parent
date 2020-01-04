@@ -1,7 +1,7 @@
 package com.openclassrooms.bibliotheque.service;
 
 
-import com.openclassrooms.projects.bibliot.UserWs;
+import com.openclassrooms.bibliotheque.ws.UserWs;
 
 public interface UserService {
 

@@ -24,13 +24,13 @@ public class WebServiceConfig extends WsConfigurerAdapter {
         return new ServletRegistrationBean<>(servlet, "/ws/*"); //8080/ws ect...
     }
 
-    @Bean(name = "bibliot")
-    public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema bibliotSchema) {
+    @Bean(name = "bibliotheque")
+    public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema bibliothequeSchema) {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
         wsdl11Definition.setPortTypeName("BibliothequePort");
         wsdl11Definition.setLocationUri("/ws");
         wsdl11Definition.setTargetNamespace("http://openclassrooms.com/projects/bibliotheque");
-        wsdl11Definition.setSchema(bibliotSchema);
+        wsdl11Definition.setSchema(bibliothequeSchema);
         return wsdl11Definition;
     }
 
