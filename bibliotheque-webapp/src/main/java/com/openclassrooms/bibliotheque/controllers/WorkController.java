@@ -1,33 +1,60 @@
-/*package com.openclassrooms.bibliotheque.controllers;
+package com.openclassrooms.bibliotheque.controllers;
 
-import org.occ.bibliot.client.endpoint.Work;
-import org.occ.bibliot.client.endpoint.WorkWeb;
-import org.occ.bibliot.client.endpoint.WorkWs;
+import com.openclassrooms.bibliotheque.models.SearchWork;
+import com.openclassrooms.bibliotheque.service.WorkService;
+import com.openclassrooms.bibliotheque.ws.WorkWs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
+
 
 @Controller
 public class WorkController {
 
     private static Logger logger = LoggerFactory.getLogger(WorkController.class);
 
+    @Autowired
+    private WorkService workService;
 
 
-    //instanciation des WorkWeb et Workws
 
-    WorkWeb workWsService = new WorkWeb();
-    WorkWs workWs;
+    @GetMapping("/searchWork")
+    public String searchWorkForm(Model model) {
+        model.addAttribute("searchWork", new SearchWork());
 
-    public WorkController() {
-        this.workWs = this.workWsService.getWorkWsPort();
+        model.addAttribute("findResult", false);
+        // retourne la jsp
+        return "search";
     }
 
-    @RequestMapping(value = {"/work/{author}"}, method = {RequestMethod.GET})
+
+    @PostMapping(path = "/searchByAuthor")
+    public String searchByAuthor(Model model, @ModelAttribute("searchWork") SearchWork searchWork) {
+
+        List<WorkWs> listWorks = workService.findWorks(searchWork.getAuthor());
+
+        model.addAttribute("findResult", true);
+
+        model.addAttribute("listWorks" ,listWorks);
+
+        return "search";
+    }
+
+
+
+
+
+
+
+
+ /*   @RequestMapping(value = {"/work/{author}"}, method = {RequestMethod.GET})
     @ResponseBody
     public List<Work> getWorksByAuthor (@PathVariable String author) {
         this.workWs.init();
@@ -36,15 +63,8 @@ public class WorkController {
     }
 
 
-    @RequestMapping (value = {"/work/{publicationDate}"}, method = {RequestMethod.GET})
-    @ResponseBody
-    public List<Work> getWorksByPublicationDate (@PathVariable Integer publicationDate) {
-        this.workWs.init();
-        List<Work> workByPublicationDate = this.workWs.getWorksByPublicationDate(publicationDate);
-        return workByPublicationDate;
-    }
 
-    @RequestMapping (value = {"/Search"}, method = {RequestMethod.GET})
+    @RequestMapping (value = {"/searchWork"}, method = {RequestMethod.GET})
     public ModelAndView searchPage() {
         ModelAndView search = new ModelAndView("search");
         return search;
@@ -62,8 +82,8 @@ public class WorkController {
         logger.info("taille liste recue = " + workByAuthor.size());
 
         return mav;
-    }
+    }*/
 
 }
 
-*/
+

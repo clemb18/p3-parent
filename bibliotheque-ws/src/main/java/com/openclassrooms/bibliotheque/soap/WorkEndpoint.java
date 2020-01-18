@@ -10,6 +10,9 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.openclassrooms.projects.bibliotheque.Status.NOT_FOUND;
 import static com.openclassrooms.projects.bibliotheque.Status.SUCCESS;
 
@@ -27,14 +30,19 @@ public class WorkEndpoint {
     public GetWorkByAuthorResponse getWorksByAuthor(@RequestPayload GetWorkByAuthorRequest request) {
         GetWorkByAuthorResponse response = new GetWorkByAuthorResponse();
         ServiceStatus serviceStatus = new ServiceStatus();
-        Work work = (Work) workService.getWorksByAuthor(request.getAuthor());
-        if (work == null) {
+        List<Work> works =  workService.getWorksByAuthor(request.getAuthor());
+        if (works == null || works.isEmpty() ) {
             serviceStatus.setStatus(NOT_FOUND);
         } else {
             serviceStatus.setStatus(SUCCESS);
-            WorkWs workWs = new WorkWs();
-            BeanUtils.copyProperties(work, workWs);
-            response.setWorkWs(workWs);
+            List<WorkWs> listworkWs = new ArrayList<>();
+            for(Work work:works){
+                WorkWs workWs = new WorkWs();
+                BeanUtils.copyProperties(work, workWs);
+                listworkWs.add(workWs);
+            }
+
+            response.getWorkWs().addAll(listworkWs);
         }
         response.setServiceStatus(serviceStatus);
         return response;

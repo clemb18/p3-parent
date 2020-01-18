@@ -90,11 +90,12 @@
         </xs:complexType>
     </xs:element>
 
+
     <xs:element name="getWorkByAuthorResponse">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="serviceStatus" type="tns:serviceStatus"/>
-                <xs:element name="workWs" type="tns:workWs"/>
+                <xs:element name="workWs" type="tns:workWs" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
