@@ -32,9 +32,8 @@
 <c:forEach items="${listWorks}" var="work">
     <ul>
         <li>${work.title}</li>
-        <li>${work.publicationDate}</li>
         <li>${work.bookDescription}</li>
-        <li><a href="/borrow/${work.id}">Emprunter ce livre</a></li>
+        <li><a href="borrow/${work.id}">Emprunter ce livre</a></li>
 
     </ul>
 </c:forEach>

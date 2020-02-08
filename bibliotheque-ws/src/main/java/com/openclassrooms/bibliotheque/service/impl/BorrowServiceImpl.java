@@ -80,18 +80,14 @@ public class BorrowServiceImpl implements BorrowService {
                 borrowToSave.setStatus(BorrowStatusEnum.ENCOURS.value());
                 borrowToSave.setWorkName(workName);
 
+                // set extended
+                borrowToSave.setExtended(false);
+
                  //  Save le borrow dans le repository
                 borrowRepository.save(borrowToSave);
                 //Indique que le livre n'est plus disponible et on sauvegarde dans le bookRepository
                 result.setAvailable(false);
                 bookRepository.save(result);
-
-               // Mettre a jour la liste des emprunt du memmberCo et save
-
-                List<Borrow> memberListBorrowToUpdate = memberService.findBorrowListByMember(member);
-                memberListBorrowToUpdate.add(borrowToSave);
-
-                memberRepository.save(member);
 
                 toReturn = true;
                 break;

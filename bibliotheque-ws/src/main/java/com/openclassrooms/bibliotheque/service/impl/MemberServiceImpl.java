@@ -24,8 +24,8 @@ public class MemberServiceImpl implements MemberService {
     public BorrowRepository borrowRepository;
 
     @Override
-    public Member findByNameAndFirstName(String name, String firstName) {
-        return memberRepository.findByNameAndFirstName(name, firstName);
+    public Member findByNameAndMailAdress(String name, String mailAdress) {
+        return memberRepository.findByNameAndMailAdress(name, mailAdress);
     }
 
     public List<Borrow> findBorrowListByMember (Member member){

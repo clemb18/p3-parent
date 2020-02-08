@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2020.01.18 à 08:33:17 AM CET 
+// Généré le : 2020.02.08 à 04:15:09 PM CET 
 //
 
 
@@ -10,7 +10,6 @@ package com.openclassrooms.projects.bibliotheque;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -25,8 +24,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="workWs" type="{http://openclassrooms.com/projects/bibliotheque}workWs"/&gt;
- *         &lt;element name="memberWs" type="{http://openclassrooms.com/projects/bibliotheque}memberWs"/&gt;
+ *         &lt;element name="workId" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="memberId" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -37,63 +36,45 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "workWs",
-    "memberWs"
+    "workId",
+    "memberId"
 })
 @XmlRootElement(name = "getBorrowBookRequest")
 public class GetBorrowBookRequest {
 
-    @XmlElement(required = true)
-    protected WorkWs workWs;
-    @XmlElement(required = true)
-    protected MemberWs memberWs;
+    protected long workId;
+    protected long memberId;
 
     /**
-     * Obtient la valeur de la propriété workWs.
+     * Obtient la valeur de la propriété workId.
      * 
-     * @return
-     *     possible object is
-     *     {@link WorkWs }
-     *     
      */
-    public WorkWs getWorkWs() {
-        return workWs;
+    public long getWorkId() {
+        return workId;
     }
 
     /**
-     * Définit la valeur de la propriété workWs.
+     * Définit la valeur de la propriété workId.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link WorkWs }
-     *     
      */
-    public void setWorkWs(WorkWs value) {
-        this.workWs = value;
+    public void setWorkId(long value) {
+        this.workId = value;
     }
 
     /**
-     * Obtient la valeur de la propriété memberWs.
+     * Obtient la valeur de la propriété memberId.
      * 
-     * @return
-     *     possible object is
-     *     {@link MemberWs }
-     *     
      */
-    public MemberWs getMemberWs() {
-        return memberWs;
+    public long getMemberId() {
+        return memberId;
     }
 
     /**
-     * Définit la valeur de la propriété memberWs.
+     * Définit la valeur de la propriété memberId.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link MemberWs }
-     *     
      */
-    public void setMemberWs(MemberWs value) {
-        this.memberWs = value;
+    public void setMemberId(long value) {
+        this.memberId = value;
     }
 
 }

@@ -23,8 +23,6 @@ public class WorkController {
     @Autowired
     private WorkService workService;
 
-
-
     @GetMapping("/searchWork")
     public String searchWorkForm(Model model) {
         model.addAttribute("searchWork", new SearchWork());
@@ -47,42 +45,19 @@ public class WorkController {
         return "search";
     }
 
+    @PostMapping(path = "/searchByPublicationDate")
+    public String searchByPublicationDate(Model model, @ModelAttribute("searchWork") SearchWork searchWork) {
 
+        List<WorkWs> listWorks = workService.findWorks(searchWork.getPublicationDate());
 
+        model.addAttribute("findResult", true);
 
+        model.addAttribute("listWorks" ,listWorks);
 
-
-
-
- /*   @RequestMapping(value = {"/work/{author}"}, method = {RequestMethod.GET})
-    @ResponseBody
-    public List<Work> getWorksByAuthor (@PathVariable String author) {
-        this.workWs.init();
-        List<Work> workByAuthor = this.workWs.getWorksByAuthor(author);
-        return workByAuthor;
+        return "search";
     }
 
-
-
-    @RequestMapping (value = {"/searchWork"}, method = {RequestMethod.GET})
-    public ModelAndView searchPage() {
-        ModelAndView search = new ModelAndView("search");
-        return search;
-    }
-
-    @RequestMapping(value = {"/doSearch"}, method = {RequestMethod.POST})
-    public ModelAndView search(@RequestParam("searchText") String searchText) {
-        this.workWs.init();
-
-        logger.info("texte recu = " + searchText);
-        List<Work> workByAuthor = this.workWs.getWorksByAuthor(searchText);
-
-        ModelAndView mav = new ModelAndView("SearchResults");
-        mav.addObject("foundWorks", workByAuthor);
-        logger.info("taille liste recue = " + workByAuthor.size());
-
-        return mav;
-    }*/
+    // Ajouter la recherche par titre
 
 }
 

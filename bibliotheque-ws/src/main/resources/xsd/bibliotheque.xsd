@@ -21,18 +21,18 @@
         </xs:complexType>
     </xs:element>
 
-    <!-- methode findByNameAndFirstName -->
+    <!-- methode findByNameAndMailAdress -->
 
-    <xs:element name="getMemberByNameAndFirstNameRequest">
+    <xs:element name="getMemberByNameAndMailAdressRequest">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="name" type="xs:string"/>
-                <xs:element name="firstName" type="xs:string"/>
+                <xs:element name="mailAdress" type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="getMemberByNameAndFirstNameResponse">
+    <xs:element name="getMemberByNameAndMailAdressResponse">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="serviceStatus" type="tns:serviceStatus"/>
@@ -50,6 +50,7 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
 
     <xs:element name="createUserResponse">
         <xs:complexType>
@@ -221,8 +222,8 @@
     <xs:element name="getBorrowBookRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="workWs" type="tns:workWs"/>
-                <xs:element name="memberWs" type="tns:memberWs"/>
+                <xs:element name="workId" type="xs:long"/>
+                <xs:element name="memberId" type="xs:long"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

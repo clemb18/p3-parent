@@ -1,11 +1,12 @@
 package com.openclassrooms.bibliotheque.config;
 
+import com.openclassrooms.bibliotheque.soap.client.BorrowClient;
+import com.openclassrooms.bibliotheque.soap.client.MemberClient;
 import com.openclassrooms.bibliotheque.soap.client.UserClient;
 import com.openclassrooms.bibliotheque.soap.client.WorkClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 
 @Configuration
@@ -37,5 +38,23 @@ public class SoapWsConfiguration {
         client.setMarshaller(marshaller);
         client.setUnmarshaller(marshaller);
         return client;
+    }
+
+    @Bean
+    public MemberClient memberClient(Jaxb2Marshaller marshaller) {
+        MemberClient client = new MemberClient();
+        client.setDefaultUri(bibliothequeWs);
+        client.setMarshaller(marshaller);
+        client.setUnmarshaller(marshaller);
+        return client;
+    }
+
+    @Bean
+    public BorrowClient borrowClient(Jaxb2Marshaller marshaller) {
+        BorrowClient borrow = new BorrowClient();
+        borrow.setDefaultUri(bibliothequeWs);
+        borrow.setMarshaller(marshaller);
+        borrow.setUnmarshaller(marshaller);
+        return borrow;
     }
 }

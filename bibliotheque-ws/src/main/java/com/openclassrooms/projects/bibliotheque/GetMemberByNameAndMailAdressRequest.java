@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2020.01.25 à 08:15:31 AM CET 
+// Généré le : 2020.02.08 à 04:15:09 PM CET 
 //
 
 
@@ -25,8 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="serviceStatus" type="{http://openclassrooms.com/projects/bibliotheque}serviceStatus"/&gt;
- *         &lt;element name="memberWs" type="{http://openclassrooms.com/projects/bibliotheque}memberWs"/&gt;
+ *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="mailAdress" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -37,63 +37,63 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "serviceStatus",
-    "memberWs"
+    "name",
+    "mailAdress"
 })
-@XmlRootElement(name = "getMemberByNameAndFirstNameResponse")
-public class GetMemberByNameAndFirstNameResponse {
+@XmlRootElement(name = "getMemberByNameAndMailAdressRequest")
+public class GetMemberByNameAndMailAdressRequest {
 
     @XmlElement(required = true)
-    protected ServiceStatus serviceStatus;
+    protected String name;
     @XmlElement(required = true)
-    protected MemberWs memberWs;
+    protected String mailAdress;
 
     /**
-     * Obtient la valeur de la propriété serviceStatus.
+     * Obtient la valeur de la propriété name.
      * 
      * @return
      *     possible object is
-     *     {@link ServiceStatus }
+     *     {@link String }
      *     
      */
-    public ServiceStatus getServiceStatus() {
-        return serviceStatus;
+    public String getName() {
+        return name;
     }
 
     /**
-     * Définit la valeur de la propriété serviceStatus.
+     * Définit la valeur de la propriété name.
      * 
      * @param value
      *     allowed object is
-     *     {@link ServiceStatus }
+     *     {@link String }
      *     
      */
-    public void setServiceStatus(ServiceStatus value) {
-        this.serviceStatus = value;
+    public void setName(String value) {
+        this.name = value;
     }
 
     /**
-     * Obtient la valeur de la propriété memberWs.
+     * Obtient la valeur de la propriété mailAdress.
      * 
      * @return
      *     possible object is
-     *     {@link MemberWs }
+     *     {@link String }
      *     
      */
-    public MemberWs getMemberWs() {
-        return memberWs;
+    public String getMailAdress() {
+        return mailAdress;
     }
 
     /**
-     * Définit la valeur de la propriété memberWs.
+     * Définit la valeur de la propriété mailAdress.
      * 
      * @param value
      *     allowed object is
-     *     {@link MemberWs }
+     *     {@link String }
      *     
      */
-    public void setMemberWs(MemberWs value) {
-        this.memberWs = value;
+    public void setMailAdress(String value) {
+        this.mailAdress = value;
     }
 
 }

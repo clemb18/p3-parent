@@ -41,15 +41,19 @@ VALUES ('clement', 'CLEMENT', 'clement', 'biotteau'),
 -- creation table member
 create table T_MEMBER
 (
+    M_ID       SERIAL,
     M_NAME VARCHAR(50)  NOT NULL,
     M_MAIL VARCHAR(100) NOT NULL,
-    PRIMARY KEY (M_NAME, M_MAIL) -- Définition de la clé primaire de la table
+    M_FIRST_NAME VARCHAR(50) NOT NULL,
+    M_TEL VARCHAR(10) NOT NULL,
+    M_ADRESS VARCHAR(100) NOT NULL,
+    PRIMARY KEY (M_ID) -- Définition de la clé primaire de la table
 );
 
-INSERT INTO T_MEMBER (M_NAME, M_MAIL)
-VALUES ('clement', 'clem.biotteau@gmail.com'),
-       ('serge', 'serge.biotteau@gmail.com'),
-       ('oscar', 'oscar.biotteau@gmail.com');
+
+INSERT INTO T_MEMBER (M_NAME, M_MAIL, M_FIRST_NAME, M_TEL, M_ADRESS)
+VALUES ('clement', 'clem.biotteau@gmail.com', 'biotteau', '0642335349', 'clichy'),
+       ('oscar', 'oscar.biotteau@gmail.com', 'biotteau', '0642335349', 'clichy');
 
 -- creation table library
 create table T_LIBRARY
@@ -58,6 +62,15 @@ create table T_LIBRARY
     L_NAME VARCHAR(100) NOT NULL,
     L_CITY VARCHAR(100) NOT NULL,
     PRIMARY KEY (L_ID) -- Définition de la clé primaire de la table
+);
+
+-- creation table book
+create table T_BOOK
+(
+    BOOK_ID        SERIAL,
+    BOOK_AVAILABLE BOOLEAN NOT NULL,
+
+    PRIMARY KEY (BOOK_ID) -- Définition de la clé primaire de la table
 );
 
 -- creation table borrow
@@ -69,17 +82,12 @@ create table T_BORROW
     B_END_BORROW_DATE   DATE         NOT NULL,
     B_EXTENDED          BOOLEAN      NOT NULL,
     B_WORK_TITLE        VARCHAR(100) NOT NULL,
+    B_MEMBER_ID         INTEGER REFERENCES T_MEMBER(M_ID),
+    B_BOOK_ID           INTEGER REFERENCES T_BOOK(BOOK_ID),
     PRIMARY KEY (B_ID) -- Définition de la clé primaire de la table
 );
 
--- creation table book
-create table T_BOOK
-(
-    BOOK_ID        SERIAL,
-    BOOK_AVAILABLE BOOLEAN NOT NULL,
 
-    PRIMARY KEY (BOOK_ID) -- Définition de la clé primaire de la table
-);
 
 INSERT INTO T_BOOK (BOOK_AVAILABLE)
 VALUES ('false'),
@@ -102,6 +110,7 @@ VALUES ('false'),
        ('true'),
        ('true'),
        ('true');
+
 
 
 -- creation table work_book

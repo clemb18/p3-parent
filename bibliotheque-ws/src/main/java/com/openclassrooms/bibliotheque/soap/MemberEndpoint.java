@@ -5,6 +5,7 @@ import com.openclassrooms.bibliotheque.service.MemberService;
 import com.openclassrooms.projects.bibliotheque.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
@@ -12,6 +13,7 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import static com.openclassrooms.projects.bibliotheque.Status.NOT_FOUND;
 import static com.openclassrooms.projects.bibliotheque.Status.SUCCESS;
 
+@Endpoint
 public class MemberEndpoint {
 
     private static final String NAMESPACE_URI = "http://openclassrooms.com/projects/bibliotheque";
@@ -19,12 +21,12 @@ public class MemberEndpoint {
     @Autowired
     private MemberService memberService;
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getMemberByNameAndFirstNameRequest")
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getMemberByNameAndMailAdressRequest")
     @ResponsePayload
-    public GetMemberByNameAndFirstNameResponse getMemberByNameAndFirstName(@RequestPayload GetMemberByNameAndFirstNameRequest request) {
-        GetMemberByNameAndFirstNameResponse response = new GetMemberByNameAndFirstNameResponse();
+    public GetMemberByNameAndMailAdressResponse getMemberByNameAndMailAdress(@RequestPayload GetMemberByNameAndMailAdressRequest request) {
+        GetMemberByNameAndMailAdressResponse response = new GetMemberByNameAndMailAdressResponse();
         ServiceStatus serviceStatus = new ServiceStatus();
-        Member member = memberService.findByNameAndFirstName(request.getName(), request.getFirstName());
+        Member member = memberService.findByNameAndMailAdress(request.getName(), request.getMailAdress());
         if (member == null) {
             serviceStatus.setStatus(NOT_FOUND);
         } else {

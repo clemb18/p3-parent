@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MemberRepository extends CrudRepository<Member, Long> {
 
-    Member findByNameAndFirstName(String name, String firstName);
+    Member findByNameAndMailAdress(String name, String mailAdress);
 
     Member save(Member member);
 

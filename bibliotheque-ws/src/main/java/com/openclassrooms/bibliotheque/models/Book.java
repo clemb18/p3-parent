@@ -8,12 +8,10 @@ import java.io.Serializable;
 public class Book implements Serializable {
 
 	@Id
-
 	@Column(name = "BOOK_ID")
 	private Long id;
 	@Column(name = "BOOK_AVAILABLE")
 	private boolean available;
-
 
 	public Long getId() {
 		return id;

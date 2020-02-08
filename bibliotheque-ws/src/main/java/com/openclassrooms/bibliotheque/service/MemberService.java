@@ -10,7 +10,7 @@ public interface MemberService {
 
 
 
-    Member findByNameAndFirstName(String name, String firstName);
+    Member findByNameAndMailAdress(String name, String mailAdress);
 
     Member create(MemberWs member);
 

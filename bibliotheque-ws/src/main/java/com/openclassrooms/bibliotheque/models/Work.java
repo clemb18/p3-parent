@@ -12,7 +12,6 @@ public class Work implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-
 	@Column(name = "W_ID")
 	private Long id;
 
@@ -28,7 +27,8 @@ public class Work implements Serializable {
 	@Column(name = "W_DESCRIPTION")
 	private String bookDescription;
 
-	@OneToMany(fetch=FetchType.EAGER)
+	@OneToMany(fetch=FetchType.LAZY)
+	@JoinColumn(name = "BOOK_ID")
 	private List<Book> booksList;
 
 	public Work() {

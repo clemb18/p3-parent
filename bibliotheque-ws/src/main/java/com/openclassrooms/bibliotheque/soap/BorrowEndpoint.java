@@ -27,7 +27,7 @@ public class BorrowEndpoint {
         GetBorrowBookResponse response = new GetBorrowBookResponse();
         ServiceStatus serviceStatus = new ServiceStatus();
 
-        Boolean borrow = borrowService.borrowBook(request.getWorkWs().getId(), request.getMemberWs().getId());
+        Boolean borrow = borrowService.borrowBook(request.getWorkId(), request.getMemberId());
         if (borrow == null) {
             serviceStatus.setStatus(NOT_FOUND);
         } else {

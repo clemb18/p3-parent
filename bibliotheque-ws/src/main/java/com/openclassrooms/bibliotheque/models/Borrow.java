@@ -13,7 +13,7 @@ public class Borrow implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "B_ID")
 	private Long id;
 	@Column(name = "B_STATUS")
@@ -39,6 +39,7 @@ public class Borrow implements Serializable {
 	private Member member;
 
 	@OneToOne
+	@JoinColumn(name = "B_BOOK_ID")
 	private Book book;
 
 	public Long getId() {

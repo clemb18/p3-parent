@@ -1,11 +1,9 @@
 package com.openclassrooms.bibliotheque.models;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 
 @Entity
@@ -33,6 +31,18 @@ public class Member implements Serializable {
 
 	@Column(name = "M_ADRESS")
 	private String adress;
+
+	public List<Borrow> getBorrowList() {
+		return borrowList;
+	}
+
+	public void setBorrowList(List<Borrow> borrowList) {
+		this.borrowList = borrowList;
+	}
+
+	@OneToMany(fetch=FetchType.LAZY)
+	@JoinColumn(name = "B_ID")
+	private List<Borrow> borrowList;
 
 	public static long getSerialVersionUID() {
 		return serialVersionUID;
