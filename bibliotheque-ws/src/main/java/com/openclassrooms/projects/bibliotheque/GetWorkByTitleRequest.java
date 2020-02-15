@@ -10,6 +10,7 @@ package com.openclassrooms.projects.bibliotheque;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -24,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -35,27 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "id"
+    "title"
 })
-@XmlRootElement(name = "getDeleteBookRequest")
-public class GetDeleteBookRequest {
+@XmlRootElement(name = "getWorkByTitleRequest")
+public class GetWorkByTitleRequest {
 
-    protected long id;
+    @XmlElement(required = true)
+    protected String title;
 
     /**
-     * Obtient la valeur de la propriété id.
+     * Obtient la valeur de la propriété title.
      * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public long getId() {
-        return id;
+    public String getTitle() {
+        return title;
     }
 
     /**
-     * Définit la valeur de la propriété id.
+     * Définit la valeur de la propriété title.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setId(long value) {
-        this.id = value;
+    public void setTitle(String value) {
+        this.title = value;
     }
 
 }

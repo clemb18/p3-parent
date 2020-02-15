@@ -10,7 +10,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.List;
 
 
@@ -29,7 +28,13 @@ public class WorkServiceImpl implements WorkService {
     }
 
     @Override
-    public List<Work> getWorksByPublicationDate(XMLGregorianCalendar publicationDate) {
+    public List<Work> getWorksByTitle(String title) {
+
+        return workRepository.findByTitleIsContainingIgnoreCase(title);
+    }
+
+    @Override
+    public List<Work> getWorksByPublicationDate(String publicationDate) {
 
         return workRepository.findByPublicationDate(publicationDate);
 

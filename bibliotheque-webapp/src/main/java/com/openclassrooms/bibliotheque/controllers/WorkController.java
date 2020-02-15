@@ -45,19 +45,47 @@ public class WorkController {
         return "search";
     }
 
-    @PostMapping(path = "/searchByPublicationDate")
-    public String searchByPublicationDate(Model model, @ModelAttribute("searchWork") SearchWork searchWork) {
+    @GetMapping("/searchWorkByDate")
+    public String searchWorkFormDate(Model model) {
+        model.addAttribute("searchWorkByDate", new SearchWork());
 
-        List<WorkWs> listWorks = workService.findWorks(searchWork.getPublicationDate());
+        model.addAttribute("findResult", false);
+        // retourne la jsp
+        return "searchByPublicationDate";
+    }
+
+    @PostMapping(path = "/searchByPublicationDate")
+    public String searchByPublicationDate(Model model, @ModelAttribute("searchWorkByDate") SearchWork searchWork) {
+
+        List<WorkWs> listWorks = workService.findWorksByPublicationDate(searchWork.getPublicationDate());
 
         model.addAttribute("findResult", true);
 
         model.addAttribute("listWorks" ,listWorks);
 
-        return "search";
+        return "searchByPublicationDate";
     }
 
-    // Ajouter la recherche par titre
+    @GetMapping("/searchWorkByTitle")
+    public String searchWorkFormTitle(Model model) {
+        model.addAttribute("searchWorkByTitle", new SearchWork());
+
+        model.addAttribute("findResult", false);
+        // retourne la jsp
+        return "searchByTitle";
+    }
+
+    @PostMapping(path = "/searchByTitle")
+    public String searchByTitle(Model model, @ModelAttribute("searchWorkByTitle") SearchWork searchWork) {
+
+        List<WorkWs> listWorks = workService.findWorksByTitle(searchWork.getTitle());
+
+        model.addAttribute("findResult", true);
+
+        model.addAttribute("listWorks" ,listWorks);
+
+        return "searchByTitle";
+    }
 
 }
 

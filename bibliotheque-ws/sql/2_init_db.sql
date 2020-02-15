@@ -4,22 +4,22 @@ create table T_WORK
     W_ID               SERIAL,
     W_TITLE            VARCHAR(100) NOT NULL,
     W_AUTHOR           VARCHAR(50)  NOT NULL,
-    W_PUBLICATION_DATE DATE         NOT NULL,
+    W_PUBLICATION_DATE VARCHAR(4)         NOT NULL,
     W_DESCRIPTION      VARCHAR(255) NOT NULL,
     PRIMARY KEY (W_ID) -- Définition de la clé primaire de la table
 );
 
 INSERT INTO T_WORK (W_TITLE, W_AUTHOR, W_PUBLICATION_DATE, W_DESCRIPTION)
-VALUES ('Vacances dans le comas', 'Frederic Beigbeder', '1994-01-01 00:00:00', 'Roman'),
-       ('99 Francs', 'Frederic Beigbeder', '2000-01-01 00:00:00', 'Roman'),
-       ('Windows on the world', 'Frederic Beigbeder', '2003-01-01 00:00:00', 'Roman'),
-       ('Un roman francais', 'Frederic Beigbeder', '2009-01-01 00:00:00', 'Roman'),
-       ('Une vie sans fin', 'Frederic Beigbeder', '2018-01-01 00:00:00', 'Roman'),
-       ('Harry Potter et le coupe de feu', 'JK Rowling', '2000-01-01 00:00:00', 'Fantastique'),
-       ('Harry Potter et lordre du phoenix', 'JK Rowling', '2003-01-01 00:00:00', 'Fantastique'),
-       ('Harry Potter et les reliques de la mort', 'JK Rowling', '2009-01-01 00:00:00', 'Fantastique'),
-       ('Insomnie', 'Stephen King', '1994-01-01 00:00:00', 'Fiction'),
-       ('Sleaping Beauties', 'Stephen King', '2018-01-01 00:00:00', 'Fiction');
+VALUES ('Vacances dans le comas', 'Frederic Beigbeder', '1994', 'Roman'),
+       ('99 Francs', 'Frederic Beigbeder', '2000', 'Roman'),
+       ('Windows on the world', 'Frederic Beigbeder', '2003', 'Roman'),
+       ('Un roman francais', 'Frederic Beigbeder', '2009', 'Roman'),
+       ('Une vie sans fin', 'Frederic Beigbeder', '2018', 'Roman'),
+       ('Harry Potter et le coupe de feu', 'JK Rowling', '2000', 'Fantastique'),
+       ('Harry Potter et lordre du phoenix', 'JK Rowling', '2003', 'Fantastique'),
+       ('Harry Potter et les reliques de la mort', 'JK Rowling', '2009', 'Fantastique'),
+       ('Insomnie', 'Stephen King', '1994', 'Fiction'),
+       ('Sleaping Beauties', 'Stephen King', '2018', 'Fiction');
 
 
 -- creation table user

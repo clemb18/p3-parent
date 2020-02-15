@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2020.02.08 à 04:15:09 PM CET 
+// Généré le : 2020.02.15 à 04:23:09 PM CET 
 //
 
 
@@ -11,9 +11,7 @@ package com.openclassrooms.projects.bibliotheque;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
@@ -29,7 +27,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="author" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="publicationDate" type="{http://www.w3.org/2001/XMLSchema}date"/&gt;
+ *         &lt;element name="publicationDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="bookDescription" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -55,8 +53,7 @@ public class WorkWs {
     @XmlElement(required = true)
     protected String author;
     @XmlElement(required = true)
-    @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar publicationDate;
+    protected String publicationDate;
     @XmlElement(required = true)
     protected String bookDescription;
 
@@ -129,10 +126,10 @@ public class WorkWs {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getPublicationDate() {
+    public String getPublicationDate() {
         return publicationDate;
     }
 
@@ -141,10 +138,10 @@ public class WorkWs {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public void setPublicationDate(XMLGregorianCalendar value) {
+    public void setPublicationDate(String value) {
         this.publicationDate = value;
     }
 

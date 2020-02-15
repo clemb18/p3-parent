@@ -20,6 +20,21 @@ public class WorkServiceImpl implements WorkService{
        Assert.notNull(author, "Author must not be null.");
       return workClient.getWorkByAuthorResponse(author);
 
- }
+    }
+
+    @Override
+    public List<WorkWs> findWorksByTitle(String title) {
+        Assert.notNull(title, "Title must not be null.");
+        return workClient.getWorkByTitleResponse(title);
+
+    }
+
+    @Override
+    public List<WorkWs> findWorksByPublicationDate(String publicationDate) {
+        Assert.notNull(publicationDate, "Date must not be null.");
+        return workClient.getWorkByPublicationDateResponse(publicationDate);
+
+    }
+
 }
 

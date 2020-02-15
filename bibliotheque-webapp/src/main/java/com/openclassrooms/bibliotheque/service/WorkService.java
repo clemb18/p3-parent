@@ -8,5 +8,9 @@ public interface WorkService {
 
     List<WorkWs> findWorks(String author);
 
+    List<WorkWs> findWorksByTitle(String title);
+
+    List<WorkWs> findWorksByPublicationDate(String publicationDate);
+
 
 }

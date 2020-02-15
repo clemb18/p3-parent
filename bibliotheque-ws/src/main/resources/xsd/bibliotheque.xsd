@@ -125,7 +125,7 @@
     <xs:element name="getWorkByPublicationDateRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="publicationDate" type="xs:date"/>
+                <xs:element name="publicationDate" type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -134,7 +134,26 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="serviceStatus" type="tns:serviceStatus"/>
-                <xs:element name="workWs" type="tns:workWs"/>
+                <xs:element name="workWs" type="tns:workWs" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- methode get works by title -->
+
+    <xs:element name="getWorkByTitleRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="title" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getWorkByTitleResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="workWs" type="tns:workWs" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -369,7 +388,7 @@
             <xs:element name="id" type="xs:long"/>
             <xs:element name="title" type="xs:string"/>
             <xs:element name="author" type="xs:string"/>
-            <xs:element name="publicationDate" type="xs:date"/>
+            <xs:element name="publicationDate" type="xs:string"/>
             <xs:element name="bookDescription" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>

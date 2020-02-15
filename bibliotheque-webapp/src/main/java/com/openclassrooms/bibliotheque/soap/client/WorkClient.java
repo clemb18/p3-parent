@@ -1,8 +1,6 @@
 package com.openclassrooms.bibliotheque.soap.client;
 
-import com.openclassrooms.bibliotheque.ws.GetWorkByAuthorRequest;
-import com.openclassrooms.bibliotheque.ws.GetWorkByAuthorResponse;
-import com.openclassrooms.bibliotheque.ws.WorkWs;
+import com.openclassrooms.bibliotheque.ws.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 import org.springframework.ws.soap.client.core.SoapActionCallback;
@@ -20,6 +18,24 @@ public class WorkClient extends WebServiceGatewaySupport {
         GetWorkByAuthorResponse response = (GetWorkByAuthorResponse) getWebServiceTemplate().marshalSendAndReceive(bibliothequeWsUrl, request,
                 new SoapActionCallback("http://openclassrooms.com/projects/bibliotheque/GetWorksByAuthorRequest"));
        return response.getWorkWs();
+
+    }
+
+    public List<WorkWs> getWorkByTitleResponse(String title) {
+        GetWorkByTitleRequest request = new GetWorkByTitleRequest();
+        request.setTitle(title);
+        GetWorkByTitleResponse response = (GetWorkByTitleResponse) getWebServiceTemplate().marshalSendAndReceive(bibliothequeWsUrl, request,
+                new SoapActionCallback("http://openclassrooms.com/projects/bibliotheque/GetWorksByTitleRequest"));
+       return response.getWorkWs();
+
+    }
+
+    public List<WorkWs> getWorkByPublicationDateResponse(String publicationDate) {
+        GetWorkByPublicationDateRequest request = new GetWorkByPublicationDateRequest();
+        request.setPublicationDate(publicationDate);
+        GetWorkByPublicationDateResponse response = (GetWorkByPublicationDateResponse) getWebServiceTemplate().marshalSendAndReceive(bibliothequeWsUrl, request,
+                new SoapActionCallback("http://openclassrooms.com/projects/bibliotheque/GetWorksByPublicationDateRequest"));
+        return response.getWorkWs();
 
     }
 

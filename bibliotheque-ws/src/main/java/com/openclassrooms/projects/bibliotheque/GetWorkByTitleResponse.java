@@ -8,6 +8,8 @@
 
 package com.openclassrooms.projects.bibliotheque;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -26,7 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="serviceStatus" type="{http://openclassrooms.com/projects/bibliotheque}serviceStatus"/&gt;
- *         &lt;element name="bookWs" type="{http://openclassrooms.com/projects/bibliotheque}bookWs"/&gt;
+ *         &lt;element name="workWs" type="{http://openclassrooms.com/projects/bibliotheque}workWs" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -38,15 +40,14 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "serviceStatus",
-    "bookWs"
+    "workWs"
 })
-@XmlRootElement(name = "getBookByIdResponse")
-public class GetBookByIdResponse {
+@XmlRootElement(name = "getWorkByTitleResponse")
+public class GetWorkByTitleResponse {
 
     @XmlElement(required = true)
     protected ServiceStatus serviceStatus;
-    @XmlElement(required = true)
-    protected BookWs bookWs;
+    protected List<WorkWs> workWs;
 
     /**
      * Obtient la valeur de la propriété serviceStatus.
@@ -73,27 +74,32 @@ public class GetBookByIdResponse {
     }
 
     /**
-     * Obtient la valeur de la propriété bookWs.
+     * Gets the value of the workWs property.
      * 
-     * @return
-     *     possible object is
-     *     {@link BookWs }
-     *     
-     */
-    public BookWs getBookWs() {
-        return bookWs;
-    }
-
-    /**
-     * Définit la valeur de la propriété bookWs.
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the workWs property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link BookWs }
-     *     
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getWorkWs().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link WorkWs }
+     * 
+     * 
      */
-    public void setBookWs(BookWs value) {
-        this.bookWs = value;
+    public List<WorkWs> getWorkWs() {
+        if (workWs == null) {
+            workWs = new ArrayList<WorkWs>();
+        }
+        return this.workWs;
     }
 
 }

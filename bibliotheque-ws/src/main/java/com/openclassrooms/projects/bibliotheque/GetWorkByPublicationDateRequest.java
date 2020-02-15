@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2020.02.08 à 04:15:09 PM CET 
+// Généré le : 2020.02.15 à 04:23:09 PM CET 
 //
 
 
@@ -12,9 +12,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
@@ -27,7 +25,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="publicationDate" type="{http://www.w3.org/2001/XMLSchema}date"/&gt;
+ *         &lt;element name="publicationDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -44,18 +42,17 @@ import javax.xml.datatype.XMLGregorianCalendar;
 public class GetWorkByPublicationDateRequest {
 
     @XmlElement(required = true)
-    @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar publicationDate;
+    protected String publicationDate;
 
     /**
      * Obtient la valeur de la propriété publicationDate.
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getPublicationDate() {
+    public String getPublicationDate() {
         return publicationDate;
     }
 
@@ -64,10 +61,10 @@ public class GetWorkByPublicationDateRequest {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public void setPublicationDate(XMLGregorianCalendar value) {
+    public void setPublicationDate(String value) {
         this.publicationDate = value;
     }
 

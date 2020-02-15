@@ -2,7 +2,6 @@ package com.openclassrooms.bibliotheque.models;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -22,7 +21,7 @@ public class Work implements Serializable {
 	private String author;
 
 	@Column(name = "W_PUBLICATION_DATE")
-	private Date publicationDate;
+	private String publicationDate;
 
 	@Column(name = "W_DESCRIPTION")
 	private String bookDescription;
@@ -64,11 +63,11 @@ public class Work implements Serializable {
 		this.author = author;
 	}
 
-	public Date getPublicationDate() {
+	public String getPublicationDate() {
 		return publicationDate;
 	}
 
-	public void setPublicationDate(Date publicationDate) {
+	public void setPublicationDate(String publicationDate) {
 		this.publicationDate = publicationDate;
 	}
 

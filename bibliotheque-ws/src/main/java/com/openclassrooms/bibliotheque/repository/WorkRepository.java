@@ -4,7 +4,6 @@ import com.openclassrooms.bibliotheque.models.Work;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.List;
 
 
@@ -12,10 +11,11 @@ import java.util.List;
 public interface WorkRepository extends CrudRepository<Work, Long> {
 
 
-    List<Work> findByPublicationDate(XMLGregorianCalendar publicationDate);
-
+    List<Work> findByPublicationDate(String publicationDate);
 
     List<Work> findByAuthorIsContainingIgnoreCase(String author);
+
+    List<Work> findByTitleIsContainingIgnoreCase(String title);
 
     void deleteById(Long workId);
 

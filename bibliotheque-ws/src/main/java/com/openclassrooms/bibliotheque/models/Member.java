@@ -32,6 +32,9 @@ public class Member implements Serializable {
 	@Column(name = "M_ADRESS")
 	private String adress;
 
+	@OneToMany(mappedBy = "member")
+	private List<Borrow> borrowList;
+
 	public List<Borrow> getBorrowList() {
 		return borrowList;
 	}
@@ -40,9 +43,7 @@ public class Member implements Serializable {
 		this.borrowList = borrowList;
 	}
 
-	@OneToMany(fetch=FetchType.LAZY)
-	@JoinColumn(name = "B_ID")
-	private List<Borrow> borrowList;
+
 
 	public static long getSerialVersionUID() {
 		return serialVersionUID;

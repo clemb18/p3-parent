@@ -35,11 +35,12 @@ public class Borrow implements Serializable {
 		this.workTitle = workName;
 	}
 
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="B_MEMBER_ID")
 	private Member member;
 
 	@OneToOne
-	@JoinColumn(name = "B_BOOK_ID")
+	@JoinColumn(name = "B_BOOK_ID", referencedColumnName = "BOOK_ID")
 	private Book book;
 
 	public Long getId() {

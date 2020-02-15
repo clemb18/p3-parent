@@ -48,58 +48,46 @@ public class WorkEndpoint {
         return response;
     }
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getWorksByPublicationDate")
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getWorkByTitleRequest")
     @ResponsePayload
-    public GetWorkByPublicationDateResponse getWorksByPublicationDate(@RequestPayload GetWorkByPublicationDateRequest request) {
-        GetWorkByPublicationDateResponse response = new GetWorkByPublicationDateResponse();
+    public GetWorkByTitleResponse getWorksByTitle(@RequestPayload GetWorkByTitleRequest request) {
+        GetWorkByTitleResponse response = new GetWorkByTitleResponse();
         ServiceStatus serviceStatus = new ServiceStatus();
-        Work work = (Work) workService.getWorksByPublicationDate(request.getPublicationDate());
-        if (work == null) {
+        List<Work> works =  workService.getWorksByTitle(request.getTitle());
+        if (works == null || works.isEmpty() ) {
             serviceStatus.setStatus(NOT_FOUND);
         } else {
             serviceStatus.setStatus(SUCCESS);
-            WorkWs workWs = new WorkWs();
-            BeanUtils.copyProperties(work, workWs);
-            response.setWorkWs(workWs);
+            List<WorkWs> listworkWs = new ArrayList<>();
+            for(Work work:works){
+                WorkWs workWs = new WorkWs();
+                BeanUtils.copyProperties(work, workWs);
+                listworkWs.add(workWs);
+            }
+
+            response.getWorkWs().addAll(listworkWs);
         }
         response.setServiceStatus(serviceStatus);
         return response;
     }
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "createWorkRequest")
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getWorkByPublicationDateRequest")
     @ResponsePayload
-    public CreateWorkResponse createWork(@RequestPayload CreateWorkRequest request) {
-        CreateWorkResponse createWorkResponse = new CreateWorkResponse();
+    public GetWorkByPublicationDateResponse getWorksByPublicationDate(@RequestPayload GetWorkByPublicationDateRequest request) {
+        GetWorkByPublicationDateResponse response = new GetWorkByPublicationDateResponse();
         ServiceStatus serviceStatus = new ServiceStatus();
-        Work work = new Work();
-        BeanUtils.copyProperties(request.getWorkWs(), work);
-        Work workCreated = workService.create(request.getWorkWs());
-        if (workCreated == null) {
+        List<Work> works = workService.getWorksByPublicationDate(request.getPublicationDate());
+        if (works == null || works.isEmpty() ) {
             serviceStatus.setStatus(NOT_FOUND);
         } else {
             serviceStatus.setStatus(SUCCESS);
-            WorkWs workWs = new WorkWs();
-            BeanUtils.copyProperties(workCreated, workWs);
-            createWorkResponse.setWorkWs(workWs);
-        }
-        createWorkResponse.setServiceStatus(serviceStatus);
-        return createWorkResponse;
-    }
-
-
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getDeleteWorkRequest")
-    @ResponsePayload
-    public GetDeleteWorkResponse getDeleteWork(@RequestPayload GetDeleteWorkRequest request) {
-        GetDeleteWorkResponse response = new GetDeleteWorkResponse();
-        ServiceStatus serviceStatus = new ServiceStatus();
-        Work workToDelete = workService.deleteWork(request.getId());
-        if (workToDelete == null) {
-            serviceStatus.setStatus(NOT_FOUND);
-        } else {
-            serviceStatus.setStatus(SUCCESS);
-            WorkWs workWs = new WorkWs();
-            BeanUtils.copyProperties(workToDelete, workWs);
-            response.setWorkWs(workWs);
+            List<WorkWs> listworkWs = new ArrayList<>();
+            for(Work work:works){
+                WorkWs workWs = new WorkWs();
+                BeanUtils.copyProperties(work, workWs);
+                listworkWs.add(workWs);
+            }
+            response.getWorkWs().addAll(listworkWs);
         }
         response.setServiceStatus(serviceStatus);
         return response;

@@ -43,21 +43,21 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/WEB-INF/views/login.jsp">Home</a></li>
-                <li><a href="searchWork">Rechercher une oeuvre</a></li>
-                <li><a href="/borrowList">Rechercher un membre</a></li>
-                <li><a href="/moncompte">Mon compte</a></li>
-
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Rechercher une oeuvre
                     </a>
                     <div class="dropdown-menu" aria-labelledby="menuDropdown">
-                        <a class="dropdown-item" href="/bibliot-webapp/search">Par auteur</a>
+                        <a class="dropdown-item" href="searchWork">Par auteur</a>
                         <br>
-                        <a class="dropdown-item" href="#">Par année de publication</a>
-                        <a class="dropdown-item" href="#">Par titre</a>
+                        <a class="dropdown-item" href="searchWorkByDate">Par année de publication</a>
+                        <a class="dropdown-item" href="searchWorkByTitle">Par titre</a>
                     </div>
                 </li>
+                <li><a href="/borrowList">Rechercher un membre</a></li>
+                <li><a href="/moncompte">Mon compte</a></li>
+
+
             </ul>
         </div><!--/.nav-collapse -->
     </div>

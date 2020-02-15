@@ -2,12 +2,14 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2020.02.08 à 04:15:09 PM CET 
+// Généré le : 2020.02.15 à 04:23:09 PM CET 
 //
 
 
 package com.openclassrooms.projects.bibliotheque;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -26,7 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="serviceStatus" type="{http://openclassrooms.com/projects/bibliotheque}serviceStatus"/&gt;
- *         &lt;element name="workWs" type="{http://openclassrooms.com/projects/bibliotheque}workWs"/&gt;
+ *         &lt;element name="workWs" type="{http://openclassrooms.com/projects/bibliotheque}workWs" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -45,8 +47,7 @@ public class GetWorkByPublicationDateResponse {
 
     @XmlElement(required = true)
     protected ServiceStatus serviceStatus;
-    @XmlElement(required = true)
-    protected WorkWs workWs;
+    protected List<WorkWs> workWs;
 
     /**
      * Obtient la valeur de la propriété serviceStatus.
@@ -73,27 +74,32 @@ public class GetWorkByPublicationDateResponse {
     }
 
     /**
-     * Obtient la valeur de la propriété workWs.
+     * Gets the value of the workWs property.
      * 
-     * @return
-     *     possible object is
-     *     {@link WorkWs }
-     *     
-     */
-    public WorkWs getWorkWs() {
-        return workWs;
-    }
-
-    /**
-     * Définit la valeur de la propriété workWs.
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the workWs property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link WorkWs }
-     *     
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getWorkWs().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link WorkWs }
+     * 
+     * 
      */
-    public void setWorkWs(WorkWs value) {
-        this.workWs = value;
+    public List<WorkWs> getWorkWs() {
+        if (workWs == null) {
+            workWs = new ArrayList<WorkWs>();
+        }
+        return this.workWs;
     }
 
 }
