@@ -353,6 +353,26 @@
         </xs:complexType>
     </xs:element>
 
+    <!-- methode get borrow by member -->
+
+    <xs:element name="getBorrowListByMemberRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="memberWs" type="tns:memberWs"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="getBorrowListByMemberResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="borrowWs" type="tns:borrowWs" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
     <!-- objects -->
 
     <xs:complexType name="serviceStatus">
@@ -400,6 +420,7 @@
             <xs:element name="extended" type="xs:boolean"/>
             <xs:element name="workTitle" type="xs:string"/>
             <xs:element name="memberId" type="xs:long"/>
+            <xs:element name="member" type="tns:memberWs"/>
             <!-- #AJOUT MEMBRE -->
         </xs:sequence>
     </xs:complexType>

@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2020.02.16 à 03:43:17 PM CET 
+// Généré le : 2020.02.16 à 10:04:09 PM CET 
 //
 
 
@@ -33,6 +33,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="extended" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *         &lt;element name="workTitle" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="memberId" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="member" type="{http://openclassrooms.com/projects/bibliotheque}memberWs"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -49,7 +50,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "endBorrowDate",
     "extended",
     "workTitle",
-    "memberId"
+    "memberId",
+    "member"
 })
 public class BorrowWs {
 
@@ -66,6 +68,8 @@ public class BorrowWs {
     @XmlElement(required = true)
     protected String workTitle;
     protected long memberId;
+    @XmlElement(required = true)
+    protected MemberWs member;
 
     /**
      * Obtient la valeur de la propriété id.
@@ -209,6 +213,30 @@ public class BorrowWs {
      */
     public void setMemberId(long value) {
         this.memberId = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété member.
+     * 
+     * @return
+     *     possible object is
+     *     {@link MemberWs }
+     *     
+     */
+    public MemberWs getMember() {
+        return member;
+    }
+
+    /**
+     * Définit la valeur de la propriété member.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link MemberWs }
+     *     
+     */
+    public void setMember(MemberWs value) {
+        this.member = value;
     }
 
 }

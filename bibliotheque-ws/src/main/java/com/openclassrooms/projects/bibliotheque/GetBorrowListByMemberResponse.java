@@ -8,6 +8,8 @@
 
 package com.openclassrooms.projects.bibliotheque;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -26,7 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="serviceStatus" type="{http://openclassrooms.com/projects/bibliotheque}serviceStatus"/&gt;
- *         &lt;element name="borrowWs" type="{http://openclassrooms.com/projects/bibliotheque}borrowWs"/&gt;
+ *         &lt;element name="borrowWs" type="{http://openclassrooms.com/projects/bibliotheque}borrowWs" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -40,13 +42,12 @@ import javax.xml.bind.annotation.XmlType;
     "serviceStatus",
     "borrowWs"
 })
-@XmlRootElement(name = "getTerminateBorrowResponse")
-public class GetTerminateBorrowResponse {
+@XmlRootElement(name = "getBorrowListByMemberResponse")
+public class GetBorrowListByMemberResponse {
 
     @XmlElement(required = true)
     protected ServiceStatus serviceStatus;
-    @XmlElement(required = true)
-    protected BorrowWs borrowWs;
+    protected List<BorrowWs> borrowWs;
 
     /**
      * Obtient la valeur de la propriété serviceStatus.
@@ -73,27 +74,32 @@ public class GetTerminateBorrowResponse {
     }
 
     /**
-     * Obtient la valeur de la propriété borrowWs.
+     * Gets the value of the borrowWs property.
      * 
-     * @return
-     *     possible object is
-     *     {@link BorrowWs }
-     *     
-     */
-    public BorrowWs getBorrowWs() {
-        return borrowWs;
-    }
-
-    /**
-     * Définit la valeur de la propriété borrowWs.
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the borrowWs property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link BorrowWs }
-     *     
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getBorrowWs().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link BorrowWs }
+     * 
+     * 
      */
-    public void setBorrowWs(BorrowWs value) {
-        this.borrowWs = value;
+    public List<BorrowWs> getBorrowWs() {
+        if (borrowWs == null) {
+            borrowWs = new ArrayList<BorrowWs>();
+        }
+        return this.borrowWs;
     }
 
 }

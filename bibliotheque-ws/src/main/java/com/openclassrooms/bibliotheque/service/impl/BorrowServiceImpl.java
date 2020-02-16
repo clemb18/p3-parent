@@ -12,6 +12,7 @@ import com.openclassrooms.bibliotheque.repository.MemberRepository;
 import com.openclassrooms.bibliotheque.repository.WorkRepository;
 import com.openclassrooms.bibliotheque.service.BorrowService;
 import com.openclassrooms.bibliotheque.service.MemberService;
+import com.openclassrooms.projects.bibliotheque.MemberWs;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -64,7 +65,7 @@ public class BorrowServiceImpl implements BorrowService {
 
 
                 // On associe le member a borrow
-                borrowToSave.setMemberBorrowing(member);
+                borrowToSave.setMember(member);
                 borrowToSave.setStartBorrowDate(new Date());
 
 
@@ -148,6 +149,12 @@ public class BorrowServiceImpl implements BorrowService {
     @Override
     public List<Borrow> findBorrowListByMemberId(Long memberId) {
         return borrowRepository.findByMemberId(memberId);
+    }
+
+    @Override
+    public List<Borrow> findBorrowListByMember(MemberWs member) {
+
+        return borrowRepository.findByMember(member);
     }
 
 

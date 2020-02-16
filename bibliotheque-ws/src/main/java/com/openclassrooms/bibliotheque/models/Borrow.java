@@ -67,12 +67,12 @@ public class Borrow implements Serializable {
 		this.endBorrowDate = endBorrowDate;
 	}
 
-	public Member getMemberBorrowing() {
+	public Member getMember() {
 		return member;
 	}
 
-	public void setMemberBorrowing(Member memberBorrowing) {
-		this.member = memberBorrowing;
+	public void setMember(Member member) {
+		this.member = member;
 	}
 
 	public static long getSerialversionuid() {

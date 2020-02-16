@@ -94,6 +94,7 @@ public class BorrowEndpoint {
             for(Borrow borrow:borrowList){
                 BorrowWs borrowWs = new BorrowWs();
                 BeanUtils.copyProperties(borrow, borrowWs);
+                borrowWs.setMemberId(borrow.getMember().getId().longValue());
                 listBorrowWs.add(borrowWs);
             }
             response.getBorrowWs().addAll(listBorrowWs);
@@ -101,4 +102,47 @@ public class BorrowEndpoint {
         response.setServiceStatus(serviceStatus);
         return response;
     }
+
+    /*@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getBorrowListByMemberIdRequest")
+@ResponsePayload
+public GetBorrowListByMemberIdResponse findBorrowListByMemberId(@RequestPayload GetBorrowListByMemberIdRequest request) {
+    GetBorrowListByMemberIdResponse response = new GetBorrowListByMemberIdResponse();
+    List<Borrow> borrowList = borrowService.findBorrowListByMemberId(request.getMemberId());
+    if (borrowList != null && !borrowList.isEmpty()) {
+        List<BorrowWs> listBorrowWs = new ArrayList<>();
+        for(Borrow borrow:borrowList){
+            BorrowWs borrowWs = new BorrowWs();
+            BeanUtils.copyProperties(borrow, borrowWs);
+            borrowWs.setMemberId(borrow.getMember().getId().longValue());
+            listBorrowWs.add(borrowWs);
+        }
+        response.getBorrowWs().addAll(listBorrowWs);
+    }
+    return response;
+}*/
+
+  @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getBorrowListByMemberRequest")
+    @ResponsePayload
+    public GetBorrowListByMemberResponse findBorrowListByMember(@RequestPayload GetBorrowListByMemberRequest request) {
+        GetBorrowListByMemberResponse response = new GetBorrowListByMemberResponse();
+        ServiceStatus serviceStatus = new ServiceStatus();
+
+        List<Borrow> borrowList = borrowService.findBorrowListByMember(request.getMemberWs());
+        if (borrowList == null || borrowList.isEmpty()) {
+            serviceStatus.setStatus(NOT_FOUND);
+        } else {
+            serviceStatus.setStatus(SUCCESS);
+            List<BorrowWs> listBorrowWs = new ArrayList<>();
+            for(Borrow borrow:borrowList){
+                BorrowWs borrowWs = new BorrowWs();
+                BeanUtils.copyProperties(borrow, borrowWs);
+                listBorrowWs.add(borrowWs);
+            }
+            response.getBorrowWs().addAll(listBorrowWs);
+        }
+        response.setServiceStatus(serviceStatus);
+        return response;
+    }
+
+
 }

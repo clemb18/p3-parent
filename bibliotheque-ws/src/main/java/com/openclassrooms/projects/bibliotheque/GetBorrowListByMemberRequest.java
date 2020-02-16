@@ -25,8 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="serviceStatus" type="{http://openclassrooms.com/projects/bibliotheque}serviceStatus"/&gt;
- *         &lt;element name="borrowWs" type="{http://openclassrooms.com/projects/bibliotheque}borrowWs"/&gt;
+ *         &lt;element name="memberWs" type="{http://openclassrooms.com/projects/bibliotheque}memberWs"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -37,63 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "serviceStatus",
-    "borrowWs"
+    "memberWs"
 })
-@XmlRootElement(name = "getTerminateBorrowResponse")
-public class GetTerminateBorrowResponse {
+@XmlRootElement(name = "getBorrowListByMemberRequest")
+public class GetBorrowListByMemberRequest {
 
     @XmlElement(required = true)
-    protected ServiceStatus serviceStatus;
-    @XmlElement(required = true)
-    protected BorrowWs borrowWs;
+    protected MemberWs memberWs;
 
     /**
-     * Obtient la valeur de la propriété serviceStatus.
+     * Obtient la valeur de la propriété memberWs.
      * 
      * @return
      *     possible object is
-     *     {@link ServiceStatus }
+     *     {@link MemberWs }
      *     
      */
-    public ServiceStatus getServiceStatus() {
-        return serviceStatus;
+    public MemberWs getMemberWs() {
+        return memberWs;
     }
 
     /**
-     * Définit la valeur de la propriété serviceStatus.
+     * Définit la valeur de la propriété memberWs.
      * 
      * @param value
      *     allowed object is
-     *     {@link ServiceStatus }
+     *     {@link MemberWs }
      *     
      */
-    public void setServiceStatus(ServiceStatus value) {
-        this.serviceStatus = value;
-    }
-
-    /**
-     * Obtient la valeur de la propriété borrowWs.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BorrowWs }
-     *     
-     */
-    public BorrowWs getBorrowWs() {
-        return borrowWs;
-    }
-
-    /**
-     * Définit la valeur de la propriété borrowWs.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BorrowWs }
-     *     
-     */
-    public void setBorrowWs(BorrowWs value) {
-        this.borrowWs = value;
+    public void setMemberWs(MemberWs value) {
+        this.memberWs = value;
     }
 
 }

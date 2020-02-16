@@ -84,7 +84,7 @@ public class BorrowController {
     }
 
     // methode post qui recup les infos de recherche du membre nom et mail
-    @PostMapping(path = "/searchMemberBorrow")
+ /*   @PostMapping(path = "/searchMemberBorrow")
     public String searchMemberBorrow(Model model, @ModelAttribute("searchMemberBorrow") SearchMemberBorrow searchMemberBorrow) {
 
         MemberWs memberFind = memberService.findMember(searchMemberBorrow.getName(), searchMemberBorrow.getMailAdress());
@@ -94,9 +94,32 @@ public class BorrowController {
         model.addAttribute("memberFind" ,memberFind);
 
         return "searchMemberBorrowPage";
+    }*/
+
+    // test methode 2 en 1, recup du membre via le post, et recup la liste de borrow en settant le memberfind
+    @PostMapping(path = "/searchMemberBorrow")
+    public String searchMemberBorrow(Model model, @ModelAttribute("searchMemberBorrow") SearchMemberBorrow searchMemberBorrow) {
+
+        MemberWs memberFind = memberService.findMember(searchMemberBorrow.getName(), searchMemberBorrow.getMailAdress());
+
+        long memberFindId = memberFind.getId();
+
+      //  List<BorrowWs> borrowListMember = borrowService.findBorrowListByMember(memberFind);
+
+        List<BorrowWs> borrowListMember = borrowService.findBorrowListByMemberId(Long.valueOf(memberFindId));
+
+        model.addAttribute("findMemberResult", true);
+
+        model.addAttribute("memberFind" ,memberFind);
+
+        model.addAttribute("findResult", true);
+
+        model.addAttribute("borrowList" , borrowListMember);
+
+        return "borrowListPage";
     }
 
-    // recup l'id du membre selectionné en param session
+  /*  // recup l'id du membre selectionné en param session
     @GetMapping("/selectMemberBorrow/{memberFindId}")
     public String finalBorrowFor2m(Model model, HttpSession session, @PathVariable int memberFindId)  {
 
@@ -108,6 +131,6 @@ public class BorrowController {
 
         // retourne la jsp qui affiche la liste des emprunts d'un membre
         return "borrowListPage";
-    }
+    }*/
 
 }

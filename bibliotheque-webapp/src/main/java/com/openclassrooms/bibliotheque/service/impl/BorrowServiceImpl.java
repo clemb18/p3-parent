@@ -3,6 +3,7 @@ package com.openclassrooms.bibliotheque.service.impl;
 import com.openclassrooms.bibliotheque.service.BorrowService;
 import com.openclassrooms.bibliotheque.soap.client.BorrowClient;
 import com.openclassrooms.bibliotheque.ws.BorrowWs;
+import com.openclassrooms.bibliotheque.ws.MemberWs;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,5 +35,10 @@ public class BorrowServiceImpl implements BorrowService {
     @Override
     public List<BorrowWs> findBorrowListByMemberId(Long memberId) {
         return borrowClient.getBorrowListByMemberIdResponse(memberId);
+    }
+
+    @Override
+    public List<BorrowWs> findBorrowListByMember(MemberWs memberWs) {
+        return borrowClient.getBorrowListByMemberResponse(memberWs);
     }
 }

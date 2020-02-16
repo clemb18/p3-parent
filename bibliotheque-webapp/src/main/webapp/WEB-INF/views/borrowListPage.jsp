@@ -18,7 +18,8 @@
 </p>
 <c:if test = "${findResult == true}">
 
-    <c:forEach items="${borrowListMember}" var="borrow">
+
+    <c:forEach items="${borrowList}" var="borrow">
         <ul>
             <li>Statut de l'emprunt: ${borrow.status}</li>
             <li>Date de début de l'emprunt: ${borrow.startBorrowDate}</li>
