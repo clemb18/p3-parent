@@ -18,7 +18,7 @@
 
 
 
-<form:form method="POST" action="searchMember" modelAttribute="searchMember">
+<form:form method="POST" action="searchMemberBorrow" modelAttribute="searchMemberBorrow">
     <form:input path="name" type="text" name="name" id="name" class="form-control" placeholder="Name"
                 autofocus="true" required="true"/>
     <form:input path="mailAdress" type="text" name="mailAdress" id="mailAdress" class="form-control" placeholder="Mail"
@@ -33,16 +33,11 @@
 
     <ul>
         <li>${memberFind.name}</li>
+        <li>${memberFind.mailAdress}</li>
         <li>${memberFind.firstName}</li>
-        <c:forEach items="${listBorrow}" var="work">
-            <ul>
-                <li>${work.title}</li>
-                <li>${work.bookDescription}</li>
-                <li><a href="borrow/${work.id}">Emprunter ce livre</a></li>
-
-            </ul>
-        </c:forEach>
-
+        <li>${memberFind.adress}</li>
+        <li>${memberFind.tel}</li>
+        <li><a href="selectMemberBorrow/${memberFind.id}">Choisir ce membre</a></li>
     </ul>
 
 

@@ -1,6 +1,7 @@
 package com.openclassrooms.bibliotheque.controllers;
 
 import com.openclassrooms.bibliotheque.models.SearchMember;
+import com.openclassrooms.bibliotheque.models.SearchMemberBorrow;
 import com.openclassrooms.bibliotheque.service.BorrowService;
 import com.openclassrooms.bibliotheque.service.MemberService;
 import com.openclassrooms.bibliotheque.ws.BorrowWs;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 
 @Controller
@@ -41,7 +43,7 @@ public class BorrowController {
 
         model.addAttribute("findMemberResult", false);
         // retourne la jsp
-        return "searchMember";
+        return "searchMemberPage";
     }
 
 
@@ -54,7 +56,7 @@ public class BorrowController {
 
         model.addAttribute("memberFind" ,memberFind);
 
-        return "searchMember";
+        return "searchMemberPage";
     }
 
     @GetMapping("/borrow/selectMember/{memberFindId}")
@@ -74,22 +76,38 @@ public class BorrowController {
     // Menu => renvoie sur la page de recherche de membre
     @GetMapping("/searchMemberBorrow")
     public String searchMemberBorrowForm(Model model) {
-        model.addAttribute("searchMember", new SearchMember());
+        model.addAttribute("searchMemberBorrow", new SearchMemberBorrow());
 
         model.addAttribute("findMemberBorrowResult", false);
         // retourne la jsp
-        return "searchMemberBorrow";
+        return "searchMemberBorrowPage";
     }
 
-    @PostMapping(path = "/borrow/searchMemberBorrow")
-    public String searchMemberBorrow(Model model, @ModelAttribute("searchMember") SearchMember searchMember) {
+    // methode post qui recup les infos de recherche du membre nom et mail
+    @PostMapping(path = "/searchMemberBorrow")
+    public String searchMemberBorrow(Model model, @ModelAttribute("searchMemberBorrow") SearchMemberBorrow searchMemberBorrow) {
 
-        MemberWs memberFind = memberService.findMember(searchMember.getName(), searchMember.getMailAdress());
+        MemberWs memberFind = memberService.findMember(searchMemberBorrow.getName(), searchMemberBorrow.getMailAdress());
 
         model.addAttribute("findMemberResult", true);
 
         model.addAttribute("memberFind" ,memberFind);
 
-        return "searchMember";
+        return "searchMemberBorrowPage";
     }
+
+    // recup l'id du membre selectionné en param session
+    @GetMapping("/selectMemberBorrow/{memberFindId}")
+    public String finalBorrowFor2m(Model model, HttpSession session, @PathVariable int memberFindId)  {
+
+        List<BorrowWs> borrowListMember = borrowService.findBorrowListByMemberId(Long.valueOf(memberFindId));
+
+        model.addAttribute("findResult", true);
+
+        model.addAttribute("borrowList" , borrowListMember);
+
+        // retourne la jsp qui affiche la liste des emprunts d'un membre
+        return "borrowListPage";
+    }
+
 }
