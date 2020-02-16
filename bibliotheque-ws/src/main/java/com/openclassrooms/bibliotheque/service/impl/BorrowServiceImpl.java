@@ -145,6 +145,10 @@ public class BorrowServiceImpl implements BorrowService {
         return toReturn;
     }
 
+    @Override
+    public List<Borrow> findBorrowListByMemberId(Long memberId) {
+        return borrowRepository.findByMemberId(memberId);
+    }
 
 
 }

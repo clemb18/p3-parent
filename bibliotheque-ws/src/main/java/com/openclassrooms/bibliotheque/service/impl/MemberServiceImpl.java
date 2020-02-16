@@ -1,18 +1,15 @@
 package com.openclassrooms.bibliotheque.service.impl;
 
-import com.openclassrooms.bibliotheque.models.Borrow;
 import com.openclassrooms.bibliotheque.models.Member;
-import com.openclassrooms.bibliotheque.repository.MemberRepository;
 import com.openclassrooms.bibliotheque.repository.BorrowRepository;
+import com.openclassrooms.bibliotheque.repository.MemberRepository;
 import com.openclassrooms.bibliotheque.service.MemberService;
 import com.openclassrooms.projects.bibliotheque.MemberWs;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.util.List;
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -28,10 +25,15 @@ public class MemberServiceImpl implements MemberService {
         return memberRepository.findByNameAndMailAdress(name, mailAdress);
     }
 
-    public List<Borrow> findBorrowListByMember (Member member){
+  /*  public List<Borrow> findBorrowListByMember (Member member){
 
         return borrowRepository.findByMember(member);
     }
+
+    @Override
+    public List<Borrow> findBorrowListByMemberid(Long memberId) {
+        return null;
+    }*/
 
     @Override
     public Member create(MemberWs member) {

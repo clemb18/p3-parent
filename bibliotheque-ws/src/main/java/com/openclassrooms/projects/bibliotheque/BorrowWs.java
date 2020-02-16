@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2020.02.15 à 04:23:09 PM CET 
+// Généré le : 2020.02.16 à 03:43:17 PM CET 
 //
 
 
@@ -32,6 +32,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="endBorrowDate" type="{http://www.w3.org/2001/XMLSchema}date"/&gt;
  *         &lt;element name="extended" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *         &lt;element name="workTitle" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="memberId" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -47,7 +48,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "startBorrowDate",
     "endBorrowDate",
     "extended",
-    "workTitle"
+    "workTitle",
+    "memberId"
 })
 public class BorrowWs {
 
@@ -63,6 +65,7 @@ public class BorrowWs {
     protected boolean extended;
     @XmlElement(required = true)
     protected String workTitle;
+    protected long memberId;
 
     /**
      * Obtient la valeur de la propriété id.
@@ -190,6 +193,22 @@ public class BorrowWs {
      */
     public void setWorkTitle(String value) {
         this.workTitle = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété memberId.
+     * 
+     */
+    public long getMemberId() {
+        return memberId;
+    }
+
+    /**
+     * Définit la valeur de la propriété memberId.
+     * 
+     */
+    public void setMemberId(long value) {
+        this.memberId = value;
     }
 
 }

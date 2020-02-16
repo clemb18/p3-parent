@@ -80,7 +80,6 @@
         </xs:complexType>
     </xs:element>
 
-
     <!-- methode get works by author -->
 
     <xs:element name="getWorkByAuthorRequest">
@@ -333,6 +332,27 @@
         </xs:complexType>
     </xs:element>
 
+
+    <!-- methode get borrow by memberId -->
+
+    <xs:element name="getBorrowListByMemberIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="memberId" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="getBorrowListByMemberIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="borrowWs" type="tns:borrowWs" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
     <!-- objects -->
 
     <xs:complexType name="serviceStatus">
@@ -379,6 +399,7 @@
             <xs:element name="endBorrowDate" type="xs:date"/>
             <xs:element name="extended" type="xs:boolean"/>
             <xs:element name="workTitle" type="xs:string"/>
+            <xs:element name="memberId" type="xs:long"/>
             <!-- #AJOUT MEMBRE -->
         </xs:sequence>
     </xs:complexType>

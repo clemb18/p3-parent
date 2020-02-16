@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="serviceStatus" type="{http://openclassrooms.com/projects/bibliotheque}serviceStatus"/&gt;
- *         &lt;element name="workWs" type="{http://openclassrooms.com/projects/bibliotheque}workWs" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="borrowWs" type="{http://openclassrooms.com/projects/bibliotheque}borrowWs" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -40,14 +40,14 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "serviceStatus",
-    "workWs"
+    "borrowWs"
 })
-@XmlRootElement(name = "getWorkByTitleResponse")
-public class GetWorkByTitleResponse {
+@XmlRootElement(name = "getBorrowListByMemberIdResponse")
+public class GetBorrowListByMemberIdResponse {
 
     @XmlElement(required = true)
     protected ServiceStatus serviceStatus;
-    protected List<WorkWs> workWs;
+    protected List<BorrowWs> borrowWs;
 
     /**
      * Obtient la valeur de la propriété serviceStatus.
@@ -74,32 +74,32 @@ public class GetWorkByTitleResponse {
     }
 
     /**
-     * Gets the value of the workWs property.
+     * Gets the value of the borrowWs property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the workWs property.
+     * This is why there is not a <CODE>set</CODE> method for the borrowWs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getWorkWs().add(newItem);
+     *    getBorrowWs().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link WorkWs }
+     * {@link BorrowWs }
      * 
      * 
      */
-    public List<WorkWs> getWorkWs() {
-        if (workWs == null) {
-            workWs = new ArrayList<WorkWs>();
+    public List<BorrowWs> getBorrowWs() {
+        if (borrowWs == null) {
+            borrowWs = new ArrayList<BorrowWs>();
         }
-        return this.workWs;
+        return this.borrowWs;
     }
 
 }

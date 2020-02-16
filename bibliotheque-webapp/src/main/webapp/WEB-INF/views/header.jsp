@@ -54,7 +54,7 @@
                         <a class="dropdown-item" href="searchWorkByTitle">Par titre</a>
                     </div>
                 </li>
-                <li><a href="/borrowList">Rechercher un membre</a></li>
+                <li><a href="searchMemberBorrow">Rechercher Membre</a></li>
                 <li><a href="/moncompte">Mon compte</a></li>
 
 

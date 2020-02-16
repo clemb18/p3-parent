@@ -1,5 +1,6 @@
 package com.openclassrooms.bibliotheque.soap;
 
+import com.openclassrooms.bibliotheque.models.Borrow;
 import com.openclassrooms.bibliotheque.service.BorrowService;
 import com.openclassrooms.projects.bibliotheque.*;
 import org.springframework.beans.BeanUtils;
@@ -8,6 +9,9 @@ import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.openclassrooms.projects.bibliotheque.Status.NOT_FOUND;
 import static com.openclassrooms.projects.bibliotheque.Status.SUCCESS;
@@ -71,6 +75,28 @@ public class BorrowEndpoint {
             BorrowWs borrowWsResult = new BorrowWs();
             BeanUtils.copyProperties(borrowToEnd, borrowWsResult);
             response.setBorrowWs(borrowWsResult);
+        }
+        response.setServiceStatus(serviceStatus);
+        return response;
+    }
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getBorrowListByMemberIdRequest")
+    @ResponsePayload
+    public GetBorrowListByMemberIdResponse findBorrowListByMemberId(@RequestPayload GetBorrowListByMemberIdRequest request) {
+        GetBorrowListByMemberIdResponse response = new GetBorrowListByMemberIdResponse();
+        ServiceStatus serviceStatus = new ServiceStatus();
+        List<Borrow> borrowList = borrowService.findBorrowListByMemberId(request.getMemberId());
+        if (borrowList == null || borrowList.isEmpty()) {
+            serviceStatus.setStatus(NOT_FOUND);
+        } else {
+            serviceStatus.setStatus(SUCCESS);
+            List<BorrowWs> listBorrowWs = new ArrayList<>();
+            for(Borrow borrow:borrowList){
+                BorrowWs borrowWs = new BorrowWs();
+                BeanUtils.copyProperties(borrow, borrowWs);
+                listBorrowWs.add(borrowWs);
+            }
+            response.getBorrowWs().addAll(listBorrowWs);
         }
         response.setServiceStatus(serviceStatus);
         return response;

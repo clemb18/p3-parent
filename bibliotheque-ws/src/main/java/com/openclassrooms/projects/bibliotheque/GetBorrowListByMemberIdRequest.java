@@ -10,7 +10,6 @@ package com.openclassrooms.projects.bibliotheque;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -25,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="bookWs" type="{http://openclassrooms.com/projects/bibliotheque}bookWs"/&gt;
+ *         &lt;element name="memberId" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,36 +35,27 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "bookWs"
+    "memberId"
 })
-@XmlRootElement(name = "createBookRequest")
-public class CreateBookRequest {
+@XmlRootElement(name = "getBorrowListByMemberIdRequest")
+public class GetBorrowListByMemberIdRequest {
 
-    @XmlElement(required = true)
-    protected BookWs bookWs;
+    protected long memberId;
 
     /**
-     * Obtient la valeur de la propriété bookWs.
+     * Obtient la valeur de la propriété memberId.
      * 
-     * @return
-     *     possible object is
-     *     {@link BookWs }
-     *     
      */
-    public BookWs getBookWs() {
-        return bookWs;
+    public long getMemberId() {
+        return memberId;
     }
 
     /**
-     * Définit la valeur de la propriété bookWs.
+     * Définit la valeur de la propriété memberId.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link BookWs }
-     *     
      */
-    public void setBookWs(BookWs value) {
-        this.bookWs = value;
+    public void setMemberId(long value) {
+        this.memberId = value;
     }
 
 }

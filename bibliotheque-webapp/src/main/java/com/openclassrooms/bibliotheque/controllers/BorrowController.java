@@ -65,11 +65,31 @@ public class BorrowController {
 
         BorrowWs borrowWs = borrowService.borrowBook(workId, Long.valueOf(memberFindId));
 
-
-
         // retourne la jsp
         return "finalBorrow";
     }
 
+    // extend Borrow========================================================================================================================
 
+    // Menu => renvoie sur la page de recherche de membre
+    @GetMapping("/searchMemberBorrow")
+    public String searchMemberBorrowForm(Model model) {
+        model.addAttribute("searchMember", new SearchMember());
+
+        model.addAttribute("findMemberBorrowResult", false);
+        // retourne la jsp
+        return "searchMemberBorrow";
+    }
+
+    @PostMapping(path = "/borrow/searchMemberBorrow")
+    public String searchMemberBorrow(Model model, @ModelAttribute("searchMember") SearchMember searchMember) {
+
+        MemberWs memberFind = memberService.findMember(searchMember.getName(), searchMember.getMailAdress());
+
+        model.addAttribute("findMemberResult", true);
+
+        model.addAttribute("memberFind" ,memberFind);
+
+        return "searchMember";
+    }
 }
