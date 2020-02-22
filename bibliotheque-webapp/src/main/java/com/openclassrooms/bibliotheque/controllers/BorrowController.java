@@ -112,7 +112,7 @@ public class BorrowController {
 
         BorrowWs borrowExtend = borrowService.extendBorrow(Long.valueOf(borrowId));
 
-        model.addAttribute("findResult", true);
+
 
         model.addAttribute("borrowExtend" , borrowExtend);
 
@@ -125,7 +125,7 @@ public class BorrowController {
 
         BorrowWs borrowEnd = borrowService.terminateBorrow(Long.valueOf(borrowId));
 
-        model.addAttribute("findResult", true);
+
 
         model.addAttribute("borrowEnd" , borrowEnd);
 

@@ -16,20 +16,16 @@
 
 <p>L'emprunt a ete prolonge avec succes :
 </p>
-<c:if test = "${findResult == true}">
 
 
-    <c:forEach items="${borrowExtend}" var="borrow">
         <ul>
             <li>Statut de l'emprunt: ${borrowExtend.status}</li>
             <li>Date de début de l'emprunt: ${borrowExtend.startBorrowDate}</li>
             <li>Date de fin de l'emprunt: ${borrowExtend.endBorrowDate}</li>
             <li>Prolongé ? : ${borrowExtend.extended}</li>
             <li>Titre du livre: ${borrowExtend.workTitle}</li>
-            <li><a href="endBorrow/${borrow.id}">Clôturer l'emprunt</a></li>
         </ul>
-    </c:forEach>
 
-</c:if>
+
 </body>
 </html>
