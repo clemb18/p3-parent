@@ -23,6 +23,7 @@ public class BorrowServiceImpl implements BorrowService {
 
     @Override
     public BorrowWs extendBorrow(Long borrowId) {
+
         return borrowClient.getExtendBorrowResponse(borrowId);
     }
 

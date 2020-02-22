@@ -148,6 +148,7 @@ public class BorrowServiceImpl implements BorrowService {
 
     @Override
     public List<Borrow> findBorrowListByMemberId(Long memberId) {
+
         return borrowRepository.findByMemberId(memberId);
     }
 
