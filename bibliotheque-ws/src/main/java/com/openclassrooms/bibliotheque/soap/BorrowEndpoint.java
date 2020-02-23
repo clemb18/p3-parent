@@ -13,8 +13,7 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.openclassrooms.projects.bibliotheque.Status.NOT_FOUND;
-import static com.openclassrooms.projects.bibliotheque.Status.SUCCESS;
+//TODO : ajouter des commentaires sur les classes et les méthodes
 
 @Endpoint
 public class BorrowEndpoint {
@@ -29,18 +28,12 @@ public class BorrowEndpoint {
     @ResponsePayload
     public GetBorrowBookResponse borrowBook(@RequestPayload GetBorrowBookRequest request) {
         GetBorrowBookResponse response = new GetBorrowBookResponse();
-        ServiceStatus serviceStatus = new ServiceStatus();
-
         Boolean borrow = borrowService.borrowBook(request.getWorkId(), request.getMemberId());
-        if (borrow == null) {
-            serviceStatus.setStatus(NOT_FOUND);
-        } else {
-            serviceStatus.setStatus(SUCCESS);
+        if (borrow != null) {
             BorrowWs borrowWsResult = new BorrowWs();
             BeanUtils.copyProperties(borrow, borrowWsResult);
             response.setBorrowWs(borrowWsResult);
         }
-        response.setServiceStatus(serviceStatus);
         return response;
     }
 
@@ -48,17 +41,12 @@ public class BorrowEndpoint {
     @ResponsePayload
     public GetExtendBorrowResponse extendBorrow(@RequestPayload GetExtendBorrowRequest request) {
         GetExtendBorrowResponse response = new GetExtendBorrowResponse();
-        ServiceStatus serviceStatus = new ServiceStatus();
         Boolean borrowToExtend = borrowService.extendBorrow(request.getId());
-        if (borrowToExtend == null) {
-            serviceStatus.setStatus(NOT_FOUND);
-        } else {
-            serviceStatus.setStatus(SUCCESS);
+        if (borrowToExtend != null) {
             BorrowWs borrowWs = new BorrowWs();
             BeanUtils.copyProperties(borrowToExtend, borrowWs);
             response.setBorrowWs(borrowWs);
         }
-        response.setServiceStatus(serviceStatus);
         return response;
     }
 
@@ -66,17 +54,12 @@ public class BorrowEndpoint {
     @ResponsePayload
     public GetTerminateBorrowResponse terminateBorrow(@RequestPayload GetTerminateBorrowRequest request) {
         GetTerminateBorrowResponse response = new GetTerminateBorrowResponse();
-        ServiceStatus serviceStatus = new ServiceStatus();
         Boolean borrowToEnd = borrowService.terminateBorrow(request.getId());
-        if (borrowToEnd == null) {
-            serviceStatus.setStatus(NOT_FOUND);
-        } else {
-            serviceStatus.setStatus(SUCCESS);
+        if (borrowToEnd != null) {
             BorrowWs borrowWsResult = new BorrowWs();
             BeanUtils.copyProperties(borrowToEnd, borrowWsResult);
             response.setBorrowWs(borrowWsResult);
         }
-        response.setServiceStatus(serviceStatus);
         return response;
     }
 
@@ -84,14 +67,10 @@ public class BorrowEndpoint {
     @ResponsePayload
     public GetBorrowListByMemberIdResponse findBorrowListByMemberId(@RequestPayload GetBorrowListByMemberIdRequest request) {
         GetBorrowListByMemberIdResponse response = new GetBorrowListByMemberIdResponse();
-        ServiceStatus serviceStatus = new ServiceStatus();
         List<Borrow> borrowList = borrowService.findBorrowListByMemberId(request.getMemberId());
-        if (borrowList == null || borrowList.isEmpty()) {
-            serviceStatus.setStatus(NOT_FOUND);
-        } else {
-            serviceStatus.setStatus(SUCCESS);
+        if (borrowList != null && !borrowList.isEmpty()) {
             List<BorrowWs> listBorrowWs = new ArrayList<>();
-            for(Borrow borrow:borrowList){
+            for (Borrow borrow : borrowList) {
                 BorrowWs borrowWs = new BorrowWs();
                 BeanUtils.copyProperties(borrow, borrowWs);
                 borrowWs.setMemberId(borrow.getMember().getId().longValue());
@@ -99,50 +78,6 @@ public class BorrowEndpoint {
             }
             response.getBorrowWs().addAll(listBorrowWs);
         }
-        response.setServiceStatus(serviceStatus);
         return response;
     }
-
-    /*@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getBorrowListByMemberIdRequest")
-@ResponsePayload
-public GetBorrowListByMemberIdResponse findBorrowListByMemberId(@RequestPayload GetBorrowListByMemberIdRequest request) {
-    GetBorrowListByMemberIdResponse response = new GetBorrowListByMemberIdResponse();
-    List<Borrow> borrowList = borrowService.findBorrowListByMemberId(request.getMemberId());
-    if (borrowList != null && !borrowList.isEmpty()) {
-        List<BorrowWs> listBorrowWs = new ArrayList<>();
-        for(Borrow borrow:borrowList){
-            BorrowWs borrowWs = new BorrowWs();
-            BeanUtils.copyProperties(borrow, borrowWs);
-            borrowWs.setMemberId(borrow.getMember().getId().longValue());
-            listBorrowWs.add(borrowWs);
-        }
-        response.getBorrowWs().addAll(listBorrowWs);
-    }
-    return response;
-}*/
-
-  @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getBorrowListByMemberRequest")
-    @ResponsePayload
-    public GetBorrowListByMemberResponse findBorrowListByMember(@RequestPayload GetBorrowListByMemberRequest request) {
-        GetBorrowListByMemberResponse response = new GetBorrowListByMemberResponse();
-        ServiceStatus serviceStatus = new ServiceStatus();
-
-        List<Borrow> borrowList = borrowService.findBorrowListByMember(request.getMemberWs());
-        if (borrowList == null || borrowList.isEmpty()) {
-            serviceStatus.setStatus(NOT_FOUND);
-        } else {
-            serviceStatus.setStatus(SUCCESS);
-            List<BorrowWs> listBorrowWs = new ArrayList<>();
-            for(Borrow borrow:borrowList){
-                BorrowWs borrowWs = new BorrowWs();
-                BeanUtils.copyProperties(borrow, borrowWs);
-                listBorrowWs.add(borrowWs);
-            }
-            response.getBorrowWs().addAll(listBorrowWs);
-        }
-        response.setServiceStatus(serviceStatus);
-        return response;
-    }
-
-
 }

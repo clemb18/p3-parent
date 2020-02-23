@@ -2,12 +2,13 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2020.02.16 à 10:04:09 PM CET 
+// Généré le : 2020.02.23 à 03:45:04 PM CET 
 //
 
 
 package com.openclassrooms.projects.bibliotheque;
 
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -39,9 +40,11 @@ import javax.xml.bind.annotation.XmlType;
     "workWs"
 })
 @XmlRootElement(name = "createWorkRequest")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-23T03:45:04+01:00", comments = "JAXB RI v2.3.2")
 public class CreateWorkRequest {
 
     @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-23T03:45:04+01:00", comments = "JAXB RI v2.3.2")
     protected WorkWs workWs;
 
     /**
@@ -52,6 +55,7 @@ public class CreateWorkRequest {
      *     {@link WorkWs }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-23T03:45:04+01:00", comments = "JAXB RI v2.3.2")
     public WorkWs getWorkWs() {
         return workWs;
     }
@@ -64,6 +68,7 @@ public class CreateWorkRequest {
      *     {@link WorkWs }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-23T03:45:04+01:00", comments = "JAXB RI v2.3.2")
     public void setWorkWs(WorkWs value) {
         this.workWs = value;
     }

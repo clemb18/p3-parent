@@ -9,98 +9,95 @@ import java.util.Date;
 @Table(name = "T_BORROW")
 public class Borrow implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+    @Column(name = "B_WORK_TITLE")
+    public String workTitle;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "B_ID")
+    private Long id;
+    @Column(name = "B_STATUS")
+    private String status;
+    @Column(name = "B_START_BORROW_DATE")
+    private Date startBorrowDate;
+    @Column(name = "B_END_BORROW_DATE")
+    private Date endBorrowDate;
+    @Column(name = "B_EXTENDED")
+    private boolean extended;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "B_MEMBER_ID")
+    private Member member;
 
-	private static final long serialVersionUID = 1L;
+    @OneToOne
+    @JoinColumn(name = "B_BOOK_ID", referencedColumnName = "BOOK_ID")
+    private Book book;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "B_ID")
-	private Long id;
-	@Column(name = "B_STATUS")
-	private String status;
-	@Column(name = "B_START_BORROW_DATE")
-	private Date startBorrowDate;
-	@Column(name = "B_END_BORROW_DATE")
-	private Date endBorrowDate;
-	@Column(name = "B_EXTENDED")
-	private boolean extended;
-	@Column(name = "B_WORK_TITLE")
-	public String workTitle;
+    public static long getSerialversionuid() {
+        return serialVersionUID;
+    }
 
-	public String getWorkName() {
-		return workTitle;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setWorkName(String workName) {
-		this.workTitle = workName;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="B_MEMBER_ID")
-	private Member member;
+    public Date getStartBorrowDate() {
+        return startBorrowDate;
+    }
 
-	@OneToOne
-	@JoinColumn(name = "B_BOOK_ID", referencedColumnName = "BOOK_ID")
-	private Book book;
+    public void setStartBorrowDate(Date startBorrowDate) {
+        this.startBorrowDate = startBorrowDate;
+    }
 
-	public Long getId() {
-		return id;
-	}
+    public Date getEndBorrowDate() {
+        return endBorrowDate;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public void setEndBorrowDate(Date endBorrowDate) {
+        this.endBorrowDate = endBorrowDate;
+    }
 
-	public Date getStartBorrowDate() {
-		return startBorrowDate;
-	}
+    public Member getMember() {
+        return member;
+    }
 
-	public void setStartBorrowDate(Date startBorrowDate) {
-		this.startBorrowDate = startBorrowDate;
-	}
+    public void setMember(Member member) {
+        this.member = member;
+    }
 
-	public Date getEndBorrowDate() {
-		return endBorrowDate;
-	}
+    public Book getBook() {
+        return book;
+    }
 
-	public void setEndBorrowDate(Date endBorrowDate) {
-		this.endBorrowDate = endBorrowDate;
-	}
+    public void setBook(Book book) {
+        this.book = book;
+    }
 
-	public Member getMember() {
-		return member;
-	}
+    public boolean isExtended() {
+        return extended;
+    }
 
-	public void setMember(Member member) {
-		this.member = member;
-	}
+    public void setExtended(boolean extended) {
+        this.extended = extended;
+    }
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
+    public String getStatus() {
+        return status;
+    }
 
-	public Book getBook() {
-		return book;
-	}
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
-	public void setBook(Book book) {
-		this.book = book;
-	}
+    public String getWorkTitle() {
+        return workTitle;
+    }
 
-	public boolean isExtended() {
-		return extended;
-	}
-
-	public void setExtended(boolean extended) {
-		this.extended = extended;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
+    public void setWorkTitle(String workTitle) {
+        this.workTitle = workTitle;
+    }
 
 }

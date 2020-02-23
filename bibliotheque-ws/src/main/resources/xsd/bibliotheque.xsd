@@ -15,7 +15,6 @@
     <xs:element name="getUserByUsernameAndPasswordResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
                 <xs:element name="userWs" type="tns:userWs"/>
             </xs:sequence>
         </xs:complexType>
@@ -35,7 +34,6 @@
     <xs:element name="getMemberByNameAndMailAdressResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
                 <xs:element name="memberWs" type="tns:memberWs"/>
             </xs:sequence>
         </xs:complexType>
@@ -55,7 +53,6 @@
     <xs:element name="createUserResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
                 <xs:element name="userWs" type="tns:userWs"/>
             </xs:sequence>
         </xs:complexType>
@@ -74,7 +71,6 @@
     <xs:element name="createMemberResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
                 <xs:element name="memberWs" type="tns:memberWs"/>
             </xs:sequence>
         </xs:complexType>
@@ -94,7 +90,6 @@
     <xs:element name="getWorkByAuthorResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
                 <xs:element name="workWs" type="tns:workWs" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
@@ -113,7 +108,6 @@
     <xs:element name="createWorkResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
                 <xs:element name="workWs" type="tns:workWs"/>
             </xs:sequence>
         </xs:complexType>
@@ -132,7 +126,6 @@
     <xs:element name="getWorkByPublicationDateResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
                 <xs:element name="workWs" type="tns:workWs" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
@@ -151,13 +144,10 @@
     <xs:element name="getWorkByTitleResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
                 <xs:element name="workWs" type="tns:workWs" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-
-
 
     <!-- methode delete workWs -->
 
@@ -172,7 +162,6 @@
     <xs:element name="getDeleteWorkResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
                 <xs:element name="workWs" type="tns:workWs"/>
             </xs:sequence>
         </xs:complexType>
@@ -191,7 +180,6 @@
     <xs:element name="getDeleteBookResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
                 <xs:element name="bookWs" type="tns:bookWs"/>
             </xs:sequence>
         </xs:complexType>
@@ -210,7 +198,6 @@
     <xs:element name="getDeleteMemberResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
                 <xs:element name="memberWs" type="tns:memberWs"/>
             </xs:sequence>
         </xs:complexType>
@@ -229,7 +216,6 @@
     <xs:element name="getDeleteUserResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
                 <xs:element name="userWs" type="tns:userWs"/>
             </xs:sequence>
         </xs:complexType>
@@ -249,7 +235,6 @@
     <xs:element name="getBorrowBookResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
                 <xs:element name="borrowWs" type="tns:borrowWs"/>
             </xs:sequence>
         </xs:complexType>
@@ -268,7 +253,6 @@
     <xs:element name="getExtendBorrowResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
                 <xs:element name="borrowWs" type="tns:borrowWs"/>
             </xs:sequence>
         </xs:complexType>
@@ -280,7 +264,6 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="id" type="xs:long"/>
-
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -288,7 +271,6 @@
     <xs:element name="getTerminateBorrowResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
                 <xs:element name="borrowWs" type="tns:borrowWs"/>
             </xs:sequence>
         </xs:complexType>
@@ -307,7 +289,6 @@
     <xs:element name="getBookByIdResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
                 <xs:element name="bookWs" type="tns:bookWs"/>
             </xs:sequence>
         </xs:complexType>
@@ -326,12 +307,10 @@
     <xs:element name="createBookResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
                 <xs:element name="bookWs" type="tns:bookWs"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-
 
     <!-- methode get borrow by memberId -->
 
@@ -343,45 +322,15 @@
         </xs:complexType>
     </xs:element>
 
-
     <xs:element name="getBorrowListByMemberIdResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
-                <xs:element name="borrowWs" type="tns:borrowWs" minOccurs="0" maxOccurs="unbounded"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <!-- methode get borrow by member -->
-
-    <xs:element name="getBorrowListByMemberRequest">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="memberWs" type="tns:memberWs"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-
-    <xs:element name="getBorrowListByMemberResponse">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
                 <xs:element name="borrowWs" type="tns:borrowWs" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
     <!-- objects -->
-
-    <xs:complexType name="serviceStatus">
-        <xs:sequence>
-            <xs:element name="status" type="tns:status"/>
-            <xs:element name="message" type="xs:string"/>
-        </xs:sequence>
-    </xs:complexType>
-
     <xs:complexType name="userWs">
         <xs:sequence>
             <xs:element name="id" type="xs:long"/>
@@ -420,7 +369,6 @@
             <xs:element name="extended" type="xs:boolean"/>
             <xs:element name="workTitle" type="xs:string"/>
             <xs:element name="memberId" type="xs:long"/>
-            <xs:element name="member" type="tns:memberWs"/>
             <!-- #AJOUT MEMBRE -->
         </xs:sequence>
     </xs:complexType>
@@ -434,14 +382,5 @@
             <xs:element name="bookDescription" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
-
-
-
-    <xs:simpleType name="status">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="SUCCESS" />
-            <xs:enumeration value="NOT_FOUND" />
-        </xs:restriction>
-    </xs:simpleType>
 
 </xs:schema>

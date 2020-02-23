@@ -13,24 +13,16 @@
     <script src="../js/bootstrap.min.js"></script>
 </head>
 <body>
-
 <p>Rechercher un membre:</p>
-
-
-
 <form:form method="POST" action="searchMember" modelAttribute="searchMember">
     <form:input path="name" type="text" name="name" id="name" class="form-control" placeholder="Name"
                 autofocus="true" required="true"/>
     <form:input path="mailAdress" type="text" name="mailAdress" id="mailAdress" class="form-control" placeholder="Mail"
                 autofocus="true" required="true"/>
-
     <form:button type="submit">Rechercher</form:button>
 </form:form>
-
 <c:if test = "${findMemberResult == true}">
-
-    <p>Résultats de votre recherche:</p>
-
+    <p>R&eacute;sultats de votre recherche:</p>
         <ul>
             <li>${memberFind.name}</li>
             <li>${memberFind.mailAdress}</li>
@@ -39,8 +31,6 @@
             <li>${memberFind.tel}</li>
             <li><a href="selectMember/${memberFind.id}">Choisir ce membre</a></li>
         </ul>
-
-
 </c:if>
 </body>
 </html>

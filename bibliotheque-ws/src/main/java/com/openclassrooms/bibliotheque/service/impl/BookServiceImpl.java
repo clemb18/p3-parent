@@ -16,31 +16,25 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class BookServiceImpl implements BookService {
 
-    private static Logger logger = LoggerFactory.getLogger(BookServiceImpl.class);
-
-
+    private static Logger LOGGER = LoggerFactory.getLogger(BookServiceImpl.class);
 
     @Autowired
     private BookRepository bookRepository;
 
     public Book getBookById(Long bookId) {
-
         return bookRepository.findById(bookId).get();
     }
 
-    public Book deleteBook(Long bookId) {
-        logger.info("suppression d'un livre: {}", bookId);
-
-         bookRepository.deleteById(bookId);
-        return null;
+    public void deleteBook(Long bookId) {
+        LOGGER.info("suppression d'un livre: {}", bookId);
+        bookRepository.deleteById(bookId);
     }
 
     @Override
     public Book create(BookWs book) {
         Book bookCreated = new Book();
         BeanUtils.copyProperties(book, bookCreated);
-        bookCreated = bookRepository.save(bookCreated);
-        return bookCreated;
+        return bookRepository.save(bookCreated);
     }
 }
 

@@ -22,8 +22,7 @@ import java.util.List;
 
 @Controller
 public class BorrowController {
-    //private WorkService workService;
-    private static Logger logger = LoggerFactory.getLogger(BorrowController.class);
+    private static Logger LOGGER = LoggerFactory.getLogger(BorrowController.class);
 
     public static final String WORK = "WORK";
     public static final String MEMBER = "MEMBER";
@@ -83,53 +82,27 @@ public class BorrowController {
         return "searchMemberBorrowPage";
     }
 
-    // test methode 2 en 1, recup du membre via le post, et recup la liste de borrow en settant le memberfind
+    // methode post qui recup les infos de recherche du membre nom et mail
     @PostMapping(path = "/searchMemberBorrow")
     public String searchMemberBorrow(Model model, @ModelAttribute("searchMemberBorrow") SearchMemberBorrow searchMemberBorrow) {
 
         MemberWs memberFind = memberService.findMember(searchMemberBorrow.getName(), searchMemberBorrow.getMailAdress());
 
-        long memberFindId = memberFind.getId();
-
-      //  List<BorrowWs> borrowListMember = borrowService.findBorrowListByMember(memberFind);
-
-        List<BorrowWs> borrowListMember = borrowService.findBorrowListByMemberId(Long.valueOf(memberFindId));
-
         model.addAttribute("findMemberResult", true);
 
         model.addAttribute("memberFind" ,memberFind);
 
+        return "searchMemberBorrowPage";
+    }
+
+    // recup l'id du membre selectionné en param session
+    @GetMapping("/selectMemberBorrow/{memberFindId}")
+    public String finalBorrowFor2m(Model model, HttpSession session, @PathVariable int memberFindId)  {
+        List<BorrowWs> borrowListMember = borrowService.findBorrowListByMemberId(Long.valueOf(memberFindId));
         model.addAttribute("findResult", true);
-
         model.addAttribute("borrowList" , borrowListMember);
-
-
+        // retourne la jsp qui affiche la liste des emprunts d'un membre
         return "borrowListPage";
     }
 
-    @GetMapping("/extendBorrow/{borrowId}")
-    public String extendBorrow(Model model, HttpSession session, @PathVariable int borrowId)  {
-
-        BorrowWs borrowExtend = borrowService.extendBorrow(Long.valueOf(borrowId));
-
-
-
-        model.addAttribute("borrowExtend" , borrowExtend);
-
-        // retourne la jsp
-        return "extendBorrow";
-    }
-
-    @GetMapping("/endBorrow/{borrowId}")
-    public String endBorrow(Model model, HttpSession session, @PathVariable int borrowId)  {
-
-        BorrowWs borrowEnd = borrowService.terminateBorrow(Long.valueOf(borrowId));
-
-
-
-        model.addAttribute("borrowEnd" , borrowEnd);
-
-        // retourne la jsp
-        return "endBorrow";
-    }
 }

@@ -8,9 +8,10 @@ public enum BorrowStatusEnum {
 
     private String status;
 
-    BorrowStatusEnum(String status){
-        this.status=status;
+    BorrowStatusEnum(String status) {
+        this.status = status;
     }
+
     public String value() {
         return status;
     }

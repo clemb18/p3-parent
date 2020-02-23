@@ -47,19 +47,17 @@
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
         </dependency>
-
         <!--  <dependency>
               <groupId>org.postgresql</groupId>
               <artifactId>postgresql</artifactId>
           </dependency>-->
 
-          <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+        <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.2.9</version>
         </dependency>
-
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -93,13 +91,12 @@
                     <sources>
                         <source>${project.basedir}/src/main/resources/xsd/</source>
                     </sources>
-
-
-
-                        <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
-                        <clearOutputDir>false</clearOutputDir>
-
-
+                    <xjbSources>
+                        <xjbSource>${project.basedir}/src/main/resources/global.xjb</xjbSource>
+                    </xjbSources>
+                    <addGeneratedAnnotation>true</addGeneratedAnnotation>
+                    <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+                    <clearOutputDir>false</clearOutputDir>
                 </configuration>
             </plugin>
             <plugin>

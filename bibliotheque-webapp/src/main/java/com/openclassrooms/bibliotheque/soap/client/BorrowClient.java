@@ -51,13 +51,4 @@ public class BorrowClient extends WebServiceGatewaySupport {
         return response.getBorrowWs();
     }
 
-    public List<BorrowWs> getBorrowListByMemberResponse(MemberWs memberWs) {
-        GetBorrowListByMemberRequest request = new GetBorrowListByMemberRequest();
-        request.setMemberWs(memberWs);
-
-        GetBorrowListByMemberResponse response = (GetBorrowListByMemberResponse) getWebServiceTemplate().marshalSendAndReceive(bibliothequeWsUrl, request,
-                new SoapActionCallback("http://openclassrooms.com/projects/bibliotheque/GetBorrowListByMemberRequest"));
-        return response.getBorrowWs();
-    }
-
 }

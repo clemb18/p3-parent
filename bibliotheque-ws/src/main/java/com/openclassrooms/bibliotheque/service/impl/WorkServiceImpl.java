@@ -23,26 +23,22 @@ public class WorkServiceImpl implements WorkService {
 
     @Override
     public List<Work> getWorksByAuthor(String author) {
-
         return workRepository.findByAuthorIsContainingIgnoreCase(author);
     }
 
     @Override
     public List<Work> getWorksByTitle(String title) {
-
         return workRepository.findByTitleIsContainingIgnoreCase(title);
     }
 
     @Override
     public List<Work> getWorksByPublicationDate(String publicationDate) {
-
         return workRepository.findByPublicationDate(publicationDate);
 
     }
 
     public Work deleteWork(Long workId) {
         logger.info("suppression d'un livre: {}", workId);
-
         workRepository.deleteById(workId);
         return null;
     }

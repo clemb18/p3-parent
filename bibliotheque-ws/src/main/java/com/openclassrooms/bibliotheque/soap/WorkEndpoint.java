@@ -13,8 +13,7 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.openclassrooms.projects.bibliotheque.Status.NOT_FOUND;
-import static com.openclassrooms.projects.bibliotheque.Status.SUCCESS;
+//TODO : ajouter des commentaires sur les classes et les méthodes
 
 @Endpoint
 public class WorkEndpoint {
@@ -24,27 +23,20 @@ public class WorkEndpoint {
     @Autowired
     private WorkService workService;
 
-
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getWorkByAuthorRequest")
     @ResponsePayload
     public GetWorkByAuthorResponse getWorksByAuthor(@RequestPayload GetWorkByAuthorRequest request) {
         GetWorkByAuthorResponse response = new GetWorkByAuthorResponse();
-        ServiceStatus serviceStatus = new ServiceStatus();
-        List<Work> works =  workService.getWorksByAuthor(request.getAuthor());
-        if (works == null || works.isEmpty() ) {
-            serviceStatus.setStatus(NOT_FOUND);
-        } else {
-            serviceStatus.setStatus(SUCCESS);
+        List<Work> works = workService.getWorksByAuthor(request.getAuthor());
+        if (works != null && !works.isEmpty()) {
             List<WorkWs> listworkWs = new ArrayList<>();
-            for(Work work:works){
+            for (Work work : works) {
                 WorkWs workWs = new WorkWs();
                 BeanUtils.copyProperties(work, workWs);
                 listworkWs.add(workWs);
             }
-
             response.getWorkWs().addAll(listworkWs);
         }
-        response.setServiceStatus(serviceStatus);
         return response;
     }
 
@@ -52,22 +44,16 @@ public class WorkEndpoint {
     @ResponsePayload
     public GetWorkByTitleResponse getWorksByTitle(@RequestPayload GetWorkByTitleRequest request) {
         GetWorkByTitleResponse response = new GetWorkByTitleResponse();
-        ServiceStatus serviceStatus = new ServiceStatus();
-        List<Work> works =  workService.getWorksByTitle(request.getTitle());
-        if (works == null || works.isEmpty() ) {
-            serviceStatus.setStatus(NOT_FOUND);
-        } else {
-            serviceStatus.setStatus(SUCCESS);
+        List<Work> works = workService.getWorksByTitle(request.getTitle());
+        if (works != null && !works.isEmpty()) {
             List<WorkWs> listworkWs = new ArrayList<>();
-            for(Work work:works){
+            for (Work work : works) {
                 WorkWs workWs = new WorkWs();
                 BeanUtils.copyProperties(work, workWs);
                 listworkWs.add(workWs);
             }
-
             response.getWorkWs().addAll(listworkWs);
         }
-        response.setServiceStatus(serviceStatus);
         return response;
     }
 
@@ -75,23 +61,17 @@ public class WorkEndpoint {
     @ResponsePayload
     public GetWorkByPublicationDateResponse getWorksByPublicationDate(@RequestPayload GetWorkByPublicationDateRequest request) {
         GetWorkByPublicationDateResponse response = new GetWorkByPublicationDateResponse();
-        ServiceStatus serviceStatus = new ServiceStatus();
         List<Work> works = workService.getWorksByPublicationDate(request.getPublicationDate());
-        if (works == null || works.isEmpty() ) {
-            serviceStatus.setStatus(NOT_FOUND);
-        } else {
-            serviceStatus.setStatus(SUCCESS);
+        if (works != null && !works.isEmpty()) {
             List<WorkWs> listworkWs = new ArrayList<>();
-            for(Work work:works){
+            for (Work work : works) {
                 WorkWs workWs = new WorkWs();
                 BeanUtils.copyProperties(work, workWs);
                 listworkWs.add(workWs);
             }
             response.getWorkWs().addAll(listworkWs);
         }
-        response.setServiceStatus(serviceStatus);
         return response;
     }
-
 }
 

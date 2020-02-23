@@ -22,13 +22,11 @@ public class LoginController {
     public String welcome(Model model) {
         model.addAttribute("login", new Login());
         return "login";
-
     }
 
     @PostMapping(path = "/login")
     public String login(Model model, @ModelAttribute("login") Login login) {
         UserWs user = userService.findUser(login.getUsername(), login.getPassword());
-
         if (user != null) {
             model.addAttribute("message", "Bienvenue " + user.getFirstName() + " "+ user.getName());
         } else {

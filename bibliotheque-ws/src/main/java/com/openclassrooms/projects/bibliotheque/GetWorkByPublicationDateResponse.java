@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2020.02.16 à 10:04:09 PM CET 
+// Généré le : 2020.02.23 à 03:45:04 PM CET 
 //
 
 
@@ -10,9 +10,9 @@ package com.openclassrooms.projects.bibliotheque;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -27,7 +27,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="serviceStatus" type="{http://openclassrooms.com/projects/bibliotheque}serviceStatus"/&gt;
  *         &lt;element name="workWs" type="{http://openclassrooms.com/projects/bibliotheque}workWs" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -39,39 +38,14 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "serviceStatus",
     "workWs"
 })
 @XmlRootElement(name = "getWorkByPublicationDateResponse")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-23T03:45:04+01:00", comments = "JAXB RI v2.3.2")
 public class GetWorkByPublicationDateResponse {
 
-    @XmlElement(required = true)
-    protected ServiceStatus serviceStatus;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-23T03:45:04+01:00", comments = "JAXB RI v2.3.2")
     protected List<WorkWs> workWs;
-
-    /**
-     * Obtient la valeur de la propriété serviceStatus.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ServiceStatus }
-     *     
-     */
-    public ServiceStatus getServiceStatus() {
-        return serviceStatus;
-    }
-
-    /**
-     * Définit la valeur de la propriété serviceStatus.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ServiceStatus }
-     *     
-     */
-    public void setServiceStatus(ServiceStatus value) {
-        this.serviceStatus = value;
-    }
 
     /**
      * Gets the value of the workWs property.
@@ -95,6 +69,7 @@ public class GetWorkByPublicationDateResponse {
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-23T03:45:04+01:00", comments = "JAXB RI v2.3.2")
     public List<WorkWs> getWorkWs() {
         if (workWs == null) {
             workWs = new ArrayList<WorkWs>();

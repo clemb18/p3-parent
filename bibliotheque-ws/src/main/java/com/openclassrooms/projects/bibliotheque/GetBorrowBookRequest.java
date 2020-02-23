@@ -2,12 +2,13 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2020.02.16 à 10:04:09 PM CET 
+// Généré le : 2020.02.23 à 03:45:04 PM CET 
 //
 
 
 package com.openclassrooms.projects.bibliotheque;
 
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -40,15 +41,19 @@ import javax.xml.bind.annotation.XmlType;
     "memberId"
 })
 @XmlRootElement(name = "getBorrowBookRequest")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-23T03:45:04+01:00", comments = "JAXB RI v2.3.2")
 public class GetBorrowBookRequest {
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-23T03:45:04+01:00", comments = "JAXB RI v2.3.2")
     protected long workId;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-23T03:45:04+01:00", comments = "JAXB RI v2.3.2")
     protected long memberId;
 
     /**
      * Obtient la valeur de la propriété workId.
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-23T03:45:04+01:00", comments = "JAXB RI v2.3.2")
     public long getWorkId() {
         return workId;
     }
@@ -57,6 +62,7 @@ public class GetBorrowBookRequest {
      * Définit la valeur de la propriété workId.
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-23T03:45:04+01:00", comments = "JAXB RI v2.3.2")
     public void setWorkId(long value) {
         this.workId = value;
     }
@@ -65,6 +71,7 @@ public class GetBorrowBookRequest {
      * Obtient la valeur de la propriété memberId.
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-23T03:45:04+01:00", comments = "JAXB RI v2.3.2")
     public long getMemberId() {
         return memberId;
     }
@@ -73,6 +80,7 @@ public class GetBorrowBookRequest {
      * Définit la valeur de la propriété memberId.
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-23T03:45:04+01:00", comments = "JAXB RI v2.3.2")
     public void setMemberId(long value) {
         this.memberId = value;
     }

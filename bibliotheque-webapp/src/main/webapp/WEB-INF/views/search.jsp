@@ -15,29 +15,21 @@
 <body>
 
 <p>Rechercher une oeuvre par auteur:</p>
-
-
-
 <form:form method="POST" action="searchByAuthor" modelAttribute="searchWork">
     <form:input path="author" type="text" name="author" id="author" class="form-control" placeholder="Author"
                 autofocus="true" required="true"/>
 
     <form:button type="submit">Rechercher</form:button>
 </form:form>
-
-<c:if test = "${findResult == true}">
-
-<p>Résultats de votre recherche:</p>
-
-<c:forEach items="${listWorks}" var="work">
-    <ul>
-        <li>${work.title}</li>
-        <li>${work.bookDescription}</li>
-        <li><a href="borrow/${work.id}">Emprunter ce livre</a></li>
-
-    </ul>
-</c:forEach>
-
+<c:if test="${findResult == true}">
+    <p>R&eacute;sultats de votre recherche:</p>
+    <c:forEach items="${listWorks}" var="work">
+        <ul>
+            <li>${work.title}</li>
+            <li>${work.bookDescription}</li>
+            <li><a href="borrow/${work.id}">Emprunter ce livre</a></li>
+        </ul>
+    </c:forEach>
 </c:if>
 </body>
 </html>

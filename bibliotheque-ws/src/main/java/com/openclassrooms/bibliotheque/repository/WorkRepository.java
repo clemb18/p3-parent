@@ -6,10 +6,10 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+//TODO : ajouter des commentaires sur les classes et les méthodes
 
 @Repository
 public interface WorkRepository extends CrudRepository<Work, Long> {
-
 
     List<Work> findByPublicationDate(String publicationDate);
 
@@ -20,6 +20,5 @@ public interface WorkRepository extends CrudRepository<Work, Long> {
     void deleteById(Long workId);
 
     Work save(Work work);
-
 
 }

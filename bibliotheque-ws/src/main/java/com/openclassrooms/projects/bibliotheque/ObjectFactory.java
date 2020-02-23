@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2020.02.16 à 10:04:09 PM CET 
+// Généré le : 2020.02.23 à 03:45:04 PM CET 
 //
 
 
@@ -50,14 +50,6 @@ public class ObjectFactory {
      */
     public GetUserByUsernameAndPasswordResponse createGetUserByUsernameAndPasswordResponse() {
         return new GetUserByUsernameAndPasswordResponse();
-    }
-
-    /**
-     * Create an instance of {@link ServiceStatus }
-     * 
-     */
-    public ServiceStatus createServiceStatus() {
-        return new ServiceStatus();
     }
 
     /**
@@ -370,22 +362,6 @@ public class ObjectFactory {
      */
     public GetBorrowListByMemberIdResponse createGetBorrowListByMemberIdResponse() {
         return new GetBorrowListByMemberIdResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetBorrowListByMemberRequest }
-     * 
-     */
-    public GetBorrowListByMemberRequest createGetBorrowListByMemberRequest() {
-        return new GetBorrowListByMemberRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetBorrowListByMemberResponse }
-     * 
-     */
-    public GetBorrowListByMemberResponse createGetBorrowListByMemberResponse() {
-        return new GetBorrowListByMemberResponse();
     }
 
 }

@@ -10,8 +10,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 public class MemberServiceImpl implements MemberService {
 
     private static Logger logger = LoggerFactory.getLogger(MemberServiceImpl.class);
@@ -43,11 +45,9 @@ public class MemberServiceImpl implements MemberService {
         return memberCreated;
     }
 
-    public Member deleteMember(Long memberId) {
+    public void deleteMember(Long memberId) {
         logger.info("suppression d'un membre: {}", memberId);
-
         memberRepository.deleteById(memberId);
-        return null;
     }
 
 }

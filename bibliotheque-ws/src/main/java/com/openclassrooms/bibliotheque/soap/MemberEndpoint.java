@@ -10,8 +10,7 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
-import static com.openclassrooms.projects.bibliotheque.Status.NOT_FOUND;
-import static com.openclassrooms.projects.bibliotheque.Status.SUCCESS;
+//TODO : ajouter des commentaires sur les classes et les méthodes
 
 @Endpoint
 public class MemberEndpoint {
@@ -25,17 +24,12 @@ public class MemberEndpoint {
     @ResponsePayload
     public GetMemberByNameAndMailAdressResponse getMemberByNameAndMailAdress(@RequestPayload GetMemberByNameAndMailAdressRequest request) {
         GetMemberByNameAndMailAdressResponse response = new GetMemberByNameAndMailAdressResponse();
-        ServiceStatus serviceStatus = new ServiceStatus();
         Member member = memberService.findByNameAndMailAdress(request.getName(), request.getMailAdress());
-        if (member == null) {
-            serviceStatus.setStatus(NOT_FOUND);
-        } else {
-            serviceStatus.setStatus(SUCCESS);
+        if (member != null) {
             MemberWs memberWs = new MemberWs();
             BeanUtils.copyProperties(member, memberWs);
             response.setMemberWs(memberWs);
         }
-        response.setServiceStatus(serviceStatus);
         return response;
     }
 
@@ -43,38 +37,28 @@ public class MemberEndpoint {
     @ResponsePayload
     public CreateMemberResponse createMember(@RequestPayload CreateMemberRequest request) {
         CreateMemberResponse createMemberResponse = new CreateMemberResponse();
-        ServiceStatus serviceStatus = new ServiceStatus();
         Member member = new Member();
         BeanUtils.copyProperties(request.getMemberWs(), member);
         Member memberCreated = memberService.create(request.getMemberWs());
-        if (memberCreated == null) {
-            serviceStatus.setStatus(NOT_FOUND);
-        } else {
-            serviceStatus.setStatus(SUCCESS);
+        if (memberCreated != null) {
             MemberWs memberWs = new MemberWs();
             BeanUtils.copyProperties(memberCreated, memberWs);
             createMemberResponse.setMemberWs(memberWs);
         }
-        createMemberResponse.setServiceStatus(serviceStatus);
         return createMemberResponse;
     }
-
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getDeleteMemberRequest")
     @ResponsePayload
     public GetDeleteMemberResponse getDeleteMember(@RequestPayload GetDeleteMemberRequest request) {
         GetDeleteMemberResponse response = new GetDeleteMemberResponse();
-        ServiceStatus serviceStatus = new ServiceStatus();
-        Member memberToDelete = memberService.deleteMember(request.getId());
-        if (memberToDelete == null) {
-            serviceStatus.setStatus(NOT_FOUND);
-        } else {
-            serviceStatus.setStatus(SUCCESS);
-            MemberWs memberWs = new MemberWs();
-            BeanUtils.copyProperties(memberToDelete, memberWs);
-            response.setMemberWs(memberWs);
-        }
-        response.setServiceStatus(serviceStatus);
+        memberService.deleteMember(request.getId());
+//       TODO
+//        if (memberToDelete != null) {
+//            MemberWs memberWs = new MemberWs();
+//            BeanUtils.copyProperties(memberToDelete, memberWs);
+//            response.setMemberWs(memberWs);
+//        }
         return response;
     }
 

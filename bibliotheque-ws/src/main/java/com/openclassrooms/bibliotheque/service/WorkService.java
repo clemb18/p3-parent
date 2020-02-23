@@ -5,13 +5,14 @@ import com.openclassrooms.projects.bibliotheque.WorkWs;
 
 import java.util.List;
 
+//TODO : ajouter des commentaires sur les classes et les méthodes
 public interface WorkService {
 
-    public List<Work> getWorksByAuthor(String author);
+    List<Work> getWorksByAuthor(String author);
 
-    public List<Work> getWorksByTitle(String title);
+    List<Work> getWorksByTitle(String title);
 
-    public List<Work> getWorksByPublicationDate (String publicationDate);
+    List<Work> getWorksByPublicationDate(String publicationDate);
 
     Work create(WorkWs work);
 
