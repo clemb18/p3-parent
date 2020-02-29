@@ -19,5 +19,12 @@ public class MemberServiceImpl implements MemberService {
         Assert.notNull(mailAdress, "mailAdress must not be null. mailAdress is mandatory.");
         return memberClient.getMemberByNameAndMailAdressResponse(name, mailAdress);
     }
+
+    @Override
+    public MemberWs findMemberLogin(String mailAdress, String password) {
+        Assert.notNull(mailAdress, "name must not be null. name is mandatory.");
+        Assert.notNull(password, "mailAdress must not be null. mailAdress is mandatory.");
+        return memberClient.getMemberByMailAdressAndPasswordResponse(mailAdress, password);
+    }
 }
 

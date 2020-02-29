@@ -1,8 +1,6 @@
 package com.openclassrooms.bibliotheque.soap.client;
 
-import com.openclassrooms.bibliotheque.ws.GetMemberByNameAndMailAdressRequest;
-import com.openclassrooms.bibliotheque.ws.GetMemberByNameAndMailAdressResponse;
-import com.openclassrooms.bibliotheque.ws.MemberWs;
+import com.openclassrooms.bibliotheque.ws.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
@@ -21,6 +19,15 @@ public class MemberClient extends WebServiceGatewaySupport {
         request.setMailAdress(mailAdress);
         GetMemberByNameAndMailAdressResponse response = (GetMemberByNameAndMailAdressResponse) getWebServiceTemplate().marshalSendAndReceive(bibliothequeWsUrl, request,
                 new SoapActionCallback("http://openclassrooms.com/projects/bibliotheque/GetMemberByNameAndMailAdressRequest"));
+        return response.getMemberWs();
+    }
+
+    public MemberWs getMemberByMailAdressAndPasswordResponse(String mailAdress, String password) {
+        GetMemberByMailAdressAndPasswordRequest request = new GetMemberByMailAdressAndPasswordRequest();
+        request.setMailAdress(mailAdress);
+        request.setPassword(password);
+        GetMemberByMailAdressAndPasswordResponse response = (GetMemberByMailAdressAndPasswordResponse) getWebServiceTemplate().marshalSendAndReceive(bibliothequeWsUrl, request,
+                new SoapActionCallback("http://openclassrooms.com/projects/bibliotheque/GetMemberByMailAdressAndPasswordRequest"));
         return response.getMemberWs();
     }
 

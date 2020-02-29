@@ -54,7 +54,8 @@ create table T_MEMBER
 
 INSERT INTO T_MEMBER (M_NAME, M_MAIL, M_FIRST_NAME, M_TEL, M_ADRESS)
 VALUES ('clement', 'clem.biotteau@gmail.com', 'motdepasse', 'biotteau', '0642335349', 'clichy'),
-       ('oscar', 'oscar.biotteau@gmail.com', 'motdepasse', 'biotteau', '0642335349', 'clichy');
+        ('oscar', 'oscar.biotteau@gmail.com', 'motdepasse', 'biotteau', '0642335349', 'clichy'),
+       ('test', 'test@test.com', 'motdepasse', 'biotteau', '0642335349', 'test');
 
 -- creation table library
 create table T_LIBRARY

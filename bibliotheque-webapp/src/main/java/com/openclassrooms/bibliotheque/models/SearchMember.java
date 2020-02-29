@@ -10,6 +10,8 @@ public class SearchMember {
 
     private String mailAdress;
 
+    private String password;
+
     private List<BorrowWs> borrowList;
 
     public String getName() {
@@ -25,6 +27,11 @@ public class SearchMember {
     public String getMailAdress() {
 
         return mailAdress;
+    }
+
+    public String getPassword() {
+
+        return password;
     }
 
     public void setMailAdress(String mailAdress) {
