@@ -6,14 +6,17 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-//TODO : ajouter des commentaires sur les classes et les méthodes
+//Classe comprenant les méthodes faisant appels à la BDD pour l'objet Borrow
 
 @Repository
 public interface BorrowRepository extends CrudRepository<Borrow, Integer> {
 
+    // Trouver les emprunt en BDD
     Iterable<Borrow> findAll();
 
+    // Trouver un emprunt par ID
     Borrow findById(Long borrowId);
 
+    // Trouver les emprunts d'un membre
     List<Borrow> findByMemberId(Long id);
 }

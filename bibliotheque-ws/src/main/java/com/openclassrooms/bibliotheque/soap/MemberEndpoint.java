@@ -33,6 +33,19 @@ public class MemberEndpoint {
         return response;
     }
 
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getMemberByMailAdressAndPasswordRequest")
+    @ResponsePayload
+    public GetMemberByMailAdressAndPasswordResponse getMemberByMailAdressAndPassword(@RequestPayload GetMemberByMailAdressAndPasswordRequest request) {
+        GetMemberByMailAdressAndPasswordResponse response = new GetMemberByMailAdressAndPasswordResponse();
+        Member member = memberService.findByMailAdressAndPassword(request.getMailAdress(), request.getPassword());
+        if (member != null) {
+            MemberWs memberWs = new MemberWs();
+            BeanUtils.copyProperties(member, memberWs);
+            response.setMemberWs(memberWs);
+        }
+        return response;
+    }
+
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "createMemberRequest")
     @ResponsePayload
     public CreateMemberResponse createMember(@RequestPayload CreateMemberRequest request) {

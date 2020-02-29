@@ -44,6 +44,7 @@ create table T_MEMBER
     M_ID       SERIAL,
     M_NAME VARCHAR(50)  NOT NULL,
     M_MAIL VARCHAR(100) NOT NULL,
+    M_PASSWORD VARCHAR(50)  NOT NULL,
     M_FIRST_NAME VARCHAR(50) NOT NULL,
     M_TEL VARCHAR(10) NOT NULL,
     M_ADRESS VARCHAR(100) NOT NULL,
@@ -52,8 +53,8 @@ create table T_MEMBER
 
 
 INSERT INTO T_MEMBER (M_NAME, M_MAIL, M_FIRST_NAME, M_TEL, M_ADRESS)
-VALUES ('clement', 'clem.biotteau@gmail.com', 'biotteau', '0642335349', 'clichy'),
-       ('oscar', 'oscar.biotteau@gmail.com', 'biotteau', '0642335349', 'clichy');
+VALUES ('clement', 'clem.biotteau@gmail.com', 'motdepasse', 'biotteau', '0642335349', 'clichy'),
+       ('oscar', 'oscar.biotteau@gmail.com', 'motdepasse', 'biotteau', '0642335349', 'clichy');
 
 -- creation table library
 create table T_LIBRARY

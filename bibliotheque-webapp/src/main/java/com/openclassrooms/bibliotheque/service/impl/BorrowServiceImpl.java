@@ -21,11 +21,13 @@ public class BorrowServiceImpl implements BorrowService {
 
     @Override
     public BorrowWs extendBorrow(Long borrowId) {
+
         return borrowClient.getExtendBorrowResponse(borrowId);
     }
 
     @Override
     public BorrowWs terminateBorrow(Long borrowId) {
+
         return borrowClient.getTerminateBorrowResponse(borrowId);
     }
 

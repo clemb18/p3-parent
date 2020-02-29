@@ -26,7 +26,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="userWs" type="{http://openclassrooms.com/projects/bibliotheque}userWs"/&gt;
+ *         &lt;element name="mailAdress" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -37,40 +38,70 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "userWs"
+    "mailAdress",
+    "password"
 })
-@XmlRootElement(name = "createUserRequest")
+@XmlRootElement(name = "getMemberByMailAdressAndPasswordRequest")
 @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:42:21+01:00", comments = "JAXB RI v2.3.2")
-public class CreateUserRequest {
+public class GetMemberByMailAdressAndPasswordRequest {
 
     @XmlElement(required = true)
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:42:21+01:00", comments = "JAXB RI v2.3.2")
-    protected UserWs userWs;
+    protected String mailAdress;
+    @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:42:21+01:00", comments = "JAXB RI v2.3.2")
+    protected String password;
 
     /**
-     * Obtient la valeur de la propriété userWs.
+     * Obtient la valeur de la propriété mailAdress.
      * 
      * @return
      *     possible object is
-     *     {@link UserWs }
+     *     {@link String }
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:42:21+01:00", comments = "JAXB RI v2.3.2")
-    public UserWs getUserWs() {
-        return userWs;
+    public String getMailAdress() {
+        return mailAdress;
     }
 
     /**
-     * Définit la valeur de la propriété userWs.
+     * Définit la valeur de la propriété mailAdress.
      * 
      * @param value
      *     allowed object is
-     *     {@link UserWs }
+     *     {@link String }
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:42:21+01:00", comments = "JAXB RI v2.3.2")
-    public void setUserWs(UserWs value) {
-        this.userWs = value;
+    public void setMailAdress(String value) {
+        this.mailAdress = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété password.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:42:21+01:00", comments = "JAXB RI v2.3.2")
+    public String getPassword() {
+        return password;
+    }
+
+    /**
+     * Définit la valeur de la propriété password.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:42:21+01:00", comments = "JAXB RI v2.3.2")
+    public void setPassword(String value) {
+        this.password = value;
     }
 
 }

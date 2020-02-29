@@ -32,6 +32,9 @@ public class Member implements Serializable {
     @Column(name = "M_ADRESS")
     private String adress;
 
+    @Column(name = "M_PASSWORD")
+    private String password;
+
     @OneToMany(mappedBy = "member")
     private List<Borrow> borrowList;
 
@@ -45,6 +48,14 @@ public class Member implements Serializable {
 
     public void setBorrowList(List<Borrow> borrowList) {
         this.borrowList = borrowList;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Long getId() {

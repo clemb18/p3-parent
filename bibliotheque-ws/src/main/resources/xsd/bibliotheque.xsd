@@ -20,6 +20,25 @@
         </xs:complexType>
     </xs:element>
 
+    <!-- methode getMemberByMailAdressAndPassword -->
+
+    <xs:element name="getMemberByMailAdressAndPasswordRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="mailAdress" type="xs:string"/>
+                <xs:element name="password" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getMemberByMailAdressAndPasswordResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="memberWs" type="tns:memberWs"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
     <!-- methode findByNameAndMailAdress -->
 
     <xs:element name="getMemberByNameAndMailAdressRequest">
@@ -345,6 +364,7 @@
         <xs:sequence>
             <xs:element name="id" type="xs:long"/>
             <xs:element name="mailAdress" type="xs:string"/>
+            <xs:element name="password" type="xs:string"/>
             <xs:element name="name" type="xs:string"/>
             <xs:element name="firstName" type="xs:string"/>
             <xs:element name="tel" type="xs:string"/>

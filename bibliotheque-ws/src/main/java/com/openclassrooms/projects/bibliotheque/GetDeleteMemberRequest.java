@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2020.02.23 à 03:45:04 PM CET 
+// Généré le : 2020.02.29 à 06:42:21 PM CET 
 //
 
 
@@ -39,17 +39,17 @@ import javax.xml.bind.annotation.XmlType;
     "id"
 })
 @XmlRootElement(name = "getDeleteMemberRequest")
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-23T03:45:04+01:00", comments = "JAXB RI v2.3.2")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:42:21+01:00", comments = "JAXB RI v2.3.2")
 public class GetDeleteMemberRequest {
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-23T03:45:04+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:42:21+01:00", comments = "JAXB RI v2.3.2")
     protected long id;
 
     /**
      * Obtient la valeur de la propriété id.
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-23T03:45:04+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:42:21+01:00", comments = "JAXB RI v2.3.2")
     public long getId() {
         return id;
     }
@@ -58,7 +58,7 @@ public class GetDeleteMemberRequest {
      * Définit la valeur de la propriété id.
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-23T03:45:04+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:42:21+01:00", comments = "JAXB RI v2.3.2")
     public void setId(long value) {
         this.id = value;
     }

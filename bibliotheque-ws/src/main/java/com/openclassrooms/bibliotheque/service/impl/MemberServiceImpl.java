@@ -27,15 +27,12 @@ public class MemberServiceImpl implements MemberService {
         return memberRepository.findByNameAndMailAdress(name, mailAdress);
     }
 
-  /*  public List<Borrow> findBorrowListByMember (Member member){
-
-        return borrowRepository.findByMember(member);
+    @Override
+    public Member findByMailAdressAndPassword(String mailAdress, String password) {
+        return memberRepository.findByMailAdressAndPassword(mailAdress, password);
     }
 
-    @Override
-    public List<Borrow> findBorrowListByMemberid(Long memberId) {
-        return null;
-    }*/
+
 
     @Override
     public Member create(MemberWs member) {

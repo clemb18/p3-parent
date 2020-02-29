@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2020.02.23 à 03:45:04 PM CET 
+// Généré le : 2020.02.29 à 06:42:21 PM CET 
 //
 
 
@@ -61,6 +61,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetMemberByMailAdressAndPasswordRequest }
+     * 
+     */
+    public GetMemberByMailAdressAndPasswordRequest createGetMemberByMailAdressAndPasswordRequest() {
+        return new GetMemberByMailAdressAndPasswordRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetMemberByMailAdressAndPasswordResponse }
+     * 
+     */
+    public GetMemberByMailAdressAndPasswordResponse createGetMemberByMailAdressAndPasswordResponse() {
+        return new GetMemberByMailAdressAndPasswordResponse();
+    }
+
+    /**
+     * Create an instance of {@link MemberWs }
+     * 
+     */
+    public MemberWs createMemberWs() {
+        return new MemberWs();
+    }
+
+    /**
      * Create an instance of {@link GetMemberByNameAndMailAdressRequest }
      * 
      */
@@ -74,14 +98,6 @@ public class ObjectFactory {
      */
     public GetMemberByNameAndMailAdressResponse createGetMemberByNameAndMailAdressResponse() {
         return new GetMemberByNameAndMailAdressResponse();
-    }
-
-    /**
-     * Create an instance of {@link MemberWs }
-     * 
-     */
-    public MemberWs createMemberWs() {
-        return new MemberWs();
     }
 
     /**
