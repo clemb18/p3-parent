@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2020.02.29 à 06:48:40 PM CET 
+// Généré le : 2020.03.07 à 07:52:15 AM CET 
 //
 
 
@@ -11,7 +11,6 @@ package com.openclassrooms.projects.bibliotheque;
 import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -26,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="borrowWs" type="{http://openclassrooms.com/projects/bibliotheque}borrowWs"/&gt;
+ *         &lt;element name="extendSucceed" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -37,40 +36,31 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "borrowWs"
+    "extendSucceed"
 })
 @XmlRootElement(name = "getExtendBorrowResponse")
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:48:40+01:00", comments = "JAXB RI v2.3.2")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
 public class GetExtendBorrowResponse {
 
-    @XmlElement(required = true)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:48:40+01:00", comments = "JAXB RI v2.3.2")
-    protected BorrowWs borrowWs;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
+    protected boolean extendSucceed;
 
     /**
-     * Obtient la valeur de la propriété borrowWs.
+     * Obtient la valeur de la propriété extendSucceed.
      * 
-     * @return
-     *     possible object is
-     *     {@link BorrowWs }
-     *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:48:40+01:00", comments = "JAXB RI v2.3.2")
-    public BorrowWs getBorrowWs() {
-        return borrowWs;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
+    public boolean isExtendSucceed() {
+        return extendSucceed;
     }
 
     /**
-     * Définit la valeur de la propriété borrowWs.
+     * Définit la valeur de la propriété extendSucceed.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link BorrowWs }
-     *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:48:40+01:00", comments = "JAXB RI v2.3.2")
-    public void setBorrowWs(BorrowWs value) {
-        this.borrowWs = value;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
+    public void setExtendSucceed(boolean value) {
+        this.extendSucceed = value;
     }
 
 }

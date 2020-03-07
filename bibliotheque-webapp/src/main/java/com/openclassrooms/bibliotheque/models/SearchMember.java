@@ -34,6 +34,10 @@ public class SearchMember {
         return password;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public void setMailAdress(String mailAdress) {
 
         this.mailAdress = mailAdress;

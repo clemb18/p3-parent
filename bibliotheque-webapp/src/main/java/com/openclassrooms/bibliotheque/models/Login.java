@@ -2,15 +2,15 @@ package com.openclassrooms.bibliotheque.models;
 
 public class Login {
 
-    private String username;
+    private String mailAdress;
     private String password;
 
-    public String getUsername() {
-        return username;
+    public String getMailAdress() {
+        return mailAdress;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setMailAdress(String mailAdress) {
+        this.mailAdress = mailAdress;
     }
 
     public String getPassword() {

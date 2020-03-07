@@ -6,20 +6,21 @@ create table T_WORK
     W_AUTHOR           VARCHAR(50)  NOT NULL,
     W_PUBLICATION_DATE VARCHAR(4)         NOT NULL,
     W_DESCRIPTION      VARCHAR(255) NOT NULL,
+    W_QUANTITE      VARCHAR(10) NOT NULL,
     PRIMARY KEY (W_ID) -- Définition de la clé primaire de la table
 );
 
-INSERT INTO T_WORK (W_TITLE, W_AUTHOR, W_PUBLICATION_DATE, W_DESCRIPTION)
-VALUES ('Vacances dans le comas', 'Frederic Beigbeder', '1994', 'Roman'),
-       ('99 Francs', 'Frederic Beigbeder', '2000', 'Roman'),
-       ('Windows on the world', 'Frederic Beigbeder', '2003', 'Roman'),
-       ('Un roman francais', 'Frederic Beigbeder', '2009', 'Roman'),
-       ('Une vie sans fin', 'Frederic Beigbeder', '2018', 'Roman'),
-       ('Harry Potter et le coupe de feu', 'JK Rowling', '2000', 'Fantastique'),
-       ('Harry Potter et lordre du phoenix', 'JK Rowling', '2003', 'Fantastique'),
-       ('Harry Potter et les reliques de la mort', 'JK Rowling', '2009', 'Fantastique'),
-       ('Insomnie', 'Stephen King', '1994', 'Fiction'),
-       ('Sleaping Beauties', 'Stephen King', '2018', 'Fiction');
+INSERT INTO T_WORK (W_TITLE, W_AUTHOR, W_PUBLICATION_DATE, W_DESCRIPTION, W_QUANTITE)
+VALUES ('Vacances dans le comas', 'Frederic Beigbeder', '1994', 'Roman', '5'),
+       ('99 Francs', 'Frederic Beigbeder', '2000', 'Roman', '5'),
+       ('Windows on the world', 'Frederic Beigbeder', '2003', 'Roman', '5'),
+       ('Un roman francais', 'Frederic Beigbeder', '2009', 'Roman', '5'),
+       ('Une vie sans fin', 'Frederic Beigbeder', '2018', 'Roman', '5'),
+       ('Harry Potter et le coupe de feu', 'JK Rowling', '2000', 'Fantastique', '5'),
+       ('Harry Potter et lordre du phoenix', 'JK Rowling', '2003', 'Fantastique', '5'),
+       ('Harry Potter et les reliques de la mort', 'JK Rowling', '2009', 'Fantastique', '5'),
+       ('Insomnie', 'Stephen King', '1994', 'Fiction', '5'),
+       ('Sleaping Beauties', 'Stephen King', '2018', 'Fiction', '5');
 
 
 -- creation table user
@@ -52,10 +53,10 @@ create table T_MEMBER
 );
 
 
-INSERT INTO T_MEMBER (M_NAME, M_MAIL, M_FIRST_NAME, M_TEL, M_ADRESS)
-VALUES ('clement', 'clem.biotteau@gmail.com', 'motdepasse', 'biotteau', '0642335349', 'clichy'),
-        ('oscar', 'oscar.biotteau@gmail.com', 'motdepasse', 'biotteau', '0642335349', 'clichy'),
-       ('test', 'test@test.com', 'motdepasse', 'biotteau', '0642335349', 'test');
+INSERT INTO T_MEMBER (M_NAME, M_MAIL, M_FIRST_NAME, M_TEL, M_ADRESS, M_PASSWORD)
+VALUES ('clement', 'clem.biotteau@gmail.com', 'biotteau', '0642335349', 'clichy', 'password'),
+        ('oscar', 'oscar.biotteau@gmail.com', 'biotteau', '0642335349', 'clichy', 'password'),
+       ('test', 'test@test.com', 'biotteau', '0642335349', 'test', 'password');
 
 -- creation table library
 create table T_LIBRARY

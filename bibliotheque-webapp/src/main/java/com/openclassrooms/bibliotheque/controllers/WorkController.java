@@ -23,6 +23,7 @@ public class WorkController {
     @Autowired
     private WorkService workService;
 
+
     @GetMapping("/searchWork")
     public String searchWorkForm(Model model) {
         model.addAttribute("searchWork", new SearchWork());
@@ -30,7 +31,6 @@ public class WorkController {
         // retourne la jsp
         return "search";
     }
-
 
     @PostMapping(path = "/searchByAuthor")
     public String searchByAuthor(Model model, @ModelAttribute("searchWork") SearchWork searchWork) {

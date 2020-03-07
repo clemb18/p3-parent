@@ -27,7 +27,6 @@
         <li>${memberFind.name}</li>
         <li>${memberFind.mailAdress}</li>
         <li>${memberFind.firstName}</li>
-        <li>${memberFind.adress}</li>
         <li>${memberFind.tel}</li>
         <li><a href="selectMemberBorrow/${memberFind.id}">Choisir ce membre</a></li>
     </ul>

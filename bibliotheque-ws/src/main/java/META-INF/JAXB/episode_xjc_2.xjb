@@ -5,33 +5,36 @@
 Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-Généré le : 2020.01.04 à 07:50:25 AM CET 
+Généré le : 2020.03.06 à 08:38:06 PM CET 
 
   -->
   <bindings scd="x-schema::tns" xmlns:tns="http://openclassrooms.com/projects/bibliotheque">
     <schemaBindings map="false">
       <package name="com.openclassrooms.projects.bibliotheque"/>
     </schemaBindings>
-    <bindings scd="tns:getUserByLoginAndPasswordRequest">
-      <class ref="com.openclassrooms.projects.bibliotheque.GetUserByLoginAndPasswordRequest"/>
+    <bindings scd="tns:getUserByUsernameAndPasswordRequest">
+      <class ref="com.openclassrooms.projects.bibliotheque.GetUserByUsernameAndPasswordRequest"/>
     </bindings>
-    <bindings scd="tns:getUserByLoginAndPasswordResponse">
-      <class ref="com.openclassrooms.projects.bibliotheque.GetUserByLoginAndPasswordResponse"/>
-    </bindings>
-    <bindings scd="~tns:serviceStatus">
-      <class ref="com.openclassrooms.projects.bibliotheque.ServiceStatus"/>
+    <bindings scd="tns:getUserByUsernameAndPasswordResponse">
+      <class ref="com.openclassrooms.projects.bibliotheque.GetUserByUsernameAndPasswordResponse"/>
     </bindings>
     <bindings scd="~tns:userWs">
       <class ref="com.openclassrooms.projects.bibliotheque.UserWs"/>
     </bindings>
-    <bindings scd="tns:getMemberByNameAndFirstNameRequest">
-      <class ref="com.openclassrooms.projects.bibliotheque.GetMemberByNameAndFirstNameRequest"/>
+    <bindings scd="tns:getMemberByMailAdressAndPasswordRequest">
+      <class ref="com.openclassrooms.projects.bibliotheque.GetMemberByMailAdressAndPasswordRequest"/>
     </bindings>
-    <bindings scd="tns:getMemberByNameAndFirstNameResponse">
-      <class ref="com.openclassrooms.projects.bibliotheque.GetMemberByNameAndFirstNameResponse"/>
+    <bindings scd="tns:getMemberByMailAdressAndPasswordResponse">
+      <class ref="com.openclassrooms.projects.bibliotheque.GetMemberByMailAdressAndPasswordResponse"/>
     </bindings>
     <bindings scd="~tns:memberWs">
       <class ref="com.openclassrooms.projects.bibliotheque.MemberWs"/>
+    </bindings>
+    <bindings scd="tns:getMemberByNameAndMailAdressRequest">
+      <class ref="com.openclassrooms.projects.bibliotheque.GetMemberByNameAndMailAdressRequest"/>
+    </bindings>
+    <bindings scd="tns:getMemberByNameAndMailAdressResponse">
+      <class ref="com.openclassrooms.projects.bibliotheque.GetMemberByNameAndMailAdressResponse"/>
     </bindings>
     <bindings scd="tns:createUserRequest">
       <class ref="com.openclassrooms.projects.bibliotheque.CreateUserRequest"/>
@@ -66,6 +69,12 @@ Généré le : 2020.01.04 à 07:50:25 AM CET
     <bindings scd="tns:getWorkByPublicationDateResponse">
       <class ref="com.openclassrooms.projects.bibliotheque.GetWorkByPublicationDateResponse"/>
     </bindings>
+    <bindings scd="tns:getWorkByTitleRequest">
+      <class ref="com.openclassrooms.projects.bibliotheque.GetWorkByTitleRequest"/>
+    </bindings>
+    <bindings scd="tns:getWorkByTitleResponse">
+      <class ref="com.openclassrooms.projects.bibliotheque.GetWorkByTitleResponse"/>
+    </bindings>
     <bindings scd="tns:getDeleteWorkRequest">
       <class ref="com.openclassrooms.projects.bibliotheque.GetDeleteWorkRequest"/>
     </bindings>
@@ -99,9 +108,6 @@ Généré le : 2020.01.04 à 07:50:25 AM CET
     <bindings scd="tns:getBorrowBookResponse">
       <class ref="com.openclassrooms.projects.bibliotheque.GetBorrowBookResponse"/>
     </bindings>
-    <bindings scd="~tns:borrowWs">
-      <class ref="com.openclassrooms.projects.bibliotheque.BorrowWs"/>
-    </bindings>
     <bindings scd="tns:getExtendBorrowRequest">
       <class ref="com.openclassrooms.projects.bibliotheque.GetExtendBorrowRequest"/>
     </bindings>
@@ -126,8 +132,20 @@ Généré le : 2020.01.04 à 07:50:25 AM CET
     <bindings scd="tns:createBookResponse">
       <class ref="com.openclassrooms.projects.bibliotheque.CreateBookResponse"/>
     </bindings>
-    <bindings scd="~tns:status">
-      <typesafeEnumClass ref="com.openclassrooms.projects.bibliotheque.Status"/>
+    <bindings scd="tns:getBorrowListByMemberIdRequest">
+      <class ref="com.openclassrooms.projects.bibliotheque.GetBorrowListByMemberIdRequest"/>
+    </bindings>
+    <bindings scd="tns:getBorrowListByMemberIdResponse">
+      <class ref="com.openclassrooms.projects.bibliotheque.GetBorrowListByMemberIdResponse"/>
+    </bindings>
+    <bindings scd="~tns:borrowWs">
+      <class ref="com.openclassrooms.projects.bibliotheque.BorrowWs"/>
+    </bindings>
+    <bindings scd="tns:getDelayBorrowsRequest">
+      <class ref="com.openclassrooms.projects.bibliotheque.GetDelayBorrowsRequest"/>
+    </bindings>
+    <bindings scd="tns:getDelayBorrowsResponse">
+      <class ref="com.openclassrooms.projects.bibliotheque.GetDelayBorrowsResponse"/>
     </bindings>
   </bindings>
 </bindings>

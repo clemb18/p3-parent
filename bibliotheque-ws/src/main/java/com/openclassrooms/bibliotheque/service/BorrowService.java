@@ -19,4 +19,7 @@ public interface BorrowService {
     // Méthode permmetant de trouver la liste d'emprunt d'un membre
     List<Borrow> findBorrowListByMemberId(Long memberId);
 
+    // Méthode permmetant de recup les emprunts non échus non rendus
+    List<Borrow> findDelayBorrows();
+
 }

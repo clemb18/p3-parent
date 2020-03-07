@@ -2,12 +2,13 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2020.02.22 à 09:04:43 AM CET 
+// Généré le : 2020.03.07 à 07:52:15 AM CET 
 //
 
 
 package com.openclassrooms.projects.bibliotheque;
 
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -40,12 +41,15 @@ import javax.xml.bind.annotation.XmlType;
     "status",
     "message"
 })
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
 public class ServiceStatus {
 
     @XmlElement(required = true)
     @XmlSchemaType(name = "string")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     protected Status status;
     @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     protected String message;
 
     /**
@@ -56,6 +60,7 @@ public class ServiceStatus {
      *     {@link Status }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     public Status getStatus() {
         return status;
     }
@@ -68,6 +73,7 @@ public class ServiceStatus {
      *     {@link Status }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     public void setStatus(Status value) {
         this.status = value;
     }
@@ -80,6 +86,7 @@ public class ServiceStatus {
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     public String getMessage() {
         return message;
     }
@@ -92,6 +99,7 @@ public class ServiceStatus {
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     public void setMessage(String value) {
         this.message = value;
     }

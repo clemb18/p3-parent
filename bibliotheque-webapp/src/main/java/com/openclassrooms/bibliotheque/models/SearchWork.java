@@ -8,6 +8,12 @@ public class SearchWork {
 
     private String publicationDate;
 
+    private Long quantite;
+
+    public Long getQuantite() { return quantite; }
+
+    public void setQuantite(Long quantite) { this.quantite = quantite; }
+
     public String getAuthor() {
         return author;
     }

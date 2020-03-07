@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2020.02.29 à 06:48:40 PM CET 
+// Généré le : 2020.03.07 à 07:52:15 AM CET 
 //
 
 
@@ -36,6 +36,7 @@ import com.openclassrooms.bibliotheque.adapters.DateTypeAdapter;
  *         &lt;element name="extended" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *         &lt;element name="workTitle" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="memberId" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="member" type="{http://openclassrooms.com/projects/bibliotheque}memberWs"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -52,39 +53,43 @@ import com.openclassrooms.bibliotheque.adapters.DateTypeAdapter;
     "endBorrowDate",
     "extended",
     "workTitle",
-    "memberId"
+    "memberId",
+    "member"
 })
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:48:40+01:00", comments = "JAXB RI v2.3.2")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
 public class BorrowWs {
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:48:40+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     protected long id;
     @XmlElement(required = true)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:48:40+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     protected String status;
     @XmlElement(required = true, type = String.class)
     @XmlJavaTypeAdapter(DateTypeAdapter.class)
     @XmlSchemaType(name = "date")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:48:40+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     protected Date startBorrowDate;
     @XmlElement(required = true, type = String.class)
     @XmlJavaTypeAdapter(DateTypeAdapter.class)
     @XmlSchemaType(name = "date")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:48:40+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     protected Date endBorrowDate;
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:48:40+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     protected boolean extended;
     @XmlElement(required = true)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:48:40+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     protected String workTitle;
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:48:40+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     protected long memberId;
+    @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
+    protected MemberWs member;
 
     /**
      * Obtient la valeur de la propriété id.
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:48:40+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     public long getId() {
         return id;
     }
@@ -93,7 +98,7 @@ public class BorrowWs {
      * Définit la valeur de la propriété id.
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:48:40+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     public void setId(long value) {
         this.id = value;
     }
@@ -106,7 +111,7 @@ public class BorrowWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:48:40+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     public String getStatus() {
         return status;
     }
@@ -119,7 +124,7 @@ public class BorrowWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:48:40+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     public void setStatus(String value) {
         this.status = value;
     }
@@ -132,7 +137,7 @@ public class BorrowWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:48:40+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     public Date getStartBorrowDate() {
         return startBorrowDate;
     }
@@ -145,7 +150,7 @@ public class BorrowWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:48:40+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     public void setStartBorrowDate(Date value) {
         this.startBorrowDate = value;
     }
@@ -158,7 +163,7 @@ public class BorrowWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:48:40+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     public Date getEndBorrowDate() {
         return endBorrowDate;
     }
@@ -171,7 +176,7 @@ public class BorrowWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:48:40+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     public void setEndBorrowDate(Date value) {
         this.endBorrowDate = value;
     }
@@ -180,7 +185,7 @@ public class BorrowWs {
      * Obtient la valeur de la propriété extended.
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:48:40+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     public boolean isExtended() {
         return extended;
     }
@@ -189,7 +194,7 @@ public class BorrowWs {
      * Définit la valeur de la propriété extended.
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:48:40+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     public void setExtended(boolean value) {
         this.extended = value;
     }
@@ -202,7 +207,7 @@ public class BorrowWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:48:40+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     public String getWorkTitle() {
         return workTitle;
     }
@@ -215,7 +220,7 @@ public class BorrowWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:48:40+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     public void setWorkTitle(String value) {
         this.workTitle = value;
     }
@@ -224,7 +229,7 @@ public class BorrowWs {
      * Obtient la valeur de la propriété memberId.
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:48:40+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     public long getMemberId() {
         return memberId;
     }
@@ -233,9 +238,35 @@ public class BorrowWs {
      * Définit la valeur de la propriété memberId.
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-02-29T06:48:40+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
     public void setMemberId(long value) {
         this.memberId = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété member.
+     * 
+     * @return
+     *     possible object is
+     *     {@link MemberWs }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
+    public MemberWs getMember() {
+        return member;
+    }
+
+    /**
+     * Définit la valeur de la propriété member.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link MemberWs }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-07T07:52:15+01:00", comments = "JAXB RI v2.3.2")
+    public void setMember(MemberWs value) {
+        this.member = value;
     }
 
 }

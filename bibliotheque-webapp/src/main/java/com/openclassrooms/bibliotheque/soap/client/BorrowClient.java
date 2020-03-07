@@ -15,7 +15,7 @@ public class BorrowClient extends WebServiceGatewaySupport {
     @Value(value = "${bibliotheque.ws.url}")
     private String bibliothequeWsUrl;
 
-    public BorrowWs getBorrowBookResponse(Long workId, Long memberId) {
+    public BorrowWs  getBorrowBookResponse(Long workId, Long memberId) {
         GetBorrowBookRequest request = new GetBorrowBookRequest();
         request.setWorkId(workId);
         request.setMemberId(memberId);
@@ -24,22 +24,22 @@ public class BorrowClient extends WebServiceGatewaySupport {
         return response.getBorrowWs();
     }
 
-    public BorrowWs getExtendBorrowResponse(Long borrowId) {
+    public boolean getExtendBorrowResponse(Long borrowId) {
         GetExtendBorrowRequest request = new GetExtendBorrowRequest();
         request.setId(borrowId);
 
         GetExtendBorrowResponse response = (GetExtendBorrowResponse) getWebServiceTemplate().marshalSendAndReceive(bibliothequeWsUrl, request,
                 new SoapActionCallback("http://openclassrooms.com/projects/bibliotheque/GetExtendBorrowRequest"));
-        return response.getBorrowWs();
+        return response.isExtendSucceed();
     }
 
-    public BorrowWs getTerminateBorrowResponse(Long borrowId) {
+    public boolean getTerminateBorrowResponse(Long borrowId) {
         GetTerminateBorrowRequest request = new GetTerminateBorrowRequest();
         request.setId(borrowId);
 
         GetTerminateBorrowResponse response = (GetTerminateBorrowResponse) getWebServiceTemplate().marshalSendAndReceive(bibliothequeWsUrl, request,
                 new SoapActionCallback("http://openclassrooms.com/projects/bibliotheque/GetTerminateBorrowRequest"));
-        return response.getBorrowWs();
+        return response.isTerminateSucceed();
     }
 
     public List<BorrowWs> getBorrowListByMemberIdResponse(Long memberId) {

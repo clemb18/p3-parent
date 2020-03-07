@@ -30,6 +30,9 @@ public class Work implements Serializable {
     @JoinColumn(name = "BOOK_ID")
     private List<Book> booksList;
 
+    @Column(name = "W_QUANTITE")
+    private Long quantite;
+
     public Work() {
         super();
     }
@@ -87,4 +90,7 @@ public class Work implements Serializable {
         this.booksList = booksList;
     }
 
+    public Long getQuantite() { return quantite; }
+
+    public void setQuantite(Long quantite) { this.quantite = quantite; }
 }

@@ -8,9 +8,9 @@ public interface BorrowService {
 
     BorrowWs borrowBook(Long workId, Long memberId);
 
-    BorrowWs extendBorrow(Long borrowId);
+    boolean extendBorrow(Long borrowId);
 
-    BorrowWs terminateBorrow(Long borrowId);
+    boolean terminateBorrow(Long borrowId);
 
     List<BorrowWs> findBorrowListByMemberId(Long memberId);
 

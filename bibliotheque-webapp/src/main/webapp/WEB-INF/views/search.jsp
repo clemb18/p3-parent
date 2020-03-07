@@ -27,7 +27,7 @@
         <ul>
             <li>${work.title}</li>
             <li>${work.bookDescription}</li>
-            <li><a href="borrow/${work.id}">Emprunter ce livre</a></li>
+           <li><a href="borrow/${work.id}">Emprunter ce livre</a></li>
         </ul>
     </c:forEach>
 </c:if>

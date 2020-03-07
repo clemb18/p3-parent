@@ -33,7 +33,7 @@ public class BorrowController {
     private BorrowService borrowService;
 
 
-    @GetMapping("/borrow/{workId}")
+    /*@GetMapping("/borrow/{workId}")
     public String searchMemberForm(Model model, HttpSession session, @PathVariable int workId)  {
 
         session.setAttribute("workToBorrow", workId);
@@ -43,6 +43,16 @@ public class BorrowController {
         model.addAttribute("findMemberResult", false);
         // retourne la jsp
         return "searchMemberPage";
+    }*/
+
+    // test emprunt sans recherche de membre
+    @GetMapping("/borrow/{workId}")
+    public String searchMemberForm(Model model, HttpSession session, @PathVariable Long workId)  {
+
+        BorrowWs  borrowWs = borrowService.borrowBook(workId, Long.valueOf(String.valueOf(session.getAttribute("memberCoId"))));
+
+        // retourne la jsp
+        return "finalBorrow";
     }
 
 
@@ -64,7 +74,7 @@ public class BorrowController {
 
         Long workId = Long.valueOf(String.valueOf(session.getAttribute("workToBorrow")));
 
-        BorrowWs borrowWs = borrowService.borrowBook(workId, Long.valueOf(memberFindId));
+        BorrowWs  borrowWs = borrowService.borrowBook(workId, Long.valueOf(memberFindId));
 
         // retourne la jsp
         return "finalBorrow";
@@ -106,10 +116,11 @@ public class BorrowController {
         return "borrowListPage";
     }
 
+    // prolonger l'emprunt
     @GetMapping("/extendBorrow/{borrowId}")
     public String extendBorrow(Model model, HttpSession session, @PathVariable int borrowId)  {
 
-        BorrowWs borrowExtend = borrowService.extendBorrow(Long.valueOf(borrowId));
+        boolean borrowExtend = borrowService.extendBorrow(Long.valueOf(borrowId));
 
         model.addAttribute("findResult", true);
 
@@ -119,10 +130,11 @@ public class BorrowController {
         return "extendBorrow";
     }
 
+    // Cloturer l'emprunt
     @GetMapping("/endBorrow/{borrowId}")
     public String endBorrow(Model model, HttpSession session, @PathVariable int borrowId)  {
 
-        BorrowWs borrowEnd = borrowService.terminateBorrow(Long.valueOf(borrowId));
+        boolean borrowEnd = borrowService.terminateBorrow(Long.valueOf(borrowId));
 
         model.addAttribute("findResult", true);
 

@@ -20,6 +20,9 @@ public interface WorkRepository extends CrudRepository<Work, Long> {
     // Rechercher les oeuvres par titre
     List<Work> findByTitleIsContainingIgnoreCase(String title);
 
+    // Rechercher les oeuvres par titre
+    Work findByTitle(String title);
+
     // Supprimer une oeuvre de la bdd
     void deleteById(Long workId);
 

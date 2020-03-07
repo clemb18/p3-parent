@@ -46,33 +46,5 @@ public class MemberEndpoint {
         return response;
     }
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "createMemberRequest")
-    @ResponsePayload
-    public CreateMemberResponse createMember(@RequestPayload CreateMemberRequest request) {
-        CreateMemberResponse createMemberResponse = new CreateMemberResponse();
-        Member member = new Member();
-        BeanUtils.copyProperties(request.getMemberWs(), member);
-        Member memberCreated = memberService.create(request.getMemberWs());
-        if (memberCreated != null) {
-            MemberWs memberWs = new MemberWs();
-            BeanUtils.copyProperties(memberCreated, memberWs);
-            createMemberResponse.setMemberWs(memberWs);
-        }
-        return createMemberResponse;
-    }
-
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getDeleteMemberRequest")
-    @ResponsePayload
-    public GetDeleteMemberResponse getDeleteMember(@RequestPayload GetDeleteMemberRequest request) {
-        GetDeleteMemberResponse response = new GetDeleteMemberResponse();
-        memberService.deleteMember(request.getId());
-//       TODO
-//        if (memberToDelete != null) {
-//            MemberWs memberWs = new MemberWs();
-//            BeanUtils.copyProperties(memberToDelete, memberWs);
-//            response.setMemberWs(memberWs);
-//        }
-        return response;
-    }
 
 }

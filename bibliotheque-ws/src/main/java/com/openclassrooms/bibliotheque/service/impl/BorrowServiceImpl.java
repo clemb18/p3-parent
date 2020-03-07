@@ -20,6 +20,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import static com.openclassrooms.bibliotheque.enumType.BorrowStatusEnum.ENCOURS;
+
 @Service
 @Transactional
 public class BorrowServiceImpl implements BorrowService {
@@ -60,7 +62,7 @@ public class BorrowServiceImpl implements BorrowService {
                 borrowToSave.setEndBorrowDate(calendar.getTime());
 
                 //Set le statut de l'emprunt + Ajout du nom de l'oeuvre à l'emprunt
-                borrowToSave.setStatus(BorrowStatusEnum.ENCOURS.value());
+                borrowToSave.setStatus(ENCOURS.value());
                 borrowToSave.setWorkTitle(work.getTitle());
 
                 // set extended
@@ -71,6 +73,13 @@ public class BorrowServiceImpl implements BorrowService {
                 //Indique que le livre n'est plus disponible et on sauvegarde dans le bookRepository
                 result.setAvailable(false);
                 bookRepository.save(result);
+
+                // Dérementer la quantite dispo
+                Long workQuantite = work.getQuantite();
+                workQuantite--;
+                work.setQuantite(workQuantite);
+                workRepository.save(work);
+
                 toReturn = true;
                 break;
             }
@@ -99,7 +108,6 @@ public class BorrowServiceImpl implements BorrowService {
         return toReturn;
     }
 
-    //public Boolean terminateBorrow(Long borrowId, Long memberId ) {
     public Boolean terminateBorrow(Long borrowId) {
         //Set le statut de l'emprunt a "rendu"
         Borrow borrowToEnd = borrowRepository.findById(borrowId);
@@ -110,12 +118,24 @@ public class BorrowServiceImpl implements BorrowService {
         //Sauvegarde du livre rendu
         bookRepository.save(returnedBook);
         borrowRepository.save(borrowToEnd);
+        // Incrementer la quantite dispo
+        Work workToIncrease = workRepository.findByTitle(borrowToEnd.getWorkTitle());
+        Long workQuantite = workToIncrease.getQuantite();
+        workQuantite++;
+        workToIncrease.setQuantite(workQuantite);
+        workRepository.save(workToIncrease);
+
         return true;
     }
 
     @Override
     public List<Borrow> findBorrowListByMemberId(Long memberId) {
         return borrowRepository.findByMemberId(memberId);
+    }
+
+    @Override
+    public List<Borrow> findDelayBorrows() {
+        return borrowRepository.findByStatusAndEndBorrowDate(ENCOURS.value(), new Date());
     }
 
 

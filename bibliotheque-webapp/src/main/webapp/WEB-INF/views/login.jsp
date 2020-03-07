@@ -14,7 +14,7 @@
         <h2 class="form-heading">Log in</h2>
         <h2>${message}</h2>
         <div class="form-group">
-            <form:input path="username" name="username" id="username" type="text" class="form-control" placeholder="Username"
+            <form:input path="mailAdress" name="mailAdress" id="mailAdress" type="text" class="form-control" placeholder="Mail"
                         autofocus="true" required="true"/>
             <br/><br/>
             <form:input path="password" name="password" id="password" type="password" class="form-control" placeholder="Password" required="true"/>
@@ -24,21 +24,6 @@
         </div>
     </form:form>
 
-<p>Connexion Membre :</p>
 
-    <form:form method="post" action="login" modelAttribute="loginMember">
-        <h2 class="form-heading">Log in</h2>
-        <h2>${message}</h2>
-        <div class="form-group">
-            <form:input path="mailAdress" name="mailAdress" id="mailAdress" type="text" class="form-control" placeholder="mailAdress"
-                        autofocus="true" required="true"/>
-            <br/><br/>
-            <form:input path="password" name="password" id="password" type="password" class="form-control" placeholder="Password" required="true"/>
-            <br/><br/>
-            <span>${error}</span>
-            <form:button type="submit">Log In</form:button>
-        </div>
-    </form:form>
-</div>
 </body>
 </html>

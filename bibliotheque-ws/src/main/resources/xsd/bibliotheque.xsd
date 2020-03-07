@@ -254,10 +254,25 @@
     <xs:element name="getBorrowBookResponse">
         <xs:complexType>
             <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
                 <xs:element name="borrowWs" type="tns:borrowWs"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
+    <xs:complexType name="serviceStatus">
+        <xs:sequence>
+            <xs:element name="status" type="tns:status"/>
+            <xs:element name="message" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="status">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="SUCCESS" />
+            <xs:enumeration value="NOT_FOUND" />
+        </xs:restriction>
+    </xs:simpleType>
 
     <!-- methode extendBorrow -->
 
@@ -272,7 +287,7 @@
     <xs:element name="getExtendBorrowResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="borrowWs" type="tns:borrowWs"/>
+                <xs:element name="extendSucceed" type="xs:boolean"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -290,7 +305,7 @@
     <xs:element name="getTerminateBorrowResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="borrowWs" type="tns:borrowWs"/>
+                <xs:element name="terminateSucceed" type="xs:boolean"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -349,6 +364,23 @@
         </xs:complexType>
     </xs:element>
 
+    <!-- methode get delay borrow (batch) -->
+
+    <xs:element name="getDelayBorrowsRequest">
+        <xs:complexType>
+            <xs:sequence>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getDelayBorrowsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="borrowWs" type="tns:borrowWs" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
     <!-- objects -->
     <xs:complexType name="userWs">
         <xs:sequence>
@@ -389,7 +421,7 @@
             <xs:element name="extended" type="xs:boolean"/>
             <xs:element name="workTitle" type="xs:string"/>
             <xs:element name="memberId" type="xs:long"/>
-            <!-- #AJOUT MEMBRE -->
+            <xs:element name="member" type="tns:memberWs"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -400,6 +432,7 @@
             <xs:element name="author" type="xs:string"/>
             <xs:element name="publicationDate" type="xs:string"/>
             <xs:element name="bookDescription" type="xs:string"/>
+            <xs:element name="quantite" type="xs:long"/>
         </xs:sequence>
     </xs:complexType>
 
