@@ -3,26 +3,25 @@
 <%@ page isELIgnored="false" %>
 <%@ include file="/WEB-INF/views/header.jsp" %>
 
-<head>
-    <title>Welcome</title>
-</head>
 <body>
-<div>
-    <p>Connexion Personnel Bibliothèque :</p>
 
-    <form:form method="post" action="login" modelAttribute="login">
-        <h2 class="form-heading">Log in</h2>
-        <h2>${message}</h2>
-        <div class="form-group">
-            <form:input path="mailAdress" name="mailAdress" id="mailAdress" type="text" class="form-control" placeholder="Mail"
-                        autofocus="true" required="true"/>
-            <br/><br/>
-            <form:input path="password" name="password" id="password" type="password" class="form-control" placeholder="Password" required="true"/>
-            <br/><br/>
-            <span>${error}</span>
-            <form:button type="submit">Log In</form:button>
+        <div class="container">
+
+            <h1>S'identifier</h1>
+            <form:form method="post" action="login" modelAttribute="login">
+
+                <form:input path="mailAdress" name="mailAdress" id="mailAdress" type="text" class="form-control form-control-sm mb-3" placeholder="Mail"
+                            autofocus="true" required="true"/>
+
+                <form:input path="password" name="password" id="password" type="password" class="form-control form-control-sm mb-3" placeholder="Password" required="true"/>
+
+
+                <input type="submit" class="btn btn-success" value="Valider"/>
+                <input type="reset" class="btn btn-danger" value="Reset"/>
+
+
+            </form:form>
         </div>
-    </form:form>
 
 
 </body>

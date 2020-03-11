@@ -1,24 +1,6 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://openclassrooms.com/projects/bibliotheque"
            targetNamespace="http://openclassrooms.com/projects/bibliotheque" elementFormDefault="qualified">
 
-    <!-- methode getUserByUsernameAndPassword -->
-
-    <xs:element name="getUserByUsernameAndPasswordRequest">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="username" type="xs:string"/>
-                <xs:element name="password" type="xs:string"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:element name="getUserByUsernameAndPasswordResponse">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="userWs" type="tns:userWs"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
 
     <!-- methode getMemberByMailAdressAndPassword -->
 
@@ -39,61 +21,6 @@
         </xs:complexType>
     </xs:element>
 
-    <!-- methode findByNameAndMailAdress -->
-
-    <xs:element name="getMemberByNameAndMailAdressRequest">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="name" type="xs:string"/>
-                <xs:element name="mailAdress" type="xs:string"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:element name="getMemberByNameAndMailAdressResponse">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="memberWs" type="tns:memberWs"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <!-- methode create userWs -->
-
-    <xs:element name="createUserRequest">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="userWs" type="tns:userWs"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-
-    <xs:element name="createUserResponse">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="userWs" type="tns:userWs"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <!-- methode create memberWs -->
-
-    <xs:element name="createMemberRequest">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="memberWs" type="tns:memberWs"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:element name="createMemberResponse">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="memberWs" type="tns:memberWs"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
 
     <!-- methode get works by author -->
 
@@ -114,23 +41,6 @@
         </xs:complexType>
     </xs:element>
 
-    <!-- methode create work -->
-
-    <xs:element name="createWorkRequest">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="workWs" type="tns:workWs"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:element name="createWorkResponse">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="workWs" type="tns:workWs"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
 
     <!-- methode get works by publication date -->
 
@@ -168,77 +78,7 @@
         </xs:complexType>
     </xs:element>
 
-    <!-- methode delete workWs -->
 
-    <xs:element name="getDeleteWorkRequest">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="id" type="xs:long"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:element name="getDeleteWorkResponse">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="workWs" type="tns:workWs"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <!-- methode delete bookWs -->
-
-    <xs:element name="getDeleteBookRequest">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="id" type="xs:long"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:element name="getDeleteBookResponse">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="bookWs" type="tns:bookWs"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <!-- methode delete memberkWs -->
-
-    <xs:element name="getDeleteMemberRequest">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="id" type="xs:long"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:element name="getDeleteMemberResponse">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="memberWs" type="tns:memberWs"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <!-- methode delete memberkWs -->
-
-    <xs:element name="getDeleteUserRequest">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="id" type="xs:long"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:element name="getDeleteUserResponse">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="userWs" type="tns:userWs"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
 
     <!-- methode borrowBook -->
 
@@ -328,23 +168,7 @@
         </xs:complexType>
     </xs:element>
 
-    <!-- methode create book -->
 
-    <xs:element name="createBookRequest">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="bookWs" type="tns:bookWs"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:element name="createBookResponse">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="bookWs" type="tns:bookWs"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
 
     <!-- methode get borrow by memberId -->
 

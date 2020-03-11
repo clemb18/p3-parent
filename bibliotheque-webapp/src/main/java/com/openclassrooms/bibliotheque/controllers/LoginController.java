@@ -27,6 +27,13 @@ public class LoginController {
         return "login";
     }
 
+    @GetMapping("/login")
+    public String deco(Model model) {
+        model.addAttribute("login", new Login());
+
+        return "login";
+    }
+
     @PostMapping(path = "/login")
     public String login(Model model, HttpSession session, @ModelAttribute("login") Login login) {
         MemberWs memberWs = memberService.findMemberLogin(login.getMailAdress(), login.getPassword());
@@ -38,7 +45,14 @@ public class LoginController {
         } else {
             model.addAttribute("message", "Wrong login and/or password.");
         }
-        return "redirect:/searchWork";
+       // return "redirect:/searchWork";
+        return "home";
+    }
+
+    @GetMapping("/home")
+    public String home() {
+
+        return "home";
     }
 
 }

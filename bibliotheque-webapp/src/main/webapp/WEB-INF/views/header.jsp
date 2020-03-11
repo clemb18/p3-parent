@@ -26,10 +26,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
-
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<div class="jumbotron text-center" style="margin-bottom:0">
+    <h1>Bibliothèque Municipale</h1>
+</div>
+
+<nav class="navbar navbar-inverse">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -38,11 +41,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/WEB-INF/views/login.jsp">Bibliothèque</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/WEB-INF/views/login.jsp">Home</a></li>
+                <li class="active"><a href="home">Home</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Rechercher une oeuvre
@@ -54,16 +56,14 @@
                         <a class="dropdown-item" href="searchWorkByTitle">Par titre</a>
                     </div>
                 </li>
-                <li><a href="searchMemberBorrow">Rechercher Membre</a></li>
-                <li><a href="/moncompte">Mon compte</a></li>
+                <li><a href="searchMemberBorrow">Mes emprunts</a></li>
+                <li><a href="login">Se déconnecter</a></li>
 
 
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
-<br>
-<br>
-<br>
+
 <br>
 <br>

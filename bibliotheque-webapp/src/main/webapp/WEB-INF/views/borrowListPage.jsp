@@ -1,33 +1,25 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page isELIgnored="false" %>
 <%@ include file="/WEB-INF/views/header.jsp" %>
 
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>recherche</title>
-    <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="../css/starter-template.css" rel="stylesheet">
-    <script src="../js/bootstrap.min.js"></script>
-</head>
-<body>
 
-<p>Liste des emprunts du membre selectionn&eacute;:
-</p>
+
+
 <c:if test = "${findResult == true}">
     <c:forEach items="${borrowList}" var="borrow">
-        <ul>
-            <li>Statut de l'emprunt: ${borrow.status}</li>
-            <li>Date de début de l'emprunt: ${borrow.startBorrowDate}</li>
-            <li>Date de fin de l'emprunt: ${borrow.endBorrowDate}</li>
-            <li>Prolongé ? : ${borrow.extended}</li>
-            <li>Titre du livre: ${borrow.workTitle}</li>
-            <li><a href="extendBorrow/${borrow.id}">Rallonger la durée d'emprunt d'un mois</a></li>
-            <li><a href="endBorrow/${borrow.id}">Clôturer l'emprunt</a></li>
-        </ul>
+        <div class="card" style="width: 50rem;">
+            <div class="card-body">
+                <h5 class="card-title"><strong>Titre du livre: ${borrow.workTitle}</strong></h5>
+                <p class="card-text">Statut: ${borrow.status}</p>
+                <p class="card-text">Emprunte le: ${borrow.startBorrowDate}</p>
+                <p class="card-text">Date de fin: ${borrow.endBorrowDate}</p>
+                <a href="extendBorrow/${borrow.id}" class="btn btn-primary">Prolonger</a> <a href="endBorrow/${borrow.id}" class="btn btn-primary">Cloturer</a>
+
+            </div>
+        </div>
     </c:forEach>
 </c:if>
 </body>
 </html>
+
+

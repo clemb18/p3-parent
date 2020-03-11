@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2020.03.07 à 07:52:15 AM CET 
+// Généré le : 2020.03.11 à 08:04:15 PM CET 
 //
 
 
@@ -37,30 +37,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetUserByUsernameAndPasswordRequest }
-     * 
-     */
-    public GetUserByUsernameAndPasswordRequest createGetUserByUsernameAndPasswordRequest() {
-        return new GetUserByUsernameAndPasswordRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetUserByUsernameAndPasswordResponse }
-     * 
-     */
-    public GetUserByUsernameAndPasswordResponse createGetUserByUsernameAndPasswordResponse() {
-        return new GetUserByUsernameAndPasswordResponse();
-    }
-
-    /**
-     * Create an instance of {@link UserWs }
-     * 
-     */
-    public UserWs createUserWs() {
-        return new UserWs();
-    }
-
-    /**
      * Create an instance of {@link GetMemberByMailAdressAndPasswordRequest }
      * 
      */
@@ -85,54 +61,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetMemberByNameAndMailAdressRequest }
-     * 
-     */
-    public GetMemberByNameAndMailAdressRequest createGetMemberByNameAndMailAdressRequest() {
-        return new GetMemberByNameAndMailAdressRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetMemberByNameAndMailAdressResponse }
-     * 
-     */
-    public GetMemberByNameAndMailAdressResponse createGetMemberByNameAndMailAdressResponse() {
-        return new GetMemberByNameAndMailAdressResponse();
-    }
-
-    /**
-     * Create an instance of {@link CreateUserRequest }
-     * 
-     */
-    public CreateUserRequest createCreateUserRequest() {
-        return new CreateUserRequest();
-    }
-
-    /**
-     * Create an instance of {@link CreateUserResponse }
-     * 
-     */
-    public CreateUserResponse createCreateUserResponse() {
-        return new CreateUserResponse();
-    }
-
-    /**
-     * Create an instance of {@link CreateMemberRequest }
-     * 
-     */
-    public CreateMemberRequest createCreateMemberRequest() {
-        return new CreateMemberRequest();
-    }
-
-    /**
-     * Create an instance of {@link CreateMemberResponse }
-     * 
-     */
-    public CreateMemberResponse createCreateMemberResponse() {
-        return new CreateMemberResponse();
-    }
-
-    /**
      * Create an instance of {@link GetWorkByAuthorRequest }
      * 
      */
@@ -154,22 +82,6 @@ public class ObjectFactory {
      */
     public WorkWs createWorkWs() {
         return new WorkWs();
-    }
-
-    /**
-     * Create an instance of {@link CreateWorkRequest }
-     * 
-     */
-    public CreateWorkRequest createCreateWorkRequest() {
-        return new CreateWorkRequest();
-    }
-
-    /**
-     * Create an instance of {@link CreateWorkResponse }
-     * 
-     */
-    public CreateWorkResponse createCreateWorkResponse() {
-        return new CreateWorkResponse();
     }
 
     /**
@@ -202,78 +114,6 @@ public class ObjectFactory {
      */
     public GetWorkByTitleResponse createGetWorkByTitleResponse() {
         return new GetWorkByTitleResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetDeleteWorkRequest }
-     * 
-     */
-    public GetDeleteWorkRequest createGetDeleteWorkRequest() {
-        return new GetDeleteWorkRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetDeleteWorkResponse }
-     * 
-     */
-    public GetDeleteWorkResponse createGetDeleteWorkResponse() {
-        return new GetDeleteWorkResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetDeleteBookRequest }
-     * 
-     */
-    public GetDeleteBookRequest createGetDeleteBookRequest() {
-        return new GetDeleteBookRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetDeleteBookResponse }
-     * 
-     */
-    public GetDeleteBookResponse createGetDeleteBookResponse() {
-        return new GetDeleteBookResponse();
-    }
-
-    /**
-     * Create an instance of {@link BookWs }
-     * 
-     */
-    public BookWs createBookWs() {
-        return new BookWs();
-    }
-
-    /**
-     * Create an instance of {@link GetDeleteMemberRequest }
-     * 
-     */
-    public GetDeleteMemberRequest createGetDeleteMemberRequest() {
-        return new GetDeleteMemberRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetDeleteMemberResponse }
-     * 
-     */
-    public GetDeleteMemberResponse createGetDeleteMemberResponse() {
-        return new GetDeleteMemberResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetDeleteUserRequest }
-     * 
-     */
-    public GetDeleteUserRequest createGetDeleteUserRequest() {
-        return new GetDeleteUserRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetDeleteUserResponse }
-     * 
-     */
-    public GetDeleteUserResponse createGetDeleteUserResponse() {
-        return new GetDeleteUserResponse();
     }
 
     /**
@@ -357,19 +197,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CreateBookRequest }
+     * Create an instance of {@link BookWs }
      * 
      */
-    public CreateBookRequest createCreateBookRequest() {
-        return new CreateBookRequest();
-    }
-
-    /**
-     * Create an instance of {@link CreateBookResponse }
-     * 
-     */
-    public CreateBookResponse createCreateBookResponse() {
-        return new CreateBookResponse();
+    public BookWs createBookWs() {
+        return new BookWs();
     }
 
     /**
@@ -402,6 +234,14 @@ public class ObjectFactory {
      */
     public GetDelayBorrowsResponse createGetDelayBorrowsResponse() {
         return new GetDelayBorrowsResponse();
+    }
+
+    /**
+     * Create an instance of {@link UserWs }
+     * 
+     */
+    public UserWs createUserWs() {
+        return new UserWs();
     }
 
 }

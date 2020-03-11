@@ -13,15 +13,6 @@ public class MemberClient extends WebServiceGatewaySupport {
     @Value(value = "${bibliotheque.ws.url}")
     private String bibliothequeWsUrl;
 
-    public MemberWs getMemberByNameAndMailAdressResponse(String name, String mailAdress) {
-        GetMemberByNameAndMailAdressRequest request = new GetMemberByNameAndMailAdressRequest();
-        request.setName(name);
-        request.setMailAdress(mailAdress);
-        GetMemberByNameAndMailAdressResponse response = (GetMemberByNameAndMailAdressResponse) getWebServiceTemplate().marshalSendAndReceive(bibliothequeWsUrl, request,
-                new SoapActionCallback("http://openclassrooms.com/projects/bibliotheque/GetMemberByNameAndMailAdressRequest"));
-        return response.getMemberWs();
-    }
-
     public MemberWs getMemberByMailAdressAndPasswordResponse(String mailAdress, String password) {
         GetMemberByMailAdressAndPasswordRequest request = new GetMemberByMailAdressAndPasswordRequest();
         request.setMailAdress(mailAdress);

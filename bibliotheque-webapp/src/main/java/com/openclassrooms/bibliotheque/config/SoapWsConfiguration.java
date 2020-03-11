@@ -2,7 +2,6 @@ package com.openclassrooms.bibliotheque.config;
 
 import com.openclassrooms.bibliotheque.soap.client.BorrowClient;
 import com.openclassrooms.bibliotheque.soap.client.MemberClient;
-import com.openclassrooms.bibliotheque.soap.client.UserClient;
 import com.openclassrooms.bibliotheque.soap.client.WorkClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -20,15 +19,6 @@ public class SoapWsConfiguration {
         // this package must match the package in the <generatePackage> specified in pom.xml
         marshaller.setPackagesToScan("com.openclassrooms.bibliotheque.ws");
         return marshaller;
-    }
-
-    @Bean
-    public UserClient userClient(Jaxb2Marshaller marshaller) {
-        UserClient client = new UserClient();
-        client.setDefaultUri(bibliothequeWs);
-        client.setMarshaller(marshaller);
-        client.setUnmarshaller(marshaller);
-        return client;
     }
 
     @Bean
