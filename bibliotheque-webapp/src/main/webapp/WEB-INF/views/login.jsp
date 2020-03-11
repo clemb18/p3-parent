@@ -6,7 +6,7 @@
 <body>
 
         <div class="container">
-
+            <p>${message}</p>
             <h1>S'identifier</h1>
             <form:form method="post" action="login" modelAttribute="login">
 

@@ -21,16 +21,16 @@ public class LoginController {
     private MemberService memberService;
 
     @GetMapping("")
-    public String welcome(Model model) {
+    public String welcome(Model model, HttpSession session) {
         model.addAttribute("login", new Login());
-
+        session.removeAttribute("memberCoId");
         return "login";
     }
 
     @GetMapping("/login")
-    public String deco(Model model) {
+    public String deco(Model model, HttpSession session) {
         model.addAttribute("login", new Login());
-
+        session.removeAttribute("memberCoId");
         return "login";
     }
 
@@ -42,11 +42,11 @@ public class LoginController {
             // envoie l'id du membre connecté en param session
             Long memberCoId = memberWs.getId();
             session.setAttribute("memberCoId", memberCoId);
+            return "home";
         } else {
             model.addAttribute("message", "Wrong login and/or password.");
+            return "login";
         }
-       // return "redirect:/searchWork";
-        return "home";
     }
 
     @GetMapping("/home")

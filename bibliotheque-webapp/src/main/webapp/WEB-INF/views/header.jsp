@@ -10,19 +10,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>header menu</title>
-    <!-- Bootstrap core CSS
-    <link href="css/bootstrap.min.css" rel="stylesheet">-->
-    <!-- Custom styles for this template
-    <link href="css/starter-template.css" rel="stylesheet">
-    <script src="js/bootstrap.min.js"></script>-->
-    <!-- Latest compiled and minified CSS -->
+    <title>Bibliothèque Municipale</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- Popper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-    <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
@@ -45,6 +36,8 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="home">Home</a></li>
+
+                <% if (session.getAttribute("memberCoId") != null) { %>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Rechercher une oeuvre
@@ -58,6 +51,14 @@
                 </li>
                 <li><a href="searchMemberBorrow">Mes emprunts</a></li>
                 <li><a href="login">Se déconnecter</a></li>
+                <% } else {%>
+                <li><a href="login">Se connecter</a></li>
+                <% } %>
+
+
+
+
+
 
 
             </ul>
