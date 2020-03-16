@@ -26,7 +26,7 @@ public class BorrowEndpoint {
     private BorrowService borrowService;
 
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getBorrowBookRequest")
+   /* @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getBorrowBookRequest")
     @ResponsePayload
     public GetBorrowBookResponse borrowBook(@RequestPayload GetBorrowBookRequest request) {
         GetBorrowBookResponse response = new GetBorrowBookResponse();
@@ -37,15 +37,15 @@ public class BorrowEndpoint {
             response.setBorrowWs(borrowWsResult);
         }
         return response;
-    }
+    }*/
 
-/*    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getBorrowBookRequest")
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getBorrowBookRequest")
     @ResponsePayload
     public GetBorrowBookResponse borrowBook(@RequestPayload GetBorrowBookRequest request) {
         GetBorrowBookResponse response = new GetBorrowBookResponse();
         response.setSucceed(borrowService.borrowBook(request.getWorkId(), request.getMemberId()));
         return response;
-    }*/
+    }
 
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getExtendBorrowRequest")

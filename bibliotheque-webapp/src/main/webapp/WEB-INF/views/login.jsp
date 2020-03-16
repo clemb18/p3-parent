@@ -7,7 +7,7 @@
 
         <div class="container">
             <p>${message}</p>
-            <h1>S'identifier</h1>
+            <h1><strong>S'identifier</strong></h1>
             <form:form method="post" action="login" modelAttribute="login">
 
                 <form:input path="mailAdress" name="mailAdress" id="mailAdress" type="text" class="form-control form-control-sm mb-3" placeholder="Mail"

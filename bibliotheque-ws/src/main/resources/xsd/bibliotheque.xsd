@@ -94,25 +94,12 @@
     <xs:element name="getBorrowBookResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
-                <xs:element name="borrowWs" type="tns:borrowWs"/>
+                <xs:element name="succeed" type="xs:boolean"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
-    <xs:complexType name="serviceStatus">
-        <xs:sequence>
-            <xs:element name="status" type="tns:status"/>
-            <xs:element name="message" type="xs:string"/>
-        </xs:sequence>
-    </xs:complexType>
 
-    <xs:simpleType name="status">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="SUCCESS" />
-            <xs:enumeration value="NOT_FOUND" />
-        </xs:restriction>
-    </xs:simpleType>
 
     <!-- methode extendBorrow -->
 

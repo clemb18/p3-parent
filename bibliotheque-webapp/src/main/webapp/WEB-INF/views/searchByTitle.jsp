@@ -13,7 +13,7 @@
     <script src="../js/bootstrap.min.js"></script>
 </head>
 <body>
-<p>Rechercher une oeuvre par Titre:</p>
+<p><strong>Rechercher une oeuvre par Titre:</strong></p>
 <form:form method="POST" action="searchByTitle" modelAttribute="searchWorkByTitle">
     <form:input path="title" type="text" name="title" id="title" class="form-control" placeholder="Titre"
                 autofocus="true" required="true"/>
@@ -25,7 +25,7 @@
         <ul>
             <li>${work.title}</li>
             <li>${work.bookDescription}</li>
-
+            <li>Quantit&eacute; disponible: ${work.quantite}</li>
             <li><a href="borrow/${work.id}">Emprunter ce livre</a></li>
         </ul>
     </c:forEach>

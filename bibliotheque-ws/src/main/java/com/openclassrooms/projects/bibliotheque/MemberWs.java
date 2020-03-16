@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2020.03.11 à 08:04:15 PM CET 
+// Généré le : 2020.03.16 à 10:01:24 PM CET 
 //
 
 
@@ -50,35 +50,35 @@ import javax.xml.bind.annotation.XmlType;
     "tel",
     "adress"
 })
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
 public class MemberWs {
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     protected long id;
     @XmlElement(required = true)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     protected String mailAdress;
     @XmlElement(required = true)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     protected String password;
     @XmlElement(required = true)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     protected String name;
     @XmlElement(required = true)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     protected String firstName;
     @XmlElement(required = true)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     protected String tel;
     @XmlElement(required = true)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     protected String adress;
 
     /**
      * Obtient la valeur de la propriété id.
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public long getId() {
         return id;
     }
@@ -87,7 +87,7 @@ public class MemberWs {
      * Définit la valeur de la propriété id.
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public void setId(long value) {
         this.id = value;
     }
@@ -100,7 +100,7 @@ public class MemberWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public String getMailAdress() {
         return mailAdress;
     }
@@ -113,7 +113,7 @@ public class MemberWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public void setMailAdress(String value) {
         this.mailAdress = value;
     }
@@ -126,7 +126,7 @@ public class MemberWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public String getPassword() {
         return password;
     }
@@ -139,7 +139,7 @@ public class MemberWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public void setPassword(String value) {
         this.password = value;
     }
@@ -152,7 +152,7 @@ public class MemberWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public String getName() {
         return name;
     }
@@ -165,7 +165,7 @@ public class MemberWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public void setName(String value) {
         this.name = value;
     }
@@ -178,7 +178,7 @@ public class MemberWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public String getFirstName() {
         return firstName;
     }
@@ -191,7 +191,7 @@ public class MemberWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public void setFirstName(String value) {
         this.firstName = value;
     }
@@ -204,7 +204,7 @@ public class MemberWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public String getTel() {
         return tel;
     }
@@ -217,7 +217,7 @@ public class MemberWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public void setTel(String value) {
         this.tel = value;
     }
@@ -230,7 +230,7 @@ public class MemberWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public String getAdress() {
         return adress;
     }
@@ -243,7 +243,7 @@ public class MemberWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public void setAdress(String value) {
         this.adress = value;
     }

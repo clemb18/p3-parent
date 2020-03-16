@@ -17,7 +17,7 @@
         <p><strong>Grace à ce site vous pouvez :</strong></p>
         <ul>
             <li>Rechercher une oeuvre à emprunter</li>
-            <li>Consulter vos emprunts en cours et passés</li>
+            <li>Consulter vos emprunts en cours et pass&eacute;s</li>
             <li>Prolonger ou clôturer vos emprunts</li>
         </ul>
 

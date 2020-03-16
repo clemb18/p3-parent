@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2020.03.11 à 08:04:15 PM CET 
+// Généré le : 2020.03.16 à 10:01:24 PM CET 
 //
 
 
@@ -40,11 +40,11 @@ import javax.xml.bind.annotation.XmlType;
     "author"
 })
 @XmlRootElement(name = "getWorkByAuthorRequest")
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
 public class GetWorkByAuthorRequest {
 
     @XmlElement(required = true)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     protected String author;
 
     /**
@@ -55,7 +55,7 @@ public class GetWorkByAuthorRequest {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public String getAuthor() {
         return author;
     }
@@ -68,7 +68,7 @@ public class GetWorkByAuthorRequest {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public void setAuthor(String value) {
         this.author = value;
     }

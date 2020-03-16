@@ -8,7 +8,7 @@
 <div class="container" style="margin-top:30px">
 
 
-    <p><strong>L'emprunt a ete effectue avec succes !</strong></p>
+    <p><strong>L'emprunt a &eacute;t&eacute; effectu&eacute; avec succes !</strong></p>
 
 </div>
 

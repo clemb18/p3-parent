@@ -15,13 +15,13 @@ public class BorrowClient extends WebServiceGatewaySupport {
     @Value(value = "${bibliotheque.ws.url}")
     private String bibliothequeWsUrl;
 
-    public BorrowWs  getBorrowBookResponse(Long workId, Long memberId) {
+    public boolean getBorrowBookResponse(Long workId, Long memberId) {
         GetBorrowBookRequest request = new GetBorrowBookRequest();
         request.setWorkId(workId);
         request.setMemberId(memberId);
         GetBorrowBookResponse response = (GetBorrowBookResponse) getWebServiceTemplate().marshalSendAndReceive(bibliothequeWsUrl, request,
                 new SoapActionCallback("http://openclassrooms.com/projects/bibliotheque/GetBorrowBookRequest"));
-        return response.getBorrowWs();
+        return response.isSucceed();
     }
 
     public boolean getExtendBorrowResponse(Long borrowId) {

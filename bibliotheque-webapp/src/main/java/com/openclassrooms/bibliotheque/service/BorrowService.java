@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface BorrowService {
 
-    BorrowWs borrowBook(Long workId, Long memberId);
+    boolean borrowBook(Long workId, Long memberId);
 
     boolean extendBorrow(Long borrowId);
 

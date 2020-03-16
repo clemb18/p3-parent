@@ -45,12 +45,12 @@
                     <div class="dropdown-menu" aria-labelledby="menuDropdown">
                         <a class="dropdown-item" href="searchWork">Par auteur</a>
                         <br>
-                        <a class="dropdown-item" href="searchWorkByDate">Par année de publication</a>
+                        <a class="dropdown-item" href="searchWorkByDate">Par ann&eacute;e de publication</a>
                         <a class="dropdown-item" href="searchWorkByTitle">Par titre</a>
                     </div>
                 </li>
                 <li><a href="searchMemberBorrow">Mes emprunts</a></li>
-                <li><a href="login">Se déconnecter</a></li>
+                <li><a href="login">Se d&eacute;connecter</a></li>
                 <% } else {%>
                 <li><a href="login">Se connecter</a></li>
                 <% } %>

@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<p>Rechercher une oeuvre par auteur:</p>
+<p><strong>Rechercher une oeuvre par auteur:</strong></p>
 <form:form method="POST" action="searchByAuthor" modelAttribute="searchWork">
     <form:input path="author" type="text" name="author" id="author" class="form-control" placeholder="Author"
                 autofocus="true" required="true"/>
@@ -27,6 +27,7 @@
         <ul>
             <li>${work.title}</li>
             <li>${work.bookDescription}</li>
+            <li>Quantit&eacute; disponible: ${work.quantite}</li>
            <li><a href="borrow/${work.id}">Emprunter ce livre</a></li>
         </ul>
     </c:forEach>

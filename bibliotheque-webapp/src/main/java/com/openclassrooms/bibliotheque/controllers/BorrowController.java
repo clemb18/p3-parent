@@ -33,15 +33,17 @@ public class BorrowController {
 
     // test emprunt sans recherche de membre
     @GetMapping("/borrow/{workId}")
-    public String searchMemberForm(Model model, HttpSession session, @PathVariable Long workId)  {
+    public String toBorrow(Model model, HttpSession session, @PathVariable Long workId)  {
 
-        BorrowWs  borrowWs = borrowService.borrowBook(workId, Long.valueOf(String.valueOf(session.getAttribute("memberCoId"))));
+
+
+        boolean borrowWs = borrowService.borrowBook(workId, Long.valueOf(String.valueOf(session.getAttribute("memberCoId"))));
 
         model.addAttribute("borrow" , borrowWs);
 
-        model.addAttribute("findResult", true);
+        //model.addAttribute("findResult", true);
 
-        model.addAttribute("message", "L'emprunt à été validé avec succès !");
+      //  model.addAttribute("message", "L'emprunt à été validé avec succès !");
         // retourne la jsp
         return "redirect:/borrowSuccess";
 

@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
 // Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2020.03.11 à 08:04:15 PM CET 
+// Généré le : 2020.03.16 à 10:01:24 PM CET 
 //
 
 
@@ -48,31 +48,31 @@ import javax.xml.bind.annotation.XmlType;
     "bookDescription",
     "quantite"
 })
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
 public class WorkWs {
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     protected long id;
     @XmlElement(required = true)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     protected String title;
     @XmlElement(required = true)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     protected String author;
     @XmlElement(required = true)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     protected String publicationDate;
     @XmlElement(required = true)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     protected String bookDescription;
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     protected long quantite;
 
     /**
      * Obtient la valeur de la propriété id.
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public long getId() {
         return id;
     }
@@ -81,7 +81,7 @@ public class WorkWs {
      * Définit la valeur de la propriété id.
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public void setId(long value) {
         this.id = value;
     }
@@ -94,7 +94,7 @@ public class WorkWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public String getTitle() {
         return title;
     }
@@ -107,7 +107,7 @@ public class WorkWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public void setTitle(String value) {
         this.title = value;
     }
@@ -120,7 +120,7 @@ public class WorkWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public String getAuthor() {
         return author;
     }
@@ -133,7 +133,7 @@ public class WorkWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public void setAuthor(String value) {
         this.author = value;
     }
@@ -146,7 +146,7 @@ public class WorkWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public String getPublicationDate() {
         return publicationDate;
     }
@@ -159,7 +159,7 @@ public class WorkWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public void setPublicationDate(String value) {
         this.publicationDate = value;
     }
@@ -172,7 +172,7 @@ public class WorkWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public String getBookDescription() {
         return bookDescription;
     }
@@ -185,7 +185,7 @@ public class WorkWs {
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public void setBookDescription(String value) {
         this.bookDescription = value;
     }
@@ -194,7 +194,7 @@ public class WorkWs {
      * Obtient la valeur de la propriété quantite.
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public long getQuantite() {
         return quantite;
     }
@@ -203,7 +203,7 @@ public class WorkWs {
      * Définit la valeur de la propriété quantite.
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-11T08:04:15+01:00", comments = "JAXB RI v2.3.2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2020-03-16T10:01:24+01:00", comments = "JAXB RI v2.3.2")
     public void setQuantite(long value) {
         this.quantite = value;
     }

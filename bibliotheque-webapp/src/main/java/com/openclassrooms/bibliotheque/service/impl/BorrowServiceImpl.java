@@ -15,7 +15,7 @@ public class BorrowServiceImpl implements BorrowService {
     private BorrowClient borrowClient;
 
     @Override
-    public BorrowWs borrowBook(Long workId, Long memberId) {
+    public boolean borrowBook(Long workId, Long memberId) {
         return borrowClient.getBorrowBookResponse(workId, memberId);
     }
 

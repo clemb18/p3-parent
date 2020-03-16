@@ -13,7 +13,7 @@
     <script src="../js/bootstrap.min.js"></script>
 </head>
 <body>
-<p>Rechercher une oeuvre par Date:</p>
+<p><strong>Rechercher une oeuvre par Date:</strong></p>
 <form:form method="POST" action="searchByPublicationDate" modelAttribute="searchWorkByDate">
     <form:input path="publicationDate" type="text" name="publicationDate" id="publicationDate" class="form-control"
                 placeholder="Date"
@@ -26,7 +26,7 @@
         <ul>
             <li>${work.title}</li>
             <li>${work.bookDescription}</li>
-
+            <li>Quantit&eacute; disponible: ${work.quantite}</li>
             <li><a href="borrow/${work.id}">Emprunter ce livre</a></li>
         </ul>
     </c:forEach>
