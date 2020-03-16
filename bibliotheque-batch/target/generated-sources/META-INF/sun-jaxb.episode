@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb" if-exists="true" version="2.1">
+  <!--
+
+Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+Généré le : 2020.03.04 à 07:14:00 PM CET 
+
+  -->
+  <bindings xmlns:tns="http://openclassrooms.com/projects/bibliotheque" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="com.openclassrooms.bibliotheque.ws"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="tns:getUserByUsernameAndPasswordRequest">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetUserByUsernameAndPasswordRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getUserByUsernameAndPasswordResponse">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetUserByUsernameAndPasswordResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:userWs">
+      <class ref="com.openclassrooms.bibliotheque.ws.UserWs"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getMemberByMailAdressAndPasswordRequest">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetMemberByMailAdressAndPasswordRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getMemberByMailAdressAndPasswordResponse">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetMemberByMailAdressAndPasswordResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:memberWs">
+      <class ref="com.openclassrooms.bibliotheque.ws.MemberWs"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getMemberByNameAndMailAdressRequest">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetMemberByNameAndMailAdressRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getMemberByNameAndMailAdressResponse">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetMemberByNameAndMailAdressResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:createUserRequest">
+      <class ref="com.openclassrooms.bibliotheque.ws.CreateUserRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:createUserResponse">
+      <class ref="com.openclassrooms.bibliotheque.ws.CreateUserResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:createMemberRequest">
+      <class ref="com.openclassrooms.bibliotheque.ws.CreateMemberRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:createMemberResponse">
+      <class ref="com.openclassrooms.bibliotheque.ws.CreateMemberResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getWorkByAuthorRequest">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetWorkByAuthorRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getWorkByAuthorResponse">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetWorkByAuthorResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:workWs">
+      <class ref="com.openclassrooms.bibliotheque.ws.WorkWs"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:createWorkRequest">
+      <class ref="com.openclassrooms.bibliotheque.ws.CreateWorkRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:createWorkResponse">
+      <class ref="com.openclassrooms.bibliotheque.ws.CreateWorkResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getWorkByPublicationDateRequest">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetWorkByPublicationDateRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getWorkByPublicationDateResponse">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetWorkByPublicationDateResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getWorkByTitleRequest">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetWorkByTitleRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getWorkByTitleResponse">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetWorkByTitleResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getDeleteWorkRequest">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetDeleteWorkRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getDeleteWorkResponse">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetDeleteWorkResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getDeleteBookRequest">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetDeleteBookRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getDeleteBookResponse">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetDeleteBookResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:bookWs">
+      <class ref="com.openclassrooms.bibliotheque.ws.BookWs"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getDeleteMemberRequest">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetDeleteMemberRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getDeleteMemberResponse">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetDeleteMemberResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getDeleteUserRequest">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetDeleteUserRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getDeleteUserResponse">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetDeleteUserResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getBorrowBookRequest">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetBorrowBookRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getBorrowBookResponse">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetBorrowBookResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getExtendBorrowRequest">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetExtendBorrowRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getExtendBorrowResponse">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetExtendBorrowResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getTerminateBorrowRequest">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetTerminateBorrowRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getTerminateBorrowResponse">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetTerminateBorrowResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getBookByIdRequest">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetBookByIdRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getBookByIdResponse">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetBookByIdResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:createBookRequest">
+      <class ref="com.openclassrooms.bibliotheque.ws.CreateBookRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:createBookResponse">
+      <class ref="com.openclassrooms.bibliotheque.ws.CreateBookResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getBorrowListByMemberIdRequest">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetBorrowListByMemberIdRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getBorrowListByMemberIdResponse">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetBorrowListByMemberIdResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:borrowWs">
+      <class ref="com.openclassrooms.bibliotheque.ws.BorrowWs"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getDelayBorrowsRequest">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetDelayBorrowsRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getDelayBorrowsResponse">
+      <class ref="com.openclassrooms.bibliotheque.ws.GetDelayBorrowsResponse"/>
+    </bindings>
+  </bindings>
+</bindings>
