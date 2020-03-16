@@ -1,6 +1,6 @@
 ###### BIBLIOTHEQUE MUNICIPALE
 
-WebApp développé pour le compte de la bibliothèque municipale, visant à permettre aux utilisateurs d'emprunter des ouvrages,
+WebApp développée pour le compte de la bibliothèque municipale, visant à permettre aux utilisateurs d'emprunter des ouvrages,
 de prolonger ces emprunts ainsi que de les clôturer.
 
 Les utilisateurs auront aussi la possibilité de rechercher des ouvrages par auteur, par date de publication et par titre.
