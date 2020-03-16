@@ -1,10 +1,13 @@
 package com.openclassrooms.bibliotheque.controllers;
 
+import com.openclassrooms.bibliotheque.models.Borrow;
 import com.openclassrooms.bibliotheque.service.BorrowService;
 import com.openclassrooms.bibliotheque.service.MemberService;
+import com.openclassrooms.bibliotheque.utils.DateUtils;
 import com.openclassrooms.bibliotheque.ws.BorrowWs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -33,35 +37,34 @@ public class BorrowController {
 
         BorrowWs  borrowWs = borrowService.borrowBook(workId, Long.valueOf(String.valueOf(session.getAttribute("memberCoId"))));
 
+        model.addAttribute("borrow" , borrowWs);
+
+        model.addAttribute("findResult", true);
+
+        model.addAttribute("message", "L'emprunt à été validé avec succès !");
         // retourne la jsp
-        return "finalBorrow";
-    }
+        return "redirect:/borrowSuccess";
 
-
-    @GetMapping("/borrow/selectMember/{memberFindId}")
-    public String finalBorrowForm(Model model, HttpSession session, @PathVariable int memberFindId)  {
-
-
-        Long workId = Long.valueOf(String.valueOf(session.getAttribute("workToBorrow")));
-
-        BorrowWs  borrowWs = borrowService.borrowBook(workId, Long.valueOf(memberFindId));
-
-        // retourne la jsp
-        return "finalBorrow";
     }
 
     // Menu => renvoie sur la page de recherche de membre
     @GetMapping("/searchMemberBorrow")
     public String searchMemberBorrowForm(Model model, HttpSession session) {
         List<BorrowWs> borrowListMember = borrowService.findBorrowListByMemberId(Long.valueOf(String.valueOf(session.getAttribute("memberCoId"))));
+        List<Borrow> borrows = new ArrayList<>();
+        for (BorrowWs borrowWs : borrowListMember) {
+            Borrow borrow = new Borrow();
+            BeanUtils.copyProperties(borrowWs, borrow);
+            borrow.setEndBorrowDate(DateUtils.formatDate(borrowWs.getEndBorrowDate()));
+            borrow.setStartBorrowDate(DateUtils.formatDate(borrowWs.getStartBorrowDate()));
+            borrows.add(borrow);
+            }
 
         model.addAttribute("findMemberResult", true);
 
-
         model.addAttribute("findResult", true);
 
-        model.addAttribute("borrowList" , borrowListMember);
-
+        model.addAttribute("borrowList" , borrows);
 
         return "borrowListPage";
     }
@@ -77,8 +80,10 @@ public class BorrowController {
 
         model.addAttribute("borrowExtend" , borrowExtend);
 
+        model.addAttribute("message", "L'emprunt à été prolongé avec succès !");
         // retourne la jsp
-        return "extendBorrow";
+        return "redirect:/extendSuccess";
+
     }
 
     // Cloturer l'emprunt
@@ -91,8 +96,11 @@ public class BorrowController {
 
         model.addAttribute("borrowEnd" , borrowEnd);
 
+        model.addAttribute("message", "L'emprunt à été cloturé avec succès !");
+
         // retourne la jsp
-        return "endBorrow";
+
+        return "redirect:/endSuccess";
     }
 
 }

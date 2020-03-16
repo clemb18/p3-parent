@@ -55,4 +55,22 @@ public class LoginController {
         return "home";
     }
 
+    @GetMapping("/endSuccess")
+    public String successEnd() {
+
+        return "endBorrow";
+    }
+
+    @GetMapping("/extendSuccess")
+    public String successExtend() {
+
+        return "extendBorrow";
+    }
+
+    @GetMapping("/borrowSuccess")
+    public String successBorrow() {
+
+        return "finalBorrow";
+    }
+
 }
